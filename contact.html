@@ -68,7 +68,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Área do Aluno<b class="caret"></b></a>                       <ul class="dropdown-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Área do Aluno<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="objetivos.html">Objetivos</a>
@@ -83,7 +83,10 @@
                                 <a href="formularios.html">Formulários</a>
                             </li>
                             <li>
-                                 <a href="docentes.html">Docentes</a>
+                                <a href="docentes.html">Docentes</a>
+                            </li>
+                            <li>
+                                <a href="curriculo.html">Currículo do Curso</a>
                             </li>
                         </ul>
                     </li>
@@ -142,7 +145,7 @@
                         infowindow = new google.maps.InfoWindow({
                             content: '<strong>CCECOMP UEFS</strong><br>Labotec 3 UEFS<br>'
                         });
-                        google.maps.event.addListener(marker, 'click', function () {
+                        google.maps.event.addListener(marker, 'click', function() {
                             infowindow.open(map, marker);
                         });
                         infowindow.open(map, marker);
@@ -219,9 +222,8 @@
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Menssagem:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message"
-                                maxlength="999" style="resize:none"></textarea>
+                            <label>Mensagem:</label>
+                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
                     <div id="success"></div>
