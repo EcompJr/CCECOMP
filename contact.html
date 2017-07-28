@@ -12,7 +12,7 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -35,7 +35,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     <nav class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -45,16 +45,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Colegiado de Engenharia de Computação</a>
+                <a class="navbar-brand" href="index.html" alt="">CCECOMP</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">Sobre</a>
+                        <a href="about.html">SOBRE</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">O Curso<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">O CURSO</a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="objetivos.html">Objetivos</a>
@@ -74,7 +74,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Área do Aluno<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ÁREA DO ALUNO</a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="formularios.html">Procedimentos e Formulários</a>
@@ -91,10 +91,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="entidades.html">Entidades</a>
+                        <a href="entidades.html">ENTIDADES</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contato</a>
+                        <a href="contact.html">CONTATO</a>
                     </li>
                 </ul>
             </div>
@@ -150,7 +150,7 @@
                         infowindow = new google.maps.InfoWindow({
                             content: '<strong>CCECOMP UEFS</strong><br>Labotec 3 UEFS<br>'
                         });
-                        google.maps.event.addListener(marker, 'click', function() {
+                        google.maps.event.addListener(marker, 'click', function () {
                             infowindow.open(map, marker);
                         });
                         infowindow.open(map, marker);
@@ -202,42 +202,31 @@
 
         <!-- Contact Form -->
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-        <div class="row">
-            <div class="col-md-8">
-                <h3>Envie-nos uma mensagem</h3>
-                <form name="sentMessage" id="contactForm" novalidate>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Nome:</label>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Telefone:</label>
-                            <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Email:</label>
-                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Mensagem:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
-                        </div>
-                    </div>
-                    <div id="success"></div>
-                    <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary">Enviar mensagem</button>
-                </form>
-            </div>
+          	<section id="footer">
+				<div class="inner">
+					<header>
+						<h2>Deixe-nos uma mensagem</h2>
+					</header>
+					<form method="post" action="#">
+						<div class="field half first">
+							<label for="name">Nome</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Mensagem</label>
+							<textarea name="message" id="message" rows="6"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Enviar Mensagem" class="alt" /></li>
+						</ul>
+					</form>
+				</div>
+			</section>
 
-        </div>
         <!-- /.row -->
 
         <hr>
