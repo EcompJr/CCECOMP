@@ -32,76 +32,10 @@
 
 </head>
 
+<?php require_once("header.php") ?>
+
 <body>
 
-    <!-- Navigation -->
-     <nav class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html" alt="">CCECOMP</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="about.html">SOBRE</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">O CURSO</a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="objetivos.html">Objetivos</a>
-                            </li>
-                            <li>
-                                <a href="perfil.html">Perfil do Profissional</a>
-                            </li>
-                            <li>
-                                <a href="mercado.html">Mercado</a>
-                            </li>
-                            <li>
-                                <a href="docentes.html">Docentes</a>
-                            </li>
-                            <li>
-                                <a href="curriculo.html">Currículo do Curso</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ÁREA DO ALUNO</a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="formularios.html">Procedimentos e Formulários</a>
-                            </li>
-                            <li>
-                                <a href="tcc.html">TCC</a>
-                            </li>
-                            <li>
-                                <a href="estagio.html">Estágio</a>
-                            </li>
-                            <li>
-                                <a href="resolucoes.html">Resoluções</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="entidades.html">ENTIDADES</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">CONTATO</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
     <!-- Page Content -->
     <div class="container">
 
@@ -111,7 +45,7 @@
                 <h1 class="page-header">Docentes
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Docentes</li>
                 </ol>
@@ -154,7 +88,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4776765U7">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/angeloduarte/"> Página Pessoal</a></td>     
+                            <td> <a href="http://sites.ecomp.uefs.br/angeloduarte/"> Página Pessoal</a></td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -164,7 +98,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4771825E4">Lattes </a> </td>
-                            <td> <a href="http://www.artificial.eng.br/"> Página Pessoal</a></td>     
+                            <td> <a href="http://www.artificial.eng.br/"> Página Pessoal</a></td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -174,7 +108,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4133024P9">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -184,7 +118,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4794838D2">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -194,7 +128,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4750532H8">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -204,7 +138,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4707794Y4">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/cegoes/"> Página Pessoal</a> </td>     
+                            <td> <a href="http://sites.ecomp.uefs.br/cegoes/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -214,7 +148,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4164649Z8">Lattes </a> </td>
-                            <td> <a href="http://www2.uefs.br/danielgcosta/"> Página Pessoal</a> </td>     
+                            <td> <a href="http://www2.uefs.br/danielgcosta/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -224,7 +158,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4733960Z2">Lattes </a> </td>
-                            <td>  </td>     
+                            <td>  </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -234,7 +168,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4784554E1">Lattes </a> </td>
-                            <td>  </td>     
+                            <td>  </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -244,7 +178,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4708088Z0">Lattes </a> </td>
-                            <td>  </td>     
+                            <td>  </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -254,7 +188,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4137267P3">Lattes </a> </td>
-                            <td>  </td>     
+                            <td>  </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -264,7 +198,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4796747E7">Lattes </a> </td>
-                            <td>  </td>     
+                            <td>  </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -274,7 +208,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4798641E4">Lattes </a> </td>
-                            <td>  </td>     
+                            <td>  </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -284,7 +218,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4761191Y2">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/joao/"> Página Pessoal</a> </td>     
+                            <td> <a href="http://sites.ecomp.uefs.br/joao/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -294,7 +228,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4702164E2">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -304,7 +238,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4705842J1">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -314,7 +248,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4795949U1">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -324,7 +258,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4706053U0">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -334,7 +268,7 @@
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4770004T1">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/mgpires/"> Página Pessoal</a> </td>     
+                            <td> <a href="http://sites.ecomp.uefs.br/mgpires/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -344,7 +278,7 @@
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4778081D3">Lattes </a> </td>
-                            <td> <a href="https://sites.google.com/a/ecomp.uefs.br/michele-angelo/home?pli=1"> Página Pessoal</a> </td>     
+                            <td> <a href="https://sites.google.com/a/ecomp.uefs.br/michele-angelo/home?pli=1"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -354,8 +288,8 @@
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4791880J3">Lattes </a> </td>
-                            <td> </td>     
-                        </tr> 
+                            <td> </td>
+                        </tr>
                         <tr>
                             <th scope="row"></th>
                             <td>Roberto Almeida Bittencourt</td>
@@ -364,7 +298,7 @@
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4791059H8">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/roberto/"> Página Pessoal</a> </td>     
+                            <td> <a href="http://sites.ecomp.uefs.br/roberto/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -374,7 +308,7 @@
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4137814A8">Lattes </a> </td>
-                            <td> <a href="http://www.rtcalumby.com.br/"> Página Pessoal</a> </td>     
+                            <td> <a href="http://www.rtcalumby.com.br/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -384,7 +318,7 @@
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4783805D6">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -394,7 +328,7 @@
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4768955Z6">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -404,7 +338,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4771691Z3">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -414,7 +348,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4700484H8">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -424,7 +358,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4763285H0">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -434,7 +368,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4513433E4">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -444,7 +378,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4798313H2">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -454,7 +388,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4278208T5">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -464,7 +398,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4234332E8">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -474,7 +408,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4764187J4">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -484,7 +418,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4130951A5">Lattes </a> </td>
-                            <td><a href="http://sites.ecomp.uefs.br/jesus/"> Página Pessoal</a></td>     
+                            <td><a href="http://sites.ecomp.uefs.br/jesus/"> Página Pessoal</a></td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -494,7 +428,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4744216A1">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -504,7 +438,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4221813Z4">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -514,7 +448,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4717823Y9">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -524,7 +458,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4297460U3">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -534,7 +468,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4290860E0">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -544,7 +478,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4201076H8">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -554,7 +488,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4458195P8">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -564,7 +498,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4256956Z1">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -574,7 +508,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4269537H3">Lattes </a> </td>
-                            <td> <a href="http://just.pro.br/blog/"> Página Pessoal</a> </td>     
+                            <td> <a href="http://just.pro.br/blog/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -584,7 +518,7 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4269537H3">Lattes </a> </td>
-                            <td> <a href="http://just.pro.br/blog/"> Página Pessoal</a> </td>     
+                            <td> <a href="http://just.pro.br/blog/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -594,7 +528,7 @@
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4207338A4">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -604,25 +538,15 @@
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
                             <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4320861P7">Lattes </a> </td>
-                            <td> </td>     
+                            <td> </td>
                         </tr>
                     </tbody>
-                    
+
                 </table>
             </div>
 
         </div>
 
-        <hr>
-
-        <!-- Footer -->
-        <footer class="">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; EcompJr 2017</p>
-                </div>
-            </div>
-        </footer>
 
     </div>
     <!-- /.container -->
@@ -632,6 +556,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <?php require_once("footer.php") ?>
 
 </body>
 
