@@ -8,31 +8,31 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.html" alt="">CCECOMP</a>
+              <a class="navbar-brand" href="index.php" alt="">CCECOMP</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                   <li>
-                      <a href="about.html">SOBRE</a>
+                      <a href="about.php">SOBRE</a>
                   </li>
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">O CURSO</a>
                       <ul class="dropdown-menu">
                           <li>
-                              <a href="objetivos.html">Objetivos</a>
+                              <a href="objetivos.php">Objetivos</a>
                           </li>
                           <li>
-                              <a href="perfil.html">Perfil do Profissional</a>
+                              <a href="perfil.php">Perfil do Profissional</a>
                           </li>
                           <li>
-                              <a href="mercado.html">Mercado</a>
+                              <a href="mercado.php">Mercado</a>
                           </li>
                           <li>
-                              <a href="docentes.html">Docentes</a>
+                              <a href="docentes.php">Docentes</a>
                           </li>
                           <li>
-                              <a href="curriculo.html">Currículo do Curso</a>
+                              <a href="curriculo.php">Currículo do Curso</a>
                           </li>
                       </ul>
                   </li>
@@ -40,24 +40,24 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">ÁREA DO ALUNO</a>
                       <ul class="dropdown-menu">
                           <li>
-                              <a href="formularios.html">Procedimentos e Formulários</a>
+                              <a href="formularios.php">Procedimentos e Formulários</a>
                           </li>
                           <li>
-                              <a href="tcc.html">TCC</a>
+                              <a href="tcc.php">TCC</a>
                           </li>
                           <li>
-                              <a href="estagio.html">Estágio</a>
+                              <a href="estagio.php">Estágio</a>
                           </li>
                           <li>
-                              <a href="resolucoes.html">Resoluções</a>
+                              <a href="resolucoes.php">Resoluções</a>
                           </li>
                       </ul>
                   </li>
                   <li>
-                      <a href="entidades.html">ENTIDADES</a>
+                      <a href="entidades.php">ENTIDADES</a>
                   </li>
                   <li>
-                      <a href="contact.html">CONTATO</a>
+                      <a href="contact.php">CONTATO</a>
                   </li>
               </ul>
           </div>
