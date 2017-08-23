@@ -57,7 +57,7 @@
         <div class="row">
             <!-- Map Column -->
             <div class="col-md-8">
-                <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+                <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDwzm6uxj4QMLcdn46d1RM7qX2pLr6J4AU&v=3.exp'></script>
                 <div style='overflow:hidden;height:440px;width:700px;'>
                     <div id='gmap_canvas' style='height:440px;width:700px;'></div>
                     <div><small><a href="http://www.googlemapsgenerator.com/pt/">Incorporar um mapa do Google em seu site</a></small></div>

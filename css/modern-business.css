@@ -170,7 +170,7 @@ textarea {
     input,
     select,
     textarea {
-        font-size: 13pt;
+        font-size: 12pt;
     }
 }
 
@@ -179,7 +179,7 @@ textarea {
     input,
     select,
     textarea {
-        font-size: 13pt;
+        font-size: 12pt;
     }
 }
 
@@ -534,7 +534,7 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover,
 .button:hover {
-    background-color: #676767;
+    background-color: darkcyan;
 }
 
 input[type="submit"]:active,
@@ -828,7 +828,7 @@ input[type="email"],
 select,
 textarea {
     background: none;
-    border-color: green;
+    border-color: orangered;
 }
 
 input[type="text"]:focus,
@@ -836,12 +836,12 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-    border-color: blue;
+    border-color: oranged;
     box-shadow: 0 0 0 1px black;
 }
 
 .select-wrapper:before {
-    color: blue;
+    color: orangered;
 }
 
 input[type="checkbox"]+label,

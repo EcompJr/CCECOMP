@@ -92,9 +92,10 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="myModalLabel">Instruções para matrícula WEB</h4>
                             </div>
+                            
                             <div class="modal-body text-justify">
                                 Você deve fazer sua solicitação de matrícula por meio do Portal do Aluno, observando que esta será efetivada EXCLUSIVAMENTE
-                                pela WEB.</br>
+                                pela WEB.</br></br>
                                 <h4> <b>FASE 1 - Matrícula - (Exclusivamente via WEB) </b></h4>
 
                                 Nesta fase você indicará a sua proposta de matrícula, ou seja, as disciplinas que você quer cursar no próximo semestre. Essa
@@ -116,7 +117,7 @@
                                 Após esta etapa, haverá a confirmação de vagas, e só então você saberáefetivamente quais vagas conseguiu obter.</br>
 
                                 Se encontrarem problemas para efetuar a matrícula, nos avisem imediatamente para buscarmos resolver.</br>
-
+                                </br>
                                 <h4><b>FASE 02 – Ajuste de Matrícula - (Exclusivamente via WEB)</b></h4>
 
                                 Nesta fase o sistema gerou a sua guia de matrícula, e caso você esteja de acordo, poderá imprimi-la nesse momento, aceitando
@@ -124,12 +125,12 @@
                                 fará uma nova proposta, para inclusão.</br>
 
                                 Lembramos mais uma vez que NÃO será possível excluir as disciplinas já confirmadas na sua guia disponível na WEB.</br>
-
+                                </br>
                                 <h4><b>FASE 03 - Presencial</b></h4>
 
                                 Nesta fase, caso ainda seja necessária a inserção de disciplinas com turmas de outros colegiados, você poderá pedir a inclusão,
                                 caso tenha restado vagas.</br>
-
+                                <br>
                                 <h4><span class="label label-warning"> ATENÇÃO: </span> </h4>
 
                                 <li> Se por qualquer motivo você não participar da FASE 01, poderá participar das FASES seguintes,
@@ -148,11 +149,11 @@
                                     A ocupação das vagas será realizada pelo sistema de matrícula ao final de cada fase,
                                     automaticamente, seguindo os critérios de prioridade para ocupação das mesmas. O momento
                                     que o sistema foi acessado não interfere na distribuição das vagas.</li>
-
+                                </br>
                                 <h4> <b>PRIORIDADE PARA OCUPAÇÃO DAS VAGAS </b> </h4>
 
                                 Os alunos terão direito as vagas de acordo com os critérios estabelecidos pelo colegiado do curso.</br>
-
+                                </br>
                                 <h4><b>DÉBITO COM A BIBLIOTECA OU DE DOCUMENTAÇÃO</b> </h4>
 
                                 Caso você tenha débito com a Biblioteca ou de documentos, você deverá entrar em contato com a DAA para quitar seu débito
@@ -163,7 +164,7 @@
                                 Divisão de Assuntos Acadêmicos para que essa quitação de débito seja lançada no sistema de
                                 matrícula.
                                 </br>
-
+                                </br>
                                 <h4><b>CRITÉRIOS UTILIZADOS NA MATRÍCULA WEB PELO CURSO DE ENGENHARIA DE COMPUTAÇÃO</b></h4>
 
                                 <li> Participação do processo de demanda (independente das disciplinas escolhidas, se o aluno
