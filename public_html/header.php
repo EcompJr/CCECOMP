@@ -59,9 +59,17 @@
                 <li>
                     <a href="contact.php">CONTATO</a>
                 </li>
-                <li>
-                    <a href="login.php">ACESSO RESTRITO</a>
-                </li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACESSO RESTRITO</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="login.php">Login</a>
+                    </li>
+                    <li>
+                        <a href="cadastro.php">Cadastro</a>
+                    </li>
+                </ul>
+            </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

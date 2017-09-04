@@ -50,11 +50,16 @@
     </style>
 
     <div class="jumbotron container">
-        <form>
-            <h2>Login</h2>
-            <input class="form-control" type="text" placeholder="Usuário" /> </br>
-            <input class="form-control" type="text" placeholder="Senha" /> </br>
-            <input type="submit" value="Entrar">
+        <form name="signup" method="get" action="cadastrando.php">
+            <h2>Cadastro</h2>
+            <input class="form-control" type="text" placeholder="CPF" name="cpf" /> </br>
+            <input class="form-control" type="text" placeholder="Nome" name="nome"/> </br>
+            <input class="form-control" type="email" placeholder="Email" name="email"/> </br>
+            <input class="form-control" type="text" placeholder="Senha" name="senha"/> </br>
+            <input class="form-control" type="text" placeholder="Tipo" name="tipo"/> </br>
+            <input class="form-control" type="text" placeholder="Telefone" name="telefone"/> </br>
+            <input class="form-control" type="text" placeholder="Endereço" name="endereco"/> </br>
+            <input type="submit" value="Submit" name="submit">
         </form>
     </div>
 
