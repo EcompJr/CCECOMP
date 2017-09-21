@@ -12,7 +12,7 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -42,6 +42,7 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 20px;
+            border-radius: 20px;
         }
 
         .table {
@@ -54,7 +55,7 @@
             <h2>Login</h2>
             <input class="form-control" type="text" placeholder="Usuário" /> </br>
             <input class="form-control" type="text" placeholder="Senha" /> </br>
-            <input type="submit" value="Entrar">
+            <input class="btn btn-info"type="submit" value="Entrar">
         </form>
     </div>
 

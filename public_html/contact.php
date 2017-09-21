@@ -12,7 +12,7 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -121,7 +121,7 @@
                 </p>
                 <ul class="list-unstyled list-inline list-social-icons">
                     <li>
-                        <a href="http://www.facebook.com/ecompuefs"><i class="fa fa-facebook-square fa-3x"></i></a>
+                        <a href="http://www.facebook.com/ecompuefs"><i  class="fa fa-facebook-square fa-3x"></i></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a>
@@ -136,26 +136,27 @@
 
         <!-- Contact Form -->
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-          	<section id="footer">
-				<div class="inner">
+          	<section style="background-color:#526b65;border-radius:10px;padding:10px;"  id="footer">
+
+				<div class="inner" >
 					<header>
-						<h2>Deixe-nos uma mensagem</h2>
+						<h2 style="color:white">Deixe-nos uma mensagem</h2>
 					</header>
 					<form method="post" action="#">
 						<div class="field half first">
-							<label for="name">Nome</label>
-							<input type="text" name="name" id="name" />
+							<label style="color:white"for="name">Nome</label>
+							<input class="form-control" type="text" name="name" id="name" />
 						</div>
 						<div class="field half">
-							<label for="email">Email</label>
-							<input type="text" name="email" id="email" />
+							<label style="color:white" for="email">Email</label>
+							<input  class="form-control"type="text" name="email" id="email" />
 						</div>
 						<div class="field">
-							<label for="message">Mensagem</label>
-							<textarea name="message" id="message" rows="6"></textarea>
+							<label style="color:white" for="message">Mensagem</label>
+							<textarea class="form-control"rows="20"name="message" id="message" rows="6"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input type="submit" value="Enviar Mensagem" class="alt" /></li>
+							<li><input class="btn btn-info" type="submit" value="Enviar Mensagem" class="alt" /></li>
 						</ul>
 					</form>
 				</div>

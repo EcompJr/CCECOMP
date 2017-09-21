@@ -12,7 +12,7 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -57,19 +57,19 @@
             <div class="col-lg-12">
                 <!-- Button trigger modal -->
                 <h4> Matrícula WEB</h4>
-                <button type="button" data-toggle="modal" data-target="#myModal1">
+                <button class="btn btn-info"type="button" data-toggle="modal" data-target="#myModal1">
                     Instruções para matrícula web
                 </button>
                 </br>
                 </br>
                 <h4> Segunda chamada</h4>
-                <button type="button" data-toggle="modal" data-target="#myModal2">
+                <button class="btn btn-info"type="button" data-toggle="modal" data-target="#myModal2">
                     Procedimento de segunda chamada
                 </button>
                 </br>
                 </br>
                 <h4> Trancamento de Disciplinas e Matrícula Institucional</h4>
-                <button type="button" data-toggle="modal" data-target="#myModal3">
+                <button class="btn btn-info"type="button" data-toggle="modal" data-target="#myModal3">
                     Normas para trancamento e matrícula institucional
                 </button>
                 </br>
@@ -92,7 +92,7 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="myModalLabel">Instruções para matrícula WEB</h4>
                             </div>
-                            
+
                             <div class="modal-body text-justify">
                                 Você deve fazer sua solicitação de matrícula por meio do Portal do Aluno, observando que esta será efetivada EXCLUSIVAMENTE
                                 pela WEB.</br></br>

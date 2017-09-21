@@ -12,7 +12,7 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -73,13 +73,13 @@
                 Veja abaixo a Ementa dos Componentes Curriculares, a Estrutura Curricular e o Fluxograma. Currículo Novo (2012, conforme
                 Resolução CONSEPE 217/2011): </br>
                 </br>
-                <a href="data/Ementario-res217-2011.pdf" class="btn btn-primary" role="button">Ementas das Disciplinas</a>
-                <a href="data/OfertaSemestralizada-res217-2011.pdf" class="btn btn-primary" role="button">Oferta Semestralizada</a>
-                <a href="data/FluxogramaCurr2012.pdf" class="btn btn-primary" role="button">Fluxograma</a>
+                <a href="data/Ementario-res217-2011.pdf" class="btn btn-info" role="button">Ementas das Disciplinas</a>
+                <a href="data/OfertaSemestralizada-res217-2011.pdf" class="btn btn-info" role="button">Oferta Semestralizada</a>
+                <a href="data/FluxogramaCurr2012.pdf" class="btn btn-info" role="button">Fluxograma</a>
                 </br>
                 </br>
                 <p>Currículo Antigo:</p>
-                <a href="data/programas.zip" class="btn btn-primary" role="button">Programas</a>
+                <a href="data/programas.zip" class="btn btn-info" role="button">Programas</a>
 
             </div>
         </div>

@@ -12,13 +12,14 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+
+           
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 
     <!-- Favicon -->
     <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
@@ -44,7 +45,7 @@
             <div class="col-lg-12">
                 <h1 class="page-header">TCC
                 </h1>
-                <ol class="breadcrumb">
+                <ol style="font-size:15pt" class="breadcrumb">
                     <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">TCC</li>
@@ -55,10 +56,54 @@
 
         <!-- Content Row -->
         <div class="row">
-            <div class="col-lg-12">
+         <div class="col-md-3 col-md-offset-1 jumbotron"  >
+           <h4> Consulte TCCs abaixo </h4>
+         </div>
+
+        <div class="col-md-3 col-md-offset-1 jumbotron">
+          <h4> Envie o seu TCC para a equipe do colégiado</h4>
+        </div>
+      </div>
 
 
-            </div>
+      <div class="row">
+
+                <div class="col-md-6 col-md-offset-2">
+
+                  <table class="table table-hover" style="border-radius:10px;">
+
+                    <thead>
+                       <tr>
+                         <th>Aluno</th>
+                         <th>Nome do TCC</th>
+                         <th>Data de publicação</th>
+                       </tr>
+                    </thead>
+                 <tbody>
+                    <tr>
+                      <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspBruno Gonzaga de Mattos Vogel</td>
+                      <td>AVAA: Ambiente virtual de aprendizagem de algoritmos</td>
+                      <td>01/12/2017</td>
+                    </tr>
+
+                    <tr>
+                      <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspFusce vel leo quis metus.</td>
+                      <td> Pellentesque habitant morbi tristique senectu</td>
+                      <td>02/05/2017</td>
+                    </tr>
+                 </tbody>
+                  </table>
+
+
+
+
+                </div>
+                <div class="col-md-2 ">
+                  <input type="text" class="form-control"placeholder="Aluno/Data" />
+                </div>
+                <div class="col-md-1">
+                  <button class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspPesquisar</button>
+                </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
