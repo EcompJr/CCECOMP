@@ -56,13 +56,13 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h2 class="page-header"> <a href="ecompjr.html"> EcompJr </a> </h2>
+                <h2 class="page-header"> <a href="ecompjr.php"> EcompJr </a> </h2>
 
-                <h2 class="page-header"> <a href="pet.html"> PET Engenharias </a> </h2>
+                <h2 class="page-header"> <a href="pet.php"> PET Engenharias </a> </h2>
 
-                <h2 class="page-header"> <a href="ieee.html"> Ramo IEEE </a></h2>
+                <h2 class="page-header"> <a href="ieee.php"> Ramo IEEE </a></h2>
 
-                <h2 class="page-header"> <a href="daecomp.html"> DA de Engenharia de Computação </a></h2>
+                <h2 class="page-header"> <a href="daecomp.php"> DA de Engenharia de Computação </a></h2>
             </div>
 
         </div>

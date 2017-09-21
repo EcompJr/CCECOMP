@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -81,8 +81,8 @@
                     que 2 semestres para conclusão do curso.
                 </p>
 
-                <a href="data/TabelaReformuladaAtividadesComplementares.pdf" class="button">Tabela reformulada</a>
-                <a href="data/FormularioAtividadesComplementares.xls" class="button">Formulário para solicitação</a>
+                <a class="btn btn-info" href="data/TabelaReformuladaAtividadesComplementares.pdf" class="button">Tabela reformulada</a>
+                <a class="btn btn-info" href="data/FormularioAtividadesComplementares.xls" class="button">Formulário para solicitação</a>
 
                 <!-- Modal -->
                 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
