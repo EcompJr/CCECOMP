@@ -16,7 +16,7 @@
 
     <!-- Custom CSS -->
 
-           
+  <link href="css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
 
@@ -102,7 +102,7 @@
                   <input type="text" class="form-control"placeholder="Aluno/Data" />
                 </div>
                 <div class="col-md-1">
-                  <button class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspPesquisar</button>
+                  <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspPesquisar</button>
                 </div>
             <!-- /.col-lg-12 -->
         </div>

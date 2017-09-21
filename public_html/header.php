@@ -1,4 +1,4 @@
-<nav style="background-color:#85c3b5;color:white;border-color:#85c3b5" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
+<nav style="background-color:#4d6aa0;color:white;border-color:#4d6aa0" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
     <div  class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div   class="navbar-header ">

@@ -57,19 +57,19 @@
             <div class="col-lg-12">
                 <!-- Button trigger modal -->
                 <h4> Matrícula WEB</h4>
-                <button class="btn btn-info"type="button" data-toggle="modal" data-target="#myModal1">
+                <button class="btn btn-warning"type="button" data-toggle="modal" data-target="#myModal1">
                     Instruções para matrícula web
                 </button>
                 </br>
                 </br>
                 <h4> Segunda chamada</h4>
-                <button class="btn btn-info"type="button" data-toggle="modal" data-target="#myModal2">
+                <button class="btn btn-warning"type="button" data-toggle="modal" data-target="#myModal2">
                     Procedimento de segunda chamada
                 </button>
                 </br>
                 </br>
                 <h4> Trancamento de Disciplinas e Matrícula Institucional</h4>
-                <button class="btn btn-info"type="button" data-toggle="modal" data-target="#myModal3">
+                <button class="btn btn-warning"type="button" data-toggle="modal" data-target="#myModal3">
                     Normas para trancamento e matrícula institucional
                 </button>
                 </br>
@@ -81,8 +81,8 @@
                     que 2 semestres para conclusão do curso.
                 </p>
 
-                <a class="btn btn-info" href="data/TabelaReformuladaAtividadesComplementares.pdf" class="button">Tabela reformulada</a>
-                <a class="btn btn-info" href="data/FormularioAtividadesComplementares.xls" class="button">Formulário para solicitação</a>
+                <a class="btn btn-warning" href="data/TabelaReformuladaAtividadesComplementares.pdf" class="button">Tabela reformulada</a>
+                <a class="btn btn-warning" href="data/FormularioAtividadesComplementares.xls" class="button">Formulário para solicitação</a>
 
                 <!-- Modal -->
                 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

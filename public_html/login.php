@@ -55,7 +55,7 @@
             <h2>Login</h2>
             <input class="form-control" type="text" placeholder="Usuário" /> </br>
             <input class="form-control" type="text" placeholder="Senha" /> </br>
-            <input class="btn btn-info"type="submit" value="Entrar">
+            <input class="btn btn-warning"type="submit" value="Entrar">
         </form>
     </div>
 

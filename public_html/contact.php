@@ -136,9 +136,9 @@
 
         <!-- Contact Form -->
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-          	<section style="background-color:#526b65;border-radius:10px;padding:10px;"  id="footer">
+          	<section style="background-color:#f0ad4e;border-radius:10px;padding:10px;"  id="footer">
 
-				<div class="inner" >
+				<div class="inner " >
 					<header>
 						<h2 style="color:white">Deixe-nos uma mensagem</h2>
 					</header>
@@ -156,7 +156,7 @@
 							<textarea class="form-control"rows="20"name="message" id="message" rows="6"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input class="btn btn-info" type="submit" value="Enviar Mensagem" class="alt" /></li>
+							<li><input class="btn btn-primary" type="submit" value="Enviar Mensagem" class="alt" /></li>
 						</ul>
 					</form>
 				</div>

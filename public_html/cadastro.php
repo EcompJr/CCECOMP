@@ -60,7 +60,7 @@
             <input class="form-control" type="text" placeholder="Tipo" name="tipo"/> </br>
             <input class="form-control" type="text" placeholder="Telefone" name="telefone"/> </br>
             <input class="form-control" type="text" placeholder="Endereço" name="endereco"/> </br>
-            <input class="btn btn-info"type="submit" value="Submit" name="submit">
+            <input class="btn btn-warning"type="submit" value="Enviar" name="submit">
         </form>
     </div>
 
