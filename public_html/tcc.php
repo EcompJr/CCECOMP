@@ -53,26 +53,40 @@
             </div>
         </div>
         <!-- /.row -->
-
+<br>
         <!-- Content Row -->
         <div class="row">
-         <div class="col-md-3 col-md-offset-1 jumbotron"  >
-           <h4> Consulte TCCs abaixo </h4>
+         <div style="background-color:#f0ad4e"class="col-md-3 col-md-offset-2 jumbotron"  >
+            <h4 style="color:white"> Consulte TCCs abaixo &nbsp<span style="color:white"class="glyphicon glyphicon-search"></span></h4><br>
+            <button data-toggle="collapse" class="btn btn-default" data-target="#infotext1">Ler mais...</button>
+            <br><br>
+            <p id="infotext1" class="collapse container" style="font-size:12px;background-color:white;border-radius:10px;">Procure por um TCC digitando o nome do aluno/orientador ou nome do TCC no campo indicado. Utilize palavras-chaves.</p>
          </div>
 
-        <div class="col-md-3 col-md-offset-1 jumbotron">
-          <h4> Envie o seu TCC para a equipe do colégiado</h4>
+        <div style="background-color:#f0ad4e" class="col-md-3 col-md-offset-1 jumbotron">
+          <h4 style="color:white"> Cadastre seu TCC entrando em contato &nbsp<span style="color:white" class="glyphicon glyphicon-phone-alt"></span></h4>
+          <button data-toggle="collapse" class="btn btn-default" data-target="#infotext2">Ler mais...</button>
+           <br><br>
+          <p id="infotext2" class="collapse container" style="font-size:12px;background-color:white;border-radius:10px;">Compareça a sede do colégiado para solicitar o cadastro do documento.</p>
+       </div>
         </div>
       </div>
 
+<br><br>
 
+<div class="col-md-6 col-md-offset-2 ">
+  <input type="text" class="form-control"placeholder="Nomes/Palavra-chave" />
+</div>
+<div class="col-md-1">
+  <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspBuscar</button>
+</div>
       <div class="row">
 
-                <div class="col-md-6 col-md-offset-2">
+                <div class="col-md-7 col-md-offset-2">
 
                   <table class="table table-hover" style="border-radius:10px;">
 
-                    <thead>
+                    <thead >
                        <tr>
                          <th>Aluno</th>
                          <th>Nome do TCC</th>
@@ -81,9 +95,9 @@
                     </thead>
                  <tbody>
                     <tr>
-                      <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspBruno Gonzaga de Mattos Vogel</td>
-                      <td>AVAA: Ambiente virtual de aprendizagem de algoritmos</td>
-                      <td>01/12/2017</td>
+                      <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspDuis sed porttitor arcu. Pellentesque.</td>
+                      <td>Sed mattis vel velit eget</td>
+                      <td>01/09/2017</td>
                     </tr>
 
                     <tr>
@@ -91,6 +105,15 @@
                       <td> Pellentesque habitant morbi tristique senectu</td>
                       <td>02/05/2017</td>
                     </tr>
+
+                    <tr>
+                      <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspPraesent pellentesque eu purus quis.</td>
+                      <td>Fusce cursus nisi id orci.</td>
+                      <td>05/10/2017</td>
+                    </tr>
+
+
+
                  </tbody>
                   </table>
 
@@ -98,12 +121,7 @@
 
 
                 </div>
-                <div class="col-md-2 ">
-                  <input type="text" class="form-control"placeholder="Aluno/Data" />
-                </div>
-                <div class="col-md-1">
-                  <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspPesquisar</button>
-                </div>
+
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->

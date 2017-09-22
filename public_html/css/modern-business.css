@@ -355,7 +355,7 @@ textarea {
 }
 
 a {
-    color: orangered;
+    color: #f0ad4e;
 }
 
 strong,
@@ -382,7 +382,7 @@ code {
 }
 
 hr {
-    border-bottom-color: orangered;
+    border-bottom-color: #f0ad4e;
 }
 
 
@@ -547,7 +547,7 @@ label {
 
 
 .select-wrapper:before {
-    color: orangered;
+    color: #f0ad4e;
 }
 
 
@@ -917,11 +917,11 @@ table tbody tr:nth-child(2n+1) {
 }
 
 table th {
-    color: #e5474b;
+    color: #f0ad4e
 }
 
 table thead {
-    border-bottom-color: #e5474b;
+    border-bottom-color: #f0ad4e
 }
 
 table tfoot {

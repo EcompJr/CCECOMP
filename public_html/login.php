@@ -70,7 +70,7 @@
             $('#myInput').focus()
         })
     </script>
-
+<br><br><br>
     <?php require_once("footer.php") ?>
 
 </body>
