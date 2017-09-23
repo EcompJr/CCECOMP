@@ -18,7 +18,7 @@
     <link href="css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 
     <!-- Favicon -->
     <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
@@ -44,7 +44,7 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Resoluções
                 </h1>
-                <ol class="breadcrumb">
+                <ol style="font-size:15pt" class="breadcrumb">
                     <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Resoluções</li>
@@ -52,18 +52,52 @@
             </div>
         </div>
         <!-- /.row -->
-
+    
         <!-- Content Row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-7 col-md-offset-2">
 
-                 <p>Phasellus hendrerit turpis non semper eleifend. Morbi vitae lacus nulla. Suspendisse accumsan turpis non urna hendrerit, et vulputate libero hendrerit. Pellentesque vitae quam sem. Cras ultrices dignissim neque in feugiat. Vivamus non tempor est. Suspendisse eu purus tincidunt velit vestibulum efficitur. Nam scelerisque bibendum consectetur. Quisque vitae ultricies lorem, id auctor nunc. Integer euismod sagittis ornare. Nullam posuere arcu odio, at auctor nunc semper ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse finibus at tellus nec elementum.
+                 <table class="table table-hover" style="border-radius:10px;">
 
-Donec id lacus quis metus ultricies consectetur. Duis vehicula lobortis libero at tincidunt. Praesent suscipit ante sed turpis cursus vestibulum. Aliquam non finibus orci. Nulla laoreet viverra sem a tristique. Praesent at nibh id nisl tempor tincidunt. Fusce dolor purus, consequat in aliquam vitae, elementum eget odio. Donec a nibh luctus, varius risus ac, rhoncus ligula. Maecenas porta cursus porttitor. Aenean et congue nibh. Mauris ut luctus odio. Vivamus commodo viverra pulvinar. Praesent orci lorem, fermentum eget leo ac, molestie egestas turpis.
+                    <thead >
+                       <tr>
+                         <th>Tipo</th>
+                         <th>Número</th>
+                         <th>Descrição</th>
+                         <th>Download</th>
+                       </tr>
+                    </thead>
+                 <tbody>
+                    <tr>
+                      <td>Decreto do Governo do Estado da Bahia</td>
+                      <td>12.177/2010</td>
+                      <td>Reconhecimento do Curso de Engenharia de Computação</td>
+                   	  <td><a href="data/Decreto_12.177_2010_ReconhecimentoDoCursoDeEngenhariaDeComputacao.pdf" class="btn btn-warning" role="button">Download</a> </td>
+                    </tr>
 
-Fusce felis arcu, ullamcorper at suscipit et, consectetur id eros. Praesent id malesuada nibh. Donec elit velit, vehicula vel tellus eu, mattis tincidunt magna. Aenean id facilisis lacus. Curabitur tempor metus at tellus interdum, at porta nisl molestie. Praesent augue orci, luctus non erat auctor, vestibulum maximus dui. Integer et mauris at sapien vulputate ultricies quis sit amet augue. Fusce bibendum finibus ante, eget porttitor eros placerat vel. Pellentesque a velit leo. In mauris felis, sagittis nec congue vel, accumsan sit amet velit. Integer fringilla dui neque, non tempus nibh interdum id. Ut quam felis, ultricies non tristique vel, hendrerit eleifend risus. Nulla semper dui non aliquet convallis. Sed risus ex, convallis dictum sem at, mollis malesuada lacus. Nam tortor elit, tincidunt quis dolor quis, mollis vestibulum metus. Nunc volutpat eros nisl, eu elementum nisi tincidunt sed.
-                 </p>
-            </div>
+                    <tr>
+                      <td>Parecer do CEE</td>
+                      <td>96/2010 </td>
+                      <td>Parecer do CEE para reconhecimento do curso de Engenharia de Computação da UEFS</td>
+                   	  <td><a href="https://0ce7a950-a-529ca56d-s-sites.googlegroups.com/a/ecomp.uefs.br/ccecomp/Parecer%20CEE%20%2096-2010.pdf?attachauth=ANoY7coH1bD9EhauVUIDKaWQnai53cgR0g5C7smteU3yyRxl7ZvQHdLjieTfFhgwHC4YgNn9seYsbgVoPPMCD3C5K6L7ugHIxS1o-1TYWQWMAZvzs3ntfewKtR0Ds9Nw6gMdXQOPa6bBL07cNH5yjtEPO8vDdaazdDmXCJ5MOteVi6k3wlTv15a4LGSsPT7I-41YMcRWREw-rSedQo7YnMN_HlBDZmo0Bg%3D%3D&attredirects=0" class="btn btn-warning" role="button">Download</a> </td>
+                    </tr>
+
+                    <tr>
+                      <td>Resolução CONSEPE </td>
+                      <td>083/2013</td>
+                      <td>Regulamente Estágio em Cursos de Graduação na UEFS </td>
+                   	  <td><a href="https://0ce7a950-a-529ca56d-s-sites.googlegroups.com/a/ecomp.uefs.br/ccecomp/resolucoes/Rcpe%20083-2013%20estagio%20uefs.pdf?attachauth=ANoY7cpbFIJ-nNCDxvN6Q90CUQ2QqFLjzaYhjg8iBQj3UVeHcl_R3mYk7I1gmelzuLFlxiwHkl8V_EwCXTycRlGBRZUBz0XpwV7fSAO4Sru8mmu6GdXorM68a9EhtYoigH_hJiFHxPsfLMLmST7KWPgZdcEXX4E0lWQicEZF2fSJrg6Ep90xD9IJELEGxqqwiOUhd-LNR1jlkoUWOLB0C-FrdxT67V5vswLj_YNn0-enWDJAkk0dHG5DchUrdCDr7S65NJxp6N7n&attredirects=0" class="btn btn-warning" role="button">Download</a> </td>
+                    </tr>
+
+
+
+                 </tbody>
+                  </table>
+
+
+
+
+                </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
