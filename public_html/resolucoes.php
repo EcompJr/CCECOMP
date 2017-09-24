@@ -52,7 +52,7 @@
             </div>
         </div>
         <!-- /.row -->
-    
+
         <!-- Content Row -->
         <div class="row">
             <div class="col-md-7 col-md-offset-2">
@@ -65,6 +65,35 @@
                          <th>Número</th>
                          <th>Descrição</th>
                          <th>Download</th>
+                       </tr>
+                    </thead>
+                    <thead >
+                       <tr>
+                         <th>
+                           <select>
+                             <option>Classificar</option>
+                             <option>Crescente</option>
+                             <option>Decrescente</option>
+                            </select>
+                         </th>
+
+                         <th>
+                           <select>
+                             <option>Classificar</option>
+                             <option>Crescente</option>
+                             <option>Decrescente</option>
+                            </select>
+                         </th>
+
+                         <th>
+                           <select>
+                             <option>Classificar</option>
+                             <option>Crescente</option>
+                             <option>Decrescente</option>
+                            </select>
+                         </th>
+
+                         
                        </tr>
                     </thead>
                  <tbody>
