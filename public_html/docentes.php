@@ -77,7 +77,7 @@
                             <td>Doutor em Engenharia Elétrica pela UFRN</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4760205A7">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4760205A7">Lattes </a> </td>
                             <td>  </td>
                         </tr>
                         <tr>
@@ -87,8 +87,8 @@
                             <td>Doutor em Ciência da Computação pela UAB, Espanha</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4776765U7">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/angeloduarte/"> Página Pessoal</a></td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4776765U7">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://sites.ecomp.uefs.br/angeloduarte/"> Página Pessoal</a></td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -97,8 +97,8 @@
                             <td>Doutor em Engenharia Elétrica pela UNICAMP</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4771825E4">Lattes </a> </td>
-                            <td> <a href="http://www.artificial.eng.br/"> Página Pessoal</a></td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4771825E4">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://www.artificial.eng.br/"> Página Pessoal</a></td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -107,7 +107,7 @@
                             <td>Doutor em Engenharia Elétrica pela UFRN</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4133024P9">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4133024P9">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -117,7 +117,7 @@
                             <td>Doutor em Física pela USP</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4794838D2">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4794838D2">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -127,7 +127,7 @@
                             <td>Doutora em Difusão do Conhecimento pela UFBA</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4750532H8">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4750532H8">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -137,8 +137,8 @@
                             <td>Doutor em Engenharia Elétrica pela USP</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4707794Y4">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/cegoes/"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4707794Y4">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://sites.ecomp.uefs.br/cegoes/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -147,8 +147,8 @@
                             <td>Doutor em Engenharia Elétrica e de Computação pela UFRN</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4164649Z8">Lattes </a> </td>
-                            <td> <a href="http://www2.uefs.br/danielgcosta/"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4164649Z8">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://www2.uefs.br/danielgcosta/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -157,7 +157,7 @@
                             <td>Doutor em Difusão do Conhecimento pela UFBA </td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4733960Z2">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4733960Z2">Lattes </a> </td>
                             <td>  </td>
                         </tr>
                         <tr>
@@ -167,7 +167,7 @@
                             <td>Doutor em Engenharia Elétrica pela UFSC</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4784554E1">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4784554E1">Lattes </a> </td>
                             <td>  </td>
                         </tr>
                         <tr>
@@ -177,7 +177,7 @@
                             <td>Doutor em Engenharia Elétrica pela UFU</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4708088Z0">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4708088Z0">Lattes </a> </td>
                             <td>  </td>
                         </tr>
                         <tr>
@@ -187,7 +187,7 @@
                             <td>Doutora em Engenharia Elétrica pela USP</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4137267P3">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4137267P3">Lattes </a> </td>
                             <td>  </td>
                         </tr>
                         <tr>
@@ -197,7 +197,7 @@
                             <td>Doutora em Educação pela UFBA</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4796747E7">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4796747E7">Lattes </a> </td>
                             <td>  </td>
                         </tr>
                         <tr>
@@ -207,7 +207,7 @@
                             <td>Doutora em Geotecnia pela USP</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4798641E4">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4798641E4">Lattes </a> </td>
                             <td>  </td>
                         </tr>
                         <tr>
@@ -217,8 +217,8 @@
                             <td>Doutor em Ciências da Computação pela NTNU, Noruega</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4761191Y2">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/joao/"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4761191Y2">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://sites.ecomp.uefs.br/joao/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -227,7 +227,7 @@
                             <td>Doutor em Engenharia Elétrica pela UNICAMP</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4702164E2">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4702164E2">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -237,7 +237,7 @@
                             <td>Doutor em Ciência da Computação pela UFBA/UEFS/UNIFACS</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4705842J1">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4705842J1">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -247,7 +247,7 @@
                             <td>Doutora em Engenharia Elétrica pela UNICAMP</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4795949U1">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4795949U1">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -257,7 +257,7 @@
                             <td>Doutor em Engenharia Elétrica pela UNICAMP</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4706053U0">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4706053U0">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -267,8 +267,8 @@
                             <td>Doutor em Engenharia Elétrica pela USP</td>
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4770004T1">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/mgpires/"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4770004T1">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://sites.ecomp.uefs.br/mgpires/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -277,8 +277,8 @@
                             <td>Doutora em Engenharia Elétrica pela USP</td>
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4778081D3">Lattes </a> </td>
-                            <td> <a href="https://sites.google.com/a/ecomp.uefs.br/michele-angelo/home?pli=1"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4778081D3">Lattes </a> </td>
+                            <td> <a target="_blank" href="https://sites.google.com/a/ecomp.uefs.br/michele-angelo/home?pli=1"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -287,7 +287,7 @@
                             <td>Doutor em Engenharia e Tecnologia Espaciais pelo INPE</td>
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4791880J3">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4791880J3">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -297,8 +297,8 @@
                             <td>Doutor em Ciência da Computação pela UFCG</td>
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4791059H8">Lattes </a> </td>
-                            <td> <a href="http://sites.ecomp.uefs.br/roberto/"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4791059H8">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://sites.ecomp.uefs.br/roberto/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -307,8 +307,8 @@
                             <td>Doutor em Ciência da Computação pela UNICAMP</td>
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4137814A8">Lattes </a> </td>
-                            <td> <a href="http://www.rtcalumby.com.br/"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4137814A8">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://www.rtcalumby.com.br/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -317,7 +317,7 @@
                             <td>Doutor em Informática na Educação pela UFRGS</td>
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4783805D6">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4783805D6">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -327,7 +327,7 @@
                             <td>Doutor em Ciência da Computação pela UFBA/UEFS/UNIFACS</td>
                             <td>Área de Informática, DEXA </td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4768955Z6">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4768955Z6">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -337,7 +337,7 @@
                             <td>Mestre em Ciências da Computação pela UFSC</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4771691Z3">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4771691Z3">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -347,7 +347,7 @@
                             <td>Mestre em Ciências da Computação pela USP</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4700484H8">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4700484H8">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -357,7 +357,7 @@
                             <td>Mestre em Informática pela UFCG</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4763285H0">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4763285H0">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -367,7 +367,7 @@
                             <td>Mestre em Mecatrônica pela UFBA</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4513433E4">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4513433E4">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -377,7 +377,7 @@
                             <td>Mestre em Engenharia Química pela UFPB</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4798313H2">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4798313H2">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -387,7 +387,7 @@
                             <td>Mestre em Ciências da Computação e Matemática Computacional pela USP</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4278208T5">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4278208T5">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -397,7 +397,7 @@
                             <td>Mestre em Educação e Contemporaneidade pela UNEB</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4234332E8">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4234332E8">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -407,7 +407,7 @@
                             <td>Mestre em Engenharia Elétrica pela UFCG</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4764187J4">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4764187J4">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -417,8 +417,8 @@
                             <td>Mestre em Engenharia Elétrica pela UFRJ</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4130951A5">Lattes </a> </td>
-                            <td><a href="http://sites.ecomp.uefs.br/jesus/"> Página Pessoal</a></td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4130951A5">Lattes </a> </td>
+                            <td><a target="_blank" href="http://sites.ecomp.uefs.br/jesus/"> Página Pessoal</a></td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -427,7 +427,7 @@
                             <td>Mestre em Ciências da Computação e Matemática Computacional pela USP</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4744216A1">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4744216A1">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -437,7 +437,7 @@
                             <td>Mestre em Ciências da Computação pela UFLA</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Permanente</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4221813Z4">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4221813Z4">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -447,7 +447,7 @@
                             <td>Especialização em Gestão da Inovação Tecnológica pela UEFS</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4717823Y9">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4717823Y9">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -457,7 +457,7 @@
                             <td>Especialista em Desenvolvimento de Sistemas de Informação pela UEFS </td>
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4297460U3">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4297460U3">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -467,7 +467,7 @@
                             <td>Mestre em Computação Aplicada pela UEFS</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4290860E0">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4290860E0">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -477,7 +477,7 @@
                             <td>Mestre em Engenharia Mecatrônica pela UFBA</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4201076H8">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4201076H8">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -487,7 +487,7 @@
                             <td>Mestre em Tecnologias Aplicáveis à Bioenergia pela FTC</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4458195P8">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4458195P8">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -497,7 +497,7 @@
                             <td>Mestre em Engenharia Elétrica pela UFBA</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4256956Z1">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4256956Z1">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -507,8 +507,8 @@
                             <td>Mestre em Computação Aplicada pela UEFS</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4269537H3">Lattes </a> </td>
-                            <td> <a href="http://just.pro.br/blog/"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4269537H3">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://just.pro.br/blog/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -517,8 +517,8 @@
                             <td>Mestre em Computação Aplicada pela UEFS</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4269537H3">Lattes </a> </td>
-                            <td> <a href="http://just.pro.br/blog/"> Página Pessoal</a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4269537H3">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://just.pro.br/blog/"> Página Pessoal</a> </td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -527,7 +527,7 @@
                             <td>Mestre em Computação Aplicada pela UEFS</td>
                             <td>Área de Eletrônica e Sistemas, DTEC</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4207338A4">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4207338A4">Lattes </a> </td>
                             <td> </td>
                         </tr>
                         <tr>
@@ -537,7 +537,7 @@
                             <td>Mestre em Sistemas e Computação pela UNIFACS</td>
                             <td>Área de Informática, DEXA</td>
                             <td>Temporário</td>
-                            <td> <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4320861P7">Lattes </a> </td>
+                            <td> <a target="_blank" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4320861P7">Lattes </a> </td>
                             <td> </td>
                         </tr>
                     </tbody>

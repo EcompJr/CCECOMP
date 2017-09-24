@@ -81,7 +81,7 @@
                     que 2 semestres para conclusão do curso.
                 </p>
 
-                <a class="btn btn-warning" href="data/TabelaReformuladaAtividadesComplementares.pdf" class="button">Tabela reformulada</a>
+                <a target="_blank" class="btn btn-warning" href="data/TabelaReformuladaAtividadesComplementares.pdf" class="button">Tabela reformulada</a>
                 <a class="btn btn-warning" href="data/FormularioAtividadesComplementares.xls" class="button">Formulário para solicitação</a>
 
                 <!-- Modal -->

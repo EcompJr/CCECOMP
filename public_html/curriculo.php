@@ -73,13 +73,13 @@
                 Veja abaixo a Ementa dos Componentes Curriculares, a Estrutura Curricular e o Fluxograma. Currículo Novo (2012, conforme
                 Resolução CONSEPE 217/2011): </br>
                 </br>
-                <a href="data/Ementario-res217-2011.pdf" class="btn btn-warning" role="button">Ementas das Disciplinas</a>
-                <a href="data/OfertaSemestralizada-res217-2011.pdf" class="btn btn-warning" role="button">Oferta Semestralizada</a>
-                <a href="data/FluxogramaCurr2012.pdf" class="btn btn-warning" role="button">Fluxograma</a>
+                <a target="_blank" href="data/Ementario-res217-2011.pdf" class="btn btn-warning" role="button">Ementas das Disciplinas</a>
+                <a target="_blank" href="data/OfertaSemestralizada-res217-2011.pdf" class="btn btn-warning" role="button">Oferta Semestralizada</a>
+                <a target="_blank" href="data/FluxogramaCurr2012.pdf" class="btn btn-warning" role="button">Fluxograma</a>
                 </br>
                 </br>
                 <p>Currículo Antigo:</p>
-                <a href="data/programas.zip" class="btn btn-warning" role="button">Programas</a>
+                <a target="_blank" href="data/programas.zip" class="btn btn-warning" role="button">Programas</a>
 
             </div>
         </div>

@@ -93,7 +93,7 @@
                             </select>
                          </th>
 
-                         
+
                        </tr>
                     </thead>
                  <tbody>
@@ -101,21 +101,21 @@
                       <td>Decreto do Governo do Estado da Bahia</td>
                       <td>12.177/2010</td>
                       <td>Reconhecimento do Curso de Engenharia de Computação</td>
-                   	  <td><a href="data/Decreto_12.177_2010_ReconhecimentoDoCursoDeEngenhariaDeComputacao.pdf" class="btn btn-warning" role="button">Download</a> </td>
+                   	  <td><a target="_blank" href="data/Decreto_12.177_2010_ReconhecimentoDoCursoDeEngenhariaDeComputacao.pdf" class="btn btn-warning" role="button">Download</a> </td>
                     </tr>
 
                     <tr>
                       <td>Parecer do CEE</td>
                       <td>96/2010 </td>
                       <td>Parecer do CEE para reconhecimento do curso de Engenharia de Computação da UEFS</td>
-                   	  <td><a href="https://0ce7a950-a-529ca56d-s-sites.googlegroups.com/a/ecomp.uefs.br/ccecomp/Parecer%20CEE%20%2096-2010.pdf?attachauth=ANoY7coH1bD9EhauVUIDKaWQnai53cgR0g5C7smteU3yyRxl7ZvQHdLjieTfFhgwHC4YgNn9seYsbgVoPPMCD3C5K6L7ugHIxS1o-1TYWQWMAZvzs3ntfewKtR0Ds9Nw6gMdXQOPa6bBL07cNH5yjtEPO8vDdaazdDmXCJ5MOteVi6k3wlTv15a4LGSsPT7I-41YMcRWREw-rSedQo7YnMN_HlBDZmo0Bg%3D%3D&attredirects=0" class="btn btn-warning" role="button">Download</a> </td>
+                   	  <td><a target="_blank"href="data/Parecer CEE  96-2010.pdf" class="btn btn-warning" role="button">Download</a> </td>
                     </tr>
 
                     <tr>
                       <td>Resolução CONSEPE </td>
                       <td>083/2013</td>
                       <td>Regulamente Estágio em Cursos de Graduação na UEFS </td>
-                   	  <td><a href="https://0ce7a950-a-529ca56d-s-sites.googlegroups.com/a/ecomp.uefs.br/ccecomp/resolucoes/Rcpe%20083-2013%20estagio%20uefs.pdf?attachauth=ANoY7cpbFIJ-nNCDxvN6Q90CUQ2QqFLjzaYhjg8iBQj3UVeHcl_R3mYk7I1gmelzuLFlxiwHkl8V_EwCXTycRlGBRZUBz0XpwV7fSAO4Sru8mmu6GdXorM68a9EhtYoigH_hJiFHxPsfLMLmST7KWPgZdcEXX4E0lWQicEZF2fSJrg6Ep90xD9IJELEGxqqwiOUhd-LNR1jlkoUWOLB0C-FrdxT67V5vswLj_YNn0-enWDJAkk0dHG5DchUrdCDr7S65NJxp6N7n&attredirects=0" class="btn btn-warning" role="button">Download</a> </td>
+                   	  <td><a target="_blank"href="data/Rcpe 083-2013 estagio uefs.pdf" class="btn btn-warning" role="button">Download</a> </td>
                     </tr>
 
 

@@ -59,7 +59,7 @@
               <br>
                  <h3>Quem Somos ?</h3>
 
-                 <p>Empresa Júnior de Engenharia de Computação, composta por alunos do curso da Universidade Estadual
+                 <p align="justify">Empresa Júnior de Engenharia de Computação, composta por alunos do curso da Universidade Estadual
                    de Feira de Santana, que promove impactos positivos em micro e pequenas
                    empresas por meio de soluções tecnológicas. Fundada em 2007, a EcompJr atualmente participa ativamente do propósito que envolve ser Movimento Empresa Júnior. A empresa promove uma vivência empresarial estratégica
                    para estudantes interessados em liderar a mudança no atual cenário brasileiro.</p>
@@ -67,9 +67,9 @@
                    <div class="row">
                      <div class="col-md-12">
                        <h3>Junte-se a nós</h3>
-                       <p>Para fazer parte da EcompJr, o estudante deve se inscrever no processo seletivo enquanto estiver aberto, normalmente no início de cada semestre.
+                       <p align="justify">Para fazer parte da EcompJr, o estudante deve se inscrever no processo seletivo enquanto estiver aberto, normalmente no início de cada semestre.
                            O processo seletivo conta com uma dinâmica de grupo para avaliar soft skills e uma entrevista para avaliar o perfil do candidato a vaga.
-                          Quando selecionado, o estudante torna-se trainee da empresa, recebendo treinamento técnico e administrativo específico para a empresa</p>
+                          Quando selecionado, o estudante torna-se trainee da empresa, recebendo treinamento técnico e administrativo específico para a empresa.</p>
                      </div>
                    </div>
             </div>
