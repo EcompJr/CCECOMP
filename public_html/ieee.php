@@ -82,7 +82,7 @@
                             <a href="https://www.facebook.com/RamoIEEE.UEFS/" target="_blank"><i  class="fa fa-facebook-square fa-3x"></i></a>
                         </div>
                     </div>
-            </div>        
+            </div>
 
         </div>
 
@@ -92,7 +92,7 @@
     </div>
     <!-- /.row -->
 
-    <hr>
+
 
     <!-- /.container -->
 

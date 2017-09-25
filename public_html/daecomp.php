@@ -55,16 +55,45 @@
 
         <!-- Content Row -->
         <div class="row">
-            <div class="col-lg-12">
-
+            <div class="col-md-8 col-md-offset-2">
+              <center><h3>Sobre o Diretório Acadêmico</h3></center>
+              <p align="justify">O Diretório Acadêmico (D.A.) é um órgão de representação estudantil que tem por objetivo congregar o corpo discente e fornecer a este maior notoriedade junto à instituição e ao corpo docente da instituição, representando o elo entre o corpo discente e a direção da instituição de ensino superior.
+                      <br>
+                    O estudante tem papel fundamental na construção de uma universidade melhor.
+                 A participação ativa e direta nas questões institucionais contribui para um amadurecimento pessoal e a consciência dos seus direitos e deveres enquanto acadêmico.</p>
             </div>
-            <!-- /.col-lg-12 -->
+
+
         </div>
+  <br/>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Localização</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.7081899075797!2d-38.973279285999844!3d-12.200248148094369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x714388c7462996d%3A0xd3764aab1c912506!2sD.A.Ecomp!5e0!3m2!1spt-BR!2sbr!4v1506291518857" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+          <div class="col-md-6">
+            <h3> Redes Sociais e Links</h3>
+
+            <div class="row">
+
+            <div class="col-md-1">
+              <a role="button"  data-toggle="collapse" data-target="#info2"  ><i style="color:#f0ad4e" class="fa-2x glyphicon glyphicon-envelope"></i></a>
+              <div id="info2" class="collapse container">
+                <p>Email: daecompuefs@gmail.com<br>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- /.row -->
 
-        <hr>
+
 
     </div>
+  </div>
+  <br>
     <!-- /.container -->
 
     <!-- jQuery -->
