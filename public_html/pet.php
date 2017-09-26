@@ -60,7 +60,7 @@
                 <p align="justify">O Programa de Educação Tutorial (PET) é um programa nacional, mantido pelo ministério da Educação (MEC), sob a responsabilidade administrativa da Secretaria de Educação Superior (SESu). O PET Engenharias da UEFS consiste em um grupo formado por até 12 (doze) estudantes bolsistas e até 6 (seis) estudantes não bolsistas, que contam com a orientação de um professor(a) tutor(a), visando proporcionar condições para a realização de atividades que favoreçam a formação acadêmica integral de cada membro, bem como colaborar ao máximo para a melhoria do ensino nos cursos de graduação relacionados com o Grupo, e na universidade como um todo. <br> Instalado em 2011 como grupo dos cursos de Engenharia de Alimentos e de Computação, o grupo PET em Engenharias em decorrência das necessidades em suas atividades, abriu-se, em 2013, para o curso de Engenharia Civil e, em 2014, para o curso de Agronomia. Este grupo é o quarto dos grupos do Programa de Educação Tutorial do MEC na Universidade Estadual de Feira de Santana, que vêm sendo instituídos a partir do segundo semestre de 2007. Atualmente, a UEFS possui outros 2 (dois) grupos PET além deste, um vinculado ao curso de Ciências Econômicas e o outro ao de Odontologia. O proponente e tutor deste grupo é o professor Pablo Rodrigo Fica Piras.
                 <br>
                 Fonte:
-                <A href="http://www.seulink.com.br" title="PET ENGENHARIAS UEFS">PET ENGENHARIAS UEFS</A>
+                <A href="http://www.petengsuefs.net" title="PET ENGENHARIAS UEFS">PET ENGENHARIAS UEFS</A>
 
                 </p><br>
 
