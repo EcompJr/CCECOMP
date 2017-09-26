@@ -78,6 +78,13 @@
                   <div class="col-md-1">
                     <a href="https://www.instagram.com/pet_engs_uefs/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
                   </div>
+                  <div class="col-md-1">
+                    <a role="button"  data-toggle="collapse" data-target="#info"  ><i style="color:#f0ad4e" class="fa-2x glyphicon glyphicon-plus"></i></a>
+                    <div id="info" class="collapse container">
+                      <p>Email: petengsuefs@gmail.com<br>
+                      </p>
+                    </div>
+                  </div>
                   <br><br><br>
 
         </div>
