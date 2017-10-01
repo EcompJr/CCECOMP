@@ -8,7 +8,7 @@
                <li class="sidebar-brand">
                    <a href="#">
                       <img  alt="logo do colegiado" width="40"  src="images/customLogo1.png" /> CCECOMP ADM
-
+                           <i style="color:#f0ad4e" class="fa fa fa-wrench fa-spin fa-2x" aria-hidden="true"></i>
                    </a>
                </li>  <br><br>
                <li>

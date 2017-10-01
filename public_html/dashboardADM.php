@@ -19,7 +19,7 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+<!-- navBar css -->
     <link href="css/navbarADM.css" rel="stylesheet" >
 
     <!-- Favicon -->
@@ -30,14 +30,37 @@
   </head>
   <body>
 
-       <?php require_once("navBarADM.php")?>
-
+       <?php require_once("navBarADM.php");?>
+<div class="row">
+  <div class=" col-md-offset-4 col-md-8">
+    <h2>Administração CCECOMP</h2>
+  </div>
+</div>
+<br><br>
     <div class="row">
-      <div class="col-md-offset-4 col-md-7">
-        <h1>ADMIN PAGE</h1>
-        <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed porttitor lacus. Cras in quam aliquam mi auctor blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin euismod magna diam, sed mattis tortor auctor non. Curabitur pretium molestie congue. In vel erat aliquet, porttitor felis nec, maximus lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer id arcu quam. Nunc tincidunt ipsum vel faucibus maximus. Ut pharetra sapien lacinia euismod rutrum.
 
-Integer tincidunt ut leo non imperdiet. Nulla facilisi. Vivamus ac tellus et neque imperdiet convallis ac ut ligula. Aliquam ac lorem id est efficitur efficitur vel ac nisi. Quisque quis auctor sapien. In nec tortor tincidunt, lobortis quam in, eleifend quam. Quisque ac faucibus sapien, non laoreet arcu. Pellentesque elit sem, interdum in pharetra ut, malesuada vitae tortor. Ut viverra ipsum nibh, ac semper mi congue vel. Fusce tempus non quam eu euismod. Curabitur volutpat nisl tristique enim fringilla semper. Vivamus convallis tellus at ligula porttitor bibendum. Aenean dolor quam, lobortis tristique sollicitudin quis, congue a risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ligula non ipsum blandit mattis at sed arcu. Vestibulum congue ipsum mollis tortor pretium, id tincidunt leo aliquam.
+      <div class="col-md-offset-2  col-md-6">
+        <h3>Páginas já criadas</h3>
+        <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed porttitor lacus. Cras in quam aliquam mi auctor blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus.  </p>
+        <li class="list-group-item">Page1 | LINK:<span  style="color:#e22424;padding-left:510px" class="glyphicon glyphicon-remove "></span></li>
+        <li class="list-group-item">Page2 | LINK:<span style="color:#e22424;padding-left:510px" class="glyphicon glyphicon-remove"></span></li>
+        <li class="list-group-item">Page3 | LINK: <span style="color:#e22424;padding-left:505px" class="glyphicon glyphicon-remove"></span></li>
+
+     </ul>
+
+      </div>
+
+      <div class=" col-md-offset-1 col-md-3">
+
+            <h3>Membros administradores</h3>
+                <ul class="list-group">
+                   <li class="list-group-item">Matheus  <span style="color:#e22424;padding-left:190px" class="glyphicon glyphicon-remove"></span></li>
+                   <li class="list-group-item">Member2 <span style="color:#e22424;padding-left:190px" class="glyphicon glyphicon-remove"></span></li>
+                   <li class="list-group-item">Member3  <span style="color:#e22424;padding-left:190px" class="glyphicon glyphicon-remove"></span></li>
+                   <li class="list-group-item"> <span style="color:green"class="	glyphicon glyphicon-plus"></span>   Adicionar</li>
+                </ul>
+
+        <p align="justify">
         </p>
       </div>
     </div>
@@ -59,10 +82,10 @@ Integer tincidunt ut leo non imperdiet. Nulla facilisi. Vivamus ac tellus et neq
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+ <!-- navBarscript -->
     <script src="js/navbarADM.js" > </script>
        <br><br><br>
-   <?php require_once("footer.php") ?>
+   <?php require_once("footer.php"); ?>
 
   </body>
 </html>
