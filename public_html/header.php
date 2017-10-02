@@ -9,8 +9,10 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-                <img  alt="logo do colegiado" width="40"  src="images/customLogo1.png" />
+            <div>
+            <img  alt="logo do colegiado" width="45" height="40" style="padding-top:10px" src="images/customLogo1.png" />
             <a class="navbar-brand" href="index.php" >CCECOMP</a>
+            </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
