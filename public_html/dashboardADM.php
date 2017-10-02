@@ -50,7 +50,7 @@
 
       </div>
 
-      <div class=" col-md-offset-1 col-md-3">
+      <div class=" col-md-offset-0 col-md-3">
 
             <h3>Membros administradores</h3>
                 <ul class="list-group">

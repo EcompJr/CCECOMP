@@ -12,10 +12,10 @@
                    </a>
                </li>  <br><br>
                <li>
-                   <a href="#">Home</a>
+                   <a href="dashboardADM.php">Home</a>
                </li>
                <li>
-                 <a href="#">Notícias</a>
+                 <a href="dashboard-noticias.php">Notícias</a>
                </li>
                <li>
                    <a href="#">TCC</a>
@@ -24,7 +24,7 @@
                    <a href="#">Resoluções</a>
                </li>
                <li>
-                   <a href="#">Oportunidades de Estágio</a>
+                   <a href="dashboard-estagio.php">Oportunidades de Estágio</a>
                </li>
                <li>
                  <a href="#"> Criar nova página</a>
