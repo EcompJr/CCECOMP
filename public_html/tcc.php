@@ -91,6 +91,7 @@
                          <th>Aluno</th>
                          <th>Nome do TCC</th>
                          <th>Data de publicação</th>
+                         <th>Download</th>
                        </tr>
                     </thead>
                  <tbody>
@@ -98,18 +99,21 @@
                       <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspDuis sed porttitor arcu. Pellentesque.</td>
                       <td>Sed mattis vel velit eget</td>
                       <td>01/09/2017</td>
+                      <td><button type="button" href="#" class="btn btn-warning">Download</button></td>
                     </tr>
 
                     <tr>
                       <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspFusce vel leo quis metus.</td>
                       <td> Pellentesque habitant morbi tristique senectu</td>
                       <td>02/05/2017</td>
+                      <td><button type="button" href="#" class="btn btn-warning">Download</button></td>
                     </tr>
 
                     <tr>
                       <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspPraesent pellentesque eu purus quis.</td>
                       <td>Fusce cursus nisi id orci.</td>
                       <td>05/10/2017</td>
+                      <td><button type="button" href="#" class="btn btn-warning">Download</button></td>
                     </tr>
 
 

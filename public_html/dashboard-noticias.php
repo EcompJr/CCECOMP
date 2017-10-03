@@ -34,19 +34,19 @@
 
   <?php require_once("navBarADM.php");?>
   <div class="row">
- 
+
     <div class="col-md-offset-3 col-md-6">
       <h2>Gerenciar Notícias</h2>
     </div>
-  
+
 
     <div class="col-md-offset-3 col-md-6">
       <h3>Notícias atuais</h3>
       <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed porttitor lacus. Cras in quam aliquam mi auctor blandit.
         Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
-      <li class="list-group-item">Notícia 1<span style="color:#e22424;padding-left:510px" class="glyphicon glyphicon-remove "></span></li>
-      <li class="list-group-item">Notícia 2<span style="color:#e22424;padding-left:510px" class="glyphicon glyphicon-remove"></span></li>
-      <li class="list-group-item">Notícia 3<span style="color:#e22424;padding-left:510px" class="glyphicon glyphicon-remove"></span></li>
+      <li class="list-group-item">Notícia 1<span style="color:#e22424;padding-left:545px" class="glyphicon glyphicon-remove "></span></li>
+      <li class="list-group-item">Notícia 2<span style="color:#e22424;padding-left:545px" class="glyphicon glyphicon-remove"></span></li>
+      <li class="list-group-item">Notícia 3<span style="color:#e22424;padding-left:545px" class="glyphicon glyphicon-remove"></span></li>
 
       </ul>
       <br>

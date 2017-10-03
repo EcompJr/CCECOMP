@@ -34,18 +34,18 @@
 
   <?php require_once("navBarADM.php");?>
   <div class="row">
- 
+
     <div class="col-md-offset-3 col-md-6">
       <h2>Gerenciar Oportunidades de Estágio</h2>
     </div>
- 
+
     <div class="col-md-offset-3 col-md-6">
 
       <h3>Oportunidades de Estágio</h3>
       <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed porttitor lacus. Cras in quam aliquam mi auctor blandit.
         Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
-      <li class="list-group-item">Desenvolvedor WEB <span style="color:#e22424;padding-left:460px" class="glyphicon glyphicon-remove "></span></li>
-      <li class="list-group-item">Projetista de Circuitos Integrados<span style="color:#e22424;padding-left:380px" class="glyphicon glyphicon-remove"></span></li>
+      <li class="list-group-item">Desenvolvedor WEB <span style="color:#e22424;padding-left:457px" class="glyphicon glyphicon-remove "></span></li>
+      <li class="list-group-item">Projetista de Circuitos Integrados<span style="color:#e22424;padding-left:375px" class="glyphicon glyphicon-remove"></span></li>
       <li class="list-group-item">Programador<span style="color:#e22424;padding-left:518px" class="glyphicon glyphicon-remove"></span></li>
 
       </ul>
