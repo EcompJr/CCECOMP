@@ -43,45 +43,78 @@
 
       <h3>Notícias</h3>
 
-      <div class="row">
-
+      <div>
         <div>
 
           <table class="table table-hover">
 
             <thead>
               <tr>
-                <th>Título</th>
-                <th>Descrição</th>
-                <th>Data de publicação</th>
-                <th></th>
+                <th>Notícia</th>
+                <th>Data de Publicação</th>
+                <th> </th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>
-                  Duis sed porttitor arcu. Pellentesque.</td>
-                <td>Sed mattis vel velit eget Sed mattis vel velit eget </td>
-                <td>01/09/2017</td>
+                  <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                      Título da Notícia
+                    </a>
+                  </p>
+                  <div class="collapse" id="collapseExample1">
+                  <img src="images/default-avatar.png" height="300" width="450">
+                    <div class="card card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                      craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                  </div>
+                </td>
+                <td>04/10/2017</td>
                 <td><button type="submit" class="btn btn-danger">Remover</button></button></td>
               </tr>
 
               <tr>
-                <td>Fusce vel leo quis metus</td>
-                <td> Pellentesque habitant morbi tristique senectu</td>
+                <td>
+                  <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                      Título da Notícia
+                    </a>
+                  </p>
+                  <div class="collapse" id="collapseExample2">
+                  <img src="images/default-avatar.png" height="300" width="450">
+                    <div class="card card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                      craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                  </div>
+                </td>
                 <td>02/05/2017</td>
-                <td><button type="submit" class="btn btn-danger">Remover</button></button></td>
+                <td><button type="submit" class="btn btn-danger">Remover</button></button>
+                </td>
               </tr>
 
               <tr>
-                <td>Praesent pellentesque eu purus quis.</td>
-                <td>Fusce cursus nisi id orci</td>
+                <td>
+                  <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                      Título da Notícia
+                    </a>
+                  </p>
+                  <div class="collapse" id="collapseExample3">
+                  <img src="images/default-avatar.png" height="300" width="450">
+                    <div class="card card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                      craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                  </div>
+                </td>
                 <td>05/10/2017</td>
-                <td><button type="submit" class="btn btn-danger">Remover</button></button></td>
+                <td><button type="submit" class="btn btn-danger">Remover</button></button>
+                </td>
+                
               </tr>
-
-
-
             </tbody>
           </table>
 
@@ -109,9 +142,9 @@
                   <input type="text" class="form-control" id="cargo">
                 </div>
                 <div class="form-group">
-                  <label>Descrição</label>
-                  <input type="text" class="form-control" id="descricao">
-                </div>
+                <label for="comment">Texto</label>
+                <textarea class="form-control" rows="5" id="texto"></textarea>
+              </div>
                 <div class="form-group">
                   <label>Data de Publicação</label>
                   <input type="date" class="form-control" id="data">
@@ -120,7 +153,7 @@
                   <label>Enviar Imagem</label>
                   <input type="file" id="file1" class="custom-file-input">
                   <span class="custom-file-control"></span>
-                </div>                 
+                </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
               </form>
             </div>

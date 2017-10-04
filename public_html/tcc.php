@@ -91,7 +91,7 @@
                          <th>Aluno</th>
                          <th>Nome do TCC</th>
                          <th>Data de publicação</th>
-                         <th>Download</th>
+                         <th></th>
                        </tr>
                     </thead>
                  <tbody>
