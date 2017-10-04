@@ -42,9 +42,9 @@
       <div class="col-md-offset-2  col-md-6">
         <h3>Páginas já criadas</h3>
         <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed porttitor lacus. Cras in quam aliquam mi auctor blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus.  </p>
-        <li class="list-group-item">Page1 | LINK:<span  style="color:#e22424;padding-left:510px" class="glyphicon glyphicon-remove "></span></li>
-        <li class="list-group-item">Page2 | LINK:<span style="color:#e22424;padding-left:510px" class="glyphicon glyphicon-remove"></span></li>
-        <li class="list-group-item">Page3 | LINK: <span style="color:#e22424;padding-left:505px" class="glyphicon glyphicon-remove"></span></li>
+        <li class="list-group-item">Page1 | LINK:<button style="float:right" type="submit" class="btn btn-danger">Remover</button></button></li>
+        <li class="list-group-item">Page2 | LINK:<button style="float:right" type="submit" class="btn btn-danger">Remover</button></button></li>
+        <li class="list-group-item">Page3 | LINK:<button  style="float:right" type="submit" class="btn btn-danger">Remover</button></button></li>
 
      </ul>
 
@@ -54,14 +54,48 @@
 
             <h3>Membros administradores</h3>
                 <ul class="list-group">
-                   <li class="list-group-item">Matheus  <span style="color:#e22424;padding-left:190px" class="glyphicon glyphicon-remove"></span></li>
-                   <li class="list-group-item">Member2 <span style="color:#e22424;padding-left:190px" class="glyphicon glyphicon-remove"></span></li>
-                   <li class="list-group-item">Member3  <span style="color:#e22424;padding-left:190px" class="glyphicon glyphicon-remove"></span></li>
-                   <li class="list-group-item"> <span style="color:green"class="	glyphicon glyphicon-plus"></span>   Adicionar</li>
+                   <li class="list-group-item">Matheus  <button  style="float:right" type="submit" class="btn btn-danger">Remover</button></button></span></li>
+                   <li class="list-group-item">Member2  <button  style="float:right" type="submit" class="btn btn-danger">Remover</button></button></li>
+                   <li class="list-group-item">Member3  <button  style="float:right" type="submit" class="btn btn-danger">Remover</button></button></span></li>
+                   <br>
+                   <button  style="float:right" data-toggle="modal" data-target="#CadastrarADM" type="button" class="btn btn-success">Adicionar</button>
                 </ul>
 
-        <p align="justify">
-        </p>
+                <div class="modal fade" id="CadastrarADM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Cadastrar Novo Administrador</h4>
+                      </div>
+                      <div class="modal-body text-justify">
+                        <form>
+                          <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" class="form-control" id="cargo">
+                          </div>
+                          <div class="form-group">
+                            <label>Email/Login</label>
+                            <input type="text" class="form-control" id="descricao">
+                          </div>
+                          <div class="form-group">
+                            <label>Senha</label>
+                            <input type="text" class="form-control" id="data">
+                          </div>
+                          <div class="form-group">
+                            <label>Confirmar Senha</label>
+                            <input type="text" class="form-control">
+                            <span class="custom-file-control"></span>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+
       </div>
     </div>
 
