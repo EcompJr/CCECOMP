@@ -18,7 +18,7 @@
                  <a href="dashboard-noticias.php">Notícias</a>
                </li>
                <li>
-                   <a href="#">TCC</a>
+                   <a href="dashboard-tcc.php">TCC</a>
                </li>
                <li>
                    <a href="#">Resoluções</a>
@@ -27,7 +27,7 @@
                    <a href="dashboard-estagio.php">Oportunidades de Estágio</a>
                </li>
               <li>
-                 <a href="#"> Sair </a>
+                 <a href="?logoff=sair"> Sair </a>
               </li>
 
 
