@@ -113,7 +113,7 @@
                 <td>05/10/2017</td>
                 <td><button type="submit" class="btn btn-danger">Remover</button></button>
                 </td>
-                
+
               </tr>
             </tbody>
           </table>
@@ -145,10 +145,6 @@
                 <label for="comment">Texto</label>
                 <textarea class="form-control" rows="5" id="texto"></textarea>
               </div>
-                <div class="form-group">
-                  <label>Data de Publicação</label>
-                  <input type="date" class="form-control" id="data">
-                </div>
                 <div class="form-group">
                   <label>Enviar Imagem</label>
                   <input type="file" id="file1" class="custom-file-input">

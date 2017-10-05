@@ -71,7 +71,7 @@
                       <div class="modal-body text-justify">
                         <form>
                           <div class="form-group">
-                            <label>Nome</label>
+                            <label>Nome Completo</label>
                             <input type="text" class="form-control" id="cargo">
                           </div>
                           <div class="form-group">
@@ -93,6 +93,8 @@
                     </div>
                   </div>
                 </div>
+
+
                 </div>
 
 
