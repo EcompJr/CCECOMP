@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once 'conexao.php';
+if(!$_SESSION['auth']){
+   header('location:login.php');
+}
+
+
+ ?>
 
 <div id="wrapper">
        <div class="overlay"></div>
@@ -27,7 +36,7 @@
                    <a href="dashboard-estagio.php">Oportunidades de Estágio</a>
                </li>
               <li>
-                 <a href="?logoff=sair"> Sair </a>
+                 <a href="?logoff=go"> Sair </a>
               </li>
 
 
@@ -50,3 +59,20 @@
 
    </div>
    <!-- /#wrapper -->
+
+
+   <?php
+
+      if(isset($_GET['logoff'])){
+          if($_GET['logoff'] == 'go'){
+           
+
+                   $_SESSION['auth']= False;
+                   header("location:login.php");
+
+
+          }
+        }
+
+
+    ?>

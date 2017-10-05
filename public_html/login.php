@@ -1,3 +1,46 @@
+<?php
+session_start();
+require_once 'conexao.php';
+if(isset($_SESSION['auth']) ){ //Confere se já esta logado
+        if($_SESSION['auth']){
+                  header("location:dashboardADM.php");
+        }
+}
+
+
+         //Faz login
+   if(isset($_GET['login'])){
+       if($_GET['login'] == 'go'){ //Logou
+
+               $login = $_POST['login'];
+               $senha = $_POST['senha'];
+
+               $query = mysql_query("SELECT * FROM `administradores` WHERE `Login`= '$login' AND `Senha`= '$senha'");
+
+               if(mysql_num_rows($query) == 1){ //Existe um administrador com este login e senha
+
+                     $_SESSION['auth'] = True;
+                     header("location:dashboardADM.php");
+
+               }
+               else{
+
+                     echo "<script>alert('Login ou senha inválido!')</script>";
+
+               }
+
+
+       }
+   }
+
+
+
+
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +75,7 @@
 
 </head>
 
-<?php require_once("header.php") ?>
+<?php require_once 'header.php'; ?>
 
 <body>
     <style>
@@ -51,12 +94,15 @@
     </style>
 
     <div class="jumbotron container">
-        <form>
+        <form method="POST" action="?login=go">
             <h2>Login</h2>
-            <input class="form-control" type="text" placeholder="Usuário" /> </br>
-            <input class="form-control" type="text" placeholder="Senha" /> </br>
+            <input name="login" class="form-control" type="text" placeholder="Usuário" /> </br>
+            <input name="senha" class="form-control" type="password" placeholder="Senha" /> </br>
             <input class="btn btn-warning"type="submit" value="Entrar">
         </form>
+
+        <?php    require_once 'captcher.php';  ?>
+
     </div>
 
     <!-- jQuery -->
@@ -71,7 +117,7 @@
         })
     </script>
 <br><br><br>
-    <?php require_once("footer.php") ?>
+    <?php require_once 'footer.php'; ?>
 
 </body>
 
