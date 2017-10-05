@@ -42,8 +42,7 @@
 
     <div class="col-md-offset-3 col-md-6">
       <h3>TCC's atuais</h3>
-      <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed porttitor lacus. Cras in quam aliquam mi auctor blandit.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+
         <table class="table table-hover" style="border-radius:10px;">
 
           <thead >
@@ -58,42 +57,50 @@
             <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspDuis sed porttitor arcu. Pellentesque.</td>
             <td>Sed mattis vel velit eget</td>
             <td>01/09/2017</td>
-            <td><button type="submit" class="btn btn-danger">Remover</button></button></td>
+            <td><a target="_blank" class="btn btn-danger" role="button">Remover</a> </td>
           </tr>
 
           <tr>
             <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspFusce vel leo quis metus.</td>
             <td> Pellentesque habitant morbi tristique senectu</td>
             <td>02/05/2017</td>
-            <td><button type="submit" class="btn btn-danger">Remover</button></button></td>
+            <td><a target="_blank" class="btn btn-danger" role="button">Remover</a> </td>
           </tr>
 
           <tr>
             <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspPraesent pellentesque eu purus quis.</td>
             <td>Fusce cursus nisi id orci.</td>
             <td>05/10/2017</td>
-            <td><button type="submit" class="btn btn-danger">Remover</button></button></td>
+            <td><a target="_blank" class="btn btn-danger" role="button">Remover</a> </td>
           </tr>
           <tr>
-            <td>
-              <div class="col-md-15 col-md-offset-0 ">
-                <input type="text" class="form-control"placeholder="Inserir aluno" />
-              </div>
-            </td>
-            <td>
-              <div class="col-md-15 col-md-offset-0 ">
-                <input type="text" class="form-control"placeholder="Inserir nome do TCC" />
-              </div>
-            </td>
-            <td>
-              <div class="col-md-15 col-md-offset-0 ">
-                <input type="text" class="form-control"placeholder="Inserir data" />
-              </div>
-            </td>
-          </tr>
+            <td><input type="text" class="form-control"placeholder="Inserir nome" /></td>
+            <td><input type="text" class="form-control"placeholder="Inserir nome do TCC" /></td>
+            <td><input type="text" class="form-control"placeholder="DD/MM/AAAA" /></</td>
 
+          </tr>
         </tbody>
-        </table>
+      </table>
+
+      <table class="table table-hover" style="border-radius:10px;">
+        <tbody>
+          <tr>
+        <form>
+          <div class="form-group">
+            <td>
+            <h5>Inserir TCC</h5>
+            <input type="file" class="form-control-file" id="docTCC"></td>
+            <td>
+            <h5>Inserir foto do Aluno</h5>
+            <input type="file" class="form-control-file" id="fotoAlunoTCC"></td>
+          </div>
+          </form>
+        </tr>
+
+      </tbody>
+      </table>
+
+
       </ul>
       <br>
       <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
