@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-require_once 'conexao.php';
-if(!$_SESSION['auth']){
-
-       header('location:login.php');
-}
-
- ?>
 
 <div id="wrapper">
        <div class="overlay"></div>

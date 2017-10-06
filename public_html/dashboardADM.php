@@ -1,5 +1,10 @@
 <?php
+session_start();
+require_once 'conexao.php';
+if(!$_SESSION['auth']){
 
+       header('location:login.php');
+}
 
 
 
