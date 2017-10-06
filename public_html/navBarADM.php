@@ -1,10 +1,11 @@
 <?php
+
 session_start();
 require_once 'conexao.php';
 if(!$_SESSION['auth']){
-   header('location:login.php');
-}
 
+       header('location:login.php');
+}
 
  ?>
 
@@ -65,7 +66,7 @@ if(!$_SESSION['auth']){
 
       if(isset($_GET['logoff'])){
           if($_GET['logoff'] == 'go'){
-           
+
 
                    $_SESSION['auth']= False;
                    header("location:login.php");

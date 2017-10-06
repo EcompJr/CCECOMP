@@ -1,3 +1,44 @@
+<?php
+
+
+
+
+  if(isset($_POST['enviarAdm'])){ //Cadastro de novo administrador
+
+         $nome = $_POST['nomeCompleto'];
+         $login = $_POST['loginEmail'];
+         $senha = $_POST['senha'];
+         $confirmaSenha = $_POST['confirmaSenha'];
+
+         if($senha == $confirmaSenha){ //cadastrou corretamente salva no BD
+           mysql_query("INSERT INTO `administradores` (`Nome`, `Login`, `Senha`) VALUES ('$nome', '$login', '$senha')");
+         }
+
+         else{ //Errou as senhas
+             echo "<script>alert('Senhas digitadas incorretas')</script>";
+         }
+
+  }
+
+
+
+  if(isset($_POST['removerAdm'])){ //Remover administrador
+
+            $id = $_POST['removerAdm'];
+            mysql_query("DELETE FROM `administradores` WHERE `ID` = $id");
+  }
+
+
+
+  if(isset($_POST['removerNoticia'])){
+
+
+       $id = $_POST['removerNoticia'];
+       mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
+  }
+
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -41,25 +82,69 @@
 
       <div class="col-md-offset-2  col-md-6">
         <h3>Páginas já criadas</h3>
-        <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed porttitor lacus. Cras in quam aliquam mi auctor blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus.  </p>
-        <li class="list-group-item">Page1 | LINK:<button style="float:right" type="submit" class="btn btn-danger">Remover</button></button></li>
-        <li class="list-group-item">Page2 | LINK:<button style="float:right" type="submit" class="btn btn-danger">Remover</button></button></li>
-        <li class="list-group-item">Page3 | LINK:<button  style="float:right" type="submit" class="btn btn-danger">Remover</button></button></li>
+        <p align="justify">Selecione o link de alguma das páginas já criadas no painel de notícias para ser redirecionado, ou remova alguma das notícias. </p>
+        <ul class="list-group">
+        <form method='POST' action='' >
+       <?php
+                  $query = mysql_query("SELECT*FROM `ccecomp_noticias`");
+
+                  if(mysql_num_rows($query) > 0){ //Existe noticias a serem listadas
+
+                              while($noticias = mysql_fetch_array($query)){
+
+                                    $id = $noticias['ID'];
+                                    $titulo = $noticias['Titulo'];
+                                    $link = $noticias['Link_Page'];
+
+                                    echo "  <li class='list-group-item'>$titulo | LINK: $link<button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></li>";
+
+                              }
+
+
+
+                  }
+                  else{
+
+                    echo "<div class='alert alert-danger'><p align='justify'>Não existem páginas de notícias <a href='dashboard-noticias.php'>cadastradas</a> </p></div>";
+                  }
+
+        ?>
+
 
      </ul>
-
+     </form>
       </div>
 
       <div class=" col-md-offset-0 col-md-3">
 
             <h3>Membros administradores</h3>
+            <form method="POST" action=''>
                 <ul class="list-group">
-                   <li class="list-group-item">Matheus  <button  style="float:right" type="submit" class="btn btn-danger">Remover</button></button></span></li>
-                   <li class="list-group-item">Member2  <button  style="float:right" type="submit" class="btn btn-danger">Remover</button></button></li>
-                   <li class="list-group-item">Member3  <button  style="float:right" type="submit" class="btn btn-danger">Remover</button></button></span></li>
+                  <?php
+                          $query = mysql_query("SELECT*FROM `administradores`"); //Consulta banco de dados
+
+                          if(mysql_num_rows($query) > 0){ //Existe administradores cadastrados
+
+                            while($adm = mysql_fetch_array($query)){
+
+                                 $nome = $adm['Nome'];
+                                 $id = $adm['ID'];
+
+                                 echo " <li class='list-group-item'>$nome  <button name='removerAdm' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button></li>";
+
+                            }
+
+
+                          }
+                          else{
+                            echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhhum administrador cadastrado. </p></div>";
+                          }
+
+                  ?>
                    <br>
                    <button  style="float:right" data-toggle="modal" data-target="#CadastrarADM" type="button" class="btn btn-success">Adicionar</button>
                 </ul>
+              </form>
 
                 <div class="modal fade" id="CadastrarADM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog modal-lg" role="document">
@@ -69,25 +154,25 @@
                         <h4 class="modal-title" id="myModalLabel">Cadastrar Novo Administrador</h4>
                       </div>
                       <div class="modal-body text-justify">
-                        <form>
+                        <form method='POST' action=''>
                           <div class="form-group">
                             <label>Nome Completo</label>
-                            <input type="text" class="form-control" id="cargo">
+                            <input name='nomeCompleto' type="text" class="form-control" id="cargo">
                           </div>
                           <div class="form-group">
                             <label>Email/Login</label>
-                            <input type="text" class="form-control" id="descricao">
+                            <input name='loginEmail' type="text" class="form-control" id="descricao">
                           </div>
                           <div class="form-group">
                             <label>Senha</label>
-                            <input type="text" class="form-control" id="data">
+                            <input type='password'name='senha'  class="form-control" id="data">
                           </div>
                           <div class="form-group">
                             <label>Confirmar Senha</label>
-                            <input type="text" class="form-control">
-                            <span class="custom-file-control"></span>
+                            <input type='password' name='confirmaSenha' class="form-control">
+
                           </div>
-                          <button type="submit" class="btn btn-primary">Enviar</button>
+                          <button name='enviarAdm' type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                       </div>
                     </div>
