@@ -52,6 +52,7 @@
                  <div class='carousel-caption'>
                  <h3>Colégiado de Computação da UEFS</h3>
                  <p>Portal de comunicação com o estudante</p>
+                 <br>
                  </div>
                  </div>
 
@@ -61,18 +62,19 @@
                  <div class="carousel-caption">
                  <h3 >Fique atento às notícias do colégiado</h3>
                  <p>Acompanhe as novidades de estágio e notícias do curso</p>
+                 <br>
                  </div>
                  </div>
             </div>
 
 
-<br>
+
                 <!-- direita e esquerda-->
-                <a  style='height:900px'class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
                 </a>
-                <a style='height:900px' class="right carousel-control" href="#myCarousel" data-slide="next">
+                <a  class="right carousel-control" href="#myCarousel" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
                 </a>
