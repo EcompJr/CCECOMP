@@ -19,13 +19,44 @@ if(isset($_SESSION['auth']) ){ //Confere se já esta logado
 
                if(mysql_num_rows($query) == 1){ //Existe um administrador com este login e senha
 
-                     $_SESSION['auth'] = True;
-                     header("location:dashboardADM.php");
+                     if(isset($_SESSION['contCaptcha'])){ //existe contagem de vezes
+
+                            if($_SESSION['contCaptcha'] >= 5){ //Só pode tentar até 5 vezes
+
+                                if($_SESSION['captcha'] == $_POST['captchaCodigo']){ //acertou o codigo
+                                  $_SESSION['auth'] = True;
+                                  header("location:dashboardADM.php");
+                                  $_SESSION['contCaptcha'] = 0;
+
+                                }
+                                else{ //errou o codigo
+
+                                    echo "<script>alet('Código da imagem incorreto')</script>";
+                                    $_SESSION['contCaptcha'] += 1;
+                                }
+
+                              }
+                              else{ //logou
+                                $_SESSION['auth'] = True;
+                                header("location:dashboardADM.php");
+                                $_SESSION['contCaptcha'] = 0;
+
+                              }
+
+                     }
+                     else{ //logou
+                       $_SESSION['auth'] = True;
+                       header("location:dashboardADM.php");
+                       $_SESSION['contCaptcha'] = 0;
+
+                     }
+
 
                }
                else{
 
                      echo "<script>alert('Login ou senha inválido!')</script>";
+                     $_SESSION['contCaptcha'] += 1;
 
                }
 
@@ -98,11 +129,28 @@ if(isset($_SESSION['auth']) ){ //Confere se já esta logado
             <h2>Login</h2>
             <input name="login" class="form-control" type="text" placeholder="Usuário" /> </br>
             <input name="senha" class="form-control" type="password" placeholder="Senha" /> </br>
-            <input class="btn btn-warning"type="submit" value="Entrar">
-        </form>
 
-        <?php    require_once 'captcher.php';  ?>
 
+
+        <?php
+                    if(!isset($_SESSION['contCaptcha'])){
+                      $_SESSION['contCaptcha'] = 0;
+                    }
+
+                    if($_SESSION['contCaptcha'] >= 5){
+
+                         echo "<h5>Digite o código abaixo para logar</h5>";
+                         echo "<img src='captcha.php' width='300' height='100'  /><br><br>";
+                         echo "<input name='captchaCodigo' class='form-control' type='text'  /><br>";
+
+
+                    }
+
+
+
+        ?>
+        <input class="btn btn-warning"type="submit" value="Entrar">
+       </form>
     </div>
 
     <!-- jQuery -->
