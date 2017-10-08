@@ -1,3 +1,33 @@
+<?php
+session_start();
+require_once 'conexao.php';
+if(!$_SESSION['auth']){
+
+       header('location:login.php');
+}
+
+
+
+  if(isset($_POST['enviarNoticia'])){ //Cadastro de novo administrador
+
+         $titulo = $_POST['Titulo'];
+         $texto = $_POST['Texto'];
+         $imagem = $_POST['Imagem'];           
+         mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`, `Texto`, `Imagem`) VALUES ('$titulo', '$texto', '$imagem')");
+        
+
+  }
+
+  if(isset($_POST['removerNoticia'])){
+
+
+       $id = $_POST['removerNoticia'];
+       mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
+  }
+
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +75,7 @@
 
       <div>
         <div>
-
+<!--
           <table class="table table-hover">
 
             <thead>
@@ -111,12 +141,56 @@
                   </div>
                 </td>
                 <td>05/10/2017</td>
-                <td><button type="submit" class="btn btn-danger">Remover</button></button>
+                <td><button name="removerNoticia" type="submit" class="btn btn-danger">Remover</button></button>
                 </td>
 
               </tr>
             </tbody>
           </table>
+-->
+            <form method="POST" action=''>
+                <ul class="list-group">
+                  <?php
+                          $query = mysql_query("SELECT *FROM `ccecomp_noticias`"); //Consulta banco de dados
+
+                          if(mysql_num_rows($query) > 0){ //Existe notícias cadastradas
+
+                            while($news = mysql_fetch_array($query)){              
+
+                                 $titulo = $news['Titulo'];
+                                 $texto = $news['Texto'];
+                                 $imagem = $news['Imagem'];
+                                 $id = $news['ID'];
+
+                                 $img = "imagens/" . $news->$imagem;
+
+                                 echo " 
+                                  
+                                 <li class='list-group-item'> 
+                                 <div class='collapse' id='collapseExample'>
+                                 <img src='$img' height='300' width='450'>
+                                   <div class='card card-body'>
+                                     $texto
+                                    </div>
+                                </div>
+                                  <a class='btn btn-primary' data-toggle='collapse' href='#collapseExample' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
+                                  <button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button>
+                                 </li>";
+                            }
+
+
+                          }
+                          else{
+                            echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhuma notícia cadastrada. </p></div>";
+                          }
+
+                  ?>
+                   <br>
+                   <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
+        Cadastrar Nova Notícia
+      </button>
+                </ul>
+              </form>
 
         </div>
 
@@ -124,9 +198,7 @@
       </div>
 
       <br>
-      <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
-        Cadastrar Nova Notícia
-      </button>
+
 
       <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
@@ -136,21 +208,21 @@
               <h4 class="modal-title" id="myModalLabel">Cadastrar Nova Notícia</h4>
             </div>
             <div class="modal-body text-justify">
-              <form>
+              <form method='POST' action=''>
                 <div class="form-group">
                   <label>Título</label>
-                  <input type="text" class="form-control" id="cargo">
+                  <input name="Titulo" type="text" class="form-control" id="cargo">
                 </div>
                 <div class="form-group">
                 <label for="comment">Texto</label>
-                <textarea class="form-control" rows="5" id="texto"></textarea>
+                <textarea name="Texto" class="form-control" rows="5" id="texto"></textarea>
               </div>
                 <div class="form-group">
                   <label>Enviar Imagem</label>
-                  <input type="file" id="file1" class="custom-file-input">
+                  <input name="Imagem" type="file" id="file1" class="custom-file-input">
                   <span class="custom-file-control"></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button name="enviarNoticia" type="submit" class="btn btn-primary">Enviar</button>
               </form>
             </div>
           </div>

@@ -1,3 +1,33 @@
+<?php
+session_start();
+require_once 'conexao.php';
+if(!$_SESSION['auth']){
+
+       header('location:login.php');
+}
+
+
+
+  if(isset($_POST['enviarEstagio'])){ //Cadastro de novo administrador
+
+         $titulo = $_POST['Titulo'];
+         $texto = $_POST['Texto'];
+         $imagem = $_POST['Imagem'];           
+         mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`, `Texto`, `Imagem`) VALUES ('$titulo', '$texto', '$imagem')");
+        
+
+  }
+
+  if(isset($_POST['removerEstagio'])){
+
+
+       $id = $_POST['removerEstagio'];
+       mysql_query("DELETE FROM `ccecomp_estagios` WHERE `ID` ='$id'");
+  }
+
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -43,86 +73,47 @@
 
       <h3>Oportunidades de Estágio</h3>
 
-      <div>
+      <ul class="list-group">
+      <form method='POST' action='' >
+     <?php
+                $query = mysql_query("SELECT*FROM `ccecomp_estagios`");
 
-        <div>
+                if(mysql_num_rows($query) > 0){ //Existe noticias a serem listadas
 
-        <table class="table table-hover">
-        
-                    <thead>
-                      <tr>
-                        <th>Vaga de Estágio</th>
-                        <th>Data de Publicação</th>
-                        <th> </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-                              Título do Cargo
-                            </a>
-                          </p>
-                          <div class="collapse" id="collapseExample1">
-                          <img src="images/default-avatar.png" height="300" width="450">
-                            <div class="card card-body">
-                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-                              craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            </div>
-                          </div>
-                        </td>
-                        <td>04/10/2017</td>
-                        <td><button type="submit" class="btn btn-danger">Remover</button></button></td>
-                      </tr>
-        
-                      <tr>
-                        <td>
-                          <p>
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                              Título do Cargo
-                            </a>
-                          </p>
-                          <div class="collapse" id="collapseExample2">
-                          <img src="images/default-avatar.png" height="300" width="450">
-                            <div class="card card-body">
-                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-                              craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            </div>
-                          </div>
-                        </td>
-                        <td>02/05/2017</td>
-                        <td><button type="submit" class="btn btn-danger">Remover</button></button>
-                        </td>
-                      </tr>
-        
-                      <tr>
-                        <td>
-                          <p>
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                              Título do Cargo
-                            </a>
-                          </p>
-                          <div class="collapse" id="collapseExample3">
-                          <img src="images/default-avatar.png" height="300" width="450">
-                            <div class="card card-body">
-                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-                              craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            </div>
-                          </div>
-                        </td>
-                        <td>05/10/2017</td>
-                        <td><button type="submit" class="btn btn-danger">Remover</button></button>
-                        </td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
+                            while($estagios = mysql_fetch_array($query)){
 
-        </div>
+                                  $titulo = $estagios['Titulo'];
+                                  $texto = $estagios['Texto'];
+                                  $imagem = $estagios['Imagem'];
+                                  $id = $estagios['ID'];
 
-        <!-- /.col-lg-12 -->
-      </div>
+                                  echo " 
+                                  
+                                 <li class='list-group-item'> 
+                                 <div class='collapse' id='collapseExample'>
+                                 <img src='images/$imagem' height='300' width='450'>
+                                   <div class='card card-body'>
+                                     $texto
+                                    </div>
+                                </div>
+                                  <a class='btn btn-primary' data-toggle='collapse' href='#collapseExample' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
+                                  <button name='removerEstagio' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button>
+                                 </li>";
+
+                            }
+
+
+
+                }
+                else{
+
+                  echo "<div class='alert alert-danger'><p align='justify'>Não existem anúncios de estágios cadastrados</p></div>";
+                }
+
+      ?>
+
+
+   </ul>
 
       <br>
       <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
@@ -137,25 +128,25 @@
               <h4 class="modal-title" id="myModalLabel">Cadastrar Nova Oportunidade de Estágio</h4>
             </div>
             <div class="modal-body text-justify">
-              <form>
+              <form method='POST' action=''>
                 <div class="form-group">
                   <label>Cargo</label>
-                  <input type="text" class="form-control" id="cargo">
+                  <input name="Titulo" type="text" class="form-control" id="cargo">
                 </div>
                 <div class="form-group">
                   <label>Descrição</label>
-                  <input type="text" class="form-control" id="descricao">
+                  <input name="Texto" type="text" class="form-control" id="descricao">
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                   <label>Data de Publicação</label>
                   <input type="date" class="form-control" id="data">
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label>Enviar Imagem</label>
-                  <input type="file" id="file1" class="custom-file-input">
+                  <input name="Imagem" type="file" id="file1" class="custom-file-input">
                   <span class="custom-file-control"></span>
                 </div>                 
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button name="enviarEstagio" type="submit" class="btn btn-primary">Enviar</button>
               </form>
             </div>
           </div>
