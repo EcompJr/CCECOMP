@@ -4,7 +4,6 @@
 
 
 
-
 //Constroi imagem para evitar spam
 $codigo = substr(md5(time()),0,8);
 
