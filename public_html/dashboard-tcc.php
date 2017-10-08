@@ -1,3 +1,158 @@
+<?php
+session_start();
+require_once 'conexao.php';
+if(!$_SESSION['auth']){
+
+            header('location:login.php');
+}
+
+$busca = array();
+
+//Faz busca de TCC
+
+if(isset($_POST['buscar'])){
+
+     $nomeBusca = $_POST['nomeBusca'];
+
+  if($nomeBusca != ''){
+
+     $query = mysql_query("SELECT*FROM `aluno_tcc` ");
+
+     while($aluno_tcc = mysql_fetch_array($query)){
+
+
+           $nomeTCC = $aluno_tcc['Nome_TCC'];
+
+           if(strpos($nomeTCC,$nomeBusca)){
+
+               $nomeAluno = $aluno_tcc['Aluno'];
+               $data = $aluno_tcc['Data_Publicacao'];
+               $arquivo = $aluno_tcc['Caminho_Arquivo'];
+               $imagem =$aluno_tcc['Caminho_Imagem'];
+               $id = $aluno_tcc['ID'];
+
+               array_push($busca,"
+
+               <tr>
+               <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+               <td>$nomeTCC</td>
+               <td>$data</td>
+               <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+               <td><button name='removerTCC' value='$id'target='_blank' class='btn btn-danger' type='submit'>Remover</button> </td>
+               </tr>
+
+
+
+
+               ");
+
+
+           }
+     }
+
+   }
+   
+
+
+
+   if(empty($busca))
+   echo "<script>alert('Nenhum TCC encontrado')</script>";
+
+
+
+
+}
+
+
+
+
+//Remove TCC
+if(isset($_POST['removerTCC'])){
+
+         $id = $_POST['removerTCC'];
+         $query = mysql_query("SELECT*FROM `aluno_tcc` WHERE `ID`='$id'"); //sempre vai existir
+         $linhaTCC = mysql_fetch_array($query);
+         $caminhoFoto = $linhaTCC['Caminho_Imagem'];
+         $caminhoPDF = $linhaTCC['Caminho_Arquivo'];
+         @unlink($caminhoFoto); //remove arquivo em pasta
+         @unlink($caminhoPDF); //remove arquivo em pasta
+         mysql_query("DELETE FROM `aluno_tcc` WHERE `ID` ='$id'"); //Remove do BD
+
+
+
+}
+
+
+
+
+
+//Faz cadastro de TCC
+
+if(isset($_POST['enviarTCC'])){
+
+
+       $nomeAluno = $_POST['nomeAluno'];
+       $tituloTCC = $_POST['tituloTCC'];
+       $data = $_POST['dataPublicacao'];
+       $foto = 'images/default-avatar.png';
+       $arquivo = $_FILES['arquivoTCC']['tmp_name'];
+       $nomeArquivo = $_FILES['arquivoTCC']['name'];
+       $upFoto = false;
+       $upArquivo =false;
+
+       if($nomeArquivo != ''){ //Foto nao é obrigatorio so verifica arquivo
+
+                      $extensao = pathinfo($nomeArquivo,PATHINFO_EXTENSION);
+                      $caminhoTCC  = 'data/'. $tituloTCC.".".$extensao;
+
+                      if($extensao == 'pdf'){   //Verifica Extenção valida (pdf)
+                                    $upArquivo= true; //Pode adicionar pdf
+
+                       }
+                       else{
+                         echo "<script>alert('Extenção do arquivo inválida! Apenas .PDF permitido')</script>";
+                         goto fim;
+                       }
+
+                $arquivoFoto = $_FILES['fotoEstudante']['tmp_name'];
+                $nomeArquivoFoto = $_FILES['fotoEstudante']['name'];
+
+                        if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
+                        $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
+                        $foto = 'images/'.$nomeAluno.".".$extensaoFoto;
+
+                        if($extensaoFoto == 'png' || $extensaoFoto == 'jpg' || $extensaoFoto == 'jpeg'){
+                                  $upFoto = true; //Pode adicionar a foto
+                        }
+                        else{
+
+                           echo "<script>alert('Extenção da imagem inválida! Somente .PNG, .JPG E .JPEG permitido.')</script>";
+                           goto fim;
+
+                        }
+                       }
+                      //insere no banco de dados
+                      if($upFoto && $upArquivo){ //Pode adicionar foto e pdf
+                              move_uploaded_file($arquivo,$caminhoTCC);
+                              move_uploaded_file($arquivoFoto,$foto);
+                      }
+                      mysql_query("INSERT INTO `aluno_tcc` (`Aluno`,`Nome_TCC`,`Data_Publicacao`,`Caminho_Arquivo`,`Caminho_Imagem`) VALUES ('$nomeAluno','$tituloTCC','$data','$caminhoTCC','$foto')");
+                       fim:
+                       //Não insere no banco de dados
+       }
+       else{
+              echo "<script>alert('Arquivo de tcc não informado')</script>";
+       }
+
+}
+
+//Finish cadastro TCC
+
+
+
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -42,52 +197,132 @@
     <div class="col-md-offset-3 col-md-6">
       <h3>TCC's atuais</h3>
 
-      <div class="row">
-        <div class="col-md-10 ">
-          <input type="text" class="form-control"placeholder="Nomes/Palavra-chave" />
-        </div>
-        <div class="col-md-1">
-          <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspBuscar</button>
-        </div>
-      </div>
-        <table class="table table-hover" style="border-radius:10px;">
-
-          <thead >
-             <tr>
-               <th>Aluno</th>
-               <th>Nome do TCC</th>
-               <th>Data de publicação</th>
-             </tr>
-          </thead>
-        <tbody>
-          <tr>
-            <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspDuis sed porttitor arcu. Pellentesque.</td>
-            <td>Sed mattis vel velit eget</td>
-            <td>01/09/2017</td>
-            <td><a target="_blank" class="btn btn-danger" role="button">Remover</a> </td>
-          </tr>
-
-          <tr>
-            <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspFusce vel leo quis metus.</td>
-            <td> Pellentesque habitant morbi tristique senectu</td>
-            <td>02/05/2017</td>
-            <td><a target="_blank" class="btn btn-danger" role="button">Remover</a> </td>
-          </tr>
-
-          <tr>
-            <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspPraesent pellentesque eu purus quis.</td>
-            <td>Fusce cursus nisi id orci.</td>
-            <td>05/10/2017</td>
-            <td><a target="_blank" class="btn btn-danger" role="button">Remover</a> </td>
-          </tr>
+     <?php
 
 
+           if(!empty($busca)){ //realizou busca
 
 
-        </tbody>
-      </table>
+             echo  "
 
-      </ul>
+             <form method='POST' action=''>
+                   <div class='row'>
+                       <div class='col-md-10'>
+                         <input name='nomeBusca' type='text' class='form-control' placeholder='Nome do TCC' />
+                         </div>
+                         <div class='col-md-1'>
+                         <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                       </div>
+                   </div>
+
+
+               <table class='table table-hover' style='border-radius:10px;'>
+                       <thead >
+                       <tr>
+                        <th>Aluno</th>
+                        <th>Nome do TCC</th>
+                        <th>Data de publicação</th>
+                        <th>Download</th>
+                        <th>Remover</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+
+             ";
+
+
+             for($i=0; $i<sizeof($busca); $i++){
+
+
+                    echo $busca[$i];
+
+
+             }
+
+             echo "</tbody>";
+             echo "</table>";
+             echo "</form>";
+
+
+
+           }
+           else{
+
+               $query = mysql_query("SELECT*FROM `aluno_tcc`");
+
+                 if(mysql_num_rows($query)>0 ){
+
+             //cabeçalho da tabela;
+                 echo  "
+
+                 <form method='POST' action=''>
+                       <div class='row'>
+                           <div class='col-md-10'>
+                             <input name='nomeBusca' type='text' class='form-control' placeholder='Nome do TCC' />
+                             </div>
+                             <div class='col-md-1'>
+                             <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                           </div>
+                       </div>
+
+
+                   <table class='table table-hover' style='border-radius:10px;'>
+                           <thead >
+                           <tr>
+                            <th>Aluno</th>
+                            <th>Nome do TCC</th>
+                            <th>Data de publicação</th>
+                            <th>Download</th>
+                            <th>Remover</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+
+                 ";
+
+                      while($tcc = mysql_fetch_array($query)){
+
+                        $id = $tcc['ID'];
+                        $aluno = $tcc['Aluno'];
+                        $nomeTCC = $tcc['Nome_TCC'];
+                        $data = $tcc['Data_Publicacao'];
+                        $caminhoArquivo = $tcc['Caminho_Arquivo'];
+                        $caminhoFoto = $tcc['Caminho_Imagem'];
+
+
+                        echo "
+
+
+                                    <tr>
+                                    <td><img width='30' height='30' alt='foto do aluno/default' src='$caminhoFoto' style='border-radius:30px;' />&nbsp&nbsp$aluno</td>
+                                    <td>$nomeTCC</td>
+                                    <td>$data</td>
+                                    <td><a role='button' target='_blank'class='btn btn-warning' href='$caminhoArquivo' >Download</a></td>
+                                    <td><button name='removerTCC' value='$id'target='_blank' class='btn btn-danger' type='submit'>Remover</button> </td>
+                                    </tr>
+
+
+                        ";
+
+
+                      }
+                      echo "</tbody>";
+                      echo "</table>";
+                      echo "</form>";
+
+
+                 }
+                 else{
+
+                     echo "<div class='alert alert-danger'><p align='justify'>Não existe TCC cadastrado no sistema <a role='button' data-toggle='modal' data-target='#CadastrarTCC'>cadastre novos</a> </p></div>";
+
+                 }
+
+
+         }
+      ?>
+
+
       <br>
       <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#CadastrarTCC">
         Cadastrar TCC
@@ -101,25 +336,30 @@
               <h4 class="modal-title" id="myModalLabel">Cadastrar Novo TCC</h4>
             </div>
             <div class="modal-body text-justify">
-              <form>
+              <form method='POST' action='' enctype="multipart/form-data">
                 <div class="form-group">
                   <label>Nome do Aluno</label>
-                  <input type="text" class="form-control" id="cargo">
+                  <input name='nomeAluno'type="text" class="form-control" id="cargo">
                 </div>
                 <div class="form-group">
                   <label>Título do TCC</label>
-                  <input type="text" class="form-control" id="descricao">
+                  <input name='tituloTCC'type="text" class="form-control" id="descricao">
                 </div>
                 <div class="form-group">
                   <label>Data de Publicação</label>
-                  <input type="text" class="form-control" id="data">
+                  <input name='dataPublicacao' type="date" class="form-control" id="data">
+                </div>
+                <div class='form-group'>
+                  <label>Foto do Estudante (Opcional)</label>
+                  <input name='fotoEstudante'type="file" >
+                  <span class="custom-file-control"></span>
                 </div>
                 <div class="form-group">
                   <label>Arquivo</label>
-                  <input type="file" class="custom-file-input">
+                  <input name='arquivoTCC'type="file">
                   <span class="custom-file-control"></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button name='enviarTCC'type="submit" class="btn btn-primary">Enviar</button>
               </form>
             </div>
           </div>
@@ -130,7 +370,7 @@
 
     </div>
   </div>
-
+<br><br>
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
 
