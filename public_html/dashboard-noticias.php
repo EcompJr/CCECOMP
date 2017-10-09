@@ -118,18 +118,16 @@ if(!$_SESSION['auth']){
                                  $imagem = $news['Imagem'];
                                  $id = $news['ID'];
 
-                                 
-
                                  echo " 
                                   
                                  <li class='list-group-item'> 
-                                 <div class='collapse' id='collapseExample'>
-                                 <img width='450' height='300' alt='imagem da noticia/default' src='$imagem' style='border-radius:30px;' />
+                                 <div class='collapse' id='$id'>
+                                 <img width='500' height='300' alt='imagem da noticia/default' src='$imagem' />
                                    <div class='card card-body'>
                                      $texto
                                     </div>
                                 </div>
-                                  <a class='btn btn-primary' data-toggle='collapse' href='#collapseExample' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
+                                  <a class='btn btn-primary' data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
                                   <button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button>
                                  </li>";
                             }
