@@ -11,8 +11,8 @@ if(!$_SESSION['auth']){
   if(isset($_POST['enviarEstagio'])){ //Cadastro de novo administrador
 
          $titulo = $_POST['Titulo'];
-         $texto = $_POST['Texto'];      
-         
+         $texto = $_POST['Texto'];
+
          $arquivoFoto = $_FILES['Imagem']['tmp_name'];
          $nomeArquivoFoto = $_FILES['Imagem']['name'];
 
@@ -29,7 +29,7 @@ if(!$_SESSION['auth']){
                     goto fim;
 
                  }
-                
+
                //insere no banco de dados
                if($upFoto){ //Pode adicionar foto e pdf
                        move_uploaded_file($arquivoFoto,$imagem);
@@ -37,7 +37,7 @@ if(!$_SESSION['auth']){
                mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`, `Texto`, `Imagem`) VALUES ('$titulo', '$texto', '$imagem')");
                 fim:
                 //Não insere no banco de dados
-              }        
+              }
   }
 
   if(isset($_POST['removerEstagio'])){
@@ -113,9 +113,9 @@ if(!$_SESSION['auth']){
                                   $imagem = $estagios['Imagem'];
                                   $id = $estagios['ID'];
 
-                                  echo " 
-                                  
-                                 <li class='list-group-item'> 
+                                  echo "
+
+                                 <li class='list-group-item'>
                                  <div class='collapse' id='$id'>
                                  <img src='images/$imagem' height='300' width='450'>
                                    <div class='card card-body'>
@@ -179,7 +179,7 @@ if(!$_SESSION['auth']){
 
     </div>
     </div>
-
+<br><br>
 
 
 

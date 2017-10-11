@@ -162,19 +162,19 @@ if(!$_SESSION['auth']){
                         <form method='POST' action=''>
                           <div class="form-group">
                             <label>Nome Completo</label>
-                            <input name='nomeCompleto' type="text" class="form-control" id="cargo">
+                            <input required="true" name='nomeCompleto' type="text" class="form-control" id="cargo">
                           </div>
                           <div class="form-group">
                             <label>Email/Login</label>
-                            <input name='loginEmail' type="text" class="form-control" id="descricao">
+                            <input required="true"  name='loginEmail' type="text" class="form-control" id="descricao">
                           </div>
                           <div class="form-group">
                             <label>Senha</label>
-                            <input type='password'name='senha'  class="form-control" id="data">
+                            <input required="true" type='password'name='senha'  class="form-control" id="data">
                           </div>
                           <div class="form-group">
                             <label>Confirmar Senha</label>
-                            <input type='password' name='confirmaSenha' class="form-control">
+                            <input required="true" type='password' name='confirmaSenha' class="form-control">
 
                           </div>
                           <button name='enviarAdm' type="submit" class="btn btn-primary">Enviar</button>

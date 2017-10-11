@@ -50,7 +50,7 @@
                  <div  class="item active">
                  <img height='1000'width="1500"src="images/theme-image1.jpeg" alt="Imagem tema 1">
                  <div class='carousel-caption'>
-                 <h3>Colégiado de Engenharia de Computação da UEFS</h3>
+                 <h3>Colegiado de Engenharia de Computação da UEFS</h3>
                  <p>Portal de comunicação com o estudante</p>
                  <br>
                  </div>
@@ -60,7 +60,7 @@
                  <div class="item">
                  <img  src="images/theme-image2.jpg" alt="Imagem tema 2">
                  <div class="carousel-caption">
-                 <h3 >Fique atento às notícias do colégiado</h3>
+                 <h3 >Fique atento às notícias do colegiado</h3>
                  <p>Acompanhe as novidades de estágio e notícias do curso</p>
                  <br>
                  </div>

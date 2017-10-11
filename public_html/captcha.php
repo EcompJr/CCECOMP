@@ -17,9 +17,9 @@ $fontDoCaptcha = imageloadfont("fonts/anonymous.gdf");
 
 $corDoCaptcha = imagecolorallocate($captchaImagem, 40,30,230);
 
-imagestring($captchaImagem,$fontDoCaptcha,300,100,$codigo,$corDoCaptcha);
+imagestring($captchaImagem,$fontDoCaptcha,15,10,$codigo,$corDoCaptcha);
 
-
+header('Content-type: image/png');
 imagepng($captchaImagem);
 imagedestroy($captchaImagem);
 

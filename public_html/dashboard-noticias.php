@@ -29,7 +29,7 @@ if(!$_SESSION['auth']){
                     goto fim;
 
                  }
-                
+
                //insere no banco de dados
                if($upFoto){ //Pode adicionar foto e pdf
                        move_uploaded_file($arquivoFoto,$imagem);
@@ -37,7 +37,7 @@ if(!$_SESSION['auth']){
                mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Texto`,`Imagem`) VALUES ('$titulo','$texto','$imagem')");
                 fim:
                 //Não insere no banco de dados
-              }        
+              }
   }
 
 
@@ -49,7 +49,7 @@ if(!$_SESSION['auth']){
        $linhaNoticias = mysql_fetch_array($query);
        $imagem = $linhaNoticias['Imagem'];
        @unlink($imagem); //remove arquivo em pasta
-      
+
 
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
   }
@@ -111,16 +111,16 @@ if(!$_SESSION['auth']){
 
                           if(mysql_num_rows($query) > 0){ //Existe notícias cadastradas
 
-                            while($news = mysql_fetch_array($query)){              
+                            while($news = mysql_fetch_array($query)){
 
                                  $titulo = $news['Titulo'];
                                  $texto = $news['Texto'];
                                  $imagem = $news['Imagem'];
                                  $id = $news['ID'];
 
-                                 echo " 
-                                  
-                                 <li class='list-group-item'> 
+                                 echo "
+
+                                 <li class='list-group-item'>
                                  <div class='collapse' id='$id'>
                                  <img width='500' height='300' alt='imagem da noticia/default' src='$imagem' />
                                    <div class='card card-body'>
@@ -187,7 +187,7 @@ if(!$_SESSION['auth']){
 
     </div>
     </div>
-
+<br><br>
 
 
 

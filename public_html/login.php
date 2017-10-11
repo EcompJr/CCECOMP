@@ -140,7 +140,7 @@ if(isset($_SESSION['auth']) ){ //Confere se já esta logado
                     if($_SESSION['contCaptcha'] >= 5){
 
                          echo "<h5>Digite o código abaixo para logar</h5>";
-                         echo "<img src='captcha.php' width='300' height='100'  /><br><br>";
+                         echo "<img width='300'  height='100'src='captcha.php' />";
                          echo "<input name='captchaCodigo' class='form-control' type='text'  /><br>";
 
 

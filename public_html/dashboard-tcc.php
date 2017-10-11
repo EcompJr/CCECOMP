@@ -51,7 +51,7 @@ if(isset($_POST['buscar'])){
      }
 
    }
-   
+
 
 
 
@@ -339,24 +339,24 @@ if(isset($_POST['enviarTCC'])){
               <form method='POST' action='' enctype="multipart/form-data">
                 <div class="form-group">
                   <label>Nome do Aluno</label>
-                  <input name='nomeAluno'type="text" class="form-control" id="cargo">
+                  <input required="true"  name='nomeAluno'type="text" class="form-control" id="cargo">
                 </div>
                 <div class="form-group">
                   <label>Título do TCC</label>
-                  <input name='tituloTCC'type="text" class="form-control" id="descricao">
+                  <input required="true" name='tituloTCC'type="text" class="form-control" id="descricao">
                 </div>
                 <div class="form-group">
                   <label>Data de Publicação</label>
-                  <input name='dataPublicacao' type="date" class="form-control" id="data">
+                  <input required="true" name='dataPublicacao' type="date" class="form-control" id="data">
                 </div>
                 <div class='form-group'>
                   <label>Foto do Estudante (Opcional)</label>
-                  <input name='fotoEstudante'type="file" >
+                  <input  name='fotoEstudante'type="file" >
                   <span class="custom-file-control"></span>
                 </div>
                 <div class="form-group">
                   <label>Arquivo</label>
-                  <input name='arquivoTCC'type="file">
+                  <input required="true" name='arquivoTCC'type="file">
                   <span class="custom-file-control"></span>
                 </div>
                 <button name='enviarTCC'type="submit" class="btn btn-primary">Enviar</button>
