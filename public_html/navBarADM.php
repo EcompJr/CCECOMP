@@ -21,7 +21,7 @@
                    <a href="dashboard-tcc.php">TCC</a>
                </li>
                <li>
-                   <a href="#">Resoluções</a>
+                   <a href="dashboard-resolucoes.php">Resoluções</a>
                </li>
                <li>
                    <a href="dashboard-estagio.php">Oportunidades de Estágio</a>
