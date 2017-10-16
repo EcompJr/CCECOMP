@@ -6,38 +6,41 @@ if(!$_SESSION['auth']){
        header('location:login.php');
 }
 
-
-
-  if(isset($_POST['enviarEstagio'])){ //Cadastro de novo administrador
-
-         $titulo = $_POST['Titulo'];
-         $texto = $_POST['Texto'];
-
-         $arquivoFoto = $_FILES['Imagem']['tmp_name'];
-         $nomeArquivoFoto = $_FILES['Imagem']['name'];
-
-                 if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
-                 $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
-                 $imagem = 'images/'.$titulo.".".$extensaoFoto;
-
-                 if($extensaoFoto == 'png' || $extensaoFoto == 'jpg' || $extensaoFoto == 'jpeg'){
-                           $upFoto = true; //Pode adicionar a foto
+if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
+  
+           $titulo = $_POST['Titulo'];
+           $texto = $_POST['Texto'];
+           $imagem = 'images/default-avatar.png';
+  
+           if(isset($_FILES['file'])) {
+            $arquivoFoto = $_FILES['Imagem']['tmp_name'];
+            $nomeArquivoFoto = $_FILES['Imagem']['name'];
+   
+  
+                   if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
+                   $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
+                   $imagem = 'images/'.$titulo.".".$extensaoFoto;
+  
+                   if($extensaoFoto == 'png' || $extensaoFoto == 'jpg' || $extensaoFoto == 'jpeg'){
+                             $upFoto = true; //Pode adicionar a foto
+                   }
+                   else{
+  
+                      echo "<script>alert('Extensão da imagem inválida! Somente .PNG, .JPG E .JPEG permitido.')</script>";
+                      goto fim;
+  
+                   }
+  
+                 //insere no banco de dados
+                 if($upFoto){ //Pode adicionar foto e pdf
+                         move_uploaded_file($arquivoFoto,$imagem);
                  }
-                 else{
-
-                    echo "<script>alert('Extensão da imagem inválida! Somente .PNG, .JPG E .JPEG permitido.')</script>";
-                    goto fim;
-
-                 }
-
-               //insere no banco de dados
-               if($upFoto){ //Pode adicionar foto e pdf
-                       move_uploaded_file($arquivoFoto,$imagem);
-               }
-               mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`, `Texto`, `Imagem`) VALUES ('$titulo', '$texto', '$imagem')");
-                fim:
-                //Não insere no banco de dados
-              }
+                }
+                 mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Texto`,`Imagem`) VALUES ('$titulo','$texto','$imagem')");
+                  fim:
+                  //Não insere no banco de dados
+                
+    } 
   }
 
   if(isset($_POST['removerEstagio'])){
@@ -48,6 +51,7 @@ if(!$_SESSION['auth']){
        $linhaEstagios = mysql_fetch_array($query);
        $imagem = $linhaEstagios['Imagem'];
        @unlink($imagem); //remove arquivo em pasta
+       
        mysql_query("DELETE FROM `ccecomp_estagios` WHERE `ID` ='$id'");
   }
 
@@ -160,7 +164,7 @@ if(!$_SESSION['auth']){
                     <input name="Titulo" type="text" class="form-control" id="cargo">
                   </div>
                   <div class="form-group">
-                    <label>Descrição</label>
+                    <label for="comment">Descrição</label>
                     <textarea name="Texto" class="form-control" rows="5" id="texto"></textarea>
                   </div>
                   <div class="form-group">
