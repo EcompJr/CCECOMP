@@ -11,11 +11,11 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
            $titulo = $_POST['Titulo'];
            $texto = $_POST['Texto'];
            $imagem = 'images/default-avatar.png';
-
+           
+           if (isset($_FILES['Imagem'])) {
             $arquivoFoto = $_FILES['Imagem']['tmp_name'];
             $nomeArquivoFoto = $_FILES['Imagem']['name'];
    
-  
                    if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
                    $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
                    $imagem = 'images/'.$titulo.".".$extensaoFoto;
@@ -35,6 +35,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
                          move_uploaded_file($arquivoFoto,$imagem);
                  }
                 }
+              }
                  mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Texto`,`Imagem`) VALUES ('$titulo','$texto','$imagem')");
                   fim:
                   //Não insere no banco de dados
