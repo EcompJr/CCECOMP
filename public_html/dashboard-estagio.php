@@ -11,8 +11,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
            $titulo = $_POST['Titulo'];
            $texto = $_POST['Texto'];
            $imagem = 'images/default-avatar.png';
-  
-           if(isset($_FILES['file'])) {
+
             $arquivoFoto = $_FILES['Imagem']['tmp_name'];
             $nomeArquivoFoto = $_FILES['Imagem']['name'];
    
@@ -40,8 +39,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
                   fim:
                   //Não insere no banco de dados
                 
-    } 
-  }
+  } 
 
   if(isset($_POST['removerEstagio'])){
 
