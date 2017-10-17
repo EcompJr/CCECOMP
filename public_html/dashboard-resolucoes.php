@@ -55,6 +55,24 @@ if(!$_SESSION['auth']){
        mysql_query("DELETE FROM `ccecomp_resolucoes` WHERE `ID` ='$id'");
   }
 
+  if(isset($_POST['downloadResolucoes'])){
+
+
+       $id = $_POST['downloadResolucoes'];
+       $query = mysql_query("SELECT*FROM `ccecomp_resolucoes` WHERE `ID`='$id'"); //sempre vai existir
+       $linhaResolucoes = mysql_fetch_array($query);
+       $arquivo = $linhaResolucoes['Arquivo'];
+
+
+       $query = mysql_query("SELECT*FROM `ccecomp_resolucoes` ORDER BY `ID`='$id' ");
+       if ($arquivo = mysql_fetch_array($query)){
+           do {
+               echo "<a href=\"" . $arquivo['Numero'] ;
+               }
+           while($arquivo = mysql_fetch_array($query));
+           }
+  }
+
 
  ?>
 
@@ -104,10 +122,26 @@ if(!$_SESSION['auth']){
 
        <h3>Resoluções</h3>
 
+       <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
+Cadastrar Nova Resolução
+</button>
+<br><br>
        <div>
+
          <div>
            <form method="POST" action=''>
-             <ul class="list-group">
+             <ul class="table-hover">
+               <table class="table table-hover" >
+
+                  <thead >
+                     <tr>
+                       <th>Tipo</th>
+                       <th><a style='float:right'>Número</a></th>
+                       <th><a style='float:right'>Download</a></th>
+                       <th><a style='float:right'>Remover</a></th>
+                     </tr>
+                  </thead>
+                  <tbody>
                <?php
                          $query = mysql_query("SELECT *FROM `ccecomp_resolucoes`"); //Consulta banco de dados
 
@@ -123,16 +157,18 @@ if(!$_SESSION['auth']){
 
                                 echo "
 
-                                <li class='list-group-item'>
-                                <div class='collapse' id='$id'>
-                                <img width='500' height='300' alt='arquivo da resolucao' src='$documento' />
-                                  <div class='card card-body'>
-                                    $numero
-                                   </div>
-                               </div>
-                                 <a class='btn btn-primary' data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$tipo</a>
-                                 <button name='removerResolucoes' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button>
-                                </li>";
+
+                                  <div class='collapse' id='$id'>
+                                  </div>
+                                    <tr>
+                                      <td>$tipo</td>
+                                      <td><div style='float:right'>$numero</div></td>
+                                      <td><button name='downloadResolucoes' value='$id'style='float:right' type='submit' class='btn btn-warning'>Download</button></td>
+                                      <td><button name='removerResolucoes' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></td>
+                                    </tr>
+
+
+                                 ";
                            }
 
 
@@ -142,10 +178,10 @@ if(!$_SESSION['auth']){
                          }
 
                  ?>
+               </tbody>
+             </table>
                  <br>
-                 <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
-       Cadastrar Nova Resolução
-     </button>
+
              </ul>
            </form>
 

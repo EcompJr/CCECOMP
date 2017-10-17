@@ -12,6 +12,7 @@ if(!$_SESSION['auth']){
 
          $titulo = $_POST['Titulo'];
          $texto = $_POST['Texto'];
+         $imagem = 'images/default-avatar.png';
 
          $arquivoFoto = $_FILES['Imagem']['tmp_name'];
          $nomeArquivoFoto = $_FILES['Imagem']['name'];
@@ -34,10 +35,11 @@ if(!$_SESSION['auth']){
                if($upFoto){ //Pode adicionar foto e pdf
                        move_uploaded_file($arquivoFoto,$imagem);
                }
+              }
                mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Texto`,`Imagem`) VALUES ('$titulo','$texto','$imagem')");
                 fim:
                 //Não insere no banco de dados
-              }
+              
   }
 
 
@@ -49,7 +51,6 @@ if(!$_SESSION['auth']){
        $linhaNoticias = mysql_fetch_array($query);
        $imagem = $linhaNoticias['Imagem'];
        @unlink($imagem); //remove arquivo em pasta
-
 
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
   }
