@@ -23,7 +23,9 @@ if(isset($_POST['buscar'])){
 
            $nomeTCC = $aluno_tcc['Nome_TCC'];
 
-           if(strpos($nomeTCC,$nomeBusca)){
+
+
+           if(strpos($nomeTCC,$nomeBusca) !== false ){
 
                $nomeAluno = $aluno_tcc['Aluno'];
                $data = $aluno_tcc['Data_Publicacao'];
@@ -51,6 +53,10 @@ if(isset($_POST['buscar'])){
      }
 
    }
+   else{
+            header('location:dashboard-tcc.php');
+
+   }
 
 
 
@@ -74,6 +80,7 @@ if(isset($_POST['removerTCC'])){
          $linhaTCC = mysql_fetch_array($query);
          $caminhoFoto = $linhaTCC['Caminho_Imagem'];
          $caminhoPDF = $linhaTCC['Caminho_Arquivo'];
+         if($caminhoFoto != 'images/default-avatar.png') // Não remove imagem default
          @unlink($caminhoFoto); //remove arquivo em pasta
          @unlink($caminhoPDF); //remove arquivo em pasta
          mysql_query("DELETE FROM `aluno_tcc` WHERE `ID` ='$id'"); //Remove do BD
@@ -135,6 +142,9 @@ if(isset($_POST['enviarTCC'])){
                       if($upFoto && $upArquivo){ //Pode adicionar foto e pdf
                               move_uploaded_file($arquivo,$caminhoTCC);
                               move_uploaded_file($arquivoFoto,$foto);
+                      }
+                      if($upArquivo){
+                          move_uploaded_file($arquivo,$caminhoTCC);
                       }
                       mysql_query("INSERT INTO `aluno_tcc` (`Aluno`,`Nome_TCC`,`Data_Publicacao`,`Caminho_Arquivo`,`Caminho_Imagem`) VALUES ('$nomeAluno','$tituloTCC','$data','$caminhoTCC','$foto')");
                        fim:

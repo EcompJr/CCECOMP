@@ -8,13 +8,12 @@ if(!$_SESSION['auth']){
 
 
 
-  if(isset($_POST['enviarEstagio'])){ //Cadastro de novo administrador
+  if(isset($_POST['enviarEstagio']) ){ //Cadastro de novo administrador
 
          $titulo = $_POST['Titulo'];
          $texto = $_POST['Texto'];
-
-         $arquivoFoto = $_FILES['Imagem']['tmp_name'];
-         $nomeArquivoFoto = $_FILES['Imagem']['name'];
+         $arquivoFoto = $_FILES['imagem']['tmp_name'];
+         $nomeArquivoFoto = $_FILES['imagem']['name'];
 
                  if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
                  $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
@@ -39,6 +38,7 @@ if(!$_SESSION['auth']){
                 //Não insere no banco de dados
               }
   }
+
 
   if(isset($_POST['removerEstagio'])){
 
@@ -157,15 +157,15 @@ if(!$_SESSION['auth']){
                 <form method='POST' action='' enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Cargo</label>
-                    <input name="Titulo" type="text" class="form-control" id="cargo">
+                    <input require='true' name="Titulo" type="text" class="form-control" id="cargo">
                   </div>
                   <div class="form-group">
                     <label>Descrição</label>
-                    <textarea name="Texto" class="form-control" rows="5" id="texto"></textarea>
+                    <textarea require='true' name="Texto" class="form-control" rows="5" id="texto"></textarea>
                   </div>
                   <div class="form-group">
                     <label>Enviar Imagem</label>
-                    <input name="Imagem" type="file" id="file1" class="custom-file-input">
+                    <input required="true" name='imagem'type="file">
                     <span class="custom-file-control"></span>
                   </div>
                   <button name="enviarEstagio" type="submit" class="btn btn-primary">Enviar</button>

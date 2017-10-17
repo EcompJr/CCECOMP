@@ -195,7 +195,7 @@ if(!$_SESSION['auth']){
    </div>
    </div>
 
-
+<br><br>
 
 
    <!-- jQuery -->
