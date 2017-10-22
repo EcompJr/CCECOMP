@@ -89,7 +89,7 @@
                     <thead >
                        <tr>
                          <th>Aluno</th>
-                         <th>Nome do TCC</th>
+                         <th>Título do TCC</th>
                          <th>Data de publicação</th>
                          <th></th>
                        </tr>
