@@ -6,17 +6,16 @@ if(!$_SESSION['auth']){
        header('location:login.php');
 }
 
-if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
+if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
   
            $titulo = $_POST['Titulo'];
            $texto = $_POST['Texto'];
-           $imagem = 'images/default-avatar.png';
+           $imagem = 'images/no-image.jpg';
            
-           if (isset($_FILES['Imagem'])) {
             $arquivoFoto = $_FILES['Imagem']['tmp_name'];
             $nomeArquivoFoto = $_FILES['Imagem']['name'];
    
-                   if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
+                   if($nomeArquivoFoto != ''){ //faz upload da foto se existir
                    $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
                    $imagem = 'images/'.$titulo.".".$extensaoFoto;
   
@@ -35,7 +34,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
                          move_uploaded_file($arquivoFoto,$imagem);
                  }
                 }
-              }
+              
                  mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Texto`,`Imagem`) VALUES ('$titulo','$texto','$imagem')");
                   fim:
                   //Não insere no banco de dados
@@ -49,7 +48,11 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
        $query = mysql_query("SELECT*FROM `ccecomp_estagios` WHERE `ID`='$id'"); //sempre vai existir
        $linhaEstagios = mysql_fetch_array($query);
        $imagem = $linhaEstagios['Imagem'];
-       @unlink($imagem); //remove arquivo em pasta
+
+       if($imagem != "images/no-image.jpg")
+       {
+        @unlink($imagem); //remove arquivo em pasta
+       }
        
        mysql_query("DELETE FROM `ccecomp_estagios` WHERE `ID` ='$id'");
   }
@@ -107,7 +110,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
             <?php
                 $query = mysql_query("SELECT*FROM `ccecomp_estagios`");
 
-                if(mysql_num_rows($query) > 0){ //Existe noticias a serem listadas
+                if(mysql_num_rows($query) > 0){ //Existem estágios a serem listados
 
                             while($estagios = mysql_fetch_array($query)){
 
@@ -120,7 +123,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
 
                                  <li class='list-group-item'>
                                  <div class='collapse' id='$id'>
-                                 <img src='images/$imagem' height='300' width='450'>
+                                 <img width='500' height='300' src='$imagem' />
                                    <div class='card card-body'>
                                      $texto
                                     </div>
@@ -131,8 +134,6 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
 
                             }
 
-
-
                 }
                 else{
 
@@ -140,20 +141,23 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
                 }
 
       ?>
+          </form>
 
 
         </ul>
 
         <br>
         <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
-        Cadastrar Oportunidade de Estágio
-      </button>
+          Cadastrar Oportunidade de Estágio
+        </button>
 
         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">Cadastrar Nova Oportunidade de Estágio</h4>
               </div>
               <div class="modal-body text-justify">
@@ -178,11 +182,9 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
           </div>
         </div>
       </div>
-
-
     </div>
-    </div>
-<br><br>
+    <br>
+    <br>
 
 
 
@@ -199,7 +201,9 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de nova notícia
         }) <
         />
     </script>
-    <br><br><br>
+    <br>
+    <br>
+    <br>
     <?php require_once("footer.php"); ?>
 
   </body>

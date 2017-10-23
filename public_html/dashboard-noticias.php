@@ -12,12 +12,12 @@ if(!$_SESSION['auth']){
 
          $titulo = $_POST['Titulo'];
          $texto = $_POST['Texto'];
-         $imagem = 'images/default-avatar.png';
+         $imagem = 'images/no-image.jpg';
 
          $arquivoFoto = $_FILES['Imagem']['tmp_name'];
          $nomeArquivoFoto = $_FILES['Imagem']['name'];
 
-                 if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
+                 if($nomeArquivoFoto != ''){ //faz upload da foto se existir
                  $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
                  $imagem = 'images/'.$titulo.".".$extensaoFoto;
 
@@ -42,7 +42,6 @@ if(!$_SESSION['auth']){
               
   }
 
-
   if(isset($_POST['removerNoticia'])){
 
 
@@ -50,10 +49,15 @@ if(!$_SESSION['auth']){
        $query = mysql_query("SELECT*FROM `ccecomp_noticias` WHERE `ID`='$id'"); //sempre vai existir
        $linhaNoticias = mysql_fetch_array($query);
        $imagem = $linhaNoticias['Imagem'];
-       @unlink($imagem); //remove arquivo em pasta
+      
+       if($imagem != "images/no-image.jpg")
+       {
+        @unlink($imagem); //remove arquivo em pasta
+       }
 
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
   }
+
 
 
  ?>
@@ -120,16 +124,16 @@ if(!$_SESSION['auth']){
                                  $id = $news['ID'];
 
                                  echo "
-
+                                
                                  <li class='list-group-item'>
                                  <div class='collapse' id='$id'>
-                                 <img width='500' height='300' alt='imagem da noticia/default' src='$imagem' />
+                                 <img width='500' height='300' src='$imagem' />
                                    <div class='card card-body'>
                                      $texto
                                     </div>
                                 </div>
                                   <a class='btn btn-primary' data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
-                                  <button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button>
+                                  <button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
                                  </li>";
                             }
 
@@ -142,8 +146,8 @@ if(!$_SESSION['auth']){
                   ?>
                   <br>
                   <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
-        Cadastrar Nova Notícia
-      </button>
+                    Cadastrar Nova Notícia
+                  </button>
               </ul>
             </form>
 
@@ -159,7 +163,9 @@ if(!$_SESSION['auth']){
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">Cadastrar Nova Notícia</h4>
               </div>
               <div class="modal-body text-justify">
@@ -184,11 +190,9 @@ if(!$_SESSION['auth']){
           </div>
         </div>
       </div>
-
-
     </div>
-    </div>
-<br><br>
+    <br>
+    <br>
 
 
 
@@ -205,7 +209,9 @@ if(!$_SESSION['auth']){
         }) <
         />
     </script>
-    <br><br><br>
+    <br>
+    <br>
+    <br>
     <?php require_once("footer.php"); ?>
 
   </body>

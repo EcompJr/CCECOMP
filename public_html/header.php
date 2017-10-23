@@ -38,6 +38,9 @@
                         <li>
                             <a href="curriculo.php">Currículo do Curso</a>
                         </li>
+                        <li>
+                            <a href="infraestrutura.php">Infraestrutura</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">

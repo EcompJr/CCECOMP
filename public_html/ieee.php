@@ -92,8 +92,6 @@
     </div>
     <!-- /.row -->
 
-
-
     <!-- /.container -->
 
     <!-- jQuery -->
@@ -102,7 +100,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js "></script>
 
-    <?php require_once("footer.php ") ?>
+    <?php require_once("footer.php") ?>
 </body>
 
 </html>
