@@ -50,7 +50,7 @@ if(!$_SESSION['auth']){
        $linhaNoticias = mysql_fetch_array($query);
        $imagem = $linhaNoticias['Imagem'];
       
-       if($imagem != "images/no-image.jpg")
+       if($imagem != "images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão  
        {
         @unlink($imagem); //remove arquivo em pasta
        }
