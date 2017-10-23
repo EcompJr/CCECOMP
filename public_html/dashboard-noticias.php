@@ -32,7 +32,7 @@ if(!$_SESSION['auth']){
                  }
 
                //insere no banco de dados
-               if($upFoto){ //Pode adicionar foto e pdf
+               if($upFoto){ //Pode adicionar foto
                        move_uploaded_file($arquivoFoto,$imagem);
                }
               }
