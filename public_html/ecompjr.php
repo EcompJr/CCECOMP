@@ -93,7 +93,7 @@
                 <a href="https://www.facebook.com/ecompjr.uefs" target="_blank"><i  class="fa fa-facebook-square fa-3x"></i></a>
               </div>
               <div class="col-md-2">
-                <a target="_blank" href="http://www.ecompjr.com.br/"><img height="45" width='45'  style="border-radius:20px;"  src='images/logoEcompJr.png'/> </a>
+                <a target="_blank" href="http://www.ecompjr.com.br/"><img height="45" width='45'  style="border-radius:20px;"  src='images/logoEcompJr-default.jpg'/> </a>
               </div>
               <div class="col-md-2">
                 <a href="https://www.instagram.com/ecompjr/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>

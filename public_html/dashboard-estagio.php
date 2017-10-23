@@ -6,6 +6,7 @@ if(!$_SESSION['auth']){
        header('location:login.php');
 }
 
+<<<<<<< HEAD
 if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
   
            $titulo = $_POST['Titulo'];
@@ -40,6 +41,41 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                   //Não insere no banco de dados
                 
   } 
+=======
+
+
+  if(isset($_POST['enviarEstagio']) ){ //Cadastro de novo administrador
+
+         $titulo = $_POST['Titulo'];
+         $texto = $_POST['Texto'];
+         $arquivoFoto = $_FILES['imagem']['tmp_name'];
+         $nomeArquivoFoto = $_FILES['imagem']['name'];
+
+                 if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
+                 $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
+                 $imagem = 'images/'.$titulo.".".$extensaoFoto;
+
+                 if($extensaoFoto == 'png' || $extensaoFoto == 'jpg' || $extensaoFoto == 'jpeg'){
+                           $upFoto = true; //Pode adicionar a foto
+                 }
+                 else{
+
+                    echo "<script>alert('Extensão da imagem inválida! Somente .PNG, .JPG E .JPEG permitido.')</script>";
+                    goto fim;
+
+                 }
+
+               //insere no banco de dados
+               if($upFoto){ //Pode adicionar foto e pdf
+                       move_uploaded_file($arquivoFoto,$imagem);
+               }
+               mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`, `Texto`, `Imagem`) VALUES ('$titulo', '$texto', '$imagem')");
+                fim:
+                //Não insere no banco de dados
+              }
+  }
+
+>>>>>>> a34d71162e5c342b56ff2d0cfe1f6281d2e02c60
 
   if(isset($_POST['removerEstagio'])){
 
@@ -48,12 +84,16 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
        $query = mysql_query("SELECT*FROM `ccecomp_estagios` WHERE `ID`='$id'"); //sempre vai existir
        $linhaEstagios = mysql_fetch_array($query);
        $imagem = $linhaEstagios['Imagem'];
+<<<<<<< HEAD
 
        if($imagem != "images/no-image.jpg")
        {
         @unlink($imagem); //remove arquivo em pasta
        }
        
+=======
+       @unlink($imagem); //remove arquivo em pasta
+>>>>>>> a34d71162e5c342b56ff2d0cfe1f6281d2e02c60
        mysql_query("DELETE FROM `ccecomp_estagios` WHERE `ID` ='$id'");
   }
 
@@ -164,15 +204,15 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                 <form method='POST' action='' enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Cargo</label>
-                    <input name="Titulo" type="text" class="form-control" id="cargo">
+                    <input require='true' name="Titulo" type="text" class="form-control" id="cargo">
                   </div>
                   <div class="form-group">
-                    <label for="comment">Descrição</label>
-                    <textarea name="Texto" class="form-control" rows="5" id="texto"></textarea>
+                    <label>Descrição</label>
+                    <textarea require='true' name="Texto" class="form-control" rows="5" id="texto"></textarea>
                   </div>
                   <div class="form-group">
                     <label>Enviar Imagem</label>
-                    <input name="Imagem" type="file" id="file1" class="custom-file-input">
+                    <input required="true" name='imagem'type="file">
                     <span class="custom-file-control"></span>
                   </div>
                   <button name="enviarEstagio" type="submit" class="btn btn-primary">Enviar</button>

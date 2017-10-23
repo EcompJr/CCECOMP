@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Out-2017 às 20:24
+-- Generation Time: 22-Out-2017 às 03:30
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -38,7 +38,7 @@ CREATE TABLE `administradores` (
 --
 
 INSERT INTO `administradores` (`ID`, `Nome`, `Login`, `Senha`) VALUES
-(1, 'Matheus Giovanni Pires', 'mgpires@gmail.com', 'ccecomp2017');
+(6, 'Matheus Giovanni Pires', 'mgpires@gmail.com', 'ccecomp2017');
 
 -- --------------------------------------------------------
 
@@ -50,9 +50,10 @@ CREATE TABLE `aluno_tcc` (
   `ID` int(255) NOT NULL,
   `Aluno` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Nome_TCC` varchar(500) CHARACTER SET utf8 NOT NULL,
-  `Data_Publicacao` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `Nome_Orientador` varchar(30) CHARACTER SET utf8 NOT NULL,
   `Caminho_Arquivo` varchar(500) CHARACTER SET utf8 NOT NULL,
-  `Caminho_Imagem` varchar(500) CHARACTER SET utf8 NOT NULL
+  `Caminho_Imagem` varchar(500) CHARACTER SET utf8 NOT NULL,
+  `Palavras_Chaves` varchar(255) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -80,6 +81,18 @@ CREATE TABLE `ccecomp_noticias` (
   `Texto` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Imagem` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Link_Page` varchar(500) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ccecomp_paginas_criadas`
+--
+
+CREATE TABLE `ccecomp_paginas_criadas` (
+  `ID` int(30) NOT NULL,
+  `Tipo` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `Link` varchar(255) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -125,6 +138,12 @@ ALTER TABLE `ccecomp_noticias`
   ADD UNIQUE KEY `ID` (`ID`);
 
 --
+-- Indexes for table `ccecomp_paginas_criadas`
+--
+ALTER TABLE `ccecomp_paginas_criadas`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `ccecomp_resolucoes`
 --
 ALTER TABLE `ccecomp_resolucoes`
@@ -138,12 +157,12 @@ ALTER TABLE `ccecomp_resolucoes`
 -- AUTO_INCREMENT for table `administradores`
 --
 ALTER TABLE `administradores`
-  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `aluno_tcc`
 --
 ALTER TABLE `aluno_tcc`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `ccecomp_estagios`
 --
@@ -154,6 +173,11 @@ ALTER TABLE `ccecomp_estagios`
 --
 ALTER TABLE `ccecomp_noticias`
   MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ccecomp_paginas_criadas`
+--
+ALTER TABLE `ccecomp_paginas_criadas`
+  MODIFY `ID` int(30) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ccecomp_resolucoes`
 --

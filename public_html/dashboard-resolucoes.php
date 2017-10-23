@@ -231,7 +231,7 @@ Cadastrar Nova Resolução
    </div>
    </div>
 
-
+<br><br>
 
 
    <!-- jQuery -->
