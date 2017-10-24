@@ -234,6 +234,7 @@ if(isset($_POST['enviarTCC'])){
 
                       if($extensao == 'pdf' || $extensao == 'PDF' ){   //Verifica Extenção valida (pdf)
                                     $upArquivo= true; //Pode adicionar pdf
+                                  
 
                        }
                        else{

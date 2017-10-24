@@ -1,3 +1,165 @@
+<?php
+session_start();
+require_once 'conexao.php';
+
+$busca = array();
+
+if(isset($_POST['buscar'])){ //Faz busca de TCC
+
+     $nomeBusca = $_POST['nomeBusca'];
+     $tipo = $_POST['check'];
+
+
+  if($nomeBusca != ''){
+
+     $query = mysql_query("SELECT*FROM `aluno_tcc` ");
+
+    if($tipo == 'titulo'){
+
+     while($aluno_tcc = mysql_fetch_array($query)){
+
+
+           $nomeTCC = $aluno_tcc['Nome_TCC'];
+
+
+
+           if(strpos($nomeTCC,$nomeBusca) !== false ){
+
+               $nomeAluno = $aluno_tcc['Aluno'];
+               $nomeOrientador = $aluno_tcc['Nome_Orientador'];
+               $arquivo = $aluno_tcc['Caminho_Arquivo'];
+               $imagem =$aluno_tcc['Caminho_Imagem'];
+
+
+               array_push($busca,"
+
+               <tr>
+               <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+               <td>$nomeTCC</td>
+               <td>$nomeOrientador</td>
+               <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+               </tr>
+
+
+
+
+               ");
+
+
+           }
+     }
+   }
+   else if($tipo == 'orientador'){
+
+           while($aluno_tcc = mysql_fetch_array($query)){
+
+
+              $orientadorTCC = $aluno_tcc['Nome_Orientador'];
+
+              if(strpos($orientadorTCC,$nomeBusca) !== false){
+
+                $nomeAluno = $aluno_tcc['Aluno'];
+                $nomeTCC = $aluno_tcc['Nome_TCC'];
+                $nomeTCC = $aluno_tcc['Nome_TCC'];
+                $arquivo = $aluno_tcc['Caminho_Arquivo'];
+                $imagem =$aluno_tcc['Caminho_Imagem'];
+
+
+                array_push($busca,"
+
+                <tr>
+                <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+                <td>$nomeTCC</td>
+                <td>$orientadorTCC</td>
+                <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+                </tr>
+
+
+
+
+                ");
+              }
+           }
+
+
+
+   }
+   else if($tipo == 'chaves'){
+
+
+
+                while($aluno_tcc = mysql_fetch_array($query)){
+
+
+                   $chavesTCC = $aluno_tcc['Palavras_Chaves'];
+                   $chavesTCC =  explode(',',$chavesTCC);
+
+              for($i=0;$i<sizeof($chavesTCC);$i++){
+
+                        $nomeBusca = str_replace(' ', '', $nomeBusca);
+
+
+
+                   if(strpos($chavesTCC[$i],$nomeBusca) !== false){
+
+
+                                     $nomeAluno = $aluno_tcc['Aluno'];
+                                     $nomeTCC = $aluno_tcc['Nome_TCC'];
+                                     $nomeOrientador = $aluno_tcc['Nome_Orientador'];
+                                     $arquivo = $aluno_tcc['Caminho_Arquivo'];
+                                     $imagem =$aluno_tcc['Caminho_Imagem'];
+
+
+                                     array_push($busca,"
+
+                                     <tr>
+                                     <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+                                     <td>$nomeTCC</td>
+                                     <td>$nomeOrientador</td>
+                                     <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+                                     </tr>
+
+
+
+
+                                     ");
+
+                   }
+                 }
+                }
+
+   }
+
+
+   }
+   else{
+            header('location:tcc.php');
+
+   }
+
+
+
+
+   if(empty($busca))
+   echo "<script>alert('Nenhum TCC encontrado')</script>";
+
+
+
+
+}
+
+
+
+ ?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +222,7 @@
             <h4 style="color:white"> Consulte TCCs abaixo &nbsp<span style="color:white"class="glyphicon glyphicon-search"></span></h4><br>
             <button data-toggle="collapse" class="btn btn-default" data-target="#infotext1">Ler mais...</button>
             <br><br>
-            <p align="justify"id="infotext1" class="collapse container" style="font-size:12px;background-color:white;border-radius:10px;">Procure por um TCC digitando o nome do aluno/orientador ou nome do TCC no campo indicado. Utilize palavras-chaves.</p>
+            <p align="justify"id="infotext1" class="collapse container" style="font-size:12px;background-color:white;border-radius:10px;">Procure por um TCC escolhendo uma das três opções do filtro de busca.</p>
          </div>
 
         <div style="background-color:#f0ad4e" class="col-md-3 col-md-offset-1 jumbotron">
@@ -74,65 +236,140 @@
 
 <br><br>
 
-<div class="col-md-6 col-md-offset-2 ">
-  <input type="text" class="form-control"placeholder="Nomes/Palavra-chave" />
+<div class='row'>
+     <div class='col-md-10 col-md-offset-1'>
+<?php
+
+
+      if(!empty($busca)){ //realizou busca
+
+
+        echo  "
+
+        <form method='POST' action=''>
+              <div class='row'>
+                  <div class='col-md-10'>
+                    <input id='nomeBusca' name='nomeBusca' type='text' class='form-control' placeholder='Nome do TCC' />
+                    </div>
+                    <div class='col-md-1'>
+                    <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                  </div>
+              </div>
+              <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked type='checkbox' value='titulo'>Título do TCC</label>
+              <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check2' onclick='onlyOneCheck(this)' type='checkbox' value='orientador'>Nome do Orientador</label>
+              <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check3' onclick='onlyOneCheck(this)' type='checkbox' value='chaves'>Palavras-Chaves</label>
+
+          <table class='table table-hover' style='border-radius:10px;'>
+                  <thead >
+                  <tr>
+                   <th>Aluno</th>
+                   <th>Título do TCC</th>
+                   <th>Nome do Orientador</th>
+                   <th>Download</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+        ";
+
+
+        for($i=0; $i<sizeof($busca); $i++){
+
+
+               echo $busca[$i];
+
+
+        }
+
+        echo "</tbody>";
+        echo "</table>";
+        echo "</form>";
+
+
+
+      }
+      else{
+
+          $query = mysql_query("SELECT*FROM `aluno_tcc`");
+
+            if(mysql_num_rows($query)>0 ){
+
+        //cabeçalho da tabela;
+            echo  "
+
+            <form method='POST' action=''>
+                  <div class='row'>
+                      <div class='col-md-10'>
+                        <input id='nomeBusca' name='nomeBusca' type='text' class='form-control' placeholder='Título do TCC' />
+                        </div>
+                        <div class='col-md-1'>
+                        <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                      </div>
+                  </div>
+
+                  <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked type='checkbox' value='titulo'>Título do TCC</label>
+                  <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check2' onclick='onlyOneCheck(this)' type='checkbox' value='orientador'>Nome do Orientador</label>
+                  <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check3' onclick='onlyOneCheck(this)' type='checkbox' value='chaves'>Palavras-Chaves</label>
+
+              <table class='table table-hover' style='border-radius:10px;'>
+                      <thead >
+                      <tr>
+                       <th>Aluno</th>
+                       <th>Título do TCC</th>
+                       <th>Nome do Orientador</th>
+                       <th>Download</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+            ";
+
+                 while($tcc = mysql_fetch_array($query)){
+
+                   $aluno = $tcc['Aluno'];
+                   $nomeTCC = $tcc['Nome_TCC'];
+                   $nomeOrientador = $tcc['Nome_Orientador'];
+                   $caminhoArquivo = $tcc['Caminho_Arquivo'];
+                   $caminhoFoto = $tcc['Caminho_Imagem'];
+
+
+                   echo "
+
+
+                               <tr>
+                               <td><img width='30' height='30' alt='foto do aluno/default' src='$caminhoFoto' style='border-radius:30px;' />&nbsp&nbsp$aluno</td>
+                               <td>$nomeTCC</td>
+                               <td>$nomeOrientador</td>
+                               <td><a role='button' target='_blank'class='btn btn-warning' href='$caminhoArquivo' >Download</a></td>
+                               </tr>
+
+
+                   ";
+
+
+                 }
+                 echo "</tbody>";
+                 echo "</table>";
+                 echo "</form>";
+
+
+            }
+            else{
+
+                echo "<div class='alert alert-danger'><p align='center'>Não existem TCCs cadastrados no sistema </p></div>";
+
+            }
+
+
+    }
+ ?>
+    </div>
+
 </div>
-<div class="col-md-1">
-  <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspBuscar</button>
-</div>
-      <div class="row">
-
-                <div class="col-md-7 col-md-offset-2">
-
-                  <table class="table table-hover" style="border-radius:10px;">
-
-                    <thead >
-                       <tr>
-                         <th>Aluno</th>
-                         <th>Título do TCC</th>
-                         <th>Data de publicação</th>
-                         <th></th>
-                       </tr>
-                    </thead>
-                 <tbody>
-                    <tr>
-                      <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspDuis sed porttitor arcu. Pellentesque.</td>
-                      <td>Sed mattis vel velit eget</td>
-                      <td>01/09/2017</td>
-                      <td><button type="button" href="#" class="btn btn-warning">Download</button></td>
-                    </tr>
-
-                    <tr>
-                      <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspFusce vel leo quis metus.</td>
-                      <td> Pellentesque habitant morbi tristique senectu</td>
-                      <td>02/05/2017</td>
-                      <td><button type="button" href="#" class="btn btn-warning">Download</button></td>
-                    </tr>
-
-                    <tr>
-                      <td><img width="30" height="30" alt="foto do aluno/default" src="images/default-avatar.png" style="border-radius:30px;" />&nbsp&nbspPraesent pellentesque eu purus quis.</td>
-                      <td>Fusce cursus nisi id orci.</td>
-                      <td>05/10/2017</td>
-                      <td><button type="button" href="#" class="btn btn-warning">Download</button></td>
-                    </tr>
-
-
-
-                 </tbody>
-                  </table>
-
-
-
-
-                </div>
-
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
 
         <hr>
 
-    </div>
+
     <!-- /.container -->
 
     <!-- jQuery -->
@@ -140,6 +377,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <!--Script para TCC -->
+    <script src='js/tcc.js'></script>
 
     <?php require_once("footer.php") ?>
 
