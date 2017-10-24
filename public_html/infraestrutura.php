@@ -102,7 +102,7 @@
                                 <a class="btn btn-warning" role="button" target="_blank" href="data/acesso_LTEC3.odt">Formulário em formato ODT</a>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="bt n btn-warning" data-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
                             </div>
                         </div>
                     </div>
