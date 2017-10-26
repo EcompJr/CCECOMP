@@ -48,86 +48,77 @@
         <!-- /.row -->
 
         <!-- Content Row -->
-        <div class="row">
-            <div class="col-md-7 col-md-offset-2">
+        <div>
 
-                 <table class="table table-hover" style="border-radius:10px;">
+          <div >
+            <form method="POST" action=''>
+              <ul class="table-hover">
+                <table class="table table-hover" >
+                  <div class="col-md-6 col-md-offset-2 ">
+                    <input type="text" class="form-control"placeholder="Descrição" />
+                  </div>
+                  <div class="col-md-1">
+                    <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspBuscar</button>
+                  </div>
+                <?php
+                          $query = mysql_query("SELECT *FROM `ccecomp_resolucoes`"); //Consulta banco de dados
 
-                    <thead >
-                       <tr>
-                         <th>Tipo</th>
-                         <th>Número</th>
-                         <th>Descrição</th>
-                         <th>Download</th>
-                       </tr>
-                    </thead>
-                    <thead >
-                       <tr>
-                         <th>
-                           <select>
-                             <option>Classificar</option>
-                             <option>Crescente</option>
-                             <option>Decrescente</option>
-                            </select>
-                         </th>
+                          if(mysql_num_rows($query) > 0){ //Existe resolucoes cadastradas
 
-                         <th>
-                           <select>
-                             <option>Classificar</option>
-                             <option>Crescente</option>
-                             <option>Decrescente</option>
-                            </select>
-                         </th>
+                                if(mysql_num_rows($query) == 1){
+                                echo"  <thead >
+                                <tr>
+                                <th>Tipo</th>
+                                <th><a style='float:right'>Número</a></th>
+                                <th><a style='float:right'>Download</a></th>
+                                <th><a style='float:right'>Remover</a></th>
+                                </tr>
+                                </thead>
+                                <tbody>";
+                                }
 
-                         <th>
-                           <select>
-                             <option>Classificar</option>
-                             <option>Crescente</option>
-                             <option>Decrescente</option>
-                            </select>
-                         </th>
+                            while($news = mysql_fetch_array($query)){
 
+                                 $tipo = $news['Tipo'];
+                                 $numero = $news['Numero'];
+                                 $descricao = $news['Descricao'];
+                                 $documento = $news['Arquivo'];
+                                 $id = $news['ID'];
 
-                       </tr>
-                    </thead>
-                 <tbody>
-                    <tr>
-                      <td>Decreto do Governo do Estado da Bahia</td>
-                      <td>12.177/2010</td>
-                      <td>Reconhecimento do Curso de Engenharia de Computação</td>
-                   	  <td><a target="_blank" href="data/Decreto_12.177_2010_ReconhecimentoDoCursoDeEngenhariaDeComputacao.pdf" class="btn btn-warning" role="button">Download</a> </td>
-                    </tr>
-
-                    <tr>
-                      <td>Parecer do CEE</td>
-                      <td>96/2010 </td>
-                      <td>Parecer do CEE para reconhecimento do curso de Engenharia de Computação da UEFS</td>
-                   	  <td><a target="_blank"href="data/Parecer CEE  96-2010.pdf" class="btn btn-warning" role="button">Download</a> </td>
-                    </tr>
-
-                    <tr>
-                      <td>Resolução CONSEPE </td>
-                      <td>083/2013</td>
-                      <td>Regulamente Estágio em Cursos de Graduação na UEFS </td>
-                   	  <td><a target="_blank"href="data/Rcpe 083-2013 estagio uefs.pdf" class="btn btn-warning" role="button">Download</a> </td>
-                    </tr>
+                                 echo "
 
 
+                                   <div class='collapse' id='$id'>
+                                   </div>
+                                     <tr>
+                                       <td>$tipo</td>
+                                       <td><div style='float:right'>$numero</div></td>
+                                       <td><button name='downloadResolucoes' value='$id'style='float:right' type='submit' class='btn btn-warning'>Download</button></td>
+                                       <td><button name='removerResolucoes' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></td>
+                                     </tr>
 
-                 </tbody>
-                  </table>
+
+                                  ";
+                            }
 
 
+                          }
+                          else{
+                            echo "<div class='alert alert-danger col-md-6 col-md-offset-2'><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
+                          }
+
+                  ?>
+                </tbody>
+              </table>
 
 
-                </div>
-            <!-- /.col-lg-12 -->
+              </ul>
+            </form>
+
+          </div>
+
+          <!-- /.col-lg-12 -->
         </div>
-        <!-- /.row -->
-
-        <hr>
-
-    </div>
     <!-- /.container -->
 
     <!-- jQuery -->

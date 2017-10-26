@@ -9,8 +9,18 @@ if(!$_SESSION['auth']){
 
 
   if(isset($_POST['enviarResolucao'])){ //Cadastro de nova resolucao
-
-         $tipo = $_POST['Tipo'];
+    if(isset($_POST['tipo1'])){
+        $tipo = $_POST['tipo1'];
+    }
+    else if(isset($_POST['tipo2'])){
+        $tipo = $_POST['tipo2'];
+    }
+    else if(isset($_POST['tipo3'])){
+        $tipo = $_POST['tipo3'];
+    }
+    else{
+        $tipo = $_POST['tipo4'];
+    }
          $numero = $_POST['Numero'];
          $descricao = $_POST['Descricao'];
 
@@ -57,21 +67,17 @@ if(!$_SESSION['auth']){
 
   if(isset($_POST['downloadResolucoes'])){
 
+      $id = $_POST['downloadResolucoes'];
+      $query = mysql_query("SELECT*FROM `ccecomp_resolucoes` WHERE `ID`='$id'"); //sempre vai existir
+      $linhaResolucoes = mysql_fetch_array($query);
+      $arquivodownload = $linhaResolucoes['Arquivo'];
 
-       $id = $_POST['downloadResolucoes'];
-       $query = mysql_query("SELECT*FROM `ccecomp_resolucoes` WHERE `ID`='$id'"); //sempre vai existir
-       $linhaResolucoes = mysql_fetch_array($query);
-       $arquivo = $linhaResolucoes['Arquivo'];
 
 
-       $query = mysql_query("SELECT*FROM `ccecomp_resolucoes` ORDER BY `ID`='$id' ");
-       if ($arquivo = mysql_fetch_array($query)){
-           do {
-               echo "<a href=\"" . $arquivo['Numero'] ;
-               }
-           while($arquivo = mysql_fetch_array($query));
-           }
-  }
+      @href($arquivodownload);
+
+
+}
 
 
  ?>
@@ -122,10 +128,7 @@ if(!$_SESSION['auth']){
 
        <h3>Resoluções</h3>
 
-       <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
-Cadastrar Nova Resolução
-</button>
-<br><br>
+
        <div>
 
          <div>
@@ -133,65 +136,63 @@ Cadastrar Nova Resolução
              <ul class="table-hover">
                <table class="table table-hover" >
 
-                  <thead >
-                     <tr>
-                       <th>Tipo</th>
-                       <th><a style='float:right'>Número</a></th>
-                       <th><a style='float:right'>Download</a></th>
-                       <th><a style='float:right'>Remover</a></th>
-                     </tr>
-                  </thead>
-                  <tbody>
                <?php
-                         $query = mysql_query("SELECT *FROM `ccecomp_resolucoes`"); //Consulta banco de dados
+               echo"
+                 <div class='col-md-10'>
+                   <input type='text' class='form-control'placeholder='Descrição' />
+                 </div>
+                 <div class=col-md-'>
+                   <button class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                 </div><br>";
+                  $query = mysql_query("SELECT *FROM `ccecomp_resolucoes`"); //Consulta banco de dados
+                    if(mysql_num_rows($query) > 0){ //Existe resolucoes cadastradas
+                      if(mysql_num_rows($query) == 1){
+                          echo"
+                            <thead >
+                               <tr>
+                                 <th>Tipo</th>
+                                 <th><a style='float:right'>Número</a></th>
+                                 <th><a style='float:right'>Download</a></th>
+                                 <th><a style='float:right'>Remover</a></th>
+                               </tr>
+                            </thead>
+                            <tbody>";
+                          }
+                        while($news = mysql_fetch_array($query)){
+                          $tipo = $news['Tipo'];
+                          $numero = $news['Numero'];
+                          $descricao = $news['Descricao'];
+                          $documento = $news['Arquivo'];
+                          $id = $news['ID'];
 
-                         if(mysql_num_rows($query) > 0){ //Existe resolucoes cadastradas
-
-                           while($news = mysql_fetch_array($query)){
-
-                                $tipo = $news['Tipo'];
-                                $numero = $news['Numero'];
-                                $descricao = $news['Descricao'];
-                                $documento = $news['Arquivo'];
-                                $id = $news['ID'];
-
-                                echo "
-
-
-                                  <div class='collapse' id='$id'>
-                                  </div>
-                                    <tr>
-                                      <td>$tipo</td>
-                                      <td><div style='float:right'>$numero</div></td>
-                                      <td><button name='downloadResolucoes' value='$id'style='float:right' type='submit' class='btn btn-warning'>Download</button></td>
-                                      <td><button name='removerResolucoes' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></td>
-                                    </tr>
-
-
+                          echo "
+                            <div class='collapse' id='$id'>
+                            </div>
+                              <tr>
+                                <td>$tipo</td>
+                                <td><div style='float:right'>$numero</div></td>
+                                <td><a name='downloadResolucoes' value='$id'style='float:right' type='submit' class='btn btn-warning' href='$documento' target='_blank'>Download</a></td>
+                                <td><button name='removerResolucoes' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></td>
+                              </tr>
                                  ";
                            }
-
-
                          }
                          else{
                            echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
                          }
-
                  ?>
                </tbody>
              </table>
-                 <br>
-
              </ul>
            </form>
-
          </div>
-
          <!-- /.col-lg-12 -->
        </div>
 
-       <br>
-
+        <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
+          Cadastrar Nova Resolução
+        </button>
+       <br><br>
 
        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
          <div class="modal-dialog modal-lg" role="document">
@@ -203,8 +204,25 @@ Cadastrar Nova Resolução
              <div class="modal-body text-justify">
                <form method="POST" action='' enctype="multipart/form-data">
                  <div class="form-group">
+
                    <label>Tipo</label>
-                   <input name="Tipo" type="text" class="form-control" id="tipo">
+                   <div class="form-check">
+                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="tipo1" checked>
+                       Resolução Consepe
+                   </div>
+                   <div class="form-check">
+                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tipo2">
+                       Resolução Consu
+                   </div>
+                   <div class="form-check">
+                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tipo3">
+                       Decreto do Governo do Estado da Bahia
+                   </div>
+                   <div class="form-check">
+                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tipo4">
+                       Parecer do Conselho Estadual de Educação
+                   </div>
+
                  </div>
                  <div class="form-group">
                    <label>Número</label>
