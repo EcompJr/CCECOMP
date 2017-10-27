@@ -7,20 +7,74 @@ if(!$_SESSION['auth']){
 }
 
 
+$busca = array();
+
+//Buscar Resoluções
+
+ if(isset($_POST['buscar'])){
+
+     $descricaoBusca = $_POST['descricao'];
+
+     if($descricaoBusca != ''){
+
+     $query = mysql_query("SELECT*FROM `ccecomp_resolucoes`");
+
+     while($linhas = mysql_fetch_array($query)){
+
+        $descricaoBD = $linhas['Descricao'];
+
+        if(strpos($descricaoBD, $descricaoBusca) !== false){
+
+              $id = $linhas['ID'];
+              $tipo = $linhas['Tipo'];
+              $numero = $linhas['Numero'];
+              $descricao = $linhas['Descricao'];
+              $arquivo = $linhas['Arquivo'];
+
+
+              array_push($busca,"
+
+              <tr>
+              <td>$tipo</td>
+              <td>$numero</td>
+              <td>$descricao</td>
+              <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+              <td><button name='removerTCC' value='$id'target='_blank' class='btn btn-danger' type='submit'>Remover</button> </td>
+              </tr>
+
+
+              ");
+
+
+        }
+      }
+    }
+      else{
+
+        header('location:dashboard-resolucoes.php');
+      }
+
+
+    if(empty($busca))
+    echo "<script>alert('Não existe nenhuma resolução com esta descrição')</script>";
+
+
+
+
+
+
+
+
+ }
+
+
+
+
 
   if(isset($_POST['enviarResolucao'])){ //Cadastro de nova resolucao
-    if(isset($_POST['tipo1'])){
-        $tipo = $_POST['tipo1'];
-    }
-    else if(isset($_POST['tipo2'])){
-        $tipo = $_POST['tipo2'];
-    }
-    else if(isset($_POST['tipo3'])){
-        $tipo = $_POST['tipo3'];
-    }
-    else{
-        $tipo = $_POST['tipo4'];
-    }
+
+         $tipo = $_POST['tipo'];
+
          $numero = $_POST['Numero'];
          $descricao = $_POST['Descricao'];
 
@@ -31,7 +85,7 @@ if(!$_SESSION['auth']){
                  $extensaoResolucao = pathinfo($nomeArquivoResolucao,PATHINFO_EXTENSION);
                  $arquivo = 'data/resolucoes'.$numero.".".$extensaoResolucao;
 
-                 if($extensaoResolucao == 'pdf' || $extensaoResolucao == 'doc' || $extensaoResolucao == 'docx'){
+                 if($extensaoResolucao == 'pdf' || $extensaoResolucao == 'doc' || $extensaoResolucao == 'docx' || $extensaoResolucao == 'PDF' ){
                            $upResolucao = true; //Pode adicionar a foto
                  }
                  else{
@@ -48,6 +102,10 @@ if(!$_SESSION['auth']){
                mysql_query("INSERT INTO `ccecomp_resolucoes` (`Tipo`,`Numero`,`Descricao`,`Arquivo`) VALUES ('$tipo','$numero','$descricao','$arquivo')");
                 fim:
                 //Não insere no banco de dados
+              }
+              else{
+
+                echo "<script>alert('Selecione um arquivo de resolução')</script>";
               }
   }
 
@@ -137,27 +195,81 @@ if(!$_SESSION['auth']){
                <table class="table table-hover" >
 
                <?php
-               echo"
-                 <div class='col-md-10'>
-                   <input type='text' class='form-control'placeholder='Descrição' />
-                 </div>
-                 <div class=col-md-'>
-                   <button class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
-                 </div><br>";
+
+
+           if(!empty($busca)){
+
+
+             echo  "
+
+             <form method='POST' action=''>
+                   <div class='row'>
+                       <div class='col-md-10'>
+                         <input  name='descricao' type='text' class='form-control' placeholder='Descrição' />
+                         </div>
+                         <div class='col-md-1'>
+                         <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                       </div>
+                   </div>
+
+
+               <table class='table table-hover' style='border-radius:10px;'>
+                       <thead >
+                       <tr>
+                        <th>Tipo</th>
+                        <th>Número</th>
+                        <th>Descrição</th>
+                        <th>Download</th>
+                        <th>Remover</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+
+             ";
+
+
+             for($i=0; $i<sizeof($busca); $i++){
+
+
+                    echo $busca[$i];
+
+
+             }
+
+             echo "</tbody>";
+             echo "</table>";
+             echo "</form>";
+
+
+
+
+
+           }
+        else{
+
                   $query = mysql_query("SELECT *FROM `ccecomp_resolucoes`"); //Consulta banco de dados
                     if(mysql_num_rows($query) > 0){ //Existe resolucoes cadastradas
-                      if(mysql_num_rows($query) == 1){
+
                           echo"
+
+                          <div class='col-md-10'>
+                            <input type='text' name='descricao' class='form-control'placeholder='Descrição' />
+                          </div>
+                          <div class=col-md-1'>
+                            <button type='submit' name='buscar'class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                          </div><br>
+
                             <thead >
                                <tr>
                                  <th>Tipo</th>
-                                 <th><a style='float:right'>Número</a></th>
-                                 <th><a style='float:right'>Download</a></th>
-                                 <th><a style='float:right'>Remover</a></th>
+                                 <th>Número</th>
+                                 <th>Descrição</th>
+                                 <th>Download</th>
+                                 <th>Remover</th>
                                </tr>
                             </thead>
                             <tbody>";
-                          }
+
                         while($news = mysql_fetch_array($query)){
                           $tipo = $news['Tipo'];
                           $numero = $news['Numero'];
@@ -166,20 +278,32 @@ if(!$_SESSION['auth']){
                           $id = $news['ID'];
 
                           echo "
-                            <div class='collapse' id='$id'>
-                            </div>
+
                               <tr>
                                 <td>$tipo</td>
-                                <td><div style='float:right'>$numero</div></td>
-                                <td><a name='downloadResolucoes' value='$id'style='float:right' type='submit' class='btn btn-warning' href='$documento' target='_blank'>Download</a></td>
+                                <td>$numero</td>
+                                <td>$descricao</td>
+                                <td><a  style='float:right' class='btn btn-warning' href='$documento' target='_blank'>Download</a></td>
                                 <td><button name='removerResolucoes' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></td>
                               </tr>
                                  ";
                            }
+
+                           echo "</tbody>";
+                           echo "</table>";
+                           echo "</form>";
                          }
                          else{
                            echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
                          }
+
+
+                   }
+
+
+
+
+
                  ?>
                </tbody>
              </table>
@@ -206,35 +330,27 @@ if(!$_SESSION['auth']){
                  <div class="form-group">
 
                    <label>Tipo</label>
-                   <div class="form-check">
-                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="tipo1" checked>
-                       Resolução Consepe
-                   </div>
-                   <div class="form-check">
-                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tipo2">
-                       Resolução Consu
-                   </div>
-                   <div class="form-check">
-                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tipo3">
-                       Decreto do Governo do Estado da Bahia
-                   </div>
-                   <div class="form-check">
-                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tipo4">
-                       Parecer do Conselho Estadual de Educação
+                   <div >
+                    <select name='tipo' style="color:black">
+                      <option value='Resolução Consep'>Resolução Consepe</option>
+                      <option value='Resolução Consu'>Resolução Consu</option>
+                      <option value='Decreto do Governo do Estado da Bahia'>Decreto do Governo do Estado da Bahia</option>
+                      <option value='Parecer do Conselho Estadual de Educação'>Parecer do Conselho Estadual de Educação</option>
+                    </select>
                    </div>
 
                  </div>
                  <div class="form-group">
                    <label>Número</label>
-                   <input name="Numero" type="text" class="form-control" id="numero">
+                   <input required='true' name="Numero" type="text" class="form-control" id="numero">
                  </div>
                  <div class="form-group">
                    <label>Descrição</label>
-                   <input name="Descricao" type="text" class="form-control" id="descricao">
+                   <input required='true' name="Descricao" type="text" class="form-control" id="descricao">
                  </div>
                  <div class="form-group">
                    <label>Enviar Arquivo</label>
-                   <input name="Arquivo" type="file" id="documento" class="custom-file-input">
+                   <input required='true' name="Arquivo" type="file" id="documento" class="custom-file-input">
                    <span class="custom-file-control"></span>
                  </div>
                  <button name="enviarResolucao" type="submit" class="btn btn-primary">Enviar</button>

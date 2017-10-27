@@ -1,3 +1,71 @@
+<?php
+session_start();
+require_once 'conexao.php';
+
+
+$busca = array();
+
+//Buscar Resoluções
+
+ if(isset($_POST['buscar'])){
+
+     $descricaoBusca = $_POST['descricao'];
+
+     if($descricaoBusca != ''){
+
+     $query = mysql_query("SELECT*FROM `ccecomp_resolucoes`");
+
+     while($linhas = mysql_fetch_array($query)){
+
+        $descricaoBD = $linhas['Descricao'];
+
+        if(strpos($descricaoBD, $descricaoBusca) !== false){
+
+
+              $tipo = $linhas['Tipo'];
+              $numero = $linhas['Numero'];
+              $descricao = $linhas['Descricao'];
+              $arquivo = $linhas['Arquivo'];
+
+
+              array_push($busca,"
+
+              <tr>
+              <td>$tipo</td>
+              <td>$numero</td>
+              <td>$descricao</td>
+              <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+              </tr>
+
+
+              ");
+
+
+        }
+      }
+    }
+      else{
+
+        header('location:dashboard-resolucoes.php');
+      }
+
+
+    if(empty($busca))
+    echo "<script>alert('Não existe nenhuma resolução com esta descrição')</script>";
+
+
+
+
+
+
+
+
+ }
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,33 +117,86 @@
 
         <!-- Content Row -->
         <div>
-
+<br><br><br><br><br>
           <div >
             <form method="POST" action=''>
               <ul class="table-hover">
                 <table class="table table-hover" >
-                  <div class="col-md-6 col-md-offset-2 ">
-                    <input type="text" class="form-control"placeholder="Descrição" />
-                  </div>
-                  <div class="col-md-1">
-                    <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span>&nbsp&nbsp&nbspBuscar</button>
-                  </div>
+
                 <?php
+
+
+                      if(!empty($busca)){
+
+
+                        echo  "
+
+                        <form method='POST' action=''>
+                              <div class='row'>
+                                  <div class='col-md-10'>
+                                    <input  name='descricao' type='text' class='form-control' placeholder='Descrição' />
+                                    </div>
+                                    <div class='col-md-1'>
+                                    <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                                  </div>
+                              </div>
+
+
+                          <table class='table table-hover' style='border-radius:10px;'>
+                                  <thead >
+                                  <tr>
+                                   <th>Tipo</th>
+                                   <th>Número</th>
+                                   <th>Descrição</th>
+                                   <th>Download</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+
+                        ";
+
+
+                        for($i=0; $i<sizeof($busca); $i++){
+
+
+                               echo $busca[$i];
+
+
+                        }
+
+                        echo "</tbody>";
+                        echo "</table>";
+                        echo "</form>";
+
+
+
+                      }
+                      else{
+
                           $query = mysql_query("SELECT *FROM `ccecomp_resolucoes`"); //Consulta banco de dados
 
                           if(mysql_num_rows($query) > 0){ //Existe resolucoes cadastradas
 
-                                if(mysql_num_rows($query) == 1){
-                                echo"  <thead >
+
+                                echo"
+                                <div class='col-md-10 '>
+                                  <input name='descricao' type='text' class='form-control' placeholder='Descrição' />
+                                </div>
+                                <div class='col-md-1'>
+                                  <button type='submit' name='buscar'class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                                </div>
+
+
+                                <thead >
                                 <tr>
                                 <th>Tipo</th>
-                                <th><a style='float:right'>Número</a></th>
-                                <th><a style='float:right'>Download</a></th>
-                                <th><a style='float:right'>Remover</a></th>
+                                <th>Número</th>
+                                <th>Descrição</th>
+                                <th>Download</th>
                                 </tr>
                                 </thead>
                                 <tbody>";
-                                }
+
 
                             while($news = mysql_fetch_array($query)){
 
@@ -83,18 +204,16 @@
                                  $numero = $news['Numero'];
                                  $descricao = $news['Descricao'];
                                  $documento = $news['Arquivo'];
-                                 $id = $news['ID'];
+
 
                                  echo "
 
 
-                                   <div class='collapse' id='$id'>
-                                   </div>
                                      <tr>
                                        <td>$tipo</td>
                                        <td><div style='float:right'>$numero</div></td>
-                                       <td><button name='downloadResolucoes' value='$id'style='float:right' type='submit' class='btn btn-warning'>Download</button></td>
-                                       <td><button name='removerResolucoes' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></td>
+                                       <td><div style='float:right'>$descricao</div></td>
+                                       <td><a href='$documento'style='float:right' target='_blank' class='btn btn-warning'>Download</a></td>
                                      </tr>
 
 
@@ -104,8 +223,11 @@
 
                           }
                           else{
-                            echo "<div class='alert alert-danger col-md-6 col-md-offset-2'><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
+                            echo "<div class='alert alert-danger col-md-8 col-md-offset-2'><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
                           }
+
+
+                        }
 
                   ?>
                 </tbody>
@@ -120,7 +242,8 @@
           <!-- /.col-lg-12 -->
         </div>
     <!-- /.container -->
-
+</div>
+<br><br><br><br><br><br><br><br><br>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
