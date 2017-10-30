@@ -6,7 +6,7 @@
        <nav class="navbar navbar-inverse  navbar-fixed-top" id="sidebar-wrapper" role="navigation">
            <ul class="nav sidebar-nav">
                <li class="sidebar-brand">
-                   <a href="#">
+                   <a href="index.php">
                       <img  alt="logo do colegiado" width="40"  src="images/customLogo1.png" /> CCECOMP ADM
                            <i style="color:#f0ad4e" class="fa fa fa-wrench fa-spin fa-2x" aria-hidden="true"></i>
                    </a>
