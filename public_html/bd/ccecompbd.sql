@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Out-2017 às 18:59
+-- Generation Time: 08-Nov-2017 às 03:44
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -178,7 +178,7 @@ ALTER TABLE `ccecomp_noticias`
 -- AUTO_INCREMENT for table `ccecomp_paginas_criadas`
 --
 ALTER TABLE `ccecomp_paginas_criadas`
-  MODIFY `ID` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `ccecomp_resolucoes`
 --

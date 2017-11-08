@@ -136,7 +136,7 @@
 
         <!-- Contact Form -->
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-          	<section style="background-color:#f0ad4e;padding:10px;"  id="footer">
+          	<section style="background-color:#f0ad4e;padding:10px;border-radius:10px"  id="footer">
 
 				<div class="inner">
 					<header>
