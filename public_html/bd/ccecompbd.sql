@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Out-2017 às 03:30
+-- Generation Time: 27-Out-2017 às 18:59
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -91,6 +91,7 @@ CREATE TABLE `ccecomp_noticias` (
 
 CREATE TABLE `ccecomp_paginas_criadas` (
   `ID` int(30) NOT NULL,
+  `Nome` varchar(40) NOT NULL,
   `Tipo` varchar(255) CHARACTER SET utf8 NOT NULL,
   `Link` varchar(255) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -162,7 +163,7 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT for table `aluno_tcc`
 --
 ALTER TABLE `aluno_tcc`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ccecomp_estagios`
 --

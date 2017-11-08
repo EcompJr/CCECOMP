@@ -1,5 +1,19 @@
-<nav style="background-color:#4d6aa0;color:white;border-color:#4d6aa0" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
 
+<?php
+
+if(!isset($_SESSION))
+session_start();
+require_once 'conexao.php';
+
+
+require_once 'addPage.php';
+
+ ?>
+
+
+
+<nav style="background-color:#4d6aa0;color:white;border-color:#4d6aa0" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
+<form style='margin-bottom:5px'method='post' action=''>
     <div  class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div   class="navbar-header ">
@@ -41,6 +55,7 @@
                         <li>
                             <a href="infraestrutura.php">Infraestrutura</a>
                         </li>
+                        <?php  require_once 'listAddPageCurso.php';?>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -58,6 +73,7 @@
                         <li>
                             <a href="resolucoes.php">Resoluções</a>
                         </li>
+                        <?php   require_once 'listAddPageAreaAluno.php'?>
                     </ul>
                 </li>
                 <li>
@@ -76,4 +92,37 @@
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
+
+    <!--Cadastro Form -->
+</form>
+<script src='js/registerPage.js'> </script>
 </nav>
+
+<?php
+
+
+if(isset($_SESSION['auth'])){
+
+if($_SESSION['auth']){
+  echo"  <div class='modal fade' id='CadastrarPage' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
+      <div class='modal-dialog modal-lg' role='document'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+            <h4 class='modal-title' id='myModalLabel'>Cadastrar Nova Página</h4>
+          </div>
+          <div id='bodyRegister'class='modal-body text-justify'>
+            <label for='sectionsNumber'>Número de Sessões</label>
+            <input  name='sectionsNumber'id='sectionsNumber' class='form-control' />
+            <br>
+            <button class='btn btn-primary' onclick='buildSections(this)' >Enviar</button>
+        </div>
+      </div>
+    </div>
+    </div>";
+
+
+    }
+}
+
+ ?>

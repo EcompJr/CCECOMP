@@ -1,3 +1,10 @@
+
+<?php
+
+require_once 'addPageEntidades.php';
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +61,7 @@
         <!-- /.row -->
 
         <div class="row">
-
+      <form method='POST' action=''>
             <div class="col-lg-12">
                 <h2 class="page-header"> <a href="ecompjr.php"> EcompJr </a> </h2>
 
@@ -63,13 +70,63 @@
                 <h2 class="page-header"> <a href="ieee.php"> Ramo IEEE </a></h2>
 
                 <h2 class="page-header"> <a href="daecomp.php"> DA de Engenharia de Computação </a></h2>
-            </div>
 
+                <?php require_once 'listAddPageEntidades.php'; ?>
+
+
+
+            </div>
+          </form>
         </div>
 
         <hr>
 
     </div>
+
+
+    <div class='modal fade' id='CadastrarPageEntidade' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
+        <div class='modal-dialog modal-lg' role='document'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+              <h4 class='modal-title' id='myModalLabel'>Cadastrar Nova Página de Entidade</h4>
+            </div>
+            <div id='bodyRegister'class='modal-body text-justify'>
+              <form method='POST' action='' enctype='multipart/form-data'>
+              <label required='true'for='sectionsNumber'>Nome da Entidade*</label>
+              <input  name='entityName' class='form-control' />
+              <br>
+              <label required='true' for='description'> Descritivo*</label>
+              <textarea rows='5'name='description' class='form-control' type='text' ></textarea>
+              <br>
+              <label for='iframe'>Localização</label>
+              <label style='font-size:7px'>Adicione a tag iframe. Obtenha pelo <a target='_blank' href='https://www.google.com.br/maps/place/Feira+de+Santana+-+Maria+Quit%C3%A9ria,+Feira+de+Santana+-+BA/@-12.2439016,-39.0022771,12z/data=!3m1!4b1!4m5!3m4!1s0x71439dbd0766da9:0xed4d58d8df9d5ffe!8m2!3d-12.2597272!4d-38.9646608'>Google Maps</a> na opção: compartilhar. Utilizar tamanho pequeno. </label>
+              <input class='form-control' name='iframe'>
+              <br>
+              <label for='site'>Site da organização</label>
+              <input name='site' class='form-control' />
+              <br>
+              <label for='facebook'>Facebook</label>
+              <input class='form-control' name='facebook'/>
+              <br>
+              <label for='instagram'>Instagram</label>
+              <input class='form-control' name='instagram'/>
+              <br>
+              <label for='email'>Email de Contato</label>
+              <input class='form-control' name='email'/>
+              <br>
+              <label for='phone'>Telefone de Contato</label>
+              <input class='form-control' name='phone'/>
+              <br>
+              <label for='picture'>Foto</label>
+              <input type='file' name='picture' />
+              <br>
+              <button class='btn btn-primary' type='submit' name='createPageEntidades' >Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
     <!-- /.container -->
 
     <!-- jQuery -->

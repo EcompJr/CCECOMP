@@ -27,7 +27,7 @@
                    <a href="dashboard-estagio.php">Oportunidades de Estágio</a>
                </li>
                <li>
-                   <a href="novapagina.php">Criar página</a>
+                   <a href="index.php">Início</a>
                </li>
               <li>
                  <a href="?logoff=go"> Sair </a>
