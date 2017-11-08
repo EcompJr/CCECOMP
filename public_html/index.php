@@ -48,7 +48,7 @@
                  <!-- slides -->
         <div class="carousel-inner">
                  <div class="item active">
-                 <img style="height: 640px;" width="100%"src="images/circuits.png" alt="Imagem tema 1">
+                 <img src="images/circuits.png" alt="Imagem tema 1">
                  <div class='carousel-caption'>
                  <h3>Colegiado de Engenharia de Computação da UEFS</h3>
                  <p>Portal de comunicação com o estudante</p>
@@ -58,7 +58,7 @@
 
 
                  <div class="item">
-                 <img style="height: 640px;" width="100%" src="images/theme-image1.jpeg" alt="Imagem tema 2">
+                 <img  src="images/theme-image1.jpeg" alt="Imagem tema 2">
                  <div class="carousel-caption">
                  <h3 >Fique atento às notícias do colegiado</h3>
                  <p>Acompanhe as novidades de estágio e notícias do curso</p>
