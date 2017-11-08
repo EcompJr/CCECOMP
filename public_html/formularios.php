@@ -207,14 +207,14 @@
                                 "Artigo 60 - Terá direito à segunda chamada, o estudante que faltar pelos seguintes motivos:<br><br>
                                 a) Doença comprovada por Atestado Médico fornecido pelo Serviço de Saúde desta Universidade;<br>
                                 b) Outro direito assegurado por legislação específica.<br><br>
-                                
+
                                 Parágrafo 1º. - O pedido de segunda chamada deverá ser formulado ao Colegiado do Curso, no prazo de dois dias úteis, após a realização da modalidade de avaliação em questão.<br><br>
                                 Parágrafo 2º - O professor deverá ser imediatamente informado e a prova [avaliação] deverá ser aplicada até 15 dias úteis contados da data de solicitação formulada pelo estudante."<br><br>
 
                                 Assim, caso o estudante tenha se ausentado, pelos motivos acima, de <b>qualquer forma de avaliação</b> de componentes curriculares do curso, ele deve preencher o formulário de solicitação de Segunda Chamada (disponível também em Formulários Padrões) e entregar (pessoalmente, preferencialmente, ou por email) no colegiado do curso no prazo de dois dias úteis. <br>
                                 A <b>documentação comprovatória do motivo de ausência</b> (atestado do Serviço Médico da UEFS ou outro documento pertinente para demais casos) deve ser entregue ao colegiado no <b>prazo de 1 semana após a solicitação</b>, para que possa ser encaminhado ao professor responsável em tempo hábil para realização da segunda chamada.<br><br>
                                 Chamamos atenção que <b>não há previsão de abono de falta</b>, ou seja, a frequência do aluno continua sendo registrada normalmente. A previsão é somente de segunda chamada para o caso de haver avaliação durante o período de ausência justificada.<br><br>
-                                
+
                                 <a class="btn btn-warning" href="data/Solicitacao_Segunda_Chamada.doc" class="button">Formulário para solicitação de Segunda Chamada</a>
                                 </div>
                             </div>
@@ -250,7 +250,7 @@
 
     </div>
     <!-- /.container -->
-
+ <?php require_once 'editPage.php';?>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

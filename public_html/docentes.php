@@ -550,7 +550,7 @@
 
     </div>
     <!-- /.container -->
-
+<?php require_once 'editPage.php';?>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

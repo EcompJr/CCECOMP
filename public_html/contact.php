@@ -57,42 +57,8 @@
         <div class="row">
             <!-- Map Column -->
             <div class="col-md-8">
-                <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDwzm6uxj4QMLcdn46d1RM7qX2pLr6J4AU&v=3.exp'></script>
-                <div style='overflow:hidden;height:440px;width:700px;'>
-                    <div id='gmap_canvas' style='height:440px;width:700px;'></div>
-                    <div><small><a href="http://www.googlemapsgenerator.com/pt/">Incorporar um mapa do Google em seu site</a></small></div>
-                    <div><small><a href="https://termsandconditionsgenerator.com/">termsandconditionsgenerator.com</a></small></div>
-                    <style>
-                        #gmap_canvas img {
-                            max-width: none!important;
-                            background: none!important
-                        }
-                    </style>
-                </div>
-                <script type='text/javascript'>
-                    function init_map() {
-                        var myOptions = {
-                            zoom: 16,
-                            center: new google.maps.LatLng(-12.1981876, -38.97188540000002),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                        };
-                        map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-                        marker = new google.maps.Marker({
-                            map: map,
-                            position: new google.maps.LatLng(-12.1981876, -38.97188540000002)
-                        });
-                        infowindow = new google.maps.InfoWindow({
-                            content: '<strong>CCECOMP UEFS</strong><br>Labotec 3 UEFS<br>'
-                        });
-                        google.maps.event.addListener(marker, 'click', function () {
-                            infowindow.open(map, marker);
-                        });
-                        infowindow.open(map, marker);
-                    }
-                    google.maps.event.addDomListener(window, 'load', init_map);
-                </script>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.7227353532917!2d-38.97395058571949!3d-12.199259698076133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x714388c2af92357%3A0xf06781118830e1ef!2sLabotec+3+-+Laborat%C3%B3rios+de+Engenharia+de+Computa%C3%A7%C3%A3o%2C+UEFS!5e0!3m2!1spt-BR!2sbr!4v1510116021403" width="700" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <!-- Embedded Google Map -->
-                <!-- <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe> -->
             </div>
             <!-- Contact Details Column -->
             <div class="col-md-4">
@@ -168,7 +134,7 @@
 
     </div>
     <!-- /.container -->
-
+ <?php require_once 'editPage.php';?>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

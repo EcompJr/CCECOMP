@@ -20,7 +20,7 @@
            <link rel='icon' type='images/png' sizes='32x32' href='images/favicon.ico'>
          </head>
          <body>
-         <div class='container'>
+
          ";
 
 
@@ -28,6 +28,7 @@
 
               $htmlPage .= "<?php require_once 'header.php'?>";
               $htmlPage .= "<br>
+               <div class='container'>
               <div class='row'>
                   <div class='col-lg-12'>
                       <h1 class='page-header'>$namePage
