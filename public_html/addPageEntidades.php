@@ -211,7 +211,7 @@
       $htmlPage .= "</div>"; //row
 
 
-          $htmlPage .="</div>"; //container
+          $htmlPage .="<hr></div>"; //container
           $htmlPage .= "
                  </div>
              </div>
@@ -221,7 +221,7 @@
           <script src='js/bootstrap.min.js'></script>
           <script src='js/navbarADM.js'></script>
 
-
+           <?php require_once 'editPage.php';?>
          <br><br><br><br><br><br><br>
           ";
 

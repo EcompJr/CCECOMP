@@ -346,7 +346,7 @@ $busca = array();
                  </div>
                  <div class="form-group">
                    <label>Descrição</label>
-                   <input required='true' name="Descricao" type="text" class="form-control" id="descricao">
+                   <textarea rows='5'required='true' name="Descricao" type="text" class="form-control" id="descricao"></textarea>
                  </div>
                  <div class="form-group">
                    <label>Enviar Arquivo</label>

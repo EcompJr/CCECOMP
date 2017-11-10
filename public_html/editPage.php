@@ -54,11 +54,12 @@ if(isset($_POST['edit'])){
 
 
      $htmlPage .= "
+     <hr>
      </div>
 
 
      <?php require_once 'editPage.php';?>
-      <hr>
+
         <!-- jQuery -->
         <script src='js/jquery.js'></script>
 

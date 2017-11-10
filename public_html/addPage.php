@@ -52,6 +52,7 @@
                  $htmlPage .= "
 
                     <div class='row'>
+                    <div class='col-md-12'>
                     <h4>$titleSection</h4>";
                     $textSection = explode("\n",$textSection);
                     for($c=0;$c<sizeof($textSection); $c++)
@@ -105,7 +106,7 @@
                  }
 
 
-             $htmlPage .= "</div>";
+             $htmlPage .= "</div></div>";
 
 
          }
@@ -114,11 +115,14 @@
 
 
           $htmlPage .= "
+          <hr>
+          </div>
           <script src='js/jquery.js'></script>
           <script src='js/bootstrap.min.js'></script>
           <script src='js/navbarADM.js'></script>
 
-         </div>
+
+          <?php require_once 'editPage.php';?>
          <br><br><br><br><br><br><br>
           ";
 
