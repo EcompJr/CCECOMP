@@ -13,7 +13,7 @@ require_once 'addPage.php';
 
 
 <nav style="background-color:#4d6aa0;color:white;border-color:#4d6aa0" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
-<form style='margin-bottom:5px'method='post' action=''>
+<form style='margin-bottom:2px'method='post' action=''>
     <div  class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div   class="navbar-header ">
