@@ -90,7 +90,7 @@ $busca = array();
                  }
                  else{
 
-                    echo "<script>alert('Extensão da imagem inválida! Somente .PDF, .DOC E .DOCX permitido.')</script>";
+                    echo "<script>alert('Extensão do arquivo inválida! Somente .PDF, .DOC E .DOCX permitido.')</script>";
                     goto fim;
 
                  }

@@ -35,11 +35,24 @@ if(!$_SESSION['auth']){
 
 
 
-  if(isset($_POST['removerNoticia'])){
+  if(isset($_POST['removerNoticia'])){ //Remover notícia
 
 
        $id = $_POST['removerNoticia'];
+       $query = mysql_query("SELECT*FROM `ccecomp_noticias` WHERE `ID`='$id'"); //sempre vai existir
+       $linhaNoticias = mysql_fetch_array($query);
+       $imagem = $linhaNoticias['Imagem'];
+	   $path = $linhaNoticias['Link_Page'];
+      
+       if($imagem != "images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão  
+       {
+        @unlink($imagem); //remove arquivo em pasta
+       }
+
+	   @unlink($path); //Exclui pagina php
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
+
+
   }
 
 
@@ -85,7 +98,7 @@ if(!$_SESSION['auth']){
 <br><br>
     <div class="row">
 
-      <div class="col-md-offset-2  col-md-6">
+      <div class="col-md-offset-1  col-md-7">
         <h3>Páginas já criadas</h3>
         <p align="justify">Selecione o link de alguma das páginas já criadas no painel de notícias para ser redirecionado, ou remova alguma das notícias. </p>
         <ul class="list-group">
@@ -101,7 +114,7 @@ if(!$_SESSION['auth']){
                                     $titulo = $noticias['Titulo'];
                                     $link = $noticias['Link_Page'];
 
-                                    echo "  <li class='list-group-item'>$titulo | LINK: $link<button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></li>";
+                                    echo "  <li class='list-group-item'>$titulo | LINK: <a href='$link'>$link</a><button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></li>";
 
                               }
 
@@ -120,7 +133,7 @@ if(!$_SESSION['auth']){
      </form>
       </div>
 
-      <div class=" col-md-offset-0 col-md-3">
+      <div class="  col-md-3">
 
             <h3>Membros administradores</h3>
             <form method="POST" action=''>

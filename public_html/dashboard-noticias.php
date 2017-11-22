@@ -12,8 +12,9 @@ if(!$_SESSION['auth']){
 
          $titulo = $_POST['Titulo'];
          $texto = $_POST['Texto'];
-         $imagem = 'images/no-image.jpg';
-
+         $imagem = '';
+		 
+		 			
          $arquivoFoto = $_FILES['Imagem']['tmp_name'];
          $nomeArquivoFoto = $_FILES['Imagem']['name'];
 
@@ -33,10 +34,17 @@ if(!$_SESSION['auth']){
 
                //insere no banco de dados
                if($upFoto){ //Pode adicionar foto
+			           $imagem = str_replace(':','',$imagem);
                        move_uploaded_file($arquivoFoto,$imagem);
                }
               }
-               mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Texto`,`Imagem`) VALUES ('$titulo','$texto','$imagem')");
+
+			   require_once 'createNotice.php';
+			   $titulo = str_replace(':','',$titulo);
+			   $path = $titulo . ".php";
+			   $file = fopen($path ,"w");
+			   fwrite($file,$htmlPage);
+               mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Imagem`, `Link_Page`) VALUES ('$titulo','$imagem','$path')");
                 fim:
                 //Não insere no banco de dados
               
@@ -49,12 +57,13 @@ if(!$_SESSION['auth']){
        $query = mysql_query("SELECT*FROM `ccecomp_noticias` WHERE `ID`='$id'"); //sempre vai existir
        $linhaNoticias = mysql_fetch_array($query);
        $imagem = $linhaNoticias['Imagem'];
+	   $path = $linhaNoticias['Link_Page'];
       
-       if($imagem != "images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão  
-       {
+      
         @unlink($imagem); //remove arquivo em pasta
-       }
+       
 
+	   @unlink($path); //Exclui pagina php
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
   }
 
@@ -119,20 +128,16 @@ if(!$_SESSION['auth']){
                             while($news = mysql_fetch_array($query)){
 
                                  $titulo = $news['Titulo'];
-                                 $texto = $news['Texto'];
-                                 $imagem = $news['Imagem'];
+								 $link = $news['Link_Page'];
                                  $id = $news['ID'];
 
                                  echo "
                                 
                                  <li class='list-group-item'>
                                  <div class='collapse' id='$id'>
-                                 <img width='500' height='300' src='$imagem' />
-                                   <div class='card card-body'>
-                                     $texto
-                                    </div>
+								 <p><a href='$link'>Link de redirecionamento</a></p>
                                 </div>
-                                  <a class='btn btn-primary' data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
+                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
                                   <button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
                                  </li>";
                             }
@@ -145,7 +150,7 @@ if(!$_SESSION['auth']){
 
                   ?>
                   <br>
-                  <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal1">
+                  <button class="btn btn-warning col-md-offset-3 col-md-6" onclick="backForOne()" type="button" data-toggle="modal" data-target="#myModal1">
                     Cadastrar Nova Notícia
                   </button>
               </ul>
@@ -172,17 +177,22 @@ if(!$_SESSION['auth']){
                 <form method="POST" action='' enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Título</label>
-                    <input name="Titulo" type="text" class="form-control" id="cargo">
+                    <input required='true' name="Titulo" type="text" class="form-control" id="cargo">
                   </div>
                   <div class="form-group">
                     <label for="comment">Texto</label>
-                    <textarea name="Texto" class="form-control" rows="5" id="texto"></textarea>
+                    <textarea required='true' name="Texto" class="form-control" rows="5" id="texto"></textarea>
                   </div>
                   <div class="form-group">
                     <label>Enviar Imagem</label>
                     <input name="Imagem" type="file" id="file1" class="custom-file-input">
                     <span class="custom-file-control"></span>
                   </div>
+				  <div class='form-group' id='linksNotice'>
+				    <label>Links</label>
+					<input type='text' name='links[]' class='form-control'/>
+				  </div>
+				  <button class='btn btn-success' type='button' onclick='addLink()'  >Adicionar Link</button>
                   <button name="enviarNoticia" type="submit" class="btn btn-primary">Enviar</button>
                 </form>
               </div>
@@ -201,6 +211,8 @@ if(!$_SESSION['auth']){
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+	<!-- putAnotherLinkScript -->
+	<script src="js/addLinkNotice.js"></script>
     <!-- navBarscript -->
     <script src="js/navbarADM.js">
       < script >
@@ -209,6 +221,7 @@ if(!$_SESSION['auth']){
         }) <
         />
     </script>
+
     <br>
     <br>
     <br>

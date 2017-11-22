@@ -211,9 +211,9 @@
       $htmlPage .= "</div>"; //row
 
 
-          $htmlPage .="<hr></div>"; //container
+          $htmlPage .="</div>"; //container
           $htmlPage .= "
-                 </div>
+                <hr></div>
              </div>
 
 

@@ -54,7 +54,7 @@ if(isset($_POST['edit'])){
 
 
      $htmlPage .= "
-     <hr>
+     
      </div>
 
 

@@ -232,7 +232,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
           <p align="justify" id="infotext2" class="collapse container" style="font-size:12px;background-color:white;border-radius:10px;">Compareça a sede do colégiado para solicitar o cadastro do documento.</p>
        </div>
         </div>
-      </div>
+
 
 <br><br>
 
@@ -366,8 +366,9 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
     </div>
 
 </div>
+  <hr>
+</div>
 
-        <hr>
 
 
     <!-- /.container -->

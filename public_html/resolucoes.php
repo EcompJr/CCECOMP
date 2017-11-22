@@ -242,6 +242,7 @@ $busca = array();
           <!-- /.col-lg-12 -->
         </div>
     <!-- /.container -->
+    <hr>
 </div>
 <br><br><br><br><br><br><br><br><br>
     <!-- jQuery -->
