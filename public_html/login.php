@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'conexao.php';
-if(isset($_SESSION['auth']) ){ //Confere se já esta logado
+if(isset($_SESSION['auth']) && isset($_SESSION['email'])){ //Confere se já esta logado
         if($_SESSION['auth']){
                   header("location:dashboardADM.php");
         }
@@ -28,6 +28,7 @@ if(isset($_SESSION['auth']) ){ //Confere se já esta logado
 
                      if($response->success){
                         $_SESSION['auth'] = True;
+						$_SESSION['email'] = $login;
                         header("location:dashboardADM.php");
                      }
                      else {

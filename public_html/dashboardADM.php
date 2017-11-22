@@ -14,6 +14,9 @@ if(!$_SESSION['auth']){
          $login = $_POST['loginEmail'];
          $senha = $_POST['senha'];
          $confirmaSenha = $_POST['confirmaSenha'];
+		 $query = mysql_query("SELECT*FROM `administradores` WHERE `Login`='$login'");
+
+	if(mysql_num_rows($query) == 0){ //Não existe ninguém com este email
 
          if($senha == $confirmaSenha){ //cadastrou corretamente salva no BD
            mysql_query("INSERT INTO `administradores` (`Nome`, `Login`, `Senha`) VALUES ('$nome', '$login', '$senha')");
@@ -22,6 +25,11 @@ if(!$_SESSION['auth']){
          else{ //Errou as senhas
              echo "<script>alert('Senhas digitadas incorretas')</script>";
          }
+
+	}
+	else{
+		echo "<script>alert('Este email já esta cadastrado')</script>";
+	}
 
   }
 
@@ -51,6 +59,38 @@ if(!$_SESSION['auth']){
 
 	   @unlink($path); //Exclui pagina php
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
+
+
+  }
+
+
+  if(isset($_POST['sendNewPassword']) ){
+  
+        $email = $_SESSION['email'];
+		$query = mysql_query("SELECT*FROM `administradores` WHERE `Login` = '$email'");
+		$adm = mysql_fetch_array($query);
+		$password = $adm['Senha'];
+
+		$currentPasswordSend = $_POST['currentPassword'];
+		$newPassword = $_POST['newPassword'];
+		$confirmNewPassword = $_POST['confirmNewPassord'];
+		
+		if($password == $currentPasswordSend){ //Senha correta
+		
+		   if($newPassword == $confirmNewPassword){
+		         
+				   mysql_query("UPDATE `administradores` SET `Senha`= '$newPassword' WHERE `Login`='$email' "); //muda senha
+		   }
+		   else{
+		      echo "<script>alert('Senha de confirmação incorreta')</script>";
+		   }
+		   
+
+		}
+		else{
+			echo "<script>alert('Senha digitada incorreta')</script>";
+		}
+
 
 
   }
@@ -147,8 +187,9 @@ if(!$_SESSION['auth']){
 
                                  $nome = $adm['Nome'];
                                  $id = $adm['ID'];
-
-                                 echo " <li class='list-group-item'>$nome  <button name='removerAdm' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button></li>";
+								 $email = $adm['Login'];
+								 if($email != "ccecomp@ecomp.uefs.br")
+                                 echo " <li class='list-group-item'>$nome <button name='removerAdm' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button></li>";
 
                             }
 
@@ -160,6 +201,7 @@ if(!$_SESSION['auth']){
 
                   ?>
                    <br>
+				   <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#changePassword'>Mudar Senha</button>
                    <button  style="float:right" data-toggle="modal" data-target="#CadastrarADM" type="button" class="btn btn-success">Adicionar</button>
                 </ul>
               </form>
@@ -191,6 +233,38 @@ if(!$_SESSION['auth']){
 
                           </div>
                           <button name='enviarAdm' type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+
+				<div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mudar Senha</h4>
+                      </div>
+                      <div class="modal-body text-justify">
+                        <form method='POST' action=''>
+                          
+                          <div class="form-group">
+                            <label>Senha atual</label>
+                            <input required="true"  name='currentPassword' type="password" class="form-control" id="descricao">
+                          </div>
+                          <div class="form-group">
+                            <label>Nova Senha</label>
+                            <input required="true" type='password'name='newPassword'  class="form-control" id="data">
+                          </div>
+                          <div class="form-group">
+                            <label>Confirmar Nova Senha</label>
+                            <input required="true" type='password' name='confirmNewPassord' class="form-control">
+
+                          </div>
+                          <button name='sendNewPassword' type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                       </div>
                     </div>
