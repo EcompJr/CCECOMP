@@ -73,7 +73,9 @@ $busca = array();
 
   if(isset($_POST['enviarResolucao'])){ //Cadastro de nova resolucao
 
-         $tipo = $_POST['tipo'];
+      if(isset($_POST['tipo'])){
+		 $tipo = $_POST['tipo'];
+		 
 
          $numero = $_POST['Numero'];
          $descricao = $_POST['Descricao'];
@@ -107,6 +109,14 @@ $busca = array();
 
                 echo "<script>alert('Selecione um arquivo de resolução')</script>";
               }
+
+
+
+			  }
+		 else{
+		 	 echo "<script>alert('Cadastre algum tipo de resolução')</script>";
+			 
+	  }
   }
 
 
@@ -136,6 +146,28 @@ $busca = array();
 
 
 }
+
+
+if(isset($_POST['sendType'])){
+
+
+  $name = $_POST['nameGive'];
+
+  mysql_query("INSERT INTO `tipos_resolucoes` (`Nome`) VALUES ('$name')");
+
+
+}
+
+if(isset($_POST['removeTypeResolution'])){
+
+      $id = $_POST['removeTypeResolution'];
+
+	  mysql_query("DELETE FROM `tipos_resolucoes` WHERE ID='$id'");
+
+
+}
+
+
 
 
  ?>
@@ -317,6 +349,9 @@ $busca = array();
           Cadastrar Nova Resolução
         </button>
        <br><br>
+	   <button class="btn btn-warning col-md-offset-3 col-md-6" type="button" data-toggle="modal" data-target="#myModal2">
+          Cadastrar Novo tipo
+        </button><br><br>
 
        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
          <div class="modal-dialog modal-lg" role="document">
@@ -330,14 +365,30 @@ $busca = array();
                  <div class="form-group">
 
                    <label>Tipo</label>
-                   <div >
-                    <select name='tipo' style="color:black">
-                      <option value='Resolução Consep'>Resolução Consepe</option>
-                      <option value='Resolução Consu'>Resolução Consu</option>
-                      <option value='Decreto do Governo do Estado da Bahia'>Decreto do Governo do Estado da Bahia</option>
-                      <option value='Parecer do Conselho Estadual de Educação'>Parecer do Conselho Estadual de Educação</option>
-                    </select>
-                   </div>
+				   <?php
+				         $query = mysql_query("SELECT*FROM `tipos_resolucoes`");
+
+						 if(mysql_num_rows($query)>0){
+						 
+						    echo "<div><select name='tipo' style='color:black'>";
+						    while($types = mysql_fetch_array($query)){
+							
+							    $name = $types['Nome'];
+
+								echo "<option value='$name'>$name</option>";
+
+
+							}
+							echo"</select></div>";
+						 }
+						 else{
+						  
+						     echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhum tipo cadastrado. </p></div>";
+						    
+						 }
+
+				   ?>
+                   
 
                  </div>
                  <div class="form-group">
@@ -354,6 +405,57 @@ $busca = array();
                    <span class="custom-file-control"></span>
                  </div>
                  <button name="enviarResolucao" type="submit" class="btn btn-primary">Enviar</button>
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+	 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal-dialog modal-lg" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Cadastrar Novo Tipo de Resolução</h4>
+             </div>
+             <div class="modal-body text-justify">
+                <form method="POST" action='' >
+				 <div class='form-group'>
+				 <label>Resoluções já cadastradas</label>
+				 <?php
+				     $query = mysql_query("SELECT*FROM `tipos_resolucoes`");
+
+					 if(mysql_num_rows($query)>0){
+					 echo"<ul>";
+					    while($tipos = mysql_fetch_array($query)){
+						
+						  $tipo = $tipos['Nome'];
+						  $id = $tipos['ID'];
+
+						  echo"<li class='list-group-item'>
+						          $tipo
+                                 <button name='removeTypeResolution' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
+                                 </li>";
+
+
+						}
+						echo"</ul>";
+					 }
+					 else{
+					 	 echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhum tipo cadastrado. </p></div>";
+					 }
+
+				 ?>
+				 </div>
+				 </form>
+				 <form method="POST" action='' >
+                 <div class="form-group">
+				 <label>Novo tipo</label>
+				 <input  name='nameGive' class='form-control' type='text' required='true'/>
+                 </div>
+                 <button name="sendType" type="submit" class="btn btn-primary">Enviar</button>
                </form>
              </div>
            </div>

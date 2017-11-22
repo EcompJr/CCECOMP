@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Nov-2017 às 03:44
+-- Generation Time: 22-Nov-2017 às 19:04
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -78,7 +78,6 @@ CREATE TABLE `ccecomp_estagios` (
 CREATE TABLE `ccecomp_noticias` (
   `ID` int(255) NOT NULL,
   `Titulo` varchar(500) CHARACTER SET utf8 NOT NULL,
-  `Texto` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Imagem` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Link_Page` varchar(500) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -108,6 +107,17 @@ CREATE TABLE `ccecomp_resolucoes` (
   `Numero` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Descricao` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Arquivo` varchar(500) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipos_resolucoes`
+--
+
+CREATE TABLE `tipos_resolucoes` (
+  `ID` int(255) NOT NULL,
+  `Nome` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -151,6 +161,12 @@ ALTER TABLE `ccecomp_resolucoes`
   ADD UNIQUE KEY `ID` (`ID`);
 
 --
+-- Indexes for table `tipos_resolucoes`
+--
+ALTER TABLE `tipos_resolucoes`
+  ADD UNIQUE KEY `ID` (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -173,17 +189,22 @@ ALTER TABLE `ccecomp_estagios`
 -- AUTO_INCREMENT for table `ccecomp_noticias`
 --
 ALTER TABLE `ccecomp_noticias`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `ccecomp_paginas_criadas`
 --
 ALTER TABLE `ccecomp_paginas_criadas`
-  MODIFY `ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(30) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ccecomp_resolucoes`
 --
 ALTER TABLE `ccecomp_resolucoes`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tipos_resolucoes`
+--
+ALTER TABLE `tipos_resolucoes`
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
