@@ -122,13 +122,29 @@
 							<textarea class="form-control"rows="20"name="message" id="message" rows="6"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input class="btn btn-primary" type="submit" value="Enviar Mensagem" class="alt" /></li>
+							<li><input class="btn btn-primary" name"submit" type="submit" value="Enviar Mensagem" class="alt" /></li>
 						</ul>
 					</form>
 				</div>
 			</section>
 
         <!-- /.row -->
+
+<?php
+if(isset($_POST['submit'])){
+        $name     = $_POST['name'];
+        $email    = $_POST['email'];
+        $message = $_POST['message'];
+        $corpo  = "Nome: ".$name."<BR>\n";
+        $corpo .= "Email: ".$email."<BR>\n";
+        $corpo .= "Mensagem: ".$message."<BR>\n";
+        if(mail("luanvictortb@gmail.com","Site",$corpo)){
+          echo("email enviado com sucesso");
+        } else {
+          echo("Erro ao enviar e-mail");
+        }
+        }
+?>
 
         <hr>
 
