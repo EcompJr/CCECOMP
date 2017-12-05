@@ -2,9 +2,12 @@
     $host = 'localhost';
     $user = 'root';
     $pass = '';
+    $userCod = md5($user);
+    $passCod = md5($pass);
     $database = 'db_ccecomp';
-    
-    $conexao = mysqli_connect($host, $user, $pass, $database);
+
+    $conexao = mysqli_connect($host, $userCod, $passCod, $database);
+
 
     if(!$conexao){
         echo '
