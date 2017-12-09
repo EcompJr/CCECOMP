@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Nov-2017 às 19:04
+-- Generation Time: 09-Dez-2017 às 03:28
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -38,7 +38,8 @@ CREATE TABLE `administradores` (
 --
 
 INSERT INTO `administradores` (`ID`, `Nome`, `Login`, `Senha`) VALUES
-(6, 'Matheus Giovanni Pires', 'mgpires@gmail.com', 'ccecomp2017');
+(6, 'Matheus Giovanni Pires', 'mgpires@gmail.com', 'ccecomp2017'),
+(7, 'ROOT', 'ccecomp@ecomp.uefs.br', 'ccecomp2017');
 
 -- --------------------------------------------------------
 
@@ -65,8 +66,8 @@ CREATE TABLE `aluno_tcc` (
 CREATE TABLE `ccecomp_estagios` (
   `ID` int(255) NOT NULL,
   `Titulo` varchar(500) CHARACTER SET utf8 NOT NULL,
-  `Texto` varchar(500) CHARACTER SET utf8 NOT NULL,
-  `Imagem` varchar(500) CHARACTER SET utf8 NOT NULL
+  `Imagem` varchar(500) CHARACTER SET utf8 NOT NULL,
+  `Link_Page` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -174,7 +175,7 @@ ALTER TABLE `tipos_resolucoes`
 -- AUTO_INCREMENT for table `administradores`
 --
 ALTER TABLE `administradores`
-  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `aluno_tcc`
 --
@@ -189,7 +190,7 @@ ALTER TABLE `ccecomp_estagios`
 -- AUTO_INCREMENT for table `ccecomp_noticias`
 --
 ALTER TABLE `ccecomp_noticias`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ccecomp_paginas_criadas`
 --
@@ -199,12 +200,12 @@ ALTER TABLE `ccecomp_paginas_criadas`
 -- AUTO_INCREMENT for table `ccecomp_resolucoes`
 --
 ALTER TABLE `ccecomp_resolucoes`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tipos_resolucoes`
 --
 ALTER TABLE `tipos_resolucoes`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
