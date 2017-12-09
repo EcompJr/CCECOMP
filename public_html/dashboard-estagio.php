@@ -11,7 +11,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
   
            $titulo = $_POST['Titulo'];
            $texto = $_POST['Texto'];
-           $imagem = 'images/no-image.jpg';
+           $imagem = '';
            
             $arquivoFoto = $_FILES['Imagem']['tmp_name'];
             $nomeArquivoFoto = $_FILES['Imagem']['name'];
@@ -35,8 +35,12 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                          move_uploaded_file($arquivoFoto,$imagem);
                  }
                 }
-              
-                 mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Texto`,`Imagem`) VALUES ('$titulo','$texto','$imagem')");
+                 require_once 'addPageEstagio.php';
+				 $titulo = str_replace(':','',$titulo);
+			     $path = $titulo . ".php";
+			     $file = fopen($path ,"w");
+			     fwrite($file,$htmlPage);
+                 mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Imagem`,`Link_Page`) VALUES ('$titulo','$imagem','$path')");
                   fim:
                   //Não insere no banco de dados
                 
@@ -49,13 +53,14 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
        $query = mysql_query("SELECT*FROM `ccecomp_estagios` WHERE `ID`='$id'"); //Sempre vai existir
        $linhaEstagios = mysql_fetch_array($query);
        $imagem = $linhaEstagios['Imagem'];
-
+	   $link = $linhaEstagios['Link_Page'];
 
        if($imagem != "images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão  
        {
         @unlink($imagem); //Remove arquivo em pasta
        }
 
+	   @unlink($link);
        mysql_query("DELETE FROM `ccecomp_estagios` WHERE `ID` ='$id'");
   }
 
@@ -109,40 +114,35 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
 
         <ul class="list-group">
           <form method='POST' action=''>
-            <?php
-                $query = mysql_query("SELECT*FROM `ccecomp_estagios`");
+             <?php
+                          $query = mysql_query("SELECT *FROM `ccecomp_estagios`"); //Consulta banco de dados
 
-                if(mysql_num_rows($query) > 0){ //Existem estágios a serem listados
+                          if(mysql_num_rows($query) > 0){ //Existe notícias cadastradas
 
-                            while($estagios = mysql_fetch_array($query)){
+                            while($news = mysql_fetch_array($query)){
 
-                                  $titulo = $estagios['Titulo'];
-                                  $texto = $estagios['Texto'];
-                                  $imagem = $estagios['Imagem'];
-                                  $id = $estagios['ID'];
+                                 $titulo = $news['Titulo'];
+								 $link = $news['Link_Page'];
+                                 $id = $news['ID'];
 
-                                  echo "
-
+                                 echo "
+                                
                                  <li class='list-group-item'>
                                  <div class='collapse' id='$id'>
-                                 <img width='500' height='300' src='$imagem' />
-                                   <div class='card card-body'>
-                                     $texto
-                                    </div>
+								 <p><a href='$link'>Link de redirecionamento</a></p>
                                 </div>
-                                  <a class='btn btn-primary' data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
-                                  <button name='removerEstagio' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button>
+                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
+                                  <button name='removerEstagio' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
                                  </li>";
-
                             }
 
-                }
-                else{
 
-                  echo "<div class='alert alert-danger'><p align='justify'>Não existem anúncios de estágios cadastrados</p></div>";
-                }
+                          }
+                          else{
+                            echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhuma notícia cadastrada. </p></div>";
+                          }
 
-      ?>
+                  ?>
           </form>
 
 
@@ -177,6 +177,11 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                   <input name="Imagem" type="file" id="file1" class="custom-file-input">
                   <span class="custom-file-control"></span>
                 </div>
+				 <div class='form-group' id='linksNotice'>
+				    <label>Links</label>
+					<input type='text' name='links[]' class='form-control'/>
+				  </div>
+				  <button class='btn btn-success' type='button' onclick='addLink()'  >Adicionar Link</button>
                   <button name="enviarEstagio" type="submit" class="btn btn-primary">Enviar</button>
                 </form>
               </div>
@@ -192,7 +197,8 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
+	<!-- putAnotherLinkScript -->
+	<script src="js/addLinkNotice.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- navBarscript -->

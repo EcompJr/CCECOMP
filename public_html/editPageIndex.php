@@ -1,4 +1,13 @@
 
+
+<?php
+
+if(isset($_POST['edit'])){
+
+     $pageNameFile = basename($_SERVER['PHP_SELF'],'.php') . ".php";
+     $content = $_POST['edition'];
+
+     $htmlPage = "
     <!DOCTYPE html>
 <html lang='en'>
 
@@ -38,7 +47,9 @@
 <?php require_once 'header.php'; ?>
 
 <body>
-     
+     ";
+
+      $htmlPage .="
 	  
 	    <div id='myCarousel' class='carousel slide' data-ride='carousel'>
                 <!-- Indicador -->
@@ -95,14 +106,12 @@
 
 			<div class='col-md-6'>
                 <div class='panel panel-default textEdit'>
-	  
-                    <div class="panel-heading text-center">
-                        <h4><i class="fa fa-spin fa-paperclip"></i> O que faz um Engenheiro de Computaï¿½ï¿½o?</h4>
-                    </div>
-                    <div class="panel-body">
-					Loorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia et metus ac blandit. Phasellus sit amet odio ex. Sed sapien arcu, dictum ac nibh id, posuere facilisis diam. Morbi in efficitur massa. Duis pharetra lectus felis, eu pellentesque est suscipit vel. Quisque congue convallis nulla, a convallis odio placerat id. Praesent libero nulla, porta nec finibus nec, feugiat quis ligula. Vestibulum eget purus ut turpis mollis tempus.
-                    </div>
-                
+	  ";
+
+
+	  $htmlPage .= $content;
+
+	  $htmlPage .= "
 	  
 	  
 	            </div>
@@ -114,27 +123,27 @@
                     </div>
                     <div class='panel-body'>
                          <?php 
-						   $query = mysql_query('SELECT*FROM `ccecomp_noticias`');
+						   \$query = mysql_query('SELECT*FROM `ccecomp_noticias`');
 
-						   if(mysql_num_rows($query)>0){
+						   if(mysql_num_rows(\$query)>0){
 						       
-							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>Notícias</button>";
-								echo " <div id='notices' class='collapse'> ";
-								echo "<ul style='list-style-type:none'><br>";
-						        while($notice = mysql_fetch_array($query)){
+							    echo \"<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>Notícias</button>\";
+								echo \" <div id='notices' class='collapse'> \";
+								echo \"<ul style='list-style-type:none'><br>\";
+						        while(\$notice = mysql_fetch_array(\$query)){
 								
-								         $name = $notice['Titulo'];
-										 $link = $notice['Link_Page'];
+								         \$name = \$notice['Titulo'];
+										 \$link = \$notice['Link_Page'];
 
-								      echo "<li><a href='$link'>$name</a></li>";
+								      echo \"<li><a href='\$link'>\$name</a></li>\";
 
 
 								}
-								echo "</ul>";
-								echo "</div>";
+								echo \"</ul>\";
+								echo \"</div>\";
 						   }
 						   else{
-						          echo "<a role='button'class='btn btn-default'>Não existem notícias.</a>";
+						          echo \"<a role='button'class='btn btn-default'>Não existem notícias.</a>\";
 
 						   }
 						 
@@ -150,27 +159,27 @@
                     </div>
                     <div class='panel-body'>
 					   <?php 
-						   $query = mysql_query('SELECT*FROM `ccecomp_estagios`');
+						   \$query = mysql_query('SELECT*FROM `ccecomp_estagios`');
 
-						   if(mysql_num_rows($query)>0){
+						   if(mysql_num_rows(\$query)>0){
 						       
-							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>Notícias de Estágio</button>";
-								echo "<div id='internship' class='collapse'>";
-								echo "<ul style='list-style-type:none'><br>";
-						        while($notice = mysql_fetch_array($query)){
+							    echo \"<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>Notícias de Estágio</button>\";
+								echo \"<div id='internship' class='collapse'>\";
+								echo \"<ul style='list-style-type:none'><br>\";
+						        while(\$notice = mysql_fetch_array(\$query)){
 								
-								         $name = $notice['Titulo'];
-										 $link = $notice['Link_Page'];
+								         \$name = \$notice['Titulo'];
+										 \$link = \$notice['Link_Page'];
 
-								      echo "<li><a href='$link'>$name</a></li>";
+								      echo \"<li><a href='\$link'>\$name</a></li>\";
 
 
 								}
-								echo "</ul>";
-								echo "</div>";
+								echo \"</ul>\";
+								echo \"</div>\";
 						   }
 						   else{
-						          echo "<a role='button'class='btn btn-default'>Não existem notícias de estágio.</a>";
+						          echo \"<a role='button'class='btn btn-default'>Não existem notícias de estágio.</a>\";
 
 						   }
 						 
@@ -181,7 +190,10 @@
         </div>
         
          
-		 
+		 ";
+
+
+     $htmlPage .= "
      
      <hr>
 
@@ -200,4 +212,63 @@
 
 </body>
 
-</html>
+</html>";
+
+
+   $file = fopen($pageNameFile, 'w');
+   fwrite($file,$htmlPage);
+   fclose($file);
+
+  echo "<meta http-equiv='refresh' content='0, url=$pageNameFile'  /> ";
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+if(isset($_SESSION['auth'])){
+
+      if($_SESSION['auth']){
+
+
+         echo "
+         <div class='row'>
+         <div class='col-md-offset-1 col-md-10'>
+           <form method='POST' action=''>
+             <h4>Edite o conteúdo da caixa principal</h4>
+             <label style='font-size:8px'>Editor de texto HTML</label>
+             <textarea id='textEdit'class='form-control' name='edition' rows='10'></textarea><br>
+             <button class='btn btn-primary'name='edit' type='submit'  >Modificar</button>
+            </form>
+         </div>
+         </div>
+         <script>
+             var content = document.getElementsByClassName('textEdit')[0]; //todo o conteudo estático está nela
+             var textEdit = document.getElementById('textEdit');
+
+             textEdit.value = content.innerHTML;
+         </script>
+         ";
+
+
+      }
+}
+
+
+
+
+
+
+
+
+ ?>
