@@ -38,8 +38,8 @@
 <?php require_once 'header.php'; ?>
 
 <body>
-     
-	  
+
+
 	    <div id='myCarousel' class='carousel slide' data-ride='carousel'>
                 <!-- Indicador -->
                 <ol class='carousel-indicators'>
@@ -52,8 +52,8 @@
                  <div class='item active'>
                  <img src='images/circuits.png' alt='Imagem tema 1'>
                  <div class='carousel-caption'>
-                 <h3>Colegiado de Engenharia de Computação da UEFS</h3>
-                 <p>Portal de comunicação com o estudante</p>
+                 <h3>Colegiado de Engenharia de ComputaÃ§Ã£o da UEFS</h3>
+                 <p>Portal de comunicaÃ§Ã£o com o estudante</p>
                  <br>
                  </div>
                  </div>
@@ -62,8 +62,8 @@
                  <div class='item'>
                  <img  src='images/theme-image1.jpeg' alt='Imagem tema 2'>
                  <div class='carousel-caption'>
-                 <h3 >Fique atento às notícias do colegiado</h3>
-                 <p>Acompanhe as novidades de estágio e notícias do curso</p>
+                 <h3 >Fique atento Ã s notÃ­cias do colegiado</h3>
+                 <p>Acompanhe as novidades de estÃ¡gio e notÃ­cias do curso</p>
                  <br>
                  </div>
                  </div>
@@ -90,39 +90,39 @@
 
                 </h1>
             </div>
-	   
+
 
 
 			<div class='col-md-6'>
                 <div class='panel panel-default textEdit'>
-	  
+
                     <div class="panel-heading text-center">
-                        <h4><i class="fa fa-spin fa-paperclip"></i> O que faz um Engenheiro de Computaï¿½ï¿½o?</h4>
+                        <h4><i class="fa fa-spin fa-paperclip"></i> O que faz um Engenheiro de ComputaÃ§Ã£o?</h4>
                     </div>
                     <div class="panel-body">
 					Loorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia et metus ac blandit. Phasellus sit amet odio ex. Sed sapien arcu, dictum ac nibh id, posuere facilisis diam. Morbi in efficitur massa. Duis pharetra lectus felis, eu pellentesque est suscipit vel. Quisque congue convallis nulla, a convallis odio placerat id. Praesent libero nulla, porta nec finibus nec, feugiat quis ligula. Vestibulum eget purus ut turpis mollis tempus.
                     </div>
-                
-	  
-	  
+
+
+
 	            </div>
 		    </div>
 			<div class='col-md-6'>
                 <div class='panel panel-default'>
                     <div class='panel-heading'>
-                        <h4><i class='	fa fa-twitch fa-spin'></i> Notícias</h4>
+                        <h4><i class='	fa fa-twitch fa-spin'></i> NotÃ­cias</h4>
                     </div>
                     <div class='panel-body'>
-                         <?php 
+                         <?php
 						   $query = mysql_query('SELECT*FROM `ccecomp_noticias`');
 
 						   if(mysql_num_rows($query)>0){
-						       
-							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>Notícias</button>";
+
+							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>Notï¿½cias</button>";
 								echo " <div id='notices' class='collapse'> ";
 								echo "<ul style='list-style-type:none'><br>";
 						        while($notice = mysql_fetch_array($query)){
-								
+
 								         $name = $notice['Titulo'];
 										 $link = $notice['Link_Page'];
 
@@ -134,31 +134,31 @@
 								echo "</div>";
 						   }
 						   else{
-						          echo "<a role='button'class='btn btn-default'>Não existem notícias.</a>";
+						          echo "<a role='button'class='btn btn-default'>NÃ£o existem notÃ­cias.</a>";
 
 						   }
-						 
+
 						?>
-                        
+
                     </div>
                 </div>
             </div>
             <div class='col-md-12'>
                 <div class='panel panel-default'>
                     <div class='panel-heading'>
-                        <h4><i class='fa fa-spin  fa-plus-square'></i>    Estágios</h4>
+                        <h4><i class='fa fa-spin  fa-plus-square'></i>    EstÃ¡gios</h4>
                     </div>
                     <div class='panel-body'>
-					   <?php 
+					   <?php
 						   $query = mysql_query('SELECT*FROM `ccecomp_estagios`');
 
 						   if(mysql_num_rows($query)>0){
-						       
-							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>Notícias de Estágio</button>";
+
+							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>Notï¿½cias de Estï¿½gio</button>";
 								echo "<div id='internship' class='collapse'>";
 								echo "<ul style='list-style-type:none'><br>";
 						        while($notice = mysql_fetch_array($query)){
-								
+
 								         $name = $notice['Titulo'];
 										 $link = $notice['Link_Page'];
 
@@ -170,22 +170,22 @@
 								echo "</div>";
 						   }
 						   else{
-						          echo "<a role='button'class='btn btn-default'>Não existem notícias de estágio.</a>";
+						          echo "<a role='button'class='btn btn-default'>NÃ£o existem notÃ­cias de estÃ¡gio.</a>";
 
 						   }
-						 
+
 						?>
                     </div>
                 </div>
             </div>
         </div>
-        
-         
-		 
-     
+
+
+
+
      <hr>
 
-        
+
 
     </div>
     <!-- /.container -->

@@ -1,9 +1,3 @@
-
-$string = 'O rato reu a ropa do rei de Roma';
-$codificada = md5($string);
-echo "Resultado da codificação usando md5: " . $codificada;
-// 54cf74d1acdb4037ab956c269b63c8ac
-
 <?php
 session_start();
 require_once 'conexao.php';
@@ -12,69 +6,41 @@ if(isset($_SESSION['auth']) ){ //Confere se já esta logado
                   header("location:dashboardADM.php");
         }
 }
-
+//$string = 'ccecomp@ecomp.uefs.br';
+//$codificada = md5($string);
+//echo "Resultado da codificação usando md5: " . $codificada;
 
          //Faz login
    if(isset($_GET['login'])){
        if($_GET['login'] == 'go'){ //Logou
-
                $login = $_POST['login'];
                $senha = $_POST['senha'];
+               $cLogin = md5($login);//165a6a37f518d2bd5d5736a9b78744c5
+               $cSenha = md5($senha);//9a47fca26e5cda761ef7f4f8aae11b0a
 
-               $query = mysql_query("SELECT * FROM `administradores` WHERE `Login`= '$login' AND `Senha`= '$senha'");
 
+
+               $secretKey = "6LfA4TkUAAAAAPWG23mIr5EAD3F8-EBEnM2_uas8";
+               $responseKey = $_POST['g-recaptcha-response'];
+               $userIP = $_SERVER['REMOTE_ADDR'];
+               $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
+               $response = file_get_contents($url);
+               $response = json_decode($response);
+               $query = mysql_query("SELECT * FROM `administradores` WHERE `Login`= '$cLogin' AND `Senha`= '$cSenha'");
                if(mysql_num_rows($query) == 1){ //Existe um administrador com este login e senha
-
-                     if(isset($_SESSION['contCaptcha'])){ //existe contagem de vezes
-
-                            if($_SESSION['contCaptcha'] >= 5){ //Só pode tentar até 5 vezes
-
-                                if($_SESSION['captcha'] == $_POST['captchaCodigo']){ //acertou o codigo
-                                  $_SESSION['auth'] = True;
-                                  header("location:dashboardADM.php");
-                                  $_SESSION['contCaptcha'] = 0;
-
-                                }
-                                else{ //errou o codigo
-
-                                    echo "<script>alet('Código da imagem incorreto')</script>";
-                                    $_SESSION['contCaptcha'] += 1;
-                                }
-
-                              }
-                              else{ //logou
-                                $_SESSION['auth'] = True;
-                                header("location:dashboardADM.php");
-                                $_SESSION['contCaptcha'] = 0;
-
-                              }
-
+                     if($response->success){
+                        $_SESSION['auth'] = True;
+                        header("location:dashboardADM.php");
                      }
-                     else{ //logou
-                       $_SESSION['auth'] = True;
-                       header("location:dashboardADM.php");
-                       $_SESSION['contCaptcha'] = 0;
-
+                     else {
+                        echo "<script>alert('Verificação não efetuada!')</script>";
                      }
-
-
                }
                else{
-
                      echo "<script>alert('Login ou senha inválido!')</script>";
-                     $_SESSION['contCaptcha'] += 1;
-
                }
-
-
        }
    }
-
-
-
-
-
-
  ?>
 
 
@@ -110,6 +76,9 @@ if(isset($_SESSION['auth']) ){ //Confere se já esta logado
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Recaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
 
 <?php require_once 'header.php'; ?>
@@ -124,7 +93,6 @@ if(isset($_SESSION['auth']) ){ //Confere se já esta logado
             margin-top: 20px;
             border-radius: 20px;
         }
-
         .table {
             size: 20px;
         }
@@ -136,25 +104,8 @@ if(isset($_SESSION['auth']) ){ //Confere se já esta logado
             <input name="login" class="form-control" type="text" placeholder="Usuário" /> </br>
             <input name="senha" class="form-control" type="password" placeholder="Senha" /> </br>
 
-
-
-        <?php
-                    if(!isset($_SESSION['contCaptcha'])){
-                      $_SESSION['contCaptcha'] = 0;
-                    }
-
-                    if($_SESSION['contCaptcha'] >= 5){
-
-                         echo "<h5>Digite o código abaixo para logar</h5>";
-                         echo "<img width='300'  height='100'src='captcha.php' />";
-                         echo "<input name='captchaCodigo' class='form-control' type='text'  /><br>";
-
-
-                    }
-
-
-
-        ?>
+            <div class="text-center"><div class="g-recaptcha" data-sitekey="6LfA4TkUAAAAAEPyUZEAXbNTGehnUvx2yR-LKo-h"></div></div>
+            <br>
         <input class="btn btn-warning"type="submit" value="Entrar">
        </form>
     </div>
