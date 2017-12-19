@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Dez-2017 às 03:28
--- Versão do servidor: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Dec 13, 2017 at 05:36 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `administradores`
+-- Table structure for table `administradores`
 --
 
 CREATE TABLE `administradores` (
@@ -34,17 +36,17 @@ CREATE TABLE `administradores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `administradores`
+-- Dumping data for table `administradores`
 --
 
 INSERT INTO `administradores` (`ID`, `Nome`, `Login`, `Senha`) VALUES
-(6, 'Matheus Giovanni Pires', 'mgpires@gmail.com', 'ccecomp2017'),
-(7, 'ROOT', 'ccecomp@ecomp.uefs.br', 'ccecomp2017');
+(6, 'Matheus Giovanni Pires', '2dec3ddc4daabeea8c2880db3f8840a0', '276573ca1783cd6720d7b43c26fae47e'),
+(7, 'ROOT', 'a35942f9f047daf8f85622051e3ec0f4', '276573ca1783cd6720d7b43c26fae47e');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `aluno_tcc`
+-- Table structure for table `aluno_tcc`
 --
 
 CREATE TABLE `aluno_tcc` (
@@ -60,7 +62,7 @@ CREATE TABLE `aluno_tcc` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ccecomp_estagios`
+-- Table structure for table `ccecomp_estagios`
 --
 
 CREATE TABLE `ccecomp_estagios` (
@@ -73,7 +75,7 @@ CREATE TABLE `ccecomp_estagios` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ccecomp_noticias`
+-- Table structure for table `ccecomp_noticias`
 --
 
 CREATE TABLE `ccecomp_noticias` (
@@ -86,7 +88,7 @@ CREATE TABLE `ccecomp_noticias` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ccecomp_paginas_criadas`
+-- Table structure for table `ccecomp_paginas_criadas`
 --
 
 CREATE TABLE `ccecomp_paginas_criadas` (
@@ -99,7 +101,7 @@ CREATE TABLE `ccecomp_paginas_criadas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ccecomp_resolucoes`
+-- Table structure for table `ccecomp_resolucoes`
 --
 
 CREATE TABLE `ccecomp_resolucoes` (
@@ -113,7 +115,7 @@ CREATE TABLE `ccecomp_resolucoes` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipos_resolucoes`
+-- Table structure for table `tipos_resolucoes`
 --
 
 CREATE TABLE `tipos_resolucoes` (
@@ -205,7 +207,8 @@ ALTER TABLE `ccecomp_resolucoes`
 -- AUTO_INCREMENT for table `tipos_resolucoes`
 --
 ALTER TABLE `tipos_resolucoes`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

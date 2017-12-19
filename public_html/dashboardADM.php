@@ -13,13 +13,17 @@ if(!$_SESSION['auth']){
          $nome = $_POST['nomeCompleto'];
          $login = $_POST['loginEmail'];
          $senha = $_POST['senha'];
+         $cLogin = md5($login);
+         $cSenha = md5($senha);
+
+
          $confirmaSenha = $_POST['confirmaSenha'];
-		 $query = mysql_query("SELECT*FROM `administradores` WHERE `Login`='$login'");
+		 $query = mysql_query("SELECT*FROM `administradores` WHERE `Login`='$cLogin'");
 
 	if(mysql_num_rows($query) == 0){ //Não existe ninguém com este email
 
          if($senha == $confirmaSenha){ //cadastrou corretamente salva no BD
-           mysql_query("INSERT INTO `administradores` (`Nome`, `Login`, `Senha`) VALUES ('$nome', '$login', '$senha')");
+           mysql_query("INSERT INTO `administradores` (`Nome`, `Login`, `Senha`) VALUES ('$nome', '$cLogin', '$cSenha')");
          }
 
          else{ //Errou as senhas
@@ -51,8 +55,8 @@ if(!$_SESSION['auth']){
        $linhaNoticias = mysql_fetch_array($query);
        $imagem = $linhaNoticias['Imagem'];
 	   $path = $linhaNoticias['Link_Page'];
-      
-       if($imagem != "images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão  
+
+       if($imagem != "images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão
        {
         @unlink($imagem); //remove arquivo em pasta
        }
@@ -65,7 +69,7 @@ if(!$_SESSION['auth']){
 
 
   if(isset($_POST['sendNewPassword']) ){
-  
+
         $email = $_SESSION['email'];
 		$query = mysql_query("SELECT*FROM `administradores` WHERE `Login` = '$email'");
 		$adm = mysql_fetch_array($query);
@@ -74,17 +78,17 @@ if(!$_SESSION['auth']){
 		$currentPasswordSend = $_POST['currentPassword'];
 		$newPassword = $_POST['newPassword'];
 		$confirmNewPassword = $_POST['confirmNewPassord'];
-		
+
 		if($password == $currentPasswordSend){ //Senha correta
-		
+
 		   if($newPassword == $confirmNewPassword){
-		         
+
 				   mysql_query("UPDATE `administradores` SET `Senha`= '$newPassword' WHERE `Login`='$email' "); //muda senha
 		   }
 		   else{
 		      echo "<script>alert('Senha de confirmação incorreta')</script>";
 		   }
-		   
+
 
 		}
 		else{
@@ -250,7 +254,7 @@ if(!$_SESSION['auth']){
                       </div>
                       <div class="modal-body text-justify">
                         <form method='POST' action=''>
-                          
+
                           <div class="form-group">
                             <label>Senha atual</label>
                             <input required="true"  name='currentPassword' type="password" class="form-control" id="descricao">
