@@ -97,11 +97,8 @@
                 <div class='panel panel-default textEdit'>
 
                     <div class="panel-heading text-center">
-<<<<<<< HEAD
-                        <h4><i class="fa fa-spin fa-paperclip"></i> O que faz um Engenheiro de Computação?</h4>
-=======
                         <h4><i class="fa fa-spin fa-paperclip"></i> O que faz um Engenheiro de ComputaÃ§Ã£o?</h4>
->>>>>>> origin/master
+
                     </div>
                     <div class="panel-body">
 					Loorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia et metus ac blandit. Phasellus sit amet odio ex. Sed sapien arcu, dictum ac nibh id, posuere facilisis diam. Morbi in efficitur massa. Duis pharetra lectus felis, eu pellentesque est suscipit vel. Quisque congue convallis nulla, a convallis odio placerat id. Praesent libero nulla, porta nec finibus nec, feugiat quis ligula. Vestibulum eget purus ut turpis mollis tempus.
