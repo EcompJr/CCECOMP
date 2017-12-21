@@ -224,7 +224,7 @@ if(!$_SESSION['auth']){
 
     <br>
     <br>
-    <br>
+    <br><br><br><br><br><br><br><br><br><br>
     <?php require_once("footer.php"); ?>
 
   </body>

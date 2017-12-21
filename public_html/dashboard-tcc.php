@@ -521,7 +521,7 @@ if(isset($_POST['enviarTCC'])){
   <!--Script para TCC -->
   <script src='js/tcc.js'></script>
 
-  <br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
   <?php require_once("footer.php"); ?>
 
 </body>

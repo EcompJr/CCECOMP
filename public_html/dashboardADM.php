@@ -306,7 +306,7 @@ if(!$_SESSION['auth']){
     <script src="js/bootstrap.min.js"></script>
  <!-- navBarscript -->
     <script src="js/navbarADM.js" > </script>
-       <br><br><br>
+       <br><br><br><br><br><br><br><br><br><br><br><br>
    <?php require_once("footer.php"); ?>
 
   </body>

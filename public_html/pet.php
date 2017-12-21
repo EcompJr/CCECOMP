@@ -80,7 +80,7 @@
                   </div>
                   <div class="col-md-1">
                     <a role="button"  data-toggle="collapse" data-target="#info"  ><i style="color:#f0ad4e" class="fa-2x glyphicon glyphicon-plus"></i></a>
-                    <div id="info" class="collapse container">
+                    <div id="info" class="collapse">
                       <p>Email: petengsuefs@gmail.com<br>
                       </p>
                     </div>

@@ -211,7 +211,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
     </script>
     <br>
     <br>
-    <br>
+    <br><br><br><br><br><br><br><br><br><br>
     <?php require_once("footer.php"); ?>
 
   </body>

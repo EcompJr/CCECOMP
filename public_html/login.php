@@ -64,9 +64,7 @@ if(isset($_GET['login'])) {
 </head>
 <?php require_once 'header.php';
 ?>
-
-<body>
-    <style>
+   <style>
         .jumbotron {
             width: 500px;
             text-align: center;
@@ -88,7 +86,11 @@ if(isset($_GET['login'])) {
             margin-top: -10px;
             /* Metade da valor da Altura */
         }
-    </style>
+    </style> 
+
+
+<body>
+  
     <div class="jumbotron container">
         <form method="POST" action="?login=go">
             <h2>Login</h2>
@@ -103,6 +105,7 @@ if(isset($_GET['login'])) {
             <input class="btn btn-warning btn-lg" type="submit" value="Entrar">
         </form>
     </div>
+    
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -117,7 +120,7 @@ if(isset($_GET['login'])) {
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <br>
     <br>
-    <br>
+    <br><br><br><br>
     <?php require_once 'footer.php';
 ?>
 </body>

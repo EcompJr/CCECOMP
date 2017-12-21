@@ -78,7 +78,7 @@ require_once 'addPageEntidades.php';
             </div>
           </form>
         </div>
-
+  <br><br><br><br>
         <hr>
 
     </div>

@@ -109,9 +109,8 @@
                                     <p align='justify'>O profissional formado em Engenharia 
                                           da Computação é capaz de projetar e construir hardware e software.
                                       </p>
-                                      <button data-toggle='collapse' data-target='#moreInfo'class='btn btn-default'>Ler mais...</button>
-                             </div>         
-                             
+                                      
+                             </div>     
                              <div id='moreInfo'class='collapse'>
                              <div class='row'>
                                   <div class=' col-md-offset-1 col-md-11'>
@@ -135,7 +134,9 @@
                                          </p>
                                     </div>     
                             </div>
-                             </div>
+                             </div>    
+                             <button style='margin-left:60px'data-toggle='collapse' data-target='#moreInfo'class='btn btn-default'>Ler mais...</button>
+                             
                           </div>
                     </div>
 
