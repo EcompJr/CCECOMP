@@ -108,7 +108,7 @@
 					<header>
 						<h2 style="color:white">Deixe-nos uma mensagem</h2>
 					</header>
-					<form method="post" action="bin/contact_me.php">
+					<form method="post" action="">
 						<div class="field half first">
 							<label style="color:white"for="name">Nome</label>
 							<input class="form-control" type="text" name="name" id="name" />
@@ -122,7 +122,7 @@
 							<textarea class="form-control"rows="20"name="message" id="message" rows="6"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input class="btn btn-primary" name"submit" type="submit" value="Enviar Mensagem" class="alt" /></li>
+							<li><button class="btn btn-primary" name="sendEmail" type="submit"  >Enviar Mensagem</button></li>
 						</ul>
 					</form>
 				</div>
@@ -131,17 +131,17 @@
         <!-- /.row -->
 
 <?php
-if(isset($_POST['submit'])){
+if(isset($_POST['sendEmail'])){
         $name     = $_POST['name'];
         $email    = $_POST['email'];
         $message = $_POST['message'];
-        $corpo  = "Nome: ".$name."<BR>\n";
-        $corpo .= "Email: ".$email."<BR>\n";
-        $corpo .= "Mensagem: ".$message."<BR>\n";
-        if(mail("luanvictortb@gmail.com","Site",$corpo)){
-          echo("email enviado com sucesso");
+        $corpo  = "Nome: ".$name."\n";
+        $corpo .= "Email: ".$email."\n";
+        $corpo .= "Mensagem: ".$message."\n";
+        if(mail("ccecomp@ecomp.uefs.br","Enviado do site CCECOMP",$corpo, 'From:'.$email)){
+          echo  "<script>alert('email enviado com sucesso')</script>";
         } else {
-          echo("Erro ao enviar e-mail");
+          echo "<script>alert('Erro ao enviar e-mail')</script>";
         }
         }
 ?>
