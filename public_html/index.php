@@ -101,7 +101,42 @@
 
                     </div>
                     <div class="panel-body">
-					Loorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia et metus ac blandit. Phasellus sit amet odio ex. Sed sapien arcu, dictum ac nibh id, posuere facilisis diam. Morbi in efficitur massa. Duis pharetra lectus felis, eu pellentesque est suscipit vel. Quisque congue convallis nulla, a convallis odio placerat id. Praesent libero nulla, porta nec finibus nec, feugiat quis ligula. Vestibulum eget purus ut turpis mollis tempus.
+				        <div class='row'>
+                            <div class=' col-md-offset-1 col-md-6'>
+                            <img  width='250px'src='images/engenharia-de-computacao.jpg' alt='foto de engenheiro' style='border-radius:10px'>
+                            </div>
+                            <div class='col-md-5'>
+                                    <p align='justify'>O profissional formado em Engenharia 
+                                          da Computação é capaz de projetar e construir hardware e software.
+                                      </p>
+                                      <button data-toggle='collapse' data-target='#moreInfo'class='btn btn-default'>Ler mais...</button>
+                             </div>         
+                             
+                             <div id='moreInfo'class='collapse'>
+                             <div class='row'>
+                                  <div class=' col-md-offset-1 col-md-11'>
+                                         <p align='justify'>
+                                         O hardware consiste na parte física do computador, 
+                                        suas estruturas  e componentes e seus periféricos (como teclado, mouse e monitor).
+                                         Nessa área, o engenheiro de computação faz a integração de circuitos eletrônicos da máquina e desenvolve placas de ligação entre
+                                         o equipamento e seus acessórios.
+                                         Na área de desenvolvimento de software o engenheiro da 
+                                           computação cria programas de computadores e aplicativos para
+                                            os mais diversos fins.
+                                         </p>
+                                         <p align='justify'>
+                                         Outra área em que um engenheiro da computação pode atuar é o campo da automação industrial e robótica. Ele desenvolve robôs e sistemas digitais para fábricas e indústrias.
+                                          Também é comum este profissional atuar no suporte e gerenciamento de redes de computadores em empresas de grande porte.
+                                           A carreira acadêmica é outra opção para um engenheiro da computação, que pode ministrar aulas para cursos técnicos e profissionalizantes. Para os que optam por continuar seus estudos fazendo mestrado e doutorado existe a opção de trabalhar em universidades como professores e pesquisadores.
+                                         </p>
+                                         <p align='justify'>
+                                         Para exercer a profissão de engenheiro da computação é necessário, 
+                                         além do diploma de bacharel em uma instituição credenciada pelo MEC, obter um registro junto ao CREA (Conselho Regional de Engenharia, Arquitetura e Agronomia).
+                                         </p>
+                                    </div>     
+                            </div>
+                             </div>
+                          </div>
                     </div>
 
 

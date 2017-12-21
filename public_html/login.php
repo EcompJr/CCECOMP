@@ -10,18 +10,23 @@ if(isset($_GET['login'])) {
     if($_GET['login']=='go') {
         //Logou
         $login=$_POST['login'];
+        $email = $login;
         $senha=$_POST['senha'];
+        $login = md5($login);
+        $senha = md5($senha);
+       
         $secretKey="6LfA4TkUAAAAAPWG23mIr5EAD3F8-EBEnM2_uas8";
-        $responseKey=$_POST['g-recaptcha-response'];
+        @$responseKey=$_POST['g-recaptcha-response'];
         $userIP=$_SERVER['REMOTE_ADDR'];
         $url="https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
-        $response=file_get_contents($url);
-        $response=json_decode($response);
+        @$response=file_get_contents($url);
+        @$response=json_decode($response);
         $query=mysql_query("SELECT * FROM `administradores` WHERE `Login`= '$login' AND `Senha`= '$senha'");
         if(mysql_num_rows($query)==1) {
             //Existe um administrador com este login e senha
             if($response->success) {
                 $_SESSION['auth']=True;
+                $_SESSION['email'] = $email;
                 header("location:dashboardADM.php");
             }
         }

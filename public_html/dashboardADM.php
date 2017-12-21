@@ -68,16 +68,21 @@ if(!$_SESSION['auth']){
   }
 
 
-  if(isset($_POST['sendNewPassword']) ){
+  if(isset($_POST['sendNewPassword']) ){ //atualizar password
 
         $email = $_SESSION['email'];
+        $email = md5($email);
 		$query = mysql_query("SELECT*FROM `administradores` WHERE `Login` = '$email'");
 		$adm = mysql_fetch_array($query);
-		$password = $adm['Senha'];
-
-		$currentPasswordSend = $_POST['currentPassword'];
+    $password = $adm['Senha'];
+    
+    $currentPasswordSend = $_POST['currentPassword'];
+    $currentPasswordSend = md5($currentPasswordSend);
 		$newPassword = $_POST['newPassword'];
-		$confirmNewPassword = $_POST['confirmNewPassord'];
+    $confirmNewPassword = $_POST['confirmNewPassord'];
+    
+    $newPassword = md5($newPassword);
+    $confirmNewPassword = md5($confirmNewPassword);
 
 		if($password == $currentPasswordSend){ //Senha correta
 
@@ -192,7 +197,7 @@ if(!$_SESSION['auth']){
                                  $nome = $adm['Nome'];
                                  $id = $adm['ID'];
 								 $email = $adm['Login'];
-								 if($email != "ccecomp@ecomp.uefs.br")
+								 if($email != "ef84d6e2cf7188fd993bb1fe2acf22c0")
                                  echo " <li class='list-group-item'>$nome <button name='removerAdm' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button></li>";
 
                             }
@@ -221,15 +226,15 @@ if(!$_SESSION['auth']){
                         <form method='POST' action=''>
                           <div class="form-group">
                             <label>Nome Completo</label>
-                            <input required="true" name='nomeCompleto' type="text" class="form-control" id="cargo">
+                            <input required="true" name='nomeCompleto' type="text" class="form-control" >
                           </div>
                           <div class="form-group">
                             <label>Email/Login</label>
-                            <input required="true"  name='loginEmail' type="text" class="form-control" id="descricao">
+                            <input required="true"  name='loginEmail' type="text" class="form-control" >
                           </div>
                           <div class="form-group">
                             <label>Senha</label>
-                            <input required="true" type='password'name='senha'  class="form-control" id="data">
+                            <input required="true" type='password'name='senha'  class="form-control" >
                           </div>
                           <div class="form-group">
                             <label>Confirmar Senha</label>
@@ -257,11 +262,11 @@ if(!$_SESSION['auth']){
 
                           <div class="form-group">
                             <label>Senha atual</label>
-                            <input required="true"  name='currentPassword' type="password" class="form-control" id="descricao">
+                            <input required="true"  name='currentPassword' type="password" class="form-control" >
                           </div>
                           <div class="form-group">
                             <label>Nova Senha</label>
-                            <input required="true" type='password'name='newPassword'  class="form-control" id="data">
+                            <input required="true" type='password'name='newPassword'  class="form-control" >
                           </div>
                           <div class="form-group">
                             <label>Confirmar Nova Senha</label>
