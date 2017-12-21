@@ -122,7 +122,7 @@
                         </tr>
                         <tr>
                             <th scope="row"></th>
-                            <td>Claudia Pinto Pereira Sena</td>
+                            <td>Claudia Pinto Pereira</td>
                             <td>Doutorado</td>
                             <td>Doutora em Difusão do Conhecimento pela UFBA</td>
                             <td>Área de Informática, DEXA</td>
