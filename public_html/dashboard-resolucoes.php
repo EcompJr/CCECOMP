@@ -85,7 +85,7 @@ $busca = array();
 
                  if( $nomeArquivoResolucao != ''){ //faz upload do arquivo se existir
                  $extensaoResolucao = pathinfo($nomeArquivoResolucao,PATHINFO_EXTENSION);
-                 $arquivo = 'data/resolucoes'.$numero.".".$extensaoResolucao;
+                 $arquivo = '../data/resolucoes'.$numero.".".$extensaoResolucao;
 
                  if($extensaoResolucao == 'pdf' || $extensaoResolucao == 'doc' || $extensaoResolucao == 'docx' || $extensaoResolucao == 'PDF' ){
                            $upResolucao = true; //Pode adicionar a foto
@@ -188,18 +188,18 @@ if(isset($_POST['removeTypeResolution'])){
    <title>CCECOMP UEFS</title>
 
    <!-- Bootstrap Core CSS -->
-   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="../css/bootstrap.min.css" rel="stylesheet">
 
    <!-- Custom CSS -->
-   <link href="css/modern-business.css" rel="stylesheet">
+   <link href="../css/modern-business.css" rel="stylesheet">
 
    <!-- Custom Fonts -->
-   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
    <!-- navBar css -->
-   <link href="css/navbarADM.css" rel="stylesheet">
+   <link href="../css/navbarADM.css" rel="stylesheet">
 
    <!-- Favicon -->
-   <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+   <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
 
 
@@ -471,12 +471,12 @@ if(isset($_POST['removeTypeResolution'])){
 
 
    <!-- jQuery -->
-   <script src="js/jquery.js"></script>
+   <script src="../js/jquery.js"></script>
 
    <!-- Bootstrap Core JavaScript -->
-   <script src="js/bootstrap.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
    <!-- navBarscript -->
-   <script src="js/navbarADM.js">
+   <script src="../js/navbarADM.js">
      < script >
        $('#myModal').on('shown.bs.modal', function () {
          $('#myInput').focus()

@@ -24,10 +24,14 @@ if(isset($_GET['login'])) {
         $query=mysql_query("SELECT * FROM `administradores` WHERE `Login`= '$login' AND `Senha`= '$senha'");
         if(mysql_num_rows($query)==1) {
             //Existe um administrador com este login e senha
-            if($response->success) {
+            if(@$response->success) {
                 $_SESSION['auth']=True;
                 $_SESSION['email'] = $email;
                 header("location:dashboardADM.php");
+            }
+            else{
+                echo "<script>alert('Desculpe, ocorreu um problema com sua conexão')</script>";
+
             }
         }
         else {
@@ -51,13 +55,13 @@ if(isset($_GET['login'])) {
     <meta name="author" content="">
     <title>CCECOMP UEFS</title>
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->

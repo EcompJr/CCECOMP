@@ -15,11 +15,11 @@
            <meta name='description' content=''>
            <meta name='author' content=''>
            <title>CCECOMP UEFS</title>
-           <link href='css/bootstrap.min.css' rel='stylesheet'>
-           <link href='css/modern-business.css' rel='stylesheet'>
-           <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-           <link href='css/navbarADM.css' rel='stylesheet'>
-           <link rel='icon' type='images/png' sizes='32x32' href='images/favicon.ico'>
+           <link href='../css/bootstrap.min.css' rel='stylesheet'>
+           <link href='../css/modern-business.css' rel='stylesheet'>
+           <link href='../font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+           <link href='../css/navbarADM.css' rel='stylesheet'>
+           <link rel='icon' type='images/png' sizes='32x32' href='../images/favicon.ico'>
          </head>
          <body>		
 		";
@@ -31,7 +31,7 @@
                   <div class='col-lg-12'>
                       <h1 class='page-header'>$titulo</h1>
                       <ol class='breadcrumb'>
-                          <li><a href='index.php'>Home</a>
+                          <li><a href='../index.php'>Home</a>
                           </li>
                           <li class='active'>$titulo</li>
                       </ol>
@@ -45,7 +45,7 @@
 							  <div class='row'>
 								<div class=' col-lg-offset-3 col-lg-9'>
 					
-								   <img width='400'style='border-radius:10px'alt='Imagem da notícia' src='$imagem' />
+								   <img width='400'style='border-radius:10px'alt='Imagem da notï¿½cia' src='$imagem' />
 								</div>
 							  </div>";
 							   
@@ -78,9 +78,9 @@
 				  
 
           $htmlPage .="
-		            <script src='js/jquery.js'></script>
-                    <script src='js/bootstrap.min.js'></script>
-                    <script src='js/navbarADM.js'></script>    
+		            <script src='../js/jquery.js'></script>
+                    <script src='../js/bootstrap.min.js'></script>
+                    <script src='../js/navbarADM.js'></script>    
 					<?php require_once 'editPage.php';?>
 					<br><br><br>
 		           <?php  require_once 'footer.php' ?>

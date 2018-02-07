@@ -12,16 +12,16 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +44,7 @@
                 <h1 class="page-header">PET Engenharias
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="../index.php">Home</a>
                     </li>
                     <li class="active">PET Engenharias</li>
                 </ol>
@@ -73,7 +73,7 @@
                     <a href="https://www.facebook.com/petengsuefs/" target="_blank"><i  class="fa fa-facebook-square fa-3x"></i></a>
                   </div>
                   <div class="col-md-1">
-                    <a target="_blank" href="http://www.petengsuefs.net"><img height="45" width='45'  style="border-radius:20px;"  src='images/logoPET.png'/> </a>
+                    <a target="_blank" href="http://www.petengsuefs.net"><img height="45" width='45'  style="border-radius:20px;"  src='../images/logoPET.png'/> </a>
                   </div>
                   <div class="col-md-1">
                     <a href="https://www.instagram.com/pet_engs_uefs/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
@@ -97,10 +97,10 @@
     <!-- /.container -->
  <?php require_once 'editPage.php';?>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <?php require_once("footer.php") ?>
 

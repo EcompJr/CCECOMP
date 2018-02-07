@@ -19,16 +19,16 @@ require_once 'addPageEntidades.php';
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,7 +52,7 @@ require_once 'addPageEntidades.php';
                 <h1 class="page-header">Entidades
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="../index.php">Home</a>
                     </li>
                     <li class="active">Entidades</li>
                 </ol>
@@ -71,7 +71,7 @@ require_once 'addPageEntidades.php';
 
                 <h2 class="page-header"> <a href="daecomp.php"> DA de Engenharia de Computação </a></h2>
 
-                <?php require_once 'listAddPageEntidades.php'; ?>
+               <?php require_once('listAddPageEntidades.php') ?>
 
 
 
@@ -130,10 +130,10 @@ require_once 'addPageEntidades.php';
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <?php require_once("footer.php") ?>
 

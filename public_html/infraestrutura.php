@@ -12,16 +12,16 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +46,7 @@
                 </h1>
                 <ol class="breadcrumb">
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="../index.php">Home</a>
                     </li>
                     <li class="active">Infraestrutura</li>
                 </ol>
@@ -98,8 +98,8 @@
                                 e fechamento da sala.
                                 <br>
                                 <br>
-                                <a class="btn btn-warning" role="button" target="_blank" href="data/acesso_LTEC3.pdf">Formulário em formato PDF</a>
-                                <a class="btn btn-warning" role="button" target="_blank" href="data/acesso_LTEC3.odt">Formulário em formato ODT</a>
+                                <a class="btn btn-warning" role="button" target="_blank" href="../data/acesso_LTEC3.pdf">Formulário em formato PDF</a>
+                                <a class="btn btn-warning" role="button" target="_blank" href="../data/acesso_LTEC3.odt">Formulário em formato ODT</a>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
@@ -114,10 +114,10 @@
     <!-- /.container -->
  <?php require_once 'editPage.php';?>
     <!-- jQuery -->
-    <script src="js/jquery.js "></script>
+    <script src="../js/jquery.js "></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js "></script>
+    <script src="../js/bootstrap.min.js "></script>
 
     <?php require_once("footer.php") ?>
 </body>

@@ -1,18 +1,22 @@
 <?php
 
-           $query = mysql_query("SELECT*FROM `ccecomp_paginas_criadas` WHERE `Tipo` = 'curso'");
 
 
+       $query = mysql_query("SELECT*FROM `ccecomp_paginas_criadas` WHERE `Tipo` = 'curso'");
+           
 
-           if(mysql_num_rows($query)>0){ //Existem paginas desse tipo
+
+      if(mysql_num_rows($query)>0){ //Existem paginas desse tipo
+       
 
         if(isset($_SESSION['auth'])){
-
+        
           if($_SESSION['auth']){
               while($linhas = mysql_fetch_array($query)){
 
                      $nome = $linhas['Nome'];
                      $link = $linhas['Link'];
+                     $link = "../public_html/". $link;
                      $id = $linhas['ID'];
 
 
@@ -37,6 +41,7 @@
 
                        $nome = $linhas['Nome'];
                        $link = $linhas['Link'];
+                       $link = "../public_html/". $link;
 
                        echo "
 
@@ -55,6 +60,7 @@
 
                     $nome = $linhas['Nome'];
                     $link = $linhas['Link'];
+                    $link = "../public_html/". $link;
 
                     echo "
 
@@ -70,6 +76,7 @@
            }
            else{
 
+           
                   if(isset($_SESSION['auth'])){
 
                     if($_SESSION['auth']){

@@ -12,16 +12,16 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +44,7 @@
                 <h1 class="page-header">Procedimentos e Formulários
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="../index.php">Home</a>
                     </li>
                     <li class="active">Procedimentos e Formulários</li>
                 </ol>
@@ -81,8 +81,8 @@
                     que 2 semestres para conclusão do curso.
                 </p>
 
-                <a target="_blank" class="btn btn-warning" href="data/TabelaReformuladaAtividadesComplementares.pdf" class="button">Tabela reformulada</a>
-                <a class="btn btn-warning" href="data/FormularioAtividadesComplementares.xls" class="button">Formulário para solicitação</a>
+                <a target="_blank" class="btn btn-warning" href="../data/TabelaReformuladaAtividadesComplementares.pdf" class="button">Tabela reformulada</a>
+                <a class="btn btn-warning" href="../data/FormularioAtividadesComplementares.xls" class="button">Formulário para solicitação</a>
 
                 <!-- Modal -->
                 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -215,7 +215,7 @@
                                 A <b>documentação comprovatória do motivo de ausência</b> (atestado do Serviço Médico da UEFS ou outro documento pertinente para demais casos) deve ser entregue ao colegiado no <b>prazo de 1 semana após a solicitação</b>, para que possa ser encaminhado ao professor responsável em tempo hábil para realização da segunda chamada.<br><br>
                                 Chamamos atenção que <b>não há previsão de abono de falta</b>, ou seja, a frequência do aluno continua sendo registrada normalmente. A previsão é somente de segunda chamada para o caso de haver avaliação durante o período de ausência justificada.<br><br>
 
-                                <a class="btn btn-warning" href="data/Solicitacao_Segunda_Chamada.doc" class="button">Formulário para solicitação de Segunda Chamada</a>
+                                <a class="btn btn-warning" href="../data/Solicitacao_Segunda_Chamada.doc" class="button">Formulário para solicitação de Segunda Chamada</a>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -252,10 +252,10 @@
     <!-- /.container -->
  <?php require_once 'editPage.php';?>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <script>
         $('#myModal').on('shown.bs.modal', function () {

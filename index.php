@@ -35,7 +35,8 @@
 
 </head>
 
-<?php require_once 'header.php'; ?>
+
+<?php require_once 'public_html/header.php'; ?>
 
 <body>
 
@@ -226,14 +227,14 @@
 
     </div>
     <!-- /.container -->
-	<?php require_once 'editPageIndex.php'; ?>
+	<?php require_once 'public_html/editPageIndex.php'; ?>
     <!-- jQuery -->
     <script src='js/jquery.js'></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src='js/bootstrap.min.js'></script>
 
-    <?php require_once('footer.php') ?>
+    <?php require_once('public_html/footer.php') ?>
 
 </body>
 

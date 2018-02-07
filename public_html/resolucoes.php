@@ -80,16 +80,16 @@ $busca = array();
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
 
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
 
 </head>
@@ -107,7 +107,7 @@ $busca = array();
                 <h1 class="page-header">Resoluções
                 </h1>
                 <ol style="font-size:15pt" class="breadcrumb">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="../index.php">Home</a>
                     </li>
                     <li class="active">Resoluções</li>
                 </ol>
@@ -246,10 +246,10 @@ $busca = array();
 </div>
 <br><br><br><br><br><br><br><br><br>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <?php require_once("footer.php") ?>
 

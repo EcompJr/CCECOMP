@@ -13,8 +13,9 @@
 
                      $nome = $linhas['Nome'];
                      $link = $linhas['Link'];
+                     $link = "../public_html/". $link;
                      $id = $linhas['ID'];
-
+                  
 
                      echo "
 
@@ -37,6 +38,7 @@
 
                        $nome = $linhas['Nome'];
                        $link = $linhas['Link'];
+                       $link = "../public_html/". $link;
 
                        echo "
 
@@ -55,6 +57,7 @@
 
                     $nome = $linhas['Nome'];
                     $link = $linhas['Link'];
+                    $link = "../public_html/". $link;
 
                     echo "
 

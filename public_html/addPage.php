@@ -1,6 +1,8 @@
 <?php
 
    if(isset($_POST['createPage'])){
+       
+      
 
          $numSections =  $_POST['numSections'];
          $namePage = $_POST['namePage'];
@@ -13,11 +15,11 @@
            <meta name='description' content=''>
            <meta name='author' content=''>
            <title>CCECOMP UEFS</title>
-           <link href='css/bootstrap.min.css' rel='stylesheet'>
-           <link href='css/modern-business.css' rel='stylesheet'>
-           <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-           <link href='css/navbarADM.css' rel='stylesheet'>
-           <link rel='icon' type='images/png' sizes='32x32' href='images/favicon.ico'>
+           <link href='../css/bootstrap.min.css' rel='stylesheet'>
+           <link href='../css/modern-business.css' rel='stylesheet'>
+           <link href='../font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+           <link href='../css/navbarADM.css' rel='stylesheet'>
+           <link rel='icon' type='images/png' sizes='32x32' href='../images/favicon.ico'>
          </head>
          <body>
 
@@ -34,7 +36,7 @@
                       <h1 class='page-header'>$namePage
                       </h1>
                       <ol class='breadcrumb'>
-                          <li><a href='index.php'>Home</a>
+                          <li><a href='../index.php'>Home</a>
                           </li>
                           <li class='active'>$namePage</li>
                       </ol>
@@ -86,14 +88,30 @@
                      $htmlPage .= "<ul>";
 
                      $filesSection = $_FILES['fileSection'.$i]; //Array
+                    
+                            if($_SERVER['REQUEST_URI']== '/index.php'){
+                                @mkdir("data/dataPages/".$namePage);
 
-                      @mkdir("data/dataPages/".$namePage);
+                            }
+                            else{
+                                @mkdir("../data/dataPages/".$namePage);
+                            }
+                     
                      for($b=0; $b< sizeof($filesSection); $b++){
 
                          if(isset($filesSection['name'][$b]) && @$filesSection['name'][$b] != ''){
 
+                            if($_SERVER['REQUEST_URI'] == '/index.php'){
+                                $path = 'data/dataPages/'.$namePage."/".$filesSection['name'][$b]; //Pode colocar qualquer arquivo
 
-                             $path = 'data/dataPages/'.$namePage."/".$filesSection['name'][$b]; //Pode colocar qualquer arquivo
+                            }
+                            else{
+
+                                $path = '../data/dataPages/'.$namePage."/".$filesSection['name'][$b]; //Pode colocar qualquer arquivo
+                            }
+                            
+                             
+                             
                              $file = $filesSection['tmp_name'][$b];
                              move_uploaded_file($file,$path);
                             $htmlPage .= "
@@ -117,9 +135,9 @@
           $htmlPage .= "
           <hr>
           </div>
-          <script src='js/jquery.js'></script>
-          <script src='js/bootstrap.min.js'></script>
-          <script src='js/navbarADM.js'></script>
+          <script src='../js/jquery.js'></script>
+          <script src='../js/bootstrap.min.js'></script>
+          <script src='../js/navbarADM.js'></script>
 
 
           <?php require_once 'editPage.php';?>
@@ -135,15 +153,25 @@
                </html>
           ";
 
+
+          
            $pathPage = $namePage.".php";
-           $file = fopen($pathPage, 'w');
+           $file;
+           if($_SERVER['REQUEST_URI'] == '/index.php'){
+                 $file = fopen("public_html/".$pathPage, 'w');
+           }
+           else{
+            $file = fopen($pathPage, 'w');
+
+           }
+           
            fwrite($file,$htmlPage);
            $type = $_POST['location'];
            fclose($file);
 
            mysql_query("INSERT INTO `ccecomp_paginas_criadas` (`Nome`, `Tipo`, `Link`) VALUES ('$namePage','$type','$pathPage')");
 
-
+           
 
 
 
@@ -164,9 +192,23 @@ if(isset($_POST['removerPage'])){
            $info = mysql_fetch_array($query);
            $path = $info['Link'];
            $name = $info['Nome'];
-           if(file_exists("data/dataPages/". $name))
-           delTree("data/dataPages/". $name);
-           @unlink($path);
+           
+
+                if($_SERVER['REQUEST_URI'] == '/index.php'){
+                    
+                    
+                        if(file_exists("data/dataPages/". $name))
+                            delTree("data/dataPages/". $name);
+                    @unlink("public_html/".$path);
+
+                }
+                else{
+                        if(file_exists("../data/dataPages/". $name))
+                            delTree("../data/dataPages/". $name);
+
+                    @unlink($path);
+                }
+          
 
 
             mysql_query("DELETE FROM `ccecomp_paginas_criadas` WHERE `ID`= '$id' ");

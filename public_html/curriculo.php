@@ -12,16 +12,16 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +45,7 @@
                 <h1 class="page-header">Currículo do Curso
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="../index.php">Home</a>
                     </li>
                     <li class="active">Currículo do Curso</li>
                 </ol>
@@ -73,13 +73,13 @@
                 Veja abaixo a Ementa dos Componentes Curriculares, a Estrutura Curricular e o Fluxograma. Currículo Novo (2012, conforme
                 Resolução CONSEPE 217/2011): </br>
                 </br>
-                <a target="_blank" href="data/Ementario-res217-2011.pdf" class="btn btn-warning" role="button">Ementas das Disciplinas</a>
-                <a target="_blank" href="data/OfertaSemestralizada-res217-2011.pdf" class="btn btn-warning" role="button">Oferta Semestralizada</a>
-                <a target="_blank" href="data/FluxogramaCurr2012.pdf" class="btn btn-warning" role="button">Fluxograma</a>
+                <a target="_blank" href="../data/Ementario-res217-2011.pdf" class="btn btn-warning" role="button">Ementas das Disciplinas</a>
+                <a target="_blank" href="../data/OfertaSemestralizada-res217-2011.pdf" class="btn btn-warning" role="button">Oferta Semestralizada</a>
+                <a target="_blank" href="../data/FluxogramaCurr2012.pdf" class="btn btn-warning" role="button">Fluxograma</a>
                 </br>
                 </br>
                 <p>Currículo Antigo:</p>
-                <a target="_blank" href="data/programas.zip" class="btn btn-warning" role="button">Programas</a>
+                <a target="_blank" href="../data/programas.zip" class="btn btn-warning" role="button">Programas</a>
 
             </div>
         </div>
@@ -92,10 +92,10 @@
     <!-- /.container -->
     <?php require_once 'editPage.php';?>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <?php require_once("footer.php") ?>
 

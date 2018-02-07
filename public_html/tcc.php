@@ -174,17 +174,17 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
 
-  <link href="css/modern-business.css" rel="stylesheet">
+  <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
 
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -208,7 +208,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
                 <h1 class="page-header">TCC
                 </h1>
                 <ol style="font-size:15pt" class="breadcrumb">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="../index.php">Home</a>
                     </li>
                     <li class="active">TCC</li>
                 </ol>
@@ -374,12 +374,12 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!--Script para TCC -->
-    <script src='js/tcc.js'></script>
+    <script src='../js/tcc.js'></script>
 
     <?php require_once("footer.php") ?>
 

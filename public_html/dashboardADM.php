@@ -24,7 +24,9 @@ if(!$_SESSION['auth']){
 
          if($senha == $confirmaSenha){ //cadastrou corretamente salva no BD
            mysql_query("INSERT INTO `administradores` (`Nome`, `Login`, `Senha`) VALUES ('$nome', '$cLogin', '$cSenha')");
-         }
+           echo "<script>alert('senha modificada com sucesso!')</script>";
+         
+          }
 
          else{ //Errou as senhas
              echo "<script>alert('Senhas digitadas incorretas')</script>";
@@ -120,18 +122,18 @@ if(!$_SESSION['auth']){
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- navBar css -->
-    <link href="css/navbarADM.css" rel="stylesheet" >
+    <link href="../css/navbarADM.css" rel="stylesheet" >
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
 
 
@@ -300,12 +302,12 @@ if(!$_SESSION['auth']){
 
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
  <!-- navBarscript -->
-    <script src="js/navbarADM.js" > </script>
+    <script src="../js/navbarADM.js" > </script>
        <br><br><br><br><br><br><br><br><br><br><br><br>
    <?php require_once("footer.php"); ?>
 

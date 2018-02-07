@@ -24,66 +24,91 @@ require_once 'addPage.php';
                   <span class="icon-bar"></span>
               </button>
             <div>
-            <img  alt="logo do colegiado" width="45" height="40" style="padding-top:10px" src="images/customLogo1.png" />
-            <a class="navbar-brand" href="index.php" >CCECOMP</a>
+            <img  alt="logo do colegiado" width="45" height="40" style="padding-top:10px" src="../images/customLogo1.png" />
+            <a class="navbar-brand" href="../index.php" >CCECOMP</a>
             </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="about.php">SOBRE</a>
+                    <a href="../public_html/about.php">SOBRE</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">O CURSO</a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="objetivos.php">Objetivos</a>
+                            <a href="../public_html/objetivos.php">Objetivos</a>
                         </li>
                         <li>
-                            <a href="perfil.php">Perfil do Profissional</a>
+                            <a href="../public_html/perfil.php">Perfil do Profissional</a>
                         </li>
                         <li>
-                            <a href="mercado.php">Mercado</a>
+                            <a href="../public_html/mercado.php">Mercado</a>
                         </li>
                         <li>
-                            <a href="docentes.php">Docentes</a>
+                            <a href="../public_html/docentes.php">Docentes</a>
                         </li>
                         <li>
-                            <a href="curriculo.php">Currículo do Curso</a>
+                            <a href="../public_html/curriculo.php">Currículo do Curso</a>
                         </li>
                         <li>
-                            <a href="infraestrutura.php">Infraestrutura</a>
+                            <a href="../public_html/infraestrutura.php">Infraestrutura</a>
                         </li>
-                        <?php  require_once 'listAddPageCurso.php';?>
+                      
+                        <?php 
+                           if($_SERVER['REQUEST_URI'] == '/index.php'){
+
+                                  require_once 'public_html/listAddPageCurso.php';
+                           }
+                           else{
+                                  require_once 'listAddPageCurso.php';
+                           }
+                        
+                        ?>
+                        
+                      
+
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">ÁREA DO ALUNO</a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="formularios.php">Procedimentos e Formulários</a>
+                            <a href="../public_html/formularios.php">Procedimentos e Formulários</a>
                         </li>
                         <li>
-                            <a href="tcc.php">TCC</a>
+                            <a href="../public_html/tcc.php">TCC</a>
                         </li>
                         <li>
-                            <a href="estagio.php">Estágio</a>
+                            <a href="../public_html/estagio.php">Estágio</a>
                         </li>
                         <li>
-                            <a href="resolucoes.php">Resoluções</a>
+                            <a href="../public_html/resolucoes.php">Resoluções</a>
                         </li>
-                        <?php   require_once 'listAddPageAreaAluno.php'?>
+                        
+                         <?php
+
+                                if($_SERVER['REQUEST_URI'] == '/index.php'){
+
+                                    require_once 'public_html/listAddPageAreaAluno.php';
+                                }
+                                else{
+                                    require_once 'listAddPageAreaAluno.php';
+                                }
+
+                         ?>
+                    
                     </ul>
                 </li>
                 <li>
-                    <a href="entidades.php">ENTIDADES</a>
+                    <a href="../public_html/entidades.php">ENTIDADES</a>
                 </li>
                 <li>
-                    <a href="contact.php">CONTATO</a>
+                    <a href="../public_html/contact.php">CONTATO</a>
                 </li>
                 <li class="dropdown">
-                    <a href="login.php">ACESSO RESTRITO</a>
+                    <a href="../public_html/login.php">ACESSO RESTRITO</a>
                 <li>
             </li>
             </li>
@@ -95,7 +120,7 @@ require_once 'addPage.php';
 
     <!--Cadastro Form -->
 </form>
-<script src='js/registerPage.js'> </script>
+<script src='../js/registerPage.js'> </script>
 </nav>
 
 <?php

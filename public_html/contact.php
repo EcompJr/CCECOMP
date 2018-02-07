@@ -12,16 +12,16 @@
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +45,7 @@
                 <h1 class="page-header">Contato
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="../index.php">Home</a>
                     </li>
                     <li class="active">Contato</li>
                 </ol>
@@ -87,14 +87,9 @@
                 </p>
                 <ul class="list-unstyled list-inline list-social-icons">
                     <li>
-                        <a href="http://www.facebook.com/ecompuefs"><i  class="fa fa-facebook-square fa-3x"></i></a>
+                        <a target="_blank"href="http://www.facebook.com/ecompuefs"><i  class="fa fa-facebook-square fa-3x"></i></a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-google-plus-square fa-3x"></i></a>
-                    </li>
+                  
                 </ul>
             </div>
         </div>
@@ -152,15 +147,15 @@ if(isset($_POST['sendEmail'])){
     <!-- /.container -->
  <?php require_once 'editPage.php';?>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <!-- Contact Form JavaScript -->
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
 
     <?php require_once("footer.php") ?>
 

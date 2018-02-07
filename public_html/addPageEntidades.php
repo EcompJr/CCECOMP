@@ -13,11 +13,11 @@
            <meta name='description' content=''>
            <meta name='author' content=''>
            <title>CCECOMP UEFS</title>
-           <link href='css/bootstrap.min.css' rel='stylesheet'>
-           <link href='css/modern-business.css' rel='stylesheet'>
-           <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-           <link href='css/navbarADM.css' rel='stylesheet'>
-           <link rel='icon' type='images/png' sizes='32x32' href='images/favicon.ico'>
+           <link href='../css/bootstrap.min.css' rel='stylesheet'>
+           <link href='../css/modern-business.css' rel='stylesheet'>
+           <link href='../font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+           <link href='../css/navbarADM.css' rel='stylesheet'>
+           <link rel='icon' type='images/png' sizes='32x32' href='../images/favicon.ico'>
          </head>
          <body>
 
@@ -33,7 +33,7 @@
                       <h1 class='page-header'>$namePage
                       </h1>
                       <ol class='breadcrumb'>
-                          <li><a href='index.php'>Home</a>
+                          <li><a href='../index.php'>Home</a>
                           </li>
                           <li class='active'>$namePage</li>
                       </ol>
@@ -56,8 +56,8 @@
 
 
           $picture = $_FILES['picture'];
-          @mkdir("data/dataPages/".$namePage);
-          $path = 'data/dataPages/'.$namePage."/".$picture['name'];
+          @mkdir("../data/dataPages/".$namePage);
+          $path = '../data/dataPages/'.$namePage."/".$picture['name'];
           $file = $picture['tmp_name'];
           move_uploaded_file($file,$path);
 
@@ -217,9 +217,9 @@
              </div>
 
 
-          <script src='js/jquery.js'></script>
-          <script src='js/bootstrap.min.js'></script>
-          <script src='js/navbarADM.js'></script>
+          <script src='../js/jquery.js'></script>
+          <script src='../js/bootstrap.min.js'></script>
+          <script src='../js/navbarADM.js'></script>
 
            <?php require_once 'editPage.php';?>
          <br><br><br><br><br><br><br>
@@ -259,8 +259,8 @@ if(isset($_POST['removerPageEntidades'])){
            $info = mysql_fetch_array($query);
            $path = $info['Link'];
            $name = $info['Nome'];
-           if(file_exists("data/dataPages/". $name))
-           delTreeEntity("data/dataPages/". $name);
+           if(file_exists("../data/dataPages/". $name))
+           delTreeEntity("../data/dataPages/". $name);
            @unlink($path);
 
 

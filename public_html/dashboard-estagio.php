@@ -18,7 +18,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
    
                    if($nomeArquivoFoto != ''){ //faz upload da foto se existir
                    $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
-                   $imagem = 'images/'.$titulo.".".$extensaoFoto;
+                   $imagem = '../images/'.$titulo.".".$extensaoFoto;
   
                    if($extensaoFoto == 'png' || $extensaoFoto == 'jpg' || $extensaoFoto == 'jpeg'){
                              $upFoto = true; //Pode adicionar a foto
@@ -37,7 +37,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                 }
                  require_once 'addPageEstagio.php';
 				 $titulo = str_replace(':','',$titulo);
-			     $path = $titulo . ".php";
+			     $path = "../public_html/".$titulo . ".php";
 			     $file = fopen($path ,"w");
 			     fwrite($file,$htmlPage);
                  mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Imagem`,`Link_Page`) VALUES ('$titulo','$imagem','$path')");
@@ -55,7 +55,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
        $imagem = $linhaEstagios['Imagem'];
 	   $link = $linhaEstagios['Link_Page'];
 
-       if($imagem != "images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão  
+       if($imagem != "../images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão  
        {
         @unlink($imagem); //Remove arquivo em pasta
        }
@@ -82,18 +82,18 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- navBar css -->
-    <link href="css/navbarADM.css" rel="stylesheet">
+    <link href="../css/navbarADM.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
 
 
@@ -196,13 +196,13 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
 
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 	<!-- putAnotherLinkScript -->
-	<script src="js/addLinkNotice.js"></script>
+	<script src="../js/addLinkNotice.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- navBarscript -->
-    <script src="js/navbarADM.js">
+    <script src="../js/navbarADM.js">
       < script >
         $('#myModal').on('shown.bs.modal', function () {
           $('#myInput').focus()

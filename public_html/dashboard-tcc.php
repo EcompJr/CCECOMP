@@ -168,7 +168,7 @@ if(isset($_POST['removerTCC'])){
          $linhaTCC = mysql_fetch_array($query);
          $caminhoFoto = $linhaTCC['Caminho_Imagem'];
          $caminhoPDF = $linhaTCC['Caminho_Arquivo'];
-         if($caminhoFoto != 'images/default-avatar.png') // Não remove imagem default
+         if($caminhoFoto != '../images/default-avatar.png') // Não remove imagem default
          @unlink($caminhoFoto); //remove arquivo em pasta
          @unlink($caminhoPDF); //remove arquivo em pasta
          mysql_query("DELETE FROM `aluno_tcc` WHERE `ID` ='$id'"); //Remove do BD
@@ -190,7 +190,7 @@ if(isset($_POST['enviarTCC'])){
        $tituloTCC = $_POST['tituloTCC'];
        $nomeOrientador = $_POST['nomeOrientador'];
        $palavrasChaves = $_POST['palavrasChaves'];
-       $foto = 'images/default-avatar.png';
+       $foto = '../images/default-avatar.png';
        $arquivo = $_FILES['arquivoTCC']['tmp_name'];
        $nomeArquivo = $_FILES['arquivoTCC']['name'];
        $upFoto = false;
@@ -230,7 +230,7 @@ if(isset($_POST['enviarTCC'])){
 
 
                       $extensao = pathinfo($nomeArquivo,PATHINFO_EXTENSION);
-                      $caminhoTCC  = 'data/'. $tituloTCC.".".$extensao;
+                      $caminhoTCC  = '../data/'. $tituloTCC.".".$extensao;
 
                       if($extensao == 'pdf' || $extensao == 'PDF' ){   //Verifica Extenção valida (pdf)
                                     $upArquivo= true; //Pode adicionar pdf
@@ -247,7 +247,7 @@ if(isset($_POST['enviarTCC'])){
 
                         if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
                         $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
-                        $foto = 'images/'.$nomeAluno.".".$extensaoFoto;
+                        $foto = '../images/'.$nomeAluno.".".$extensaoFoto;
 
                         if($extensaoFoto == 'png' || $extensaoFoto == 'jpg' || $extensaoFoto == 'jpeg'){
                                   $upFoto = true; //Pode adicionar a foto
@@ -299,18 +299,18 @@ if(isset($_POST['enviarTCC'])){
   <title>CCECOMP UEFS</title>
 
   <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="css/modern-business.css" rel="stylesheet">
+  <link href="../css/modern-business.css" rel="stylesheet">
 
   <!-- Custom Fonts -->
-  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- navBar css -->
-  <link href="css/navbarADM.css" rel="stylesheet">
+  <link href="../css/navbarADM.css" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.ico">
+  <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
 
 
@@ -512,14 +512,14 @@ if(isset($_POST['enviarTCC'])){
   </div>
 <br><br>
   <!-- jQuery -->
-  <script src="js/jquery.js"></script>
+  <script src="../js/jquery.js"></script>
 
   <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
   <!-- navBarscript -->
-  <script src="js/navbarADM.js"></script>
+  <script src="../js/navbarADM.js"></script>
   <!--Script para TCC -->
-  <script src='js/tcc.js'></script>
+  <script src='../js/tcc.js'></script>
 
   <br><br><br><br><br><br><br><br><br><br><br><br>
   <?php require_once("footer.php"); ?>
