@@ -22,18 +22,18 @@ if(isset($_POST['edit'])){
     <title>CCECOMP UEFS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='../css/bootstrap.min.css' rel='stylesheet'>
 
     <!-- Custom CSS -->
-    <link href='css/modern-business.css' rel='stylesheet'>
+    <link href='../css/modern-business.css' rel='stylesheet'>
 
     <!-- Custom Fonts -->
-    <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='../font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-    <link href='css/principal.css' rel='stylesheet'>
+    <link href='../css/principal.css' rel='stylesheet'>
 
     <!-- Favicon -->
-    <link rel='icon' type='images/png' sizes='32x32' href='images/favicon.ico'>
+    <link rel='icon' type='images/png' sizes='32x32' href='../images/favicon.ico'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +44,7 @@ if(isset($_POST['edit'])){
 
 </head>
 
-<?php require_once 'header.php'; ?>
+<?php require_once 'public_html/header.php'; ?>
 
 <body>
      ";
@@ -63,8 +63,8 @@ if(isset($_POST['edit'])){
                  <div class='item active'>
                  <img src='images/circuits.png' alt='Imagem tema 1'>
                  <div class='carousel-caption'>
-                 <h3>Colegiado de Engenharia de ComputaÁ„o da UEFS</h3>
-                 <p>Portal de comunicaÁ„o com o estudante</p>
+                 <h3>Colegiado de Engenharia de Computa√ß√£o da UEFS</h3>
+                 <p>Portal de comunica√ß√£o com o estudante</p>
                  <br>
                  </div>
                  </div>
@@ -73,8 +73,8 @@ if(isset($_POST['edit'])){
                  <div class='item'>
                  <img  src='images/theme-image1.jpeg' alt='Imagem tema 2'>
                  <div class='carousel-caption'>
-                 <h3 >Fique atento ‡s notÌcias do colegiado</h3>
-                 <p>Acompanhe as novidades de est·gio e notÌcias do curso</p>
+                 <h3 >Fique atento as not√≠cias do colegiado</h3>
+                 <p>Acompanhe as novidades de est√°gio e not√≠cias do curso</p>
                  <br>
                  </div>
                  </div>
@@ -119,7 +119,7 @@ if(isset($_POST['edit'])){
 			<div class='col-md-6'>
                 <div class='panel panel-default'>
                     <div class='panel-heading'>
-                        <h4><i class='	fa fa-twitch fa-spin'></i> NotÌcias</h4>
+                        <h4><i class='	fa fa-twitch fa-spin'></i> Not√≠cias</h4>
                     </div>
                     <div class='panel-body'>
                          <?php 
@@ -127,7 +127,7 @@ if(isset($_POST['edit'])){
 
 						   if(mysql_num_rows(\$query)>0){
 						       
-							    echo \"<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>NotÌcias</button>\";
+							    echo \"<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>Not√≠cias</button>\";
 								echo \" <div id='notices' class='collapse'> \";
 								echo \"<ul style='list-style-type:none'><br>\";
 						        while(\$notice = mysql_fetch_array(\$query)){
@@ -143,7 +143,7 @@ if(isset($_POST['edit'])){
 								echo \"</div>\";
 						   }
 						   else{
-						          echo \"<a role='button'class='btn btn-default'>N„o existem notÌcias.</a>\";
+						          echo \"<a role='button'class='btn btn-default'>N√£o existem not√≠cias.</a>\";
 
 						   }
 						 
@@ -155,7 +155,7 @@ if(isset($_POST['edit'])){
             <div class='col-md-12'>
                 <div class='panel panel-default'>
                     <div class='panel-heading'>
-                        <h4><i class='fa fa-spin  fa-plus-square'></i>    Est·gios</h4>
+                        <h4><i class='fa fa-spin  fa-plus-square'></i>    Est√°gios</h4>
                     </div>
                     <div class='panel-body'>
 					   <?php 
@@ -163,7 +163,7 @@ if(isset($_POST['edit'])){
 
 						   if(mysql_num_rows(\$query)>0){
 						       
-							    echo \"<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>NotÌcias de Est·gio</button>\";
+							    echo \"<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>Not√≠cias de Est√°gio</button>\";
 								echo \"<div id='internship' class='collapse'>\";
 								echo \"<ul style='list-style-type:none'><br>\";
 						        while(\$notice = mysql_fetch_array(\$query)){
@@ -179,7 +179,7 @@ if(isset($_POST['edit'])){
 								echo \"</div>\";
 						   }
 						   else{
-						          echo \"<a role='button'class='btn btn-default'>N„o existem notÌcias de est·gio.</a>\";
+						          echo \"<a role='button'class='btn btn-default'>N√£o existem not√≠cias de est√°gio.</a>\";
 
 						   }
 						 
@@ -201,14 +201,14 @@ if(isset($_POST['edit'])){
 
     </div>
     <!-- /.container -->
-	<?php require_once 'editPageIndex.php'; ?>
+	<?php require_once 'public_html/editPageIndex.php'; ?>
     <!-- jQuery -->
-    <script src='js/jquery.js'></script>
+    <script src='../js/jquery.js'></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src='js/bootstrap.min.js'></script>
+    <script src='../js/bootstrap.min.js'></script>
 
-    <?php require_once('footer.php') ?>
+    <?php require_once('public_html/footer.php') ?>
 
 </body>
 
@@ -245,7 +245,7 @@ if(isset($_SESSION['auth'])){
          <div class='row'>
          <div class='col-md-offset-1 col-md-10'>
            <form method='POST' action=''>
-             <h4>Edite o conte˙do da caixa principal</h4>
+             <h4>Edite o conte√∫do da caixa principal</h4>
              <label style='font-size:8px'>Editor de texto HTML</label>
              <textarea id='textEdit'class='form-control' name='edition' rows='10'></textarea><br>
              <button class='btn btn-primary'name='edit' type='submit'  >Modificar</button>
@@ -253,7 +253,7 @@ if(isset($_SESSION['auth'])){
          </div>
          </div>
          <script>
-             var content = document.getElementsByClassName('textEdit')[0]; //todo o conteudo est·tico est· nela
+             var content = document.getElementsByClassName('textEdit')[0]; //todo o conteudo est√°tico est√° nela
              var textEdit = document.getElementById('textEdit');
 
              textEdit.value = content.innerHTML;
