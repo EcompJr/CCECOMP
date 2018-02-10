@@ -156,7 +156,7 @@
 
 						   if(mysql_num_rows($query)>0){
 
-							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>Not�cias</button>";
+							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>Notícias</button>";
 								echo " <div id='notices' class='collapse'> ";
 								echo "<ul style='list-style-type:none'><br>";
 						        while($notice = mysql_fetch_array($query)){
@@ -192,7 +192,7 @@
 
 						   if(mysql_num_rows($query)>0){
 
-							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>Not�cias de Est�gio</button>";
+							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>Notícias de Estágio</button>";
 								echo "<div id='internship' class='collapse'>";
 								echo "<ul style='list-style-type:none'><br>";
 						        while($notice = mysql_fetch_array($query)){

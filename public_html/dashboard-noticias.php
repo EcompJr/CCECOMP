@@ -46,6 +46,7 @@ if(!$_SESSION['auth']){
 			   fwrite($file,$htmlPage);
                mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Imagem`, `Link_Page`) VALUES ('$titulo','$imagem','$path')");
                 fim:
+                echo "<script>window.location.href=window.location.href</script>";
                 //Não insere no banco de dados
               
   }
@@ -65,6 +66,8 @@ if(!$_SESSION['auth']){
 
 	   @unlink($path); //Exclui pagina php
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
+
+       echo "<script>window.location.href=window.location.href</script>";
   }
 
 
@@ -137,8 +140,8 @@ if(!$_SESSION['auth']){
                                  <div class='collapse' id='$id'>
 								 <p><a href='$link'>Link de redirecionamento</a></p>
                                 </div>
-                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
-                                  <button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
+                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a><button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
+                                  
                                  </li>";
                             }
 
@@ -177,7 +180,7 @@ if(!$_SESSION['auth']){
                 <form method="POST" action='' enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Título</label>
-                    <input required='true' name="Titulo" type="text" class="form-control" id="cargo">
+                    <input required='true' maxlength="55" name="Titulo" type="text" class="form-control" id="cargo">
                   </div>
                   <div class="form-group">
                     <label for="comment">Texto</label>

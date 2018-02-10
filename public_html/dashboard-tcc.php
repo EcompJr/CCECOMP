@@ -142,8 +142,7 @@ if(isset($_POST['buscar'])){
 
    }
    else{
-            header('location:dashboard-tcc.php');
-
+    echo "<script>window.location.href=window.location.href</script>";
    }
 
 
@@ -172,6 +171,7 @@ if(isset($_POST['removerTCC'])){
          @unlink($caminhoFoto); //remove arquivo em pasta
          @unlink($caminhoPDF); //remove arquivo em pasta
          mysql_query("DELETE FROM `aluno_tcc` WHERE `ID` ='$id'"); //Remove do BD
+         echo "<script>window.location.href=window.location.href</script>";
 
 
 
@@ -240,6 +240,7 @@ if(isset($_POST['enviarTCC'])){
                        else{
                          echo "<script>alert('Extenção do arquivo inválida! Apenas .pdf permitido')</script>";
                          goto fim;
+                         
                        }
 
                 $arquivoFoto = $_FILES['fotoEstudante']['tmp_name'];
@@ -269,6 +270,7 @@ if(isset($_POST['enviarTCC'])){
                       }
                       mysql_query("INSERT INTO `aluno_tcc` (`Aluno`,`Nome_TCC`,`Nome_Orientador`,`Caminho_Arquivo`,`Caminho_Imagem`,`Palavras_Chaves`) VALUES ('$nomeAluno','$tituloTCC','$nomeOrientador','$caminhoTCC','$foto', '$palavrasChaves')");
                        fim:
+                       echo "<script>window.location.href=window.location.href</script>";
                        //Não insere no banco de dados
        }
        else{
@@ -475,15 +477,15 @@ if(isset($_POST['enviarTCC'])){
               <form method='POST' action='' enctype="multipart/form-data">
                 <div class="form-group">
                   <label>Nome do Aluno</label>
-                  <input required="true"  name='nomeAluno'type="text" class="form-control" id="cargo">
+                  <input required="true"  maxlength='50'name='nomeAluno'type="text" class="form-control" id="cargo">
                 </div>
                 <div class="form-group">
                   <label>Título do TCC</label>
-                  <input required="true" name='tituloTCC'type="text" class="form-control" id="descricao">
+                  <input required="true" maxlength='50' name='tituloTCC'type="text" class="form-control" id="descricao">
                 </div>
                 <div class="form-group">
                   <label>Nome do Orientador</label>
-                  <input required="true" name='nomeOrientador' class="form-control" id="data">
+                  <input required="true"  maxlength='50' name='nomeOrientador' class="form-control" id="data">
                 </div>
                 <div class="form-group">
                   <label>Palavras-Chaves (Separar por vírgulas, Mínimo:2 palavras) </label>

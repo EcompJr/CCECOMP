@@ -24,7 +24,7 @@ if(!$_SESSION['auth']){
 
          if($senha == $confirmaSenha){ //cadastrou corretamente salva no BD
            mysql_query("INSERT INTO `administradores` (`Nome`, `Login`, `Senha`) VALUES ('$nome', '$cLogin', '$cSenha')");
-           echo "<script>alert('senha modificada com sucesso!')</script>";
+           echo "<script>window.location.href=window.location.href</script>";
          
           }
 
@@ -45,6 +45,7 @@ if(!$_SESSION['auth']){
 
             $id = $_POST['removerAdm'];
             mysql_query("DELETE FROM `administradores` WHERE `ID` = $id");
+            echo "<script>window.location.href=window.location.href</script>";
   }
 
 
@@ -56,7 +57,7 @@ if(!$_SESSION['auth']){
        $query = mysql_query("SELECT*FROM `ccecomp_noticias` WHERE `ID`='$id'"); //sempre vai existir
        $linhaNoticias = mysql_fetch_array($query);
        $imagem = $linhaNoticias['Imagem'];
-	   $path = $linhaNoticias['Link_Page'];
+	     $path = $linhaNoticias['Link_Page'];
 
        if($imagem != "images/no-image.jpg") //Se a imagem atual for diferente da imagem padrão
        {
@@ -65,6 +66,7 @@ if(!$_SESSION['auth']){
 
 	   @unlink($path); //Exclui pagina php
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
+       echo "<script>window.location.href=window.location.href</script>";
 
 
   }
@@ -91,7 +93,9 @@ if(!$_SESSION['auth']){
 		   if($newPassword == $confirmNewPassword){
 
 				   mysql_query("UPDATE `administradores` SET `Senha`= '$newPassword' WHERE `Login`='$email' "); //muda senha
-		   }
+           echo "<script>alert('senha modificada com sucesso!')</script>";
+           echo "<script>window.location.href=window.location.href</script>";
+          }
 		   else{
 		      echo "<script>alert('Senha de confirmação incorreta')</script>";
 		   }
@@ -228,7 +232,7 @@ if(!$_SESSION['auth']){
                         <form method='POST' action=''>
                           <div class="form-group">
                             <label>Nome Completo</label>
-                            <input required="true" name='nomeCompleto' type="text" class="form-control" >
+                            <input required="true" maxlength='22'name='nomeCompleto' type="text" class="form-control" >
                           </div>
                           <div class="form-group">
                             <label>Email/Login</label>

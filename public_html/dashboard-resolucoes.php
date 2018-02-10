@@ -51,7 +51,7 @@ $busca = array();
     }
       else{
 
-        header('location:dashboard-resolucoes.php');
+        echo "<script>window.location.href=window.location.href</script>";
       }
 
 
@@ -104,6 +104,7 @@ $busca = array();
                mysql_query("INSERT INTO `ccecomp_resolucoes` (`Tipo`,`Numero`,`Descricao`,`Arquivo`) VALUES ('$tipo','$numero','$descricao','$arquivo')");
                 fim:
                 //Não insere no banco de dados
+                echo "<script>window.location.href=window.location.href</script>";
               }
               else{
 
@@ -131,6 +132,7 @@ $busca = array();
 
 
        mysql_query("DELETE FROM `ccecomp_resolucoes` WHERE `ID` ='$id'");
+       echo "<script>window.location.href=window.location.href</script>";
   }
 
   if(isset($_POST['downloadResolucoes'])){
@@ -154,6 +156,7 @@ if(isset($_POST['sendType'])){
   $name = $_POST['nameGive'];
 
   mysql_query("INSERT INTO `tipos_resolucoes` (`Nome`) VALUES ('$name')");
+  echo "<script>window.location.href=window.location.href</script>";
 
 
 }
@@ -162,7 +165,8 @@ if(isset($_POST['removeTypeResolution'])){
 
       $id = $_POST['removeTypeResolution'];
 
-	  mysql_query("DELETE FROM `tipos_resolucoes` WHERE ID='$id'");
+    mysql_query("DELETE FROM `tipos_resolucoes` WHERE ID='$id'");
+    echo "<script>window.location.href=window.location.href</script>";
 
 
 }
@@ -393,11 +397,11 @@ if(isset($_POST['removeTypeResolution'])){
                  </div>
                  <div class="form-group">
                    <label>Número</label>
-                   <input required='true' name="Numero" type="text" class="form-control" id="numero">
+                   <input required='true' maxlength="10" name="Numero" type="text" class="form-control" id="numero">
                  </div>
                  <div class="form-group">
                    <label>Descrição</label>
-                   <textarea rows='5'required='true' name="Descricao" type="text" class="form-control" id="descricao"></textarea>
+                   <textarea rows='5'required='true'  maxlength="50" name="Descricao" type="text" class="form-control" id="descricao"></textarea>
                  </div>
                  <div class="form-group">
                    <label>Enviar Arquivo</label>
@@ -453,7 +457,7 @@ if(isset($_POST['removeTypeResolution'])){
 				 <form method="POST" action='' >
                  <div class="form-group">
 				 <label>Novo tipo</label>
-				 <input  name='nameGive' class='form-control' type='text' required='true'/>
+				 <input  name='nameGive' maxlength="50"class='form-control' type='text' required='true'/>
                  </div>
                  <button name="sendType" type="submit" class="btn btn-primary">Enviar</button>
                </form>

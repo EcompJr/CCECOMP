@@ -170,7 +170,7 @@
            fclose($file);
 
            mysql_query("INSERT INTO `ccecomp_paginas_criadas` (`Nome`, `Tipo`, `Link`) VALUES ('$namePage','$type','$pathPage')");
-
+           echo "<script>window.location.href=window.location.href</script>";
            
 
 
@@ -212,6 +212,7 @@ if(isset($_POST['removerPage'])){
 
 
             mysql_query("DELETE FROM `ccecomp_paginas_criadas` WHERE `ID`= '$id' ");
+            echo "<script>window.location.href=window.location.href</script>";
 
 
 

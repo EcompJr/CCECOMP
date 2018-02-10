@@ -42,6 +42,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
 			     fwrite($file,$htmlPage);
                  mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Imagem`,`Link_Page`) VALUES ('$titulo','$imagem','$path')");
                   fim:
+                  echo "<script>window.location.href=window.location.href</script>";
                   //Não insere no banco de dados
                 
   } 
@@ -62,6 +63,8 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
 
 	   @unlink($link);
        mysql_query("DELETE FROM `ccecomp_estagios` WHERE `ID` ='$id'");
+       echo "<script>window.location.href=window.location.href</script>";
+
   }
 
 
@@ -166,7 +169,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                 <form method='POST' action='' enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Cargo</label>
-                    <input require='true' name="Titulo" type="text" class="form-control" id="cargo">
+                    <input require='true' maxlength="50"name="Titulo" type="text" class="form-control" id="cargo">
                   </div>
                   <div class="form-group">
                     <label>Descrição</label>

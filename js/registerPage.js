@@ -71,8 +71,8 @@ function unBuildSections(location){
 
 
 
-  newBody = "<label for='sectionsNumber'>Número de Sessões</label>"+
-  "<input  name='sectionsNumber'id='sectionsNumber' class='form-control' />"+
+  newBody = "<label for='sectionsNumber'>Número de Sessões (apenas números)</label>"+
+  "<input  name='sectionsNumber' onkeypress='return onlyNumbers(event)' id='sectionsNumber' class='form-control' />"+
   "<br>"+
   "<button class='btn btn-primary' onclick='buildSections(this)' value='"+location+"''>Enviar</button>";
 
@@ -83,6 +83,14 @@ function unBuildSections(location){
 
 }
 
+function onlyNumbers(e){		
+  var chr = String.fromCharCode(e.which);
+ 
+	if ("1234567890\b".indexOf(chr) < 0)
+  return false;
+  
+  return true;
+}
 
 function putFile(b){
 

@@ -133,7 +133,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
    }
    else{
-            header('location:tcc.php');
+    echo "<script>window.location.href=window.location.href</script>";
 
    }
 

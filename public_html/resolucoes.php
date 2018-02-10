@@ -46,7 +46,7 @@ $busca = array();
     }
       else{
 
-        header('location:dashboard-resolucoes.php');
+       echo "<script>window.location.href=window.location.href</script>";
       }
 
 
