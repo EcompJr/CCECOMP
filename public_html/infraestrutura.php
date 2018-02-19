@@ -57,16 +57,16 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-lg-12">
-                <h4>LABHARD - Laboratório de Hardware (MP 31-A)</h4>
-                <h4>Laboratório de Redes (MP 33-A)</h4>
-                <h4>LACAD - Laboratório de Computação de Alto Desempenho (SALA)</h4>
-                <h4>Laboratório de Computação Visual (MP 38)</h4>
-                <h4>LABPROG - Laboratório de Programação (MP 53)</h4>
-                <h4>Laboratório de Pesquisa (MP 55)</h4>
-                <h4>LASIC - Laboratório de Pesquisa em Sistemas Inteligentes e Cognitivos (MP 58)</h4>
-                <h4>LSE - Laboratório de Sistemas Embarcados (S10, LABOTEC III)</h4>
-                <h4>LARA</h4>
-                <h4>LENDA</h4>
+                <a href=""><h4>LABHARD - Laboratório de Hardware (MP 31-A)</h4></a>
+                <a href=""><h4>Laboratório de Redes (MP 33-A)</h4></a>
+                <a href="http://lacad.uefs.br/"><h4>LACAD - Laboratório de Computação de Alto Desempenho (SALA)</h4></a>
+                <a href=""><h4>Laboratório de Computação Visual (MP 38)</h4></a>
+                <a href=""><h4>LABPROG - Laboratório de Programação (MP 53)</h4></a>
+                <a href=""><h4>Laboratório de Pesquisa (MP 55)</h4></a>
+                <a href="http://sites.ecomp.uefs.br/lasic/"><h4>LASIC - Laboratório de Pesquisa em Sistemas Inteligentes e Cognitivos (MP 58)</h4></a>
+                <a href="http://sites.ecomp.uefs.br/lse/"><h4>LSE - Laboratório de Sistemas Embarcados (S10, LABOTEC III)</h4></a>
+                <a href="http://lara.uefs.br/"><h4>LARA</h4></a>
+                <a href=""><h4>LENDA</h4></a>
                 <br>
                 <h4>LABOTEC III</h4>
                 <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal1">

@@ -216,23 +216,6 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
         </div>
         <!-- /.row -->
 <br>
-        <!-- Content Row -->
-        <div class="row">
-         <div style="background-color:#f0ad4e"class="col-md-3 col-md-offset-2 jumbotron"  >
-            <h4 style="color:white"> Consulte TCCs abaixo &nbsp<span style="color:white"class="glyphicon glyphicon-search"></span></h4><br>
-            <button data-toggle="collapse" class="btn btn-default" data-target="#infotext1">Ler mais...</button>
-            <br><br>
-            <p align="justify"id="infotext1" class="collapse container" style="font-size:12px;background-color:white;border-radius:10px;">Procure por um TCC escolhendo uma das três opções do filtro de busca.</p>
-         </div>
-
-        <div style="background-color:#f0ad4e" class="col-md-3 col-md-offset-1 jumbotron">
-          <h4 style="color:white"> Cadastre seu TCC entrando em contato &nbsp<span style="color:white" class="glyphicon glyphicon-phone-alt"></span></h4>
-          <button data-toggle="collapse" class="btn btn-default" data-target="#infotext2">Ler mais...</button>
-           <br><br>
-          <p align="justify" id="infotext2" class="collapse container" style="font-size:12px;background-color:white;border-radius:10px;">Compareça a sede do colégiado para solicitar o cadastro do documento.</p>
-       </div>
-        </div>
-
 
 <br><br>
 
