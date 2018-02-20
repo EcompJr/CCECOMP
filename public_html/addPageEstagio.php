@@ -41,7 +41,7 @@
 							  <div class='row'>
 								<div class=' col-lg-offset-3 col-lg-9'>
 					
-								   <img width='400'style='border-radius:10px'alt='Imagem da not�cia' src='$imagem' />
+								   <img width='400'style='border-radius:10px'alt='Imagem da notícia' src='$imagem' />
 								</div>
 							  </div>";
 							   
@@ -58,7 +58,7 @@
 	   
 	                       if($links[$i] != ''){
 		  
-		                      $htmlPage .= "<li style='display:inline'><a role='button' target='_blank'class='btn btn-warning'href='$links[$i]'>Link $i</a></li>";
+		                      $htmlPage .= "<li style='display:inline'><a role='button' target='_blank'class='btn btn-warning' href='$links[$i]' >Link</a></li>";
 
 
 		                    }
@@ -82,6 +82,16 @@
 		           <?php  require_once 'footer.php' ?>
 		            </body>
 					</html>
+
+					<script>
+					
+					function sendUrl(url){
+
+                            window.location.href='url';
+
+					}
+
+					</script>
 		  ";
 		  
 		      
