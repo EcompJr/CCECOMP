@@ -24,6 +24,7 @@ $busca = array();
 
               $tipo = $linhas['Tipo'];
               $numero = $linhas['Numero'];
+              $numero .= "_".$linhas['Ano'];
               $descricao = $linhas['Descricao'];
               $arquivo = $linhas['Arquivo'];
 
@@ -202,6 +203,7 @@ $busca = array();
 
                                  $tipo = $news['Tipo'];
                                  $numero = $news['Numero'];
+                                 $numero .= "_". $news['Ano'];
                                  $descricao = $news['Descricao'];
                                  $documento = $news['Arquivo'];
 
@@ -211,9 +213,9 @@ $busca = array();
 
                                      <tr>
                                        <td>$tipo</td>
-                                       <td><div style='float:right'>$numero</div></td>
-                                       <td><div style='float:right'>$descricao</div></td>
-                                       <td><a href='$documento'style='float:right' target='_blank' class='btn btn-warning'>Download</a></td>
+                                       <td>$numero</td>
+                                       <td>$descricao</td>
+                                       <td><a href='$documento' target='_blank' class='btn btn-warning'>Download</a></td>
                                      </tr>
 
 

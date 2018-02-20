@@ -28,6 +28,7 @@ $busca = array();
               $id = $linhas['ID'];
               $tipo = $linhas['Tipo'];
               $numero = $linhas['Numero'];
+              $numero .= "_". $linhas['Ano'];
               $descricao = $linhas['Descricao'];
               $arquivo = $linhas['Arquivo'];
 
@@ -79,6 +80,7 @@ $busca = array();
 
          $numero = $_POST['Numero'];
          $descricao = $_POST['Descricao'];
+         $ano = $_POST['Ano'];
 
          $arquivoResolucao = $_FILES['Arquivo']['tmp_name'];
          $nomeArquivoResolucao = $_FILES['Arquivo']['name'];
@@ -101,7 +103,7 @@ $busca = array();
                if($upResolucao){ //Pode adicionar pdf e doc/docx
                        move_uploaded_file($arquivoResolucao,$arquivo);
                }
-               mysql_query("INSERT INTO `ccecomp_resolucoes` (`Tipo`,`Numero`,`Descricao`,`Arquivo`) VALUES ('$tipo','$numero','$descricao','$arquivo')");
+               mysql_query("INSERT INTO `ccecomp_resolucoes` (`Tipo`,`Numero`,`Ano`,`Descricao`,`Arquivo`) VALUES ('$tipo','$numero','$ano','$descricao','$arquivo')");
                 fim:
                 //Não insere no banco de dados
                 echo "<script>window.location.href=window.location.href</script>";
@@ -309,6 +311,7 @@ if(isset($_POST['removeTypeResolution'])){
                         while($news = mysql_fetch_array($query)){
                           $tipo = $news['Tipo'];
                           $numero = $news['Numero'];
+                          $numero .= "_".$news['Ano'];
                           $descricao = $news['Descricao'];
                           $documento = $news['Arquivo'];
                           $id = $news['ID'];
@@ -400,8 +403,12 @@ if(isset($_POST['removeTypeResolution'])){
                    <input required='true' maxlength="10" name="Numero" type="text" class="form-control" id="numero">
                  </div>
                  <div class="form-group">
+                   <label>Ano</label>
+                   <input required='true' maxlength="10" name="Ano" type="text" class="form-control" id="Ano">
+                 </div>
+                 <div class="form-group">
                    <label>Descrição</label>
-                   <textarea rows='5'required='true'  maxlength="50" name="Descricao" type="text" class="form-control" id="descricao"></textarea>
+                   <textarea rows='5'required='true'  maxlength="255" name="Descricao" type="text" class="form-control" id="descricao"></textarea>
                  </div>
                  <div class="form-group">
                    <label>Enviar Arquivo</label>
