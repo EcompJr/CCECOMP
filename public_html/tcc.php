@@ -349,6 +349,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
     </div>
 
 </div>
+<br><br><br><br><br><br><br><br><br><br><br>
   <hr>
 </div>
 
@@ -363,7 +364,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
     <script src="../js/bootstrap.min.js"></script>
     <!--Script para TCC -->
     <script src='../js/tcc.js'></script>
-
+    
     <?php require_once("footer.php") ?>
 
 </body>
