@@ -111,16 +111,10 @@ if(isset($_GET['login'])) {
     </div>
     
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-                $('#myInput').focus()
-            }
+    <script src="../js/bootstrap.min.js"></script>
 
-        )
-    </script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <br>
     <br>
