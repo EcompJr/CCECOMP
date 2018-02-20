@@ -95,57 +95,6 @@
 
 
 			<div class='col-md-6'>
-                <div class='panel panel-default textEdit'>
-
-                    <div class="panel-heading text-center">
-                        <h4><i class="fa fa-spin fa-paperclip"></i> O que faz um Engenheiro de Computação?</h4>
-
-                    </div>
-                    <div class="panel-body">
-				        <div class='row'>
-                            <div class=' col-md-offset-1 col-md-6'>
-                            <img  width='250px'src='images/engenharia-de-computacao.jpg' alt='foto de engenheiro' style='border-radius:10px'>
-                            </div>
-                            <div class='col-md-5'>
-                                    <p align='justify'>O profissional formado em Engenharia 
-                                          da Computação é capaz de projetar e construir hardware e software.
-                                      </p>
-                                      
-                             </div>     
-                             <div id='moreInfo'class='collapse'>
-                             <div class='row'>
-                                  <div class=' col-md-offset-1 col-md-11'>
-                                         <p align='justify'>
-                                         O hardware consiste na parte física do computador, 
-                                        suas estruturas  e componentes e seus periféricos (como teclado, mouse e monitor).
-                                         Nessa área, o engenheiro de computação faz a integração de circuitos eletrônicos da máquina e desenvolve placas de ligação entre
-                                         o equipamento e seus acessórios.
-                                         Na área de desenvolvimento de software o engenheiro da 
-                                           computação cria programas de computadores e aplicativos para
-                                            os mais diversos fins.
-                                         </p>
-                                         <p align='justify'>
-                                         Outra área em que um engenheiro da computação pode atuar é o campo da automação industrial e robótica. Ele desenvolve robôs e sistemas digitais para fábricas e indústrias.
-                                          Também é comum este profissional atuar no suporte e gerenciamento de redes de computadores em empresas de grande porte.
-                                           A carreira acadêmica é outra opção para um engenheiro da computação, que pode ministrar aulas para cursos técnicos e profissionalizantes. Para os que optam por continuar seus estudos fazendo mestrado e doutorado existe a opção de trabalhar em universidades como professores e pesquisadores.
-                                         </p>
-                                         <p align='justify'>
-                                         Para exercer a profissão de engenheiro da computação é necessário, 
-                                         além do diploma de bacharel em uma instituição credenciada pelo MEC, obter um registro junto ao CREA (Conselho Regional de Engenharia, Arquitetura e Agronomia).
-                                         </p>
-                                    </div>     
-                            </div>
-                             </div>    
-                             <button style='margin-left:60px'data-toggle='collapse' data-target='#moreInfo'class='btn btn-default'>Ler mais...</button>
-                             
-                          </div>
-                    </div>
-
-
-
-	            </div>
-		    </div>
-			<div class='col-md-6'>
                 <div class='panel panel-default'>
                     <div class='panel-heading'>
                         <h4><i class='	fa fa-twitch fa-spin'></i> Notícias</h4>
@@ -181,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <div class='col-md-12'>
+            <div class='col-md-6'>
                 <div class='panel panel-default'>
                     <div class='panel-heading'>
                         <h4><i class='fa fa-spin  fa-plus-square'></i>    Estágios</h4>
@@ -227,8 +176,9 @@
 
     </div>
     <!-- /.container -->
-	<?php require_once 'public_html/editPageIndex.php'; ?>
+
     <!-- jQuery -->
+    <br><br><br>
     <script src='js/jquery.js'></script>
 
     <!-- Bootstrap Core JavaScript -->
