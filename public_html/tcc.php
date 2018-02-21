@@ -28,13 +28,12 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
                $nomeAluno = $aluno_tcc['Aluno'];
                $nomeOrientador = $aluno_tcc['Nome_Orientador'];
                $arquivo = $aluno_tcc['Caminho_Arquivo'];
-               $imagem =$aluno_tcc['Caminho_Imagem'];
 
 
                array_push($busca,"
 
                <tr>
-               <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+               <td>$nomeAluno</td>
                <td>$nomeTCC</td>
                <td>$nomeOrientador</td>
                <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
@@ -62,13 +61,11 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
                 $nomeTCC = $aluno_tcc['Nome_TCC'];
                 $nomeTCC = $aluno_tcc['Nome_TCC'];
                 $arquivo = $aluno_tcc['Caminho_Arquivo'];
-                $imagem =$aluno_tcc['Caminho_Imagem'];
-
-
+                
                 array_push($busca,"
 
                 <tr>
-                <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+                <td>$nomeAluno</td>
                 <td>$nomeTCC</td>
                 <td>$orientadorTCC</td>
                 <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
@@ -107,13 +104,12 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
                                      $nomeTCC = $aluno_tcc['Nome_TCC'];
                                      $nomeOrientador = $aluno_tcc['Nome_Orientador'];
                                      $arquivo = $aluno_tcc['Caminho_Arquivo'];
-                                     $imagem =$aluno_tcc['Caminho_Imagem'];
 
 
                                      array_push($busca,"
 
                                      <tr>
-                                     <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+                                     <td>$nomeAluno</td>
                                      <td>$nomeTCC</td>
                                      <td>$nomeOrientador</td>
                                      <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
@@ -313,14 +309,13 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
                    $nomeTCC = $tcc['Nome_TCC'];
                    $nomeOrientador = $tcc['Nome_Orientador'];
                    $caminhoArquivo = $tcc['Caminho_Arquivo'];
-                   $caminhoFoto = $tcc['Caminho_Imagem'];
 
 
                    echo "
 
 
                                <tr>
-                               <td><img width='30' height='30' alt='foto do aluno/default' src='$caminhoFoto' style='border-radius:30px;' />&nbsp&nbsp$aluno</td>
+                               <td>$aluno</td>
                                <td>$nomeTCC</td>
                                <td>$nomeOrientador</td>
                                <td><a role='button' target='_blank'class='btn btn-warning' href='$caminhoArquivo' >Download</a></td>

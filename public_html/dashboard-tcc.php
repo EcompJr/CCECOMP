@@ -34,13 +34,12 @@ if(isset($_POST['buscar'])){
                $nomeAluno = $aluno_tcc['Aluno'];
                $nomeOrientador = $aluno_tcc['Nome_Orientador'];
                $arquivo = $aluno_tcc['Caminho_Arquivo'];
-               $imagem =$aluno_tcc['Caminho_Imagem'];
                $id = $aluno_tcc['ID'];
 
                array_push($busca,"
 
                <tr>
-               <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+               <td>$nomeAluno</td>
                <td>$nomeTCC</td>
                <td>$nomeOrientador</td>
                <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
@@ -69,13 +68,12 @@ if(isset($_POST['buscar'])){
                 $nomeTCC = $aluno_tcc['Nome_TCC'];
                 $nomeTCC = $aluno_tcc['Nome_TCC'];
                 $arquivo = $aluno_tcc['Caminho_Arquivo'];
-                $imagem =$aluno_tcc['Caminho_Imagem'];
                 $id = $aluno_tcc['ID'];
 
                 array_push($busca,"
 
                 <tr>
-                <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+                <td>$nomeAluno</td>
                 <td>$nomeTCC</td>
                 <td>$orientadorTCC</td>
                 <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
@@ -115,13 +113,12 @@ if(isset($_POST['buscar'])){
                                      $nomeTCC = $aluno_tcc['Nome_TCC'];
                                      $nomeOrientador = $aluno_tcc['Nome_Orientador'];
                                      $arquivo = $aluno_tcc['Caminho_Arquivo'];
-                                     $imagem =$aluno_tcc['Caminho_Imagem'];
                                      $id = $aluno_tcc['ID'];
 
                                      array_push($busca,"
 
                                      <tr>
-                                     <td><img width='30' height='30' alt='foto do aluno/default' src='$imagem' style='border-radius:30px;' />&nbsp&nbsp$nomeAluno</td>
+                                     <td>$nomeAluno</td>
                                      <td>$nomeTCC</td>
                                      <td>$nomeOrientador</td>
                                      <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
@@ -165,10 +162,7 @@ if(isset($_POST['removerTCC'])){
          $id = $_POST['removerTCC'];
          $query = mysql_query("SELECT*FROM `aluno_tcc` WHERE `ID`='$id'"); //sempre vai existir
          $linhaTCC = mysql_fetch_array($query);
-         $caminhoFoto = $linhaTCC['Caminho_Imagem'];
          $caminhoPDF = $linhaTCC['Caminho_Arquivo'];
-         if($caminhoFoto != '../images/default-avatar.png') // Não remove imagem default
-         @unlink($caminhoFoto); //remove arquivo em pasta
          @unlink($caminhoPDF); //remove arquivo em pasta
          mysql_query("DELETE FROM `aluno_tcc` WHERE `ID` ='$id'"); //Remove do BD
          echo "<script>window.location.href=window.location.href</script>";
@@ -190,10 +184,8 @@ if(isset($_POST['enviarTCC'])){
        $tituloTCC = $_POST['tituloTCC'];
        $nomeOrientador = $_POST['nomeOrientador'];
        $palavrasChaves = $_POST['palavrasChaves'];
-       $foto = '../images/default-avatar.png';
        $arquivo = $_FILES['arquivoTCC']['tmp_name'];
        $nomeArquivo = $_FILES['arquivoTCC']['name'];
-       $upFoto = false;
        $upArquivo =false;
 
        if($nomeArquivo != ''){ //Foto nao é obrigatorio so verifica arquivo
@@ -243,32 +235,10 @@ if(isset($_POST['enviarTCC'])){
                          
                        }
 
-                $arquivoFoto = $_FILES['fotoEstudante']['tmp_name'];
-                $nomeArquivoFoto = $_FILES['fotoEstudante']['name'];
-
-                        if( $nomeArquivoFoto != ''){ //faz upload da foto se existir
-                        $extensaoFoto = pathinfo($nomeArquivoFoto,PATHINFO_EXTENSION);
-                        $foto = '../images/'.$nomeAluno.".".$extensaoFoto;
-
-                        if($extensaoFoto == 'png' || $extensaoFoto == 'jpg' || $extensaoFoto == 'jpeg'){
-                                  $upFoto = true; //Pode adicionar a foto
-                        }
-                        else{
-
-                           echo "<script>alert('Extenção da imagem inválida! Somente .png, .jpg E .jpeg permitido.')</script>";
-                           goto fim;
-
-                        }
-                       }
-                      //insere no banco de dados
-                      if($upFoto && $upArquivo){ //Pode adicionar foto e pdf
-                              move_uploaded_file($arquivo,$caminhoTCC);
-                              move_uploaded_file($arquivoFoto,$foto);
-                      }
                       if($upArquivo){
                           move_uploaded_file($arquivo,$caminhoTCC);
                       }
-                      mysql_query("INSERT INTO `aluno_tcc` (`Aluno`,`Nome_TCC`,`Nome_Orientador`,`Caminho_Arquivo`,`Caminho_Imagem`,`Palavras_Chaves`) VALUES ('$nomeAluno','$tituloTCC','$nomeOrientador','$caminhoTCC','$foto', '$palavrasChaves')");
+                      mysql_query("INSERT INTO `aluno_tcc` (`Aluno`,`Nome_TCC`,`Nome_Orientador`,`Caminho_Arquivo`,`Palavras_Chaves`) VALUES ('$nomeAluno','$tituloTCC','$nomeOrientador','$caminhoTCC', '$palavrasChaves')");
                        fim:
                        echo "<script>window.location.href=window.location.href</script>";
                        //Não insere no banco de dados
@@ -425,14 +395,13 @@ if(isset($_POST['enviarTCC'])){
                         $nomeTCC = $tcc['Nome_TCC'];
                         $nomeOrientador = $tcc['Nome_Orientador'];
                         $caminhoArquivo = $tcc['Caminho_Arquivo'];
-                        $caminhoFoto = $tcc['Caminho_Imagem'];
 
 
                         echo "
 
 
                                     <tr>
-                                    <td><img width='30' height='30' alt='foto do aluno/default' src='$caminhoFoto' style='border-radius:30px;' />&nbsp&nbsp$aluno</td>
+                                    <td>$aluno</td>
                                     <td>$nomeTCC</td>
                                     <td>$nomeOrientador</td>
                                     <td><a role='button' target='_blank'class='btn btn-warning' href='$caminhoArquivo' >Download</a></td>
@@ -477,30 +446,26 @@ if(isset($_POST['enviarTCC'])){
               <form method='POST' action='' enctype="multipart/form-data">
                 <div class="form-group">
                   <label>Nome do Aluno</label>
-                  <input required="true"  maxlength='50'name='nomeAluno'type="text" class="form-control" id="cargo">
+                  <input required="true"  maxlength='80'name='nomeAluno'type="text" class="form-control" id="cargo">
                 </div>
                 <div class="form-group">
                   <label>Título do TCC</label>
-                  <input required="true" maxlength='50' name='tituloTCC'type="text" class="form-control" id="descricao">
+                  <input required="true" maxlength='255' name='tituloTCC'type="text" class="form-control" id="descricao">
                 </div>
                 <div class="form-group">
                   <label>Nome do Orientador</label>
-                  <input required="true"  maxlength='50' name='nomeOrientador' class="form-control" id="data">
+                  <input required="true"  maxlength='80' name='nomeOrientador' class="form-control" id="data">
                 </div>
                 <div class="form-group">
                   <label>Palavras-Chaves (Separar por vírgulas, Mínimo:2 palavras) </label>
                   <input required='true' name='palavrasChaves' type='text' class='form-control'  />
                 </div>
-                <div class='form-group'>
-                  <label>Foto do Estudante (Opcional)</label>
-                  <input  name='fotoEstudante'type="file" >
-                  <span class="custom-file-control"></span>
+                <div class="form-group"> 
+                  <label>Arquivo</label> 
+                  <input required="true" name='arquivoTCC'type="file"> 
+                  <span class="custom-file-control"></span> 
                 </div>
-                <div class="form-group">
-                  <label>Arquivo</label>
-                  <input required="true" name='arquivoTCC'type="file">
-                  <span class="custom-file-control"></span>
-                </div>
+
                 <button name='enviarTCC'type="submit" class="btn btn-primary">Enviar</button>
               </form>
             </div>

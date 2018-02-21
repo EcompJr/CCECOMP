@@ -12,7 +12,7 @@ require_once 'addPage.php';
 
 
 
-<nav style="background-color:#4d6aa0;color:white;border-color:#4d6aa0" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
+<nav style="background-color:#002f87;color:white;border-color:#002f87" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
 <form style='margin-bottom:-1px'method='post' action=''>
     <div  class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,10 +32,10 @@ require_once 'addPage.php';
         <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="../public_html/about.php">SOBRE</a>
+                    <a href="../public_html/about.php">Sobre</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">O CURSO</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">O Curso</a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../public_html/objetivos.php">Objetivos</a>
@@ -72,7 +72,7 @@ require_once 'addPage.php';
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">ÁREA DO ALUNO</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Área do aluno</a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../public_html/formularios.php">Procedimentos e Formulários</a>
@@ -102,13 +102,13 @@ require_once 'addPage.php';
                     </ul>
                 </li>
                 <li>
-                    <a href="../public_html/entidades.php">ENTIDADES</a>
+                    <a href="../public_html/entidades.php">Entidades</a>
                 </li>
                 <li>
-                    <a href="../public_html/contact.php">CONTATO</a>
+                    <a href="../public_html/contact.php">Contato</a>
                 </li>
                 <li class="dropdown">
-                    <a href="../public_html/login.php">ACESSO RESTRITO</a>
+                    <a href="../public_html/login.php">Acesso Restrito</a>
                 <li>
             </li>
             </li>
