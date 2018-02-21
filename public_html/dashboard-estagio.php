@@ -181,7 +181,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                   <span class="custom-file-control"></span>
                 </div>
 				 <div class='form-group' id='linksNotice'>
-				    <label>Links</label>
+				    <label>Links (copiar link do navegador)</label>
 					<input type='text' name='links[]' class='form-control'/>
 				  </div>
 				  <button class='btn btn-success' type='button' onclick='addLink()'  >Adicionar Link</button>

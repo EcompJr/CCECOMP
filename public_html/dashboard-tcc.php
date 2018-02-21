@@ -446,7 +446,7 @@ if(isset($_POST['enviarTCC'])){
               <form method='POST' action='' enctype="multipart/form-data">
                 <div class="form-group">
                   <label>Nome do Aluno</label>
-                  <input required="true"  maxlength='80'name='nomeAluno'type="text" class="form-control" id="cargo">
+                  <input required="true"  maxlength='200'name='nomeAluno'type="text" class="form-control" id="cargo">
                 </div>
                 <div class="form-group">
                   <label>Título do TCC</label>
@@ -454,7 +454,7 @@ if(isset($_POST['enviarTCC'])){
                 </div>
                 <div class="form-group">
                   <label>Nome do Orientador</label>
-                  <input required="true"  maxlength='80' name='nomeOrientador' class="form-control" id="data">
+                  <input required="true"  maxlength='200' name='nomeOrientador' class="form-control" id="data">
                 </div>
                 <div class="form-group">
                   <label>Palavras-Chaves (Separar por vírgulas, Mínimo:2 palavras) </label>

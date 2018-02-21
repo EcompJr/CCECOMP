@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Dez-2017 às 02:09
+-- Generation Time: 21-Fev-2018 às 19:04
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -53,7 +53,6 @@ CREATE TABLE `aluno_tcc` (
   `Nome_TCC` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Nome_Orientador` varchar(30) CHARACTER SET utf8 NOT NULL,
   `Caminho_Arquivo` varchar(500) CHARACTER SET utf8 NOT NULL,
-  `Caminho_Imagem` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Palavras_Chaves` varchar(255) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -106,6 +105,7 @@ CREATE TABLE `ccecomp_resolucoes` (
   `ID` int(255) NOT NULL,
   `Tipo` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Numero` varchar(500) CHARACTER SET utf8 NOT NULL,
+  `Ano` int(10) NOT NULL,
   `Descricao` varchar(500) CHARACTER SET utf8 NOT NULL,
   `Arquivo` varchar(500) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -120,6 +120,13 @@ CREATE TABLE `tipos_resolucoes` (
   `ID` int(255) NOT NULL,
   `Nome` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tipos_resolucoes`
+--
+
+INSERT INTO `tipos_resolucoes` (`ID`, `Nome`) VALUES
+(1, 'Consu');
 
 --
 -- Indexes for dumped tables
@@ -180,12 +187,12 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT for table `aluno_tcc`
 --
 ALTER TABLE `aluno_tcc`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `ccecomp_estagios`
 --
 ALTER TABLE `ccecomp_estagios`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `ccecomp_noticias`
 --
@@ -205,7 +212,7 @@ ALTER TABLE `ccecomp_resolucoes`
 -- AUTO_INCREMENT for table `tipos_resolucoes`
 --
 ALTER TABLE `tipos_resolucoes`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
