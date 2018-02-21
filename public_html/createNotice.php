@@ -62,7 +62,7 @@
 	   
 	                       if($links[$i] != ''){
 		  
-		                      $htmlPage .= "<li style='display:inline'><a role='button' target='_blank'class='btn btn-warning'href='$links[$i]'>Link $i</a></li>";
+		                      $htmlPage .= "<li style='display:inline'><a role='button' target='_blank'class='btn btn-warning'href='$links[$i]'>Link</a></li>";
 
 
 		                    }

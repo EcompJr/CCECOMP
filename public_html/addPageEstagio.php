@@ -83,6 +83,7 @@
 		            </body>
 					</html>
 
+<<<<<<< HEAD
 					<script>
 					
 					function sendUrl(url){
@@ -92,6 +93,9 @@
 					}
 
 					</script>
+=======
+		
+>>>>>>> a0e30b4d4916043ff312aa1dac745d24eb154246
 		  ";
 		  
 		      
