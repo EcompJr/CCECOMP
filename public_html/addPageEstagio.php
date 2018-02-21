@@ -83,15 +83,7 @@
 		            </body>
 					</html>
 
-					<script>
-					
-					function sendUrl(url){
-
-                            window.location.href='url';
-
-					}
-
-					</script>
+		
 		  ";
 		  
 		      
