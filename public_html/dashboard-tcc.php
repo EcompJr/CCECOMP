@@ -239,8 +239,9 @@ if(isset($_POST['enviarTCC'])){
                           move_uploaded_file($arquivo,$caminhoTCC);
                       }
                       mysql_query("INSERT INTO `aluno_tcc` (`Aluno`,`Nome_TCC`,`Nome_Orientador`,`Caminho_Arquivo`,`Palavras_Chaves`) VALUES ('$nomeAluno','$tituloTCC','$nomeOrientador','$caminhoTCC', '$palavrasChaves')");
-                       fim:
-                       echo "<script>window.location.href=window.location.href</script>";
+                      echo "<script>window.location.href=window.location.href</script>"; 
+                      fim:
+                      echo "<script>window.history.back()</script>"; 
                        //Não insere no banco de dados
        }
        else{

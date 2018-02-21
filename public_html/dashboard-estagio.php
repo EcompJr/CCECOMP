@@ -41,8 +41,9 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
 			     $file = fopen($path ,"w");
 			     fwrite($file,$htmlPage);
                  mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Imagem`,`Link_Page`) VALUES ('$titulo','$imagem','$path')");
-                  fim:
-                  echo "<script>window.location.href=window.location.href</script>";
+                 echo "<script>window.location.href=window.location.href</script>"; 
+                 fim:
+                 echo "<script>window.history.back()</script>";
                   //Não insere no banco de dados
                 
   } 
