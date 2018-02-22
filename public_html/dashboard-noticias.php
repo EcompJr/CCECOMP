@@ -45,8 +45,9 @@ if(!$_SESSION['auth']){
 			   $file = fopen($path ,"w");
 			   fwrite($file,$htmlPage);
                mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Imagem`, `Link_Page`) VALUES ('$titulo','$imagem','$path')");
-                fim:
-                echo "<script>window.location.href=window.location.href</script>";
+               echo "<script>window.location.href=window.location.href</script>"; 
+               fim:
+               echo "<script>window.history.back()</script>";
                 //Não insere no banco de dados
               
   }
@@ -192,7 +193,7 @@ if(!$_SESSION['auth']){
                     <span class="custom-file-control"></span>
                   </div>
 				  <div class='form-group' id='linksNotice'>
-				    <label>Links</label>
+				    <label>Links (copiar link do navegador)</label>
 					<input type='text' name='links[]' class='form-control'/>
 				  </div>
 				  <button class='btn btn-success' type='button' onclick='addLink()'  >Adicionar Link</button>

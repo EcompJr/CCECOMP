@@ -12,6 +12,8 @@
 
     <title>CCECOMP UEFS</title>
 
+<link href='../css/bootstrap-dropdownhover.min.css' rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <link href='css/bootstrap.min.css' rel='stylesheet'>
 
@@ -101,12 +103,29 @@
                     </div>
                     <div class='panel-body'>
                          <?php
-						   $query = mysql_query('SELECT*FROM `ccecomp_noticias`');
+						   $query = mysql_query('SELECT*FROM `ccecomp_noticias` ORDER BY `ID`');
 
 						   if(mysql_num_rows($query)>0){
 
-							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>Notícias</button>";
-								echo " <div id='notices' class='collapse'> ";
+                                $i=0;
+                                echo "<ul style='list-style-type:none'><br>";
+                                while($notice = mysql_fetch_array($query) ){ //Exibe os 5 primeiros
+
+                                   
+                                    $name = $notice['Titulo'];
+                                    $link = $notice['Link_Page'];
+
+                                    echo "<li><a href='$link'>$name</a></li>";
+
+                                 $i++;
+                                 if($i ==5)
+                                    break;
+                                  
+                                }
+                                echo "</ul>";
+
+							   
+								echo " <div style='position:relative;top:-65px' id='notices' class='collapse'> ";
 								echo "<ul style='list-style-type:none'><br>";
 						        while($notice = mysql_fetch_array($query)){
 
@@ -118,7 +137,8 @@
 
 								}
 								echo "</ul>";
-								echo "</div>";
+                                echo "</div>";
+                                echo "<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>+ Notícias</button>";
 						   }
 						   else{
 						          echo "<a role='button'class='btn btn-default'>Não existem notícias.</a>";
@@ -141,8 +161,27 @@
 
 						   if(mysql_num_rows($query)>0){
 
-							    echo "<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>Notícias de Estágio</button>";
-								echo "<div id='internship' class='collapse'>";
+
+                            $i=0;
+                            echo "<ul style='list-style-type:none'><br>";
+                            while($notice = mysql_fetch_array($query) ){ //Exibe os 5 primeiros
+
+                               
+                                $name = $notice['Titulo'];
+                                $link = $notice['Link_Page'];
+
+                                echo "<li><a href='$link'>$name</a></li>";
+
+                             $i++;
+                             if($i ==5)
+                                break;
+                              
+                            }
+                            echo "</ul>";
+
+
+							   
+								echo "<div style='position:relative;top:-65px' id='internship' class='collapse'>";
 								echo "<ul style='list-style-type:none'><br>";
 						        while($notice = mysql_fetch_array($query)){
 
@@ -154,7 +193,8 @@
 
 								}
 								echo "</ul>";
-								echo "</div>";
+                                echo "</div>";
+                                echo "<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>+ Notícias de Estágio</button>";
 						   }
 						   else{
 						          echo "<a role='button'class='btn btn-default'>Não existem notícias de estágio.</a>";
@@ -183,6 +223,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src='js/bootstrap.min.js'></script>
+    <script src='js/bootstrap-dropdownhover.min.js'></script>
 
     <?php require_once('public_html/footer.php') ?>
 

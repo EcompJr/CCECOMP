@@ -11,6 +11,8 @@
 
     <title>CCECOMP UEFS</title>
 
+     <link href='../css/bootstrap-dropdownhover.min.css' rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -119,6 +121,7 @@
     <hr>
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
+    <script src='js/bootstrap-dropdownhover.min.js'></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>

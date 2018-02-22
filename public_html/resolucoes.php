@@ -80,6 +80,8 @@ $busca = array();
 
     <title>CCECOMP UEFS</title>
 
+    <link href='../css/bootstrap-dropdownhover.min.css' rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -118,7 +120,7 @@ $busca = array();
 
         <!-- Content Row -->
         <div>
-<br><br><br><br><br>
+<br><br>
           <div >
             <form method="POST" action=''>
               <ul class="table-hover">
@@ -225,7 +227,7 @@ $busca = array();
 
                           }
                           else{
-                            echo "<div class='alert alert-danger col-md-8 col-md-offset-2'><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
+                            echo "<div class='alert alert-danger '><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
                           }
 
 
@@ -253,6 +255,7 @@ $busca = array();
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src='js/bootstrap-dropdownhover.min.js'></script>
 
     <?php require_once("footer.php") ?>
 

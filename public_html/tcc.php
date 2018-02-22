@@ -169,6 +169,8 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
     <title>CCECOMP UEFS</title>
 
+    <link href='../css/bootstrap-dropdownhover.min.css' rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -216,7 +218,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 <br><br>
 
 <div class='row'>
-     <div class='col-md-10 col-md-offset-1'>
+     <div class='col-md-12 '>
 <?php
 
 
@@ -334,7 +336,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
             }
             else{
 
-                echo "<div class='alert alert-danger'><p align='center'>Não existem TCCs cadastrados no sistema </p></div>";
+                echo "<div class='alert alert-danger' ><p align='justify'>Não existem TCCs cadastrados no sistema </p></div>";
 
             }
 
@@ -357,6 +359,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src='js/bootstrap-dropdownhover.min.js'></script>
     <!--Script para TCC -->
     <script src='../js/tcc.js'></script>
     

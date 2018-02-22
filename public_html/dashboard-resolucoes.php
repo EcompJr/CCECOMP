@@ -104,13 +104,15 @@ $busca = array();
                        move_uploaded_file($arquivoResolucao,$arquivo);
                }
                mysql_query("INSERT INTO `ccecomp_resolucoes` (`Tipo`,`Numero`,`Ano`,`Descricao`,`Arquivo`) VALUES ('$tipo','$numero','$ano','$descricao','$arquivo')");
-                fim:
+               echo "<script>window.location.href=window.location.href</script>";
+               fim:
                 //Não insere no banco de dados
-                echo "<script>window.location.href=window.location.href</script>";
+                echo "<script>window.history.back()</script>";
               }
               else{
 
                 echo "<script>alert('Selecione um arquivo de resolução')</script>";
+                echo "<script>window.history.back()</script>";
               }
 
 
