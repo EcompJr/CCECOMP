@@ -23,8 +23,9 @@ require_once 'addPage.php';
                   <span class="icon-bar"></span>
               </button>
             <div>
-            <img  alt="logo do colegiado" width="45" height="40" style="padding-top:10px" src="../images/customLogo1.png" />
+            <img  alt="logo da uefs" width="100" height="40" style="padding-top:10px" src="../images/uefsLogo2.png" />
             <a class="navbar-brand" href="../index.php" >CCECOMP</a>
+            <img  alt="logo do colegiado" width="45" height="40" style="padding-top:10px" src="../images/customLogo1.png" />
             </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
