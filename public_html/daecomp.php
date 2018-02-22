@@ -79,7 +79,7 @@
             <div class="row">
 
             <div class="col-md-1">
-              <a role="button"  data-toggle="collapse" data-target="#info2"  ><i style="color:#f0ad4e" class="fa-2x glyphicon glyphicon-envelope"></i></a>
+              <a role="button"  data-toggle="collapse" data-target="#info2"  ><i  class="fa-2x glyphicon glyphicon-envelope"></i></a>
               <div id="info2" class="collapse container">
                 <p>Email: daecompuefs@gmail.com<br>
 
