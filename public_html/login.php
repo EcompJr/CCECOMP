@@ -54,6 +54,7 @@ if(isset($_GET['login'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <title>CCECOMP UEFS</title>
+     <link href='../css/bootstrap-dropdownhover.min.css' rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -114,6 +115,7 @@ if(isset($_GET['login'])) {
     <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src='js/bootstrap-dropdownhover.min.js'></script>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <br>

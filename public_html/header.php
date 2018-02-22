@@ -8,8 +8,7 @@ require_once 'conexao.php';
 
 require_once 'addPage.php';
 
- ?>
-
+?>
 
 
 <nav style="background-color:#002f87;color:white;border-color:#002f87" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
@@ -35,7 +34,7 @@ require_once 'addPage.php';
                     <a href="../public_html/about.php">Sobre</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">O Curso</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">O Curso</a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../public_html/objetivos.php">Objetivos</a>
@@ -72,7 +71,7 @@ require_once 'addPage.php';
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Área do aluno</a>
+                   <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Área do Aluno</a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../public_html/formularios.php">Procedimentos e Formulários</a>
@@ -121,6 +120,7 @@ require_once 'addPage.php';
     <!--Cadastro Form -->
 </form>
 <script src='../js/registerPage.js'> </script>
+<script src="../js/bootstrap-dropdownhover.min.js"></script>
 </nav>
 
 <?php

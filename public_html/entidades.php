@@ -18,6 +18,8 @@ require_once 'addPageEntidades.php';
 
     <title>CCECOMP UEFS</title>
 
+    <link href='../css/bootstrap-dropdownhover.min.css' rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -134,6 +136,7 @@ require_once 'addPageEntidades.php';
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src='js/bootstrap-dropdownhover.min.js'></script>
 
     <?php require_once("footer.php") ?>
 

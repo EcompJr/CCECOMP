@@ -11,6 +11,8 @@
 
     <title>CCECOMP UEFS</title>
 
+    <link href='../css/bootstrap-dropdownhover.min.css' rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -122,6 +124,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src='js/bootstrap-dropdownhover.min.js'></script>
     <br>
 
     <?php require_once("footer.php") ?>

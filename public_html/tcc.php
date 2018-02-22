@@ -169,6 +169,8 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
     <title>CCECOMP UEFS</title>
 
+    <link href='../css/bootstrap-dropdownhover.min.css' rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -357,6 +359,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src='js/bootstrap-dropdownhover.min.js'></script>
     <!--Script para TCC -->
     <script src='../js/tcc.js'></script>
     
