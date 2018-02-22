@@ -115,7 +115,7 @@ if(isset($_GET['login'])) {
     <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    <script src='js/bootstrap-dropdownhover.min.js'></script>
+    <script src='../js/bootstrap-dropdownhover.min.js'></script>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <br>

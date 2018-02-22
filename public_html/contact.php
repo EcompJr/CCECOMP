@@ -154,7 +154,7 @@ if(isset($_POST['sendEmail'])){
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
 
-    <script src='js/bootstrap-dropdownhover.min.js'></script>
+    <script src='../js/bootstrap-dropdownhover.min.js'></script>
 
 
     <!-- Contact Form JavaScript -->

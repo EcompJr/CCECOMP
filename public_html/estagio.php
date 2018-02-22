@@ -141,7 +141,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
 
-    <script src='js/bootstrap-dropdownhover.min.js'></script>
+    <script src='../js/bootstrap-dropdownhover.min.js'></script>
 
     <?php require_once("footer.php") ?>
 

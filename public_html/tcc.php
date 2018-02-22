@@ -359,7 +359,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    <script src='js/bootstrap-dropdownhover.min.js'></script>
+    <script src='../js/bootstrap-dropdownhover.min.js'></script>
     <!--Script para TCC -->
     <script src='../js/tcc.js'></script>
     
