@@ -43,7 +43,7 @@
 <body>
 
 
-	    <div id='myCarousel' class='carousel slide' data-ride='carousel'>
+	    <div  id='myCarousel' class='carousel slide' data-ride='carousel'>
                 <!-- Indicador -->
                 <ol class='carousel-indicators'>
                 <li data-target='#myCarousel' data-slide-to='0' class='active'></li>
@@ -53,7 +53,7 @@
                  <!-- slides -->
         <div class='carousel-inner'>
                  <div class='item active'>
-                 <img src='images/circuits.png' alt='Imagem tema 1'>
+                 <img   src='images/circuits.png' alt='Imagem tema 1'>
                  <div class='carousel-caption'>
                  <h3>Colegiado de Engenharia de Computação da UEFS</h3>
                  <p>Portal de comunicação com o estudante</p>
