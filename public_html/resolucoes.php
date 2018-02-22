@@ -120,7 +120,7 @@ $busca = array();
 
         <!-- Content Row -->
         <div>
-<br><br><br><br><br>
+<br><br>
           <div >
             <form method="POST" action=''>
               <ul class="table-hover">
@@ -227,7 +227,7 @@ $busca = array();
 
                           }
                           else{
-                            echo "<div class='alert alert-danger col-md-8 col-md-offset-2'><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
+                            echo "<div class='alert alert-danger '><p align='justify'>Não existe nenhuma resolução cadastrada. </p></div>";
                           }
 
 
