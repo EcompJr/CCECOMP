@@ -8,6 +8,17 @@ if(!$_SESSION['auth']){
 
 $busca = array();
 
+
+
+//editTCC
+if(isset($_POST['editTCC'])){
+
+
+    $id = $_POST['editTCC'];
+    header("location:editTCC.php?tcc=$id");
+
+}
+
 //Faz busca de TCC
 
 if(isset($_POST['buscar'])){
@@ -43,6 +54,7 @@ if(isset($_POST['buscar'])){
                <td>$nomeTCC</td>
                <td>$nomeOrientador</td>
                <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+               <td><button name='editTCC' value='$id'target='_blank' class='btn btn-warning' type='submit'>Editar</button> </td>
                <td><button name='removerTCC' value='$id'target='_blank' class='btn btn-danger' type='submit'>Remover</button> </td>
                </tr>
 
@@ -77,6 +89,7 @@ if(isset($_POST['buscar'])){
                 <td>$nomeTCC</td>
                 <td>$orientadorTCC</td>
                 <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+                <td><button name='editTCC' value='$id'target='_blank' class='btn btn-warning' type='submit'>Editar</button> </td>
                 <td><button name='removerTCC' value='$id'target='_blank' class='btn btn-danger' type='submit'>Remover</button> </td>
                 </tr>
 
@@ -122,6 +135,7 @@ if(isset($_POST['buscar'])){
                                      <td>$nomeTCC</td>
                                      <td>$nomeOrientador</td>
                                      <td><a role='button' target='_blank'class='btn btn-warning' href='$arquivo' >Download</a></td>
+                                     <td><button name='editTCC' value='$id'target='_blank' class='btn btn-warning' type='submit'>Editar</button> </td>
                                      <td><button name='removerTCC' value='$id'target='_blank' class='btn btn-danger' type='submit'>Remover</button> </td>
                                      </tr>
 
@@ -292,6 +306,7 @@ if(isset($_POST['enviarTCC'])){
 <body>
 
   <?php require_once("navBarADM.php");?>
+  
   <div class="row">
 
     <div class="col-md-offset-3 col-md-6">
@@ -300,7 +315,7 @@ if(isset($_POST['enviarTCC'])){
  <br>
     <div class="col-md-offset-3 col-md-6">
       <h3>TCC's atuais</h3>
-
+   
      <?php
 
 
@@ -329,6 +344,7 @@ if(isset($_POST['enviarTCC'])){
                         <th>Título do TCC</th>
                         <th>Nome do Orientador</th>
                         <th>Download</th>
+                        <th>Editar</th>
                         <th>Remover</th>
                        </tr>
                        </thead>
@@ -382,6 +398,7 @@ if(isset($_POST['enviarTCC'])){
                             <th>Título do TCC</th>
                             <th>Nome do Orientador</th>
                             <th>Download</th>
+                            <th>Editar</th>
                             <th>Remover</th>
                            </tr>
                            </thead>
@@ -406,6 +423,7 @@ if(isset($_POST['enviarTCC'])){
                                     <td>$nomeTCC</td>
                                     <td>$nomeOrientador</td>
                                     <td><a role='button' target='_blank'class='btn btn-warning' href='$caminhoArquivo' >Download</a></td>
+                                    <td><button name='editTCC' value='$id'target='_blank' class='btn btn-warning' type='submit'>Editar</button> </td>
                                     <td><button name='removerTCC' value='$id'target='_blank' class='btn btn-danger' type='submit'>Remover</button> </td>
                                     </tr>
 
@@ -478,6 +496,7 @@ if(isset($_POST['enviarTCC'])){
 
     </div>
   </div>
+ 
 <br><br>
   <!-- jQuery -->
   <script src="../js/jquery.js"></script>
