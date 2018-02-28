@@ -114,8 +114,12 @@
                                    
                                     $name = $notice['Titulo'];
                                     $link = $notice['Link_Page'];
+                                    $date = $notice['Date'];
+                                    $date = explode('-',$date);
+                                    $date = array_reverse($date);
+                                    $date = implode('/',$date);
 
-                                    echo "<li><a href='$link'>$name</a></li>";
+                                    echo "<li><a href='$link'>$name ($date)</a></li>";
 
                                  $i++;
                                  if($i ==5)
@@ -130,9 +134,12 @@
 						        while($notice = mysql_fetch_array($query)){
 
 								         $name = $notice['Titulo'];
-										 $link = $notice['Link_Page'];
+                                         $link = $notice['Link_Page'];
+                                         $date = explode('-',$date);
+                                         $date = array_reverse($date);
+                                         $date = implode('/',$date);
 
-								      echo "<li><a href='$link'>$name</a></li>";
+								      echo "<li><a href='$link'>$name ($date)</a></li>";
 
 
 								}
@@ -169,8 +176,12 @@
                                
                                 $name = $notice['Titulo'];
                                 $link = $notice['Link_Page'];
+                                $date = $notice['Date'];
+                                $date = explode('-',$date);
+                                $date = array_reverse($date);
+                                $date = implode('/',$date);
 
-                                echo "<li><a href='$link'>$name</a></li>";
+                                echo "<li><a href='$link'>$name ($date)</a></li>";
 
                              $i++;
                              if($i ==5)
@@ -186,9 +197,13 @@
 						        while($notice = mysql_fetch_array($query)){
 
 								         $name = $notice['Titulo'];
-										 $link = $notice['Link_Page'];
+                                         $link = $notice['Link_Page'];
+                                         $date = $notice['Date'];
+                                         $date = explode('-',$date);
+                                         $date = array_reverse($date);
+                                         $date = implode('/',$date);
 
-								      echo "<li><a href='$link'>$name</a></li>";
+								      echo "<li><a href='$link'>$name ($date)</a></li>";
 
 
 								}

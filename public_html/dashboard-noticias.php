@@ -13,6 +13,10 @@ if(!$_SESSION['auth']){
          $titulo = $_POST['Titulo'];
          $texto = $_POST['Texto'];
          $imagem = '';
+         $date = date('Y/m/d');
+         $date = str_replace('/','-',$date);
+        
+         
 		 
 		 			
          $arquivoFoto = $_FILES['Imagem']['tmp_name'];
@@ -43,8 +47,9 @@ if(!$_SESSION['auth']){
 			   $titulo = str_replace(':','',$titulo);
 			   $path = "../public_html/".$titulo . ".php";
 			   $file = fopen($path ,"w");
-			   fwrite($file,$htmlPage);
-               mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Imagem`, `Link_Page`) VALUES ('$titulo','$imagem','$path')");
+         fwrite($file,$htmlPage);
+         
+               mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Date`,`Imagem`, `Link_Page`) VALUES ('$titulo','$date','$imagem','$path')");
                echo "<script>window.location.href=window.location.href</script>"; 
                fim:
                echo "<script>window.history.back()</script>";
@@ -134,6 +139,10 @@ if(!$_SESSION['auth']){
                                  $titulo = $news['Titulo'];
 								 $link = $news['Link_Page'];
                                  $id = $news['ID'];
+                                 $date = $news['Date'];
+                                 $date = explode('-',$date);
+                                 $date = array_reverse($date);
+                                 $date = implode('/',$date);
 
                                  echo "
                                 
@@ -141,7 +150,7 @@ if(!$_SESSION['auth']){
                                  <div class='collapse' id='$id'>
 								 <p><a href='$link'>Link de redirecionamento</a></p>
                                 </div>
-                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a><button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
+                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo ($date)</a><button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
                                   
                                  </li>";
                             }

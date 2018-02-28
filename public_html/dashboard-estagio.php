@@ -12,6 +12,9 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
            $titulo = $_POST['Titulo'];
            $texto = $_POST['Texto'];
            $imagem = '';
+
+           $date = date('Y/m/d');
+           $date = str_replace('/','-',$date);
            
             $arquivoFoto = $_FILES['Imagem']['tmp_name'];
             $nomeArquivoFoto = $_FILES['Imagem']['name'];
@@ -40,7 +43,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
 			     $path = "../public_html/".$titulo . ".php";
 			     $file = fopen($path ,"w");
 			     fwrite($file,$htmlPage);
-                 mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Imagem`,`Link_Page`) VALUES ('$titulo','$imagem','$path')");
+                 mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Date`,`Imagem`,`Link_Page`) VALUES ('$titulo','$date','$imagem','$path')");
                  echo "<script>window.location.href=window.location.href</script>"; 
                  fim:
                  echo "<script>window.history.back()</script>";
@@ -126,8 +129,14 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                             while($news = mysql_fetch_array($query)){
 
                                  $titulo = $news['Titulo'];
-								 $link = $news['Link_Page'];
+								                 $link = $news['Link_Page'];
                                  $id = $news['ID'];
+                                 $date = $news['Date'];
+                                 $date = explode('-',$date);
+                                 $date = array_reverse($date);
+                                 $date = implode('/',$date);
+
+
 
                                  echo "
                                 
@@ -135,7 +144,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                                  <div class='collapse' id='$id'>
 								 <p><a href='$link'>Link de redirecionamento</a></p>
                                 </div>
-                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo</a>
+                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo ($date)</a>
                                   <button name='removerEstagio' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
                                  </li>";
                             }
