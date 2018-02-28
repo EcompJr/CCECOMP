@@ -5,11 +5,24 @@ require_once 'conexao.php';
 
 $busca = array();
 
+
+function limpaString($str) { 
+  $str = preg_replace('/[áàãâä]/ui', 'a', $str);
+  $str = preg_replace('/[éèêë]/ui', 'e', $str);
+  $str = preg_replace('/[íìîï]/ui', 'i', $str);
+  $str = preg_replace('/[óòõôö]/ui', 'o', $str);
+  $str = preg_replace('/[úùûü]/ui', 'u', $str);
+  $str = preg_replace('/[ç]/ui', 'c', $str);
+  return $str;
+}
+
 //Buscar Resoluções
 
  if(isset($_POST['buscar'])){
 
      $descricaoBusca = $_POST['descricao'];
+     $descricaoBusca = limpaString($descricaoBusca);
+     $descricaoBusca = strtoupper($descricaoBusca);
 
      if($descricaoBusca != ''){
 
@@ -18,6 +31,8 @@ $busca = array();
      while($linhas = mysql_fetch_array($query)){
 
         $descricaoBD = $linhas['Descricao'];
+        $descricaoBD = limpaString($descricaoBD);
+        $descricaoBD = strtoupper($descricaoBD);
 
         if(strpos($descricaoBD, $descricaoBusca) !== false){
 

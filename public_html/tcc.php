@@ -4,9 +4,24 @@ require_once 'conexao.php';
 
 $busca = array();
 
+
+function limpaString($str) { 
+    $str = preg_replace('/[áàãâä]/ui', 'a', $str);
+    $str = preg_replace('/[éèêë]/ui', 'e', $str);
+    $str = preg_replace('/[íìîï]/ui', 'i', $str);
+    $str = preg_replace('/[óòõôö]/ui', 'o', $str);
+    $str = preg_replace('/[úùûü]/ui', 'u', $str);
+    $str = preg_replace('/[ç]/ui', 'c', $str);
+    return $str;
+  }
+  
+
+
 if(isset($_POST['buscar'])){ //Faz busca de TCC
 
      $nomeBusca = $_POST['nomeBusca'];
+     $nomeBusca = limpaString($nomeBusca);
+     $nomeBusca = strtoupper($nomeBusca);
      $tipo = $_POST['check'];
 
 
@@ -20,11 +35,14 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
 
            $nomeTCC = $aluno_tcc['Nome_TCC'];
+           $nomeTCC = limpaString($nomeTCC);
+           $nomeTCC = strtoupper($nomeTCC);
 
 
 
            if(strpos($nomeTCC,$nomeBusca) !== false ){
 
+               $nomeTCC = $aluno_tcc['Nome_TCC'];
                $nomeAluno = $aluno_tcc['Aluno'];
                $nomeOrientador = $aluno_tcc['Nome_Orientador'];
                $arquivo = $aluno_tcc['Caminho_Arquivo'];
@@ -54,9 +72,12 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
 
               $orientadorTCC = $aluno_tcc['Nome_Orientador'];
+              $orientadorTCC = limpaString($orientadorTCC);
+              $orientadorTCC = strtoupper($orientadorTCC);
 
               if(strpos($orientadorTCC,$nomeBusca) !== false){
 
+                $orientadorTCC = $aluno_tcc['Nome_Orientador'];
                 $nomeAluno = $aluno_tcc['Aluno'];
                 $nomeTCC = $aluno_tcc['Nome_TCC'];
                 $nomeTCC = $aluno_tcc['Nome_TCC'];
@@ -97,7 +118,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
 
 
-                   if(strpos($chavesTCC[$i],$nomeBusca) !== false){
+                   if(strpos(strtoupper(limpaString($chavesTCC[$i])),$nomeBusca) !== false){
 
 
                                      $nomeAluno = $aluno_tcc['Aluno'];
