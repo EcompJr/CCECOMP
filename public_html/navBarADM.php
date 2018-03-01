@@ -6,7 +6,7 @@
        <nav class="navbar navbar-inverse  navbar-fixed-top" id="sidebar-wrapper" role="navigation">
            <ul class="nav sidebar-nav">
                <li class="sidebar-brand">
-                   <a href="index.php">
+                   <a href="../index.php">
                       <img  alt="logo do colegiado" width="40"  src="../images/customLogo1.png" /> CCECOMP ADM
                            <i style="color:#f46214" class="fa fa fa-wrench fa-spin fa-2x" aria-hidden="true"></i>
                    </a>
@@ -25,6 +25,9 @@
                </li>
                <li>
                    <a href="dashboard-estagio.php">Oportunidades de Estágio</a>
+               </li>
+               <li>
+                   <a href="uploadFile.php">Upload de Arquivos</a>
                </li>
                <li>
                    <a href="../index.php">Início</a>

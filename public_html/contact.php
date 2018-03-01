@@ -25,6 +25,10 @@
     <!-- Favicon -->
     <link rel="icon" type="images/png" sizes="32x32" href="../images/favicon.ico">
 
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -58,7 +62,7 @@
         <!-- Content Row -->
         <div class="row">
             <!-- Map Column -->
-            <div class="col-md-8">
+            <div class="col-md-8 col-xs-12">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.7227353532917!2d-38.97395058571949!3d-12.199259698076133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x714388c2af92357%3A0xf06781118830e1ef!2sLabotec+3+-+Laborat%C3%B3rios+de+Engenharia+de+Computa%C3%A7%C3%A3o%2C+UEFS!5e0!3m2!1spt-BR!2sbr!4v1510116021403" width="700" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <!-- Embedded Google Map -->
             </div>
@@ -148,9 +152,7 @@ if(isset($_POST['sendEmail'])){
     </div>
     <!-- /.container -->
  <?php require_once 'editPage.php';?>
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
+  
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
 

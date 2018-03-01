@@ -1497,3 +1497,9 @@ table.alt tbody tr td {
         padding: 2em 0 0.1em 0;
     }
 }
+
+@media screen and (min-width: 375px){
+
+   iframe { width:340px}
+
+}

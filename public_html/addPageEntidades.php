@@ -18,6 +18,8 @@
            <link href='../font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
            <link href='../css/navbarADM.css' rel='stylesheet'>
            <link rel='icon' type='images/png' sizes='32x32' href='../images/favicon.ico'>
+           <link href='../css/bootstrap-dropdownhover.min.css' rel='stylesheet'>
+           <script src='../js/jquery.js'></script>
          </head>
          <body>
 
@@ -217,9 +219,10 @@
              </div>
 
 
-          <script src='../js/jquery.js'></script>
+  
           <script src='../js/bootstrap.min.js'></script>
           <script src='../js/navbarADM.js'></script>
+          <script src='../js/bootstrap-dropdownhover.min.js'></script>
 
            <?php require_once 'editPage.php';?>
          <br><br><br><br><br><br><br>
