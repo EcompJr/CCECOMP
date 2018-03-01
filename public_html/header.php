@@ -107,9 +107,7 @@ require_once 'addPage.php';
                 <li>
                     <a href="../public_html/contact.php">Contato</a>
                 </li>
-                <li class="dropdown">
-                    <a href="../public_html/login.php">Acesso Restrito</a>
-                <li>
+
             </li>
             </li>
             </ul>
