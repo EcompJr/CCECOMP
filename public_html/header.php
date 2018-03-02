@@ -11,11 +11,11 @@ require_once 'addPage.php';
 ?>
 
 
-<nav style="background-color:#002f87;color:white;border-color:#002f87" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
+<nav style="background-color:#002f87;color:white;border-color:#002f87;padding:20px" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
 <form style='margin-bottom:-1px'method='post' action=''>
     <div  class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div   class="navbar-header ">
+        <div   class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
@@ -23,11 +23,13 @@ require_once 'addPage.php';
                   <span class="icon-bar"></span>
               </button>
             <div>
-            <img  alt="logo da uefs" width="100" height="40" style="padding-top:10px" src="../images/uefsLogo2.png" />
-            <a class="navbar-brand" href="../index.php" >CCECOMP</a>
-            <img  alt="logo do colegiado" width="45" height="40" style="padding-top:10px" src="../images/customLogo1.png" />
+            <img  alt="logo da uefs" width="200" height="70" style="padding-top:-10px" src="images/uefsLogo2.png" />
+            <a class="navbar-brand" href="../index.php" >
+                CCECOMP
+            </a>
             </div>
         </div>
+        <br>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
