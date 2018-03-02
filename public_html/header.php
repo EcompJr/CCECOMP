@@ -11,6 +11,75 @@ require_once 'addPage.php';
 ?>
 
 
+<style>
+
+.sizeHighBrand{
+
+
+    position:relative;
+    top:15px;
+}
+
+.sizeHighList{
+
+    position:relative;
+    top:15px;
+
+}
+
+
+
+@media screen and (min-width:200px){
+
+    .sizeHighBrand{
+
+        font-size:15px;
+        top:0px;
+        
+    } 
+
+        
+    .sizeHighImg{
+        height:40px; 
+    }
+
+     
+}
+
+@media screen and (min-width:980px){ 
+
+    .sizeHighBrand{
+
+        height:40px;
+        font-size:35px;
+        top:15px;
+        line-height: 20px;
+
+
+    } 
+
+
+    .sizeHighImg{
+
+        height:70px; 
+    
+    }
+
+    .sizeHighLit{
+
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding: 10px 15px;
+        line-height: 20px;
+
+
+    }
+
+
+}
+
+</style>
 <nav style="background-color:#002f87;color:white;border-color:#002f87" class="navbar navPanel navbar-inverse navbar-fixed-top" role="navigation">
 <form style='margin-bottom:-1px'method='post' action=''>
     <div  class="container">
@@ -23,14 +92,15 @@ require_once 'addPage.php';
                   <span class="icon-bar"></span>
               </button>
             <div>
-            <img  alt="logo da uefs" width="100" height="40" style="padding-top:10px" src="../images/uefsLogo2.png" />
-            <a class="navbar-brand" href="../index.php" >CCECOMP</a>
-            <img  alt="logo do colegiado" width="45" height="40" style="padding-top:10px" src="../images/customLogo1.png" />
+            <img  class="sizeHighImg"alt="logo da uefs"  height="70" style="padding-top:10px" src="../images/uefsLogo2.png" />
+             
+            <a  class="navbar-brand sizeHighBrand" href="../index.php" >CCECOMP</a>
+            <img class="sizeHighImg" alt="logo do colegiado" width="45" height="60" style="padding-top:10px" src="../images/customLogo1.png" />
             </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right sizeHighList">
                 <li>
                     <a href="../public_html/about.php">Sobre</a>
                 </li>

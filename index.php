@@ -40,36 +40,30 @@
 </head>
 
 
-<?php require_once 'public_html/header.php'; ?>
+
 
 <body>
-
+<?php require_once 'public_html/header.php'; ?>
 
 	    <div  id='myCarousel' class='carousel slide' data-ride='carousel'>
-                <!-- Indicador -->
-                <ol class='carousel-indicators'>
-                <li data-target='#myCarousel' data-slide-to='0' class='active'></li>
-                <li data-target='#myCarousel' data-slide-to='1'></li>
-                </ol>
+               
 
                  <!-- slides -->
         <div class='carousel-inner'>
                  <div class='item active'>
                  <img   src='images/circuits.png' alt='Imagem tema 1'>
                  <div class='carousel-caption'>
-                 <h3>Colegiado de Engenharia de Computação da UEFS</h3>
-                 <p>Portal de comunicação com o estudante</p>
-                 <br>
+                 <h3 style="position:relative;top:80px">Colegiado de Engenharia de Computação da UEFS</h3>
+                 <p style="position:relative;top:60px">Portal de comunicação com o estudante</p>
                  </div>
                  </div>
 
 
                  <div class='item'>
                  <img  src='images/theme-image1.jpeg' alt='Imagem tema 2'>
-                 <div class='carousel-caption'>
-                 <h3 >Fique atento às notícias do colegiado</h3>
-                 <p>Acompanhe as novidades de estágio e notícias do curso</p>
-                 <br>
+                 <div  class='carousel-caption'>
+                 <h3 style="position:relative;top:80px">Fique atento às notícias do colegiado</h3>
+                 <p style="position:relative;top:60px">Acompanhe as novidades de estágio e notícias do curso</p>
                  </div>
                  </div>
             </div>
@@ -77,6 +71,7 @@
 
 
                 <!-- direita e esquerda-->
+                
                 <a class='left carousel-control' href='#myCarousel' data-slide='prev'>
                 <span class='glyphicon glyphicon-chevron-left'></span>
                 <span class='sr-only'>Previous</span>
