@@ -1703,7 +1703,7 @@ table.alt tbody tr td {
 .navPanelToggle {
     position: fixed;
     text-decoration: none;
-    height: 8em;
+    height: 4em;
     right: 3em;
     top: .75em;
     width: 4em;
