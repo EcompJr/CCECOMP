@@ -1,5 +1,5 @@
-
-    <!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -37,14 +37,15 @@
         <script src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js'></script>
     <![endif]-->
 
+    
 </head>
 
 
 
 
 <body>
-<?php require_once 'public_html/header.php'; ?>
-
+ <?php  require_once("public_html/header.php"); ?>
+ 
 	    <div  id='myCarousel' class='carousel slide' data-ride='carousel'>
                
 
@@ -81,6 +82,7 @@
                 <span class='sr-only'>Next</span>
                 </a>
     </div>
+
 
 	  <div class='container'>
         <!-- Marketing Icons Section -->
@@ -237,7 +239,7 @@
     <script src='js/bootstrap.min.js'></script>
     <script src='js/bootstrap-dropdownhover.min.js'></script>
 
-    <?php require_once('public_html/footer.php') ?>
+    <?php require_once('public_html/footer.php'); ?>
 
 </body>
 
