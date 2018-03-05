@@ -1,3 +1,8 @@
 .textEdit {
 
 }
+
+div#myCarousel
+.item img {
+   width:  100%;
+}
