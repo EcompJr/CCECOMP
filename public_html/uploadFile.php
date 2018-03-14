@@ -39,6 +39,8 @@ if(isset($_POST['sendFile'])){ //cadastro de aquivo
           $next = $linha['Auto_increment'];
           $path  = '../data/'. "Arquivo".$next.".".$extension;
           */
+          
+         $nameFile =  str_replace(' ', '', $nameFile);
 
           $path  = '../data/'. $nameFile;
           move_uploaded_file($file,$path);
