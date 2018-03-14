@@ -31,7 +31,14 @@ function limpaString($str) {
 
      if($descricaoBusca != ''){
 
-     $query = mysql_query("SELECT*FROM `ccecomp_resolucoes`");
+
+      $descricaoBusca = explode(' ', $descricaoBusca);
+     
+    for($i=0; $i<sizeof($descricaoBusca); $i++){
+
+      if($descricaoBusca[$i] == '')
+      break;
+     $query = mysql_query("SELECT*FROM `ccecomp_resolucoes` ORDER BY `ID` DESC");
 
      while($linhas = mysql_fetch_array($query)){
 
@@ -39,7 +46,7 @@ function limpaString($str) {
         $descricaoBD = limpaString($descricaoBD);
         $descricaoBD = strtoupper($descricaoBD);
 
-        if(strpos($descricaoBD, $descricaoBusca) !== false){
+        if(strpos($descricaoBD, $descricaoBusca[$i]) !== false){
           
               $descricaoBD = $linhas['Descricao'];
               $id = $linhas['ID'];
@@ -50,7 +57,8 @@ function limpaString($str) {
               $arquivo = $linhas['Arquivo'];
 
 
-              array_push($busca,"
+
+              $str = "
 
               <tr>
               <td>$tipo</td>
@@ -61,31 +69,43 @@ function limpaString($str) {
               </tr>
 
 
-              ");
+              ";
 
+              $put = true; 
+               for($j=0; $j<sizeof($busca); $j++){
+    
+                    if($busca[$j] == $str){
+                      $put=false;
+                    }
+                    
+
+               }
+
+               if($put)
+               array_push($busca, $str);
+          
 
         }
       }
-    }
-      else{
+    
 
-        echo "<script>window.location.href=window.location.href</script>";
-      }
+
+    }
+
+  }
+  else{
+
+    echo "<script>window.location.href=window.location.href</script>";
+  }
 
 
     if(empty($busca))
     echo "<script>alert('Não existe nenhuma resolução com esta descrição')</script>";
 
-
-
-
-
-
-
-
  }
+ 
 
-
+ 
 
 
 
@@ -304,7 +324,7 @@ if(isset($_POST['removeTypeResolution'])){
            }
         else{
 
-                  $query = mysql_query("SELECT *FROM `ccecomp_resolucoes`"); //Consulta banco de dados
+                  $query = mysql_query("SELECT *FROM `ccecomp_resolucoes` ORDER BY `ID` DESC"); //Consulta banco de dados
                     if(mysql_num_rows($query) > 0){ //Existe resolucoes cadastradas
 
                           echo"
@@ -455,7 +475,7 @@ if(isset($_POST['removeTypeResolution'])){
 				 <div class='form-group'>
 				 <label>Resoluções já cadastradas</label>
 				 <?php
-				     $query = mysql_query("SELECT*FROM `tipos_resolucoes`");
+				     $query = mysql_query("SELECT*FROM `tipos_resolucoes` ORDER BY `ID` DESC");
 
 					 if(mysql_num_rows($query)>0){
 					 echo"<ul>";

@@ -38,9 +38,15 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                          move_uploaded_file($arquivoFoto,$imagem);
                  }
                 }
-                 require_once 'addPageEstagio.php';
-				 $titulo = str_replace(':','',$titulo);
-			     $path = "../public_html/".$titulo . ".php";
+           require_once 'addPageEstagio.php';
+           $tituloBD = $titulo;
+           $tituloBD = str_replace(':','',$tituloBD);
+           $tituloBD = str_replace('.','',$tituloBD);
+           $tituloBD = str_replace(',','',$tituloBD);
+           $tituloBD = str_replace(' ','',$tituloBD);
+           $tituloBD = str_replace('/','',$tituloBD);
+           $tituloBD = str_replace('\\','',$tituloBD);
+			     $path = "../public_html/".$tituloBD . ".php";
 			     $file = fopen($path ,"w");
 			     fwrite($file,$htmlPage);
                  mysql_query("INSERT INTO `ccecomp_estagios` (`Titulo`,`Date`,`Imagem`,`Link_Page`) VALUES ('$titulo','$date','$imagem','$path')");
@@ -122,7 +128,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
         <ul class="list-group">
           <form method='POST' action=''>
              <?php
-                          $query = mysql_query("SELECT *FROM `ccecomp_estagios`"); //Consulta banco de dados
+                          $query = mysql_query("SELECT *FROM `ccecomp_estagios` ORDER BY `ID` DESC" ); //Consulta banco de dados
 
                           if(mysql_num_rows($query) > 0){ //Existe notícias cadastradas
 
@@ -145,7 +151,7 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
 								 <p><a href='$link'>Link de redirecionamento</a></p>
                                 </div>
                                   <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo ($date)</a>
-                                  <button name='removerEstagio' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
+                                  <br><button name='removerEstagio' value='$id' type='submit' class='btn btn-danger'>Remover</button>
                                  </li>";
                             }
 
@@ -179,11 +185,11 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
                 <form method='POST' action='' enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Cargo</label>
-                    <input require='true' maxlength="50"name="Titulo" type="text" class="form-control" id="cargo">
+                    <input require='true'  maxlength='200'name="Titulo" type="text" class="form-control" id="cargo">
                   </div>
                   <div class="form-group">
                     <label>Descrição</label>
-                    <textarea require='true' name="Texto" class="form-control" rows="5" id="texto"></textarea>
+                    <textarea required='true' name="Texto" class="form-control" rows="5" id="texto"></textarea>
                   </div>
                   <div class="form-group">
                   <label>Enviar Imagem</label>

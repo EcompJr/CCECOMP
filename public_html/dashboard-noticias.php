@@ -43,18 +43,25 @@ if(!$_SESSION['auth']){
                }
               }
 
-			   require_once 'createNotice.php';
-			   $titulo = str_replace(':','',$titulo);
-			   $path = "../public_html/".$titulo . ".php";
+         require_once 'createNotice.php';
+         $tituloBD = $titulo;
+         $tituloBD = str_replace(':','',$tituloBD);
+         $tituloBD = str_replace('.','',$tituloBD);
+         $tituloBD = str_replace(',','',$tituloBD);
+         $tituloBD = str_replace('/','',$tituloBD);
+         $tituloBD = str_replace('\\','',$tituloBD);
+         $tituloBD = str_replace(' ','',$tituloBD);
+         $path = "../public_html/".$tituloBD . ".php";
 			   $file = fopen($path ,"w");
          fwrite($file,$htmlPage);
+
          
                mysql_query("INSERT INTO `ccecomp_noticias` (`Titulo`,`Date`,`Imagem`, `Link_Page`) VALUES ('$titulo','$date','$imagem','$path')");
                echo "<script>window.location.href=window.location.href</script>"; 
                fim:
                echo "<script>window.history.back()</script>";
                 //Não insere no banco de dados
-              
+                
   }
 
   if(isset($_POST['removerNoticia'])){
@@ -64,13 +71,13 @@ if(!$_SESSION['auth']){
        $query = mysql_query("SELECT*FROM `ccecomp_noticias` WHERE `ID`='$id'"); //sempre vai existir
        $linhaNoticias = mysql_fetch_array($query);
        $imagem = $linhaNoticias['Imagem'];
-	   $path = $linhaNoticias['Link_Page'];
+	     $path = $linhaNoticias['Link_Page'];
       
       
         @unlink($imagem); //remove arquivo em pasta
        
 
-	   @unlink($path); //Exclui pagina php
+	     @unlink($path); //Exclui pagina php
        mysql_query("DELETE FROM `ccecomp_noticias` WHERE `ID` ='$id'");
 
        echo "<script>window.location.href=window.location.href</script>";
@@ -130,7 +137,7 @@ if(!$_SESSION['auth']){
             <form method="POST" action=''>
               <ul class="list-group">
                 <?php
-                          $query = mysql_query("SELECT *FROM `ccecomp_noticias`"); //Consulta banco de dados
+                          $query = mysql_query("SELECT *FROM `ccecomp_noticias` ORDER BY `ID` DESC"); //Consulta banco de dados
 
                           if(mysql_num_rows($query) > 0){ //Existe notícias cadastradas
 
@@ -147,10 +154,10 @@ if(!$_SESSION['auth']){
                                  echo "
                                 
                                  <li class='list-group-item'>
-                                 <div class='collapse' id='$id'>
-								 <p><a href='$link'>Link de redirecionamento</a></p>
-                                </div>
-                                  <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo ($date)</a><button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button>
+                                    <div class='collapse' id='$id'>
+                                        <p><a href='$link'>Link de redirecionamento</a></p>
+                                    </div>
+                                    <a data-toggle='collapse' href='#$id' aria-expanded='false' aria-controls='collapseExample'>$titulo ($date)</a><br><button name='removerNoticia' value='$id' type='submit' class='btn btn-danger'>Remover</button>
                                   
                                  </li>";
                             }
@@ -190,7 +197,7 @@ if(!$_SESSION['auth']){
                 <form method="POST" action='' enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Título</label>
-                    <input required='true' maxlength="55" name="Titulo" type="text" class="form-control" id="cargo">
+                    <input required='true' maxlength='200' name="Titulo" type="text" class="form-control" id="cargo">
                   </div>
                   <div class="form-group">
                     <label for="comment">Texto</label>

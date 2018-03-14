@@ -102,7 +102,7 @@
                     </div>
                     <div class='panel-body'>
                          <?php
-						   $query = mysql_query('SELECT*FROM `ccecomp_noticias` ORDER BY `ID`');
+						   $query = mysql_query('SELECT*FROM `ccecomp_noticias` ORDER BY `ID` DESC');
 
 						   if(mysql_num_rows($query)>0){
 
@@ -128,11 +128,29 @@
                                 echo "</ul>";
 
 							   
-								echo " <div style='position:relative;top:-65px' id='notices' class='collapse'> ";
-								echo "<ul style='list-style-type:none'><br>";
+                                    echo " <div class='modal fade' id='myModal1' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
+                                    <div class='modal-dialog modal-lg' role='document'>
+                                        <div class='modal-content'>
+                                            <div class='modal-header'>
+                                                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                                    <span aria-hidden='true'>&times;</span>
+                                                </button>
+                                                <h4 class='modal-title' id='myModalLabel'>Mais notícias</h4>
+                                            </div>
+                
+                                            <div class='modal-body text-justify'>";
+                                echo "<ul style='list-style-type:none'><br>";
+
+                                if(mysql_num_rows($query)<=5){
+
+                                    echo "Não existem mais notícias cadastradas";
+                                }
+                                else{
+
 						        while($notice = mysql_fetch_array($query)){
 
 								         $name = $notice['Titulo'];
+                           
                                          $link = $notice['Link_Page'];
                                          $date = explode('-',$date);
                                          $date = array_reverse($date);
@@ -141,11 +159,23 @@
 								      echo "<li><a href='$link'>$name ($date)</a></li>";
 
 
-								}
-								echo "</ul>";
+                                }
+                                
+                              }
+                                echo "
+                                                </div>
+                                            <div class='modal-footer'>
+                                                <button type='button' class='btn btn-warning' data-dismiss='modal'>Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                </ul>";
+                               
+                                echo "<button class='btn btn-default'  type='button' data-toggle='modal' data-target='#myModal1'>+ Notícias</button>";
                                 echo "</div>";
-                                echo "<button class='btn btn-default'data-toggle='collapse' data-target='#notices'>+ Notícias</button>";
-						   }
+                            }
 						   else{
 						          echo "<a role='button'class='btn btn-default'>Não existem notícias.</a>";
 
@@ -163,7 +193,7 @@
                     </div>
                     <div class='panel-body'>
 					   <?php
-						   $query = mysql_query('SELECT*FROM `ccecomp_estagios`');
+						   $query = mysql_query('SELECT*FROM `ccecomp_estagios` ORDER BY `ID` DESC');
 
 						   if(mysql_num_rows($query)>0){
 
@@ -191,25 +221,55 @@
 
 
 							   
-								echo "<div style='position:relative;top:-65px' id='internship' class='collapse'>";
-								echo "<ul style='list-style-type:none'><br>";
-						        while($notice = mysql_fetch_array($query)){
+                            echo " <div class='modal fade' id='myModal2' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
+                            <div class='modal-dialog modal-lg' role='document'>
+                                <div class='modal-content'>
+                                    <div class='modal-header'>
+                                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                            <span aria-hidden='true'>&times;</span>
+                                        </button>
+                                        <h4 class='modal-title' id='myModalLabel'>Mais notícias de estágio</h4>
+                                    </div>
+        
+                                    <div class='modal-body text-justify'>";
+                                echo "<ul style='list-style-type:none'><br>";
+                                
+                                if(mysql_num_rows($query)<=5){
 
-								         $name = $notice['Titulo'];
-                                         $link = $notice['Link_Page'];
-                                         $date = $notice['Date'];
-                                         $date = explode('-',$date);
-                                         $date = array_reverse($date);
-                                         $date = implode('/',$date);
+                                    echo "Não existem mais notícias de estágio cadastradas";
+                                }
+                                else{
 
-								      echo "<li><a href='$link'>$name ($date)</a></li>";
+                                
+                                    while($notice = mysql_fetch_array($query)){
+
+                                            $name = $notice['Titulo'];
+                                            $link = $notice['Link_Page'];
+                                            $date = $notice['Date'];
+                                            $date = explode('-',$date);
+                                            $date = array_reverse($date);
+                                            $date = implode('/',$date);
+
+                                        echo "<li><a href='$link'>$name ($date)</a></li>";
 
 
-								}
-								echo "</ul>";
+                                    }
+                                
+                                }
+                                echo "
+                                
+                                            </div>
+                                            <div class='modal-footer'>
+                                                <button type='button' class='btn btn-warning' data-dismiss='modal'>Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </ul>";
+                                
+                                echo "<button class='btn btn-default' type='button' data-toggle='modal' data-target='#myModal2'>+ Notícias de Estágio</button>";
                                 echo "</div>";
-                                echo "<button class='btn btn-default'data-toggle='collapse' data-target='#internship'>+ Notícias de Estágio</button>";
-						   }
+                            }
 						   else{
 						          echo "<a role='button'class='btn btn-default'>Não existem notícias de estágio.</a>";
 

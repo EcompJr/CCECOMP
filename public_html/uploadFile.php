@@ -31,14 +31,16 @@ if(isset($_POST['sendFile'])){ //cadastro de aquivo
 
     if($nameFile != ''){
 
-          $extension = pathinfo($nameFile,PATHINFO_EXTENSION);
+         /* $extension = pathinfo($nameFile,PATHINFO_EXTENSION);
           $nameFile = str_replace(".".$extension,'',$nameFile);
           $sql = "SHOW TABLE STATUS LIKE 'ccecomp_files'";
           $result = mysql_query($sql);
           $linha = mysql_fetch_array($result);
           $next = $linha['Auto_increment'];
           $path  = '../data/'. "Arquivo".$next.".".$extension;
-          
+          */
+
+          $path  = '../data/'. $nameFile;
           move_uploaded_file($file,$path);
           mysql_query("INSERT INTO `ccecomp_files` (`Nome`,`Link`) VALUES ('$nameFile', '$path')");
           echo "<script>window.location.href=window.location.href</script>";
@@ -69,7 +71,15 @@ if(isset($_POST['searchFile'])){ //Faz busca de arquivo
 
   if($nameFile != ''){
 
-  $query = mysql_query("SELECT*FROM `ccecomp_files`");
+
+  $nameFile = explode(' ', $nameFile);
+     
+  for($i=0; $i<sizeof($nameFile); $i++){
+
+    if($nameFile[$i] == '')
+    break;
+  
+  $query = mysql_query("SELECT*FROM `ccecomp_files` ORDER BY `ID` DESC");
 
   while($linhas = mysql_fetch_array($query)){
 
@@ -77,26 +87,44 @@ if(isset($_POST['searchFile'])){ //Faz busca de arquivo
      $nameFileBD = limpaString($nameFileBD);
      $nameFileBD = strtoupper($nameFileBD);
 
-     if(strpos($nameFileBD, $nameFile) !== false){
+     if(strpos($nameFileBD, $nameFile[$i]) !== false){
        
            $link = $linhas['Link'];
            $id = $linhas['ID'];
 
 
 
-           array_push($busca,"
+           $str = "
 
            <li class='list-group-item'>
            <a href='$link' target='_blank'>Link: $link</a>
-           <button name='removeFile' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button> 
+           <br><button name='removeFile' value='$id' type='submit' class='btn btn-danger'>Remover</button> 
            </li>
 
 
-           ");
+           ";
+
+
+
+           $put = true; 
+               for($j=0; $j<sizeof($busca); $j++){
+    
+                    if($busca[$j] == $str){
+                      $put=false;
+                    }
+                    
+
+               }
+
+               if($put)
+               array_push($busca, $str);
 
 
      }
    }
+
+    
+  }
  }
    else{
 
@@ -170,16 +198,17 @@ if(isset($_POST['removeFile'])){
   <body>
 
     <?php require_once("navBarADM.php");?>
+    <div class="container">
     <div class="row">
 
-        <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-11">
-            <h2>Upload de Arquivos</h2>
+        <div class="col-md-offset-2 col-md-10 col-xs-offset-1 col-xs-11">
+          <h2>Upload de Arquivos</h2>
         </div>
          
     </div>
     <div class="row">
 
-        <div class="col-md-offset-3 col-md-8 col-xs-12 ">
+        <div class="col-md-offset-2 col-md-8 col-xs-12 ">
             <form  method="POST" action=""  enctype="multipart/form-data">
 
                     <div class="row">
@@ -213,7 +242,7 @@ if(isset($_POST['removeFile'])){
 
                               }
                               else{
-                                      $query = mysql_query("SELECT*FROM `ccecomp_files`");
+                                      $query = mysql_query("SELECT*FROM `ccecomp_files` ORDER BY `ID` DESC");
 
                                       if(mysql_num_rows($query)>0){
       
@@ -225,7 +254,7 @@ if(isset($_POST['removeFile'])){
                                               echo "
                                               <li class='list-group-item'>
                                               <a href='$link' target='_blank'>Link: $link</a>
-                                              <button name='removeFile' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button> 
+                                              <br><button name='removeFile' value='$id' type='submit' class='btn btn-danger'>Remover</button> 
                                               </li>";
       
                                           } 
@@ -274,7 +303,7 @@ if(isset($_POST['removeFile'])){
 
     </div>
 
-
+</div>
 
 
 

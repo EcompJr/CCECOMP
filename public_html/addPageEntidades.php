@@ -215,7 +215,10 @@
 
           $htmlPage .="</div>"; //container
           $htmlPage .= "
-                <hr></div>
+                </div>
+             </div>
+             <div class='container'>
+             <hr>
              </div>
 
 

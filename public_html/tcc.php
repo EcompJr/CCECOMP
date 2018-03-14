@@ -29,7 +29,16 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
   if($nomeBusca != ''){
 
-     $query = mysql_query("SELECT*FROM `aluno_tcc` ");
+     
+
+     $nomeBusca = explode(' ', $nomeBusca);
+     
+     for($i=0; $i<sizeof($nomeBusca); $i++){
+
+        if($nomeBusca[$i] == '')
+        break;
+ 
+        $query = mysql_query("SELECT*FROM `aluno_tcc` ORDER BY `ID` DESC ");
 
     if($tipo == 'titulo'){
 
@@ -42,7 +51,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
 
 
-           if(strpos($nomeTCC,$nomeBusca) !== false ){
+           if(strpos($nomeTCC,$nomeBusca[$i]) !== false ){
 
                $nomeTCC = $aluno_tcc['Nome_TCC'];
                $nomeAluno = $aluno_tcc['Aluno'];
@@ -50,7 +59,8 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
                $arquivo = $aluno_tcc['Caminho_Arquivo'];
 
 
-               array_push($busca,"
+
+               $str = "
 
                <tr>
                <td>$nomeAluno</td>
@@ -62,11 +72,27 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
 
 
-               ");
+               ";
+
+
+               $put = true; 
+               for($j=0; $j<sizeof($busca); $j++){
+    
+                    if($busca[$j] == $str){
+                      $put=false;
+                    }
+                    
+
+               }
+
+               if($put)
+               array_push($busca, $str);
 
 
            }
      }
+
+     
    }
    else if($tipo == 'orientador'){
 
@@ -78,15 +104,17 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
               $orientadorTCC = strtoupper($orientadorTCC);
 
              
-              if(strpos($orientadorTCC,$nomeBusca) !== false){
+              if(strpos($orientadorTCC,$nomeBusca[$i]) !== false){
 
                 $orientadorTCC = $aluno_tcc['Nome_Orientador'];
                 $nomeAluno = $aluno_tcc['Aluno'];
                 $nomeTCC = $aluno_tcc['Nome_TCC'];
                 $nomeTCC = $aluno_tcc['Nome_TCC'];
                 $arquivo = $aluno_tcc['Caminho_Arquivo'];
-                
-                array_push($busca,"
+
+
+
+                $str = "
 
                 <tr>
                 <td>$nomeAluno</td>
@@ -98,12 +126,27 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
 
 
-                ");
+                ";
+
+               $put = true; 
+               for($j=0; $j<sizeof($busca); $j++){
+    
+                    if($busca[$j] == $str){
+                      $put=false;
+                    }
+                    
+
+               }
+
+               if($put)
+               array_push($busca, $str);
+
+
               }
            }
 
 
-
+    
    }
    else if($tipo == 'chaves'){
 
@@ -115,13 +158,14 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
                    $chavesTCC = $aluno_tcc['Palavras_Chaves'];
                    $chavesTCC =  explode(',',$chavesTCC);
 
-              for($i=0;$i<sizeof($chavesTCC);$i++){
+              for($a=0;$a<sizeof($chavesTCC);$a++){
 
-                        $nomeBusca = str_replace(' ', '', $nomeBusca);
+                        $nomeBusca[$i] = str_replace(' ', '', $nomeBusca[$i]);
+                        $chavesTCC[$a] = str_replace(' ', '', $chavesTCC[$a]);
 
 
 
-                   if(strpos(strtoupper(limpaString($chavesTCC[$i])),$nomeBusca) !== false){
+                   if(strpos(strtoupper(limpaString($chavesTCC[$a])),$nomeBusca[$i]) !== false){
 
 
                                      $nomeAluno = $aluno_tcc['Aluno'];
@@ -130,7 +174,8 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
                                      $arquivo = $aluno_tcc['Caminho_Arquivo'];
 
 
-                                     array_push($busca,"
+
+                                     $str = "
 
                                      <tr>
                                      <td>$nomeAluno</td>
@@ -142,7 +187,20 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
 
 
-                                     ");
+                                     ";
+
+                                    $put = true; 
+                                    for($j=0; $j<sizeof($busca); $j++){
+                            
+                                            if($busca[$j] == $str){
+                                            $put=false;
+                                            }
+                                            
+
+                                    }
+
+                                    if($put)
+                                    array_push($busca, $str);
 
                    }
                  }
@@ -151,6 +209,8 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
    }
 
 
+
+     }
    }
    else{
     echo "<script>window.location.href=window.location.href</script>";
@@ -297,7 +357,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
       }
       else{
 
-          $query = mysql_query("SELECT*FROM `aluno_tcc`");
+          $query = mysql_query("SELECT*FROM `aluno_tcc` ORDER BY `ID` DESC");
 
             if(mysql_num_rows($query)>0 ){
 

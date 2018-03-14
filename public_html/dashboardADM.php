@@ -159,7 +159,7 @@ if(!$_SESSION['auth']){
         <ul class="list-group">
         <form method='POST' action='' >
        <?php
-                  $query = mysql_query("SELECT*FROM `ccecomp_noticias`");
+                  $query = mysql_query("SELECT*FROM `ccecomp_noticias` ORDER BY `ID` DESC");
 
                   if(mysql_num_rows($query) > 0){ //Existe noticias a serem listadas
 
@@ -169,7 +169,7 @@ if(!$_SESSION['auth']){
                                     $titulo = $noticias['Titulo'];
                                     $link = $noticias['Link_Page'];
 
-                                    echo "  <li class='list-group-item'>$titulo | LINK: <a href='$link'>$link</a><button name='removerNoticia' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></li>";
+                                    echo "  <li class='list-group-item'>$titulo | LINK: <a href='$link'>link</a><br><button name='removerNoticia' value='$id' type='submit' class='btn btn-danger'>Remover</button></li>";
 
                               }
 
@@ -194,7 +194,7 @@ if(!$_SESSION['auth']){
             <form method="POST" action=''>
                 <ul class="list-group">
                   <?php
-                          $query = mysql_query("SELECT*FROM `administradores`"); //Consulta banco de dados
+                          $query = mysql_query("SELECT*FROM `administradores` ORDER BY `ID` DESC"); //Consulta banco de dados
                           $user = $_SESSION['email'];
                           if(mysql_num_rows($query) > 1){ //Existe administradores cadastrados
 
@@ -207,7 +207,7 @@ if(!$_SESSION['auth']){
                                  if($user == "ccecomp@ecomp.uefs.br") {//root logado
 
                                         if($email != "ef84d6e2cf7188fd993bb1fe2acf22c0") //nao exibe o root na lista de administradores
-                                                        echo " <li class='list-group-item'>$nome <button name='removerAdm' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button></li>";
+                                                        echo " <li class='list-group-item'>$nome <button name='removerAdm' value='$id'type='submit' class='btn btn-danger'>Remover</button></button></li>";
 
                                                     
 
@@ -243,7 +243,7 @@ if(!$_SESSION['auth']){
                         <form method='POST' action=''>
                           <div class="form-group">
                             <label>Nome Completo</label>
-                            <input required="true" maxlength='22'name='nomeCompleto' type="text" class="form-control" >
+                            <input required="true" name='nomeCompleto' type="text" class="form-control" >
                           </div>
                           <div class="form-group">
                             <label>Email/Login</label>

@@ -43,21 +43,55 @@
 
                  if($imagem != ''){
 					  $htmlPage .= "
-		  
 							  <div class='row'>
-								<div class=' col-lg-offset-3 col-lg-9'>
+								  <div class='col-lg-6'> ";
+						$numChar = strlen($texto);
+						if($numChar>900){		  
+							  $texto = explode("\n", $texto);
+							  for($i=0; $i<sizeof($texto) && $i != 1; $i++)
+							  $htmlPage .= "<p align='justify'>$texto[$i]</p>";
+
+						}
+						else{
+
+							$htmlPage .= "<p align='justify'>$texto</p>";
+						}
+
+					  $htmlPage .= "</div>	<div class='col-lg-6'>
 					
-								   <img width='400'style='border-radius:10px'alt='Imagem da not�cia' src='$imagem' />
+								   <img width='400'style='border-radius:10px'alt='Imagem da notícia' src='$imagem' />
 								</div>
 							  </div>";
 							   
-		         }
-				   $htmlPage .= "<div class='row'>
-								 <div class='col-lg-12'> ";
-				     $texto = explode("\n", $texto);
-					 for($i=0; $i<sizeof($texto); $i++)
-				     $htmlPage .= "<p align='justify'>$texto[$i]</p>";
+		         
+			
+
+					 $htmlPage .= "<div class='row'>
+								   <div class='col-lg-12'> ";
 					 
+                   
+				   if($numChar>900){						   
+					 for($i=1; $i<sizeof($texto); $i++)
+					 $htmlPage .= "<p align='justify'>$texto[$i]</p>";
+				   }
+                    
+				   $htmlPage .= "</div>";
+				   $htmlPage .= "</div>";
+
+				}
+				else{
+
+					$htmlPage .= "<div class='row'>
+					<div class='col-lg-12'> ";
+					$texto = explode("\n", $texto);
+					for($i=0; $i<sizeof($texto); $i++)
+					$htmlPage .= "<p align='justify'>$texto[$i]</p>";
+
+					$htmlPage .= "</div>";
+					$htmlPage .= "</div>";
+
+				   $htmlPage .= "<div class='row'>
+				                 <div class='col-lg-12'> ";
 					 $links = $_POST['links'];
 					 $htmlPage .= "<ul>";
 	                 for($i=0; $i<sizeof($links); $i++){
@@ -72,12 +106,14 @@
 					 $htmlPage .= "</ul>";
 					 
 
+			
 		  $htmlPage .="
 		           </div>
-				  </div>
-				  <hr>
+				</div>";
+			}
+			$htmlPage .="<hr>
 				  </div>";
-				  
+			
 
           $htmlPage .="
 

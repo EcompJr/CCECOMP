@@ -103,7 +103,7 @@ require_once 'addPageEntidades.php';
               <input  name='entityName' class='form-control' />
               <br>
               <label required='true' for='description'> Descritivo*</label>
-              <textarea rows='5'name='description' class='form-control' type='text' ></textarea>
+              <textarea rows='5'maxlength='900' name='description' class='form-control' type='text' ></textarea>
               <br>
               <label for='iframe'>Localização</label>
               <label style='font-size:7px'>Adicione a tag iframe. Obtenha pelo <a target='_blank' href='https://www.google.com.br/maps/place/Feira+de+Santana+-+Maria+Quit%C3%A9ria,+Feira+de+Santana+-+BA/@-12.2439016,-39.0022771,12z/data=!3m1!4b1!4m5!3m4!1s0x71439dbd0766da9:0xed4d58d8df9d5ffe!8m2!3d-12.2597272!4d-38.9646608'>Google Maps</a> na opção: compartilhar. Utilizar tamanho pequeno. </label>

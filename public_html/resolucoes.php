@@ -26,7 +26,14 @@ function limpaString($str) {
 
      if($descricaoBusca != ''){
 
-     $query = mysql_query("SELECT*FROM `ccecomp_resolucoes`");
+      $descricaoBusca = explode(' ', $descricaoBusca);
+     
+      for($i=0; $i<sizeof($descricaoBusca); $i++){
+
+        if($descricaoBusca[$i] == '')
+        break;
+
+     $query = mysql_query("SELECT*FROM `ccecomp_resolucoes` ORDER BY `ID` DESC");
 
      while($linhas = mysql_fetch_array($query)){
 
@@ -34,7 +41,7 @@ function limpaString($str) {
         $descricaoBD = limpaString($descricaoBD);
         $descricaoBD = strtoupper($descricaoBD);
 
-        if(strpos($descricaoBD, $descricaoBusca) !== false){
+        if(strpos($descricaoBD, $descricaoBusca[$i]) !== false){
 
 
               $tipo = $linhas['Tipo'];
@@ -44,7 +51,8 @@ function limpaString($str) {
               $arquivo = $linhas['Arquivo'];
 
 
-              array_push($busca,"
+
+              $str = "
 
               <tr>
               <td>$tipo</td>
@@ -54,11 +62,30 @@ function limpaString($str) {
               </tr>
 
 
-              ");
+              ";
+
+              $put = true; 
+              for($j=0; $j<sizeof($busca); $j++){
+   
+                   if($busca[$j] == $str){
+                     $put=false;
+                   }
+                   
+
+              }
+
+              if($put)
+              array_push($busca, $str);
 
 
         }
       }
+
+
+
+
+    }
+
     }
       else{
 
@@ -194,7 +221,7 @@ function limpaString($str) {
                       }
                       else{
 
-                          $query = mysql_query("SELECT *FROM `ccecomp_resolucoes`"); //Consulta banco de dados
+                          $query = mysql_query("SELECT *FROM `ccecomp_resolucoes` ORDER BY `ID` DESC"); //Consulta banco de dados
 
                           if(mysql_num_rows($query) > 0){ //Existe resolucoes cadastradas
 

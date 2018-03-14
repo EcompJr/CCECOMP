@@ -80,17 +80,17 @@
 
 
 
-                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                <div class='modal fade' id='myModal1' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
+                    <div class='modal-dialog modal-lg' role='document'>
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                    <span aria-hidden='true'>&times;</span>
                                 </button>
-                                <h4 class="modal-title" id="myModalLabel">Instruções para requisição das chaves</h4>
+                                <h4 class='modal-title' id='myModalLabel'>Instruções para requisição das chaves</h4>
                             </div>
 
-                            <div class="modal-body text-justify">
+                            <div class='modal-body text-justify'>
                                 O procedimento para solicitação de acesso é o seguinte:
                                 <br>
                                 <br> 1. Preenchimento de formulário de solicitação (o formulário deve ser assinado pelo professor
@@ -103,15 +103,17 @@
                                 e fechamento da sala.
                                 <br>
                                 <br>
-                                <a class="btn btn-warning" role="button" target="_blank" href="../data/acesso_LTEC3.pdf">Formulário em formato PDF</a>
-                                <a class="btn btn-warning" role="button" target="_blank" href="../data/acesso_LTEC3.odt">Formulário em formato ODT</a>
+                                <a class='btn btn-warning' role='button' target='_blank' href='../data/acesso_LTEC3.pdf'>Formulário em formato PDF</a>
+                                <a class='btn btn-warning' role='button' target='_blank' href='../data/acesso_LTEC3.odt'>Formulário em formato ODT</a>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+                            <div class='modal-footer'>
+                                <button type='button' class='btn btn-warning' data-dismiss='modal'>Fechar</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
         <hr>
