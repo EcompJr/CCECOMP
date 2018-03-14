@@ -5,6 +5,8 @@ require_once 'conexao.php';
 $busca = array();
 
 
+
+  
 function limpaString($str) { 
     $str = preg_replace('/[áàãâä]/ui', 'a', $str);
     $str = preg_replace('/[éèêë]/ui', 'e', $str);
@@ -14,7 +16,6 @@ function limpaString($str) {
     $str = preg_replace('/[ç]/ui', 'c', $str);
     return $str;
   }
-  
 
 
 if(isset($_POST['buscar'])){ //Faz busca de TCC
@@ -23,6 +24,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
      $nomeBusca = limpaString($nomeBusca);
      $nomeBusca = strtoupper($nomeBusca);
      $tipo = $_POST['check'];
+    
 
 
   if($nomeBusca != ''){
@@ -75,6 +77,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
               $orientadorTCC = limpaString($orientadorTCC);
               $orientadorTCC = strtoupper($orientadorTCC);
 
+             
               if(strpos($orientadorTCC,$nomeBusca) !== false){
 
                 $orientadorTCC = $aluno_tcc['Nome_Orientador'];
@@ -164,7 +167,6 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
 
 }
-
 
 
  ?>

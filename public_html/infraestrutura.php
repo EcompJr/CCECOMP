@@ -62,16 +62,16 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-lg-12">
-                <h4><a href="">LABHARD - Laboratório de Hardware (MP 31-A)</a></h4>
-                <h4><a href="">Laboratório de Redes (MP 33-A)</a></h4>
-                <h4><a href="http://lacad.uefs.br/">LACAD - Laboratório de Computação de Alto Desempenho (SALA)</a></h4>
-                <h4><a href="">Laboratório de Computação Visual (MP 38)</a></h4>
-                <h4><a href="">LABPROG - Laboratório de Programação (MP 53)</a></h4>
-                <h4><a href="">Laboratório de Pesquisa (MP 55)</a></h4>
-                <h4><a href="http://sites.ecomp.uefs.br/lasic/">LASIC - Laboratório de Pesquisa em Sistemas Inteligentes e Cognitivos (MP 58)</a></h4>
-                <h4><a href="http://sites.ecomp.uefs.br/lse/">LSE - Laboratório de Sistemas Embarcados (S10, LABOTEC III)</a></h4>
-                <h4><a href="http://lara.uefs.br/">LARA</a></h4>
-                <h4><a href="">LENDA</a></h4>
+                <h4><a target="_blank" href="">LABHARD - Laboratório de Hardware (MP 31-A)</a></h4>
+                <h4><a target="_blank" href="">Laboratório de Redes (MP 33-A)</a></h4>
+                <h4><a target="_blank" href="http://lacad.uefs.br/">LACAD - Laboratório de Computação de Alto Desempenho (SALA)</a></h4>
+                <h4><a target="_blank" href="">Laboratório de Computação Visual (MP 38)</a></h4>
+                <h4><a target="_blank" href="">LABPROG - Laboratório de Programação (MP 53)</a></h4>
+                <h4><a target="_blank" href="">Laboratório de Pesquisa (MP 55)</a></h4>
+                <h4><a target="_blank" href="http://sites.ecomp.uefs.br/lasic/">LASIC - Laboratório de Pesquisa em Sistemas Inteligentes e Cognitivos (MP 58)</a></h4>
+                <h4><a target="_blank" href="http://sites.ecomp.uefs.br/lse/">LSE - Laboratório de Sistemas Embarcados (S10, LABOTEC III)</a></h4>
+                <h4><a target="_blank" href="http://lara.uefs.br/">LARA</a></h4>
+                <h4><a target="_blank" href="">LENDA</a></h4>
                 <br>
                 <h4>LABOTEC III</h4>
                 <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal1">

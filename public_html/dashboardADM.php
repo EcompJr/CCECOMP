@@ -195,23 +195,34 @@ if(!$_SESSION['auth']){
                 <ul class="list-group">
                   <?php
                           $query = mysql_query("SELECT*FROM `administradores`"); //Consulta banco de dados
-
-                          if(mysql_num_rows($query) > 0){ //Existe administradores cadastrados
+                          $user = $_SESSION['email'];
+                          if(mysql_num_rows($query) > 1){ //Existe administradores cadastrados
 
                             while($adm = mysql_fetch_array($query)){
 
                                  $nome = $adm['Nome'];
                                  $id = $adm['ID'];
-								 $email = $adm['Login'];
-								 if($email != "ef84d6e2cf7188fd993bb1fe2acf22c0")
-                                 echo " <li class='list-group-item'>$nome <button name='removerAdm' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button></li>";
+                                 $email = $adm['Login'];
+                                 
+                                 if($user == "ccecomp@ecomp.uefs.br") {//root logado
 
-                            }
+                                        if($email != "ef84d6e2cf7188fd993bb1fe2acf22c0") //nao exibe o root na lista de administradores
+                                                        echo " <li class='list-group-item'>$nome <button name='removerAdm' value='$id'style='float:right' type='submit' class='btn btn-danger'>Remover</button></button></li>";
+
+                                                    
+
+                                }
+                                else{
+                                      if($email != "ef84d6e2cf7188fd993bb1fe2acf22c0") //nao exibe o root na lista de administradores
+                                      echo " <li class='list-group-item'>$nome </li>";
+
+                                }
 
 
+                                }
                           }
                           else{
-                            echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhhum administrador cadastrado. </p></div>";
+                            echo "<div class='alert alert-danger'><p align='justify'>Não existe nenhum administrador cadastrado. </p></div>";
                           }
 
                   ?>
