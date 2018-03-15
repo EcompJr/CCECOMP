@@ -308,7 +308,7 @@ if(isset($_POST['enviarTCC'])){
 
                   }
                   else{
-                         echo "<script>alert('Coloque vírgulas entre as palavras-chaves. Mínimo:2 palavras')</script>";
+                         echo "<script>alert('Coloque vírgulas entre as palavras-chave. Mínimo:2 palavras')</script>";
                          goto fim;
 
                   }
@@ -412,9 +412,9 @@ if(isset($_POST['enviarTCC'])){
                          <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
                        </div>
                    </div>
-                   <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked type='checkbox' value='titulo'>Título do TCC</label>
+                   <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked disabled=true  type='checkbox' value='titulo'>Título do TCC</label>
                    <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check2' onclick='onlyOneCheck(this)' type='checkbox' value='orientador'>Nome do Orientador</label>
-                   <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check3' onclick='onlyOneCheck(this)' type='checkbox' value='chaves'>Palavras-Chaves</label>
+                   <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check3' onclick='onlyOneCheck(this)' type='checkbox' value='chaves'>Palavras-Chave</label>
 
                <table class='table table-hover' style='border-radius:10px;'>
                        <thead >
@@ -466,9 +466,9 @@ if(isset($_POST['enviarTCC'])){
                            </div>
                        </div>
 
-                       <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked type='checkbox' value='titulo'>Título do TCC</label>
+                       <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked disabled=true  type='checkbox' value='titulo'>Título do TCC</label>
                        <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check2' onclick='onlyOneCheck(this)' type='checkbox' value='orientador'>Nome do Orientador</label>
-                       <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check3' onclick='onlyOneCheck(this)' type='checkbox' value='chaves'>Palavras-Chaves</label>
+                       <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check3' onclick='onlyOneCheck(this)' type='checkbox' value='chaves'>Palavras-Chave</label>
 
                    <table class='table table-hover' style='border-radius:10px;'>
                            <thead >
@@ -555,7 +555,7 @@ if(isset($_POST['enviarTCC'])){
                   <input required="true"  maxlength='200' name='nomeOrientador' class="form-control" id="data">
                 </div>
                 <div class="form-group">
-                  <label>Palavras-Chaves (Separar por vírgulas, Mínimo:2 palavras) </label>
+                  <label>Palavras-Chave (Separar por vírgulas, Mínimo:2 palavras) </label>
                   <input required='true' name='palavrasChaves' type='text' class='form-control'  />
                 </div>
                 <div class="form-group"> 

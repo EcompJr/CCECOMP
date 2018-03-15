@@ -46,14 +46,19 @@
 
  $htmlPage .= "<div class='row'>";
 
-   if(isset($_FILES['picture']) && (pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='png' || pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='jpg' || pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='jpeg') ){
+ if(isset($_FILES['picture'])){
+   if(  pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='png' || pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='jpg' || pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='jpeg' || pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='PNG' || pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='JPG' || pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION) =='JPEG'   ){
 
        $htmlPage .= "
          <h3> Quem somos?</h3>
          <div class='col-md-6'>";
-         $description = explode('\n',$description);
-         for($c=0;$c<sizeof($description); $c++)
-         $htmlPage .= "<p align='justify'>$description[$c]</p>";
+         $z=0;
+         $description = explode("\n",$description);
+         for($cont=0;$z<sizeof($description)  && ($cont+strlen($description[$z]) <= 900 || $z == 0); $z++){
+            $cont+=strlen($description[$z]);	
+            $htmlPage .= "<p align='justify'>$description[$z]</p>";
+           
+         }
          $htmlPage .= "</div>";
 
 
@@ -68,20 +73,45 @@
            <img width='550'alt='imagem da entidade'src='$path' style='border-radius:10px'     />
          </div>";
 
+         $htmlPage .=  "</div>"; //row
+
+         $htmlPage .= "<div class='row'>
+         <div class='col-lg-12'> ";
+ 
+         for(; $z<sizeof($description); $z++){
+         $htmlPage .= "<p align='justify'>$description[$z]</p>";
+         
+         }
+
+
+
+         $htmlPage .= "</div>";
+				 $htmlPage .= "</div>";
+
+     
+
+
       }
       else{
 
-             $htmlPage .= "
+        echo "<script>alert('Formato de imagem inválido')</script>";
+        goto fim;
+        
+      }
+
+    }
+    else{
+      $htmlPage .= "
                 <div class='col-md-12'>
                 <h3> Quem somos?</h3>
                       <p align='justify'>$description</p>
 
                 </div>
              ";
+             $htmlPage .=  "</div>"; //row
+    }
 
-      }
-
-      $htmlPage .=  "</div>"; //row
+      
 
 
       $htmlPage .= "<div class='row'>";
@@ -248,6 +278,8 @@
 
            mysql_query("INSERT INTO `ccecomp_paginas_criadas` (`Nome`, `Tipo`, `Link`) VALUES ('$namePage','$type','$pathPage')");
            echo "<script>window.location.href=window.location.href</script>";
+           fim:
+           echo "<script>window.history.back()</script>";
 
            }
 

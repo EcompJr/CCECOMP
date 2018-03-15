@@ -7,13 +7,16 @@ function onlyOneCheck(idPressed){
         var idOn = idPressed.id;
         var busca = document.getElementById('nomeBusca');
 
+        
+        idPressed.disabled = true;
+
         switch(idPressed.value){ //Seta placeholder da busca
 
         case 'titulo': busca.placeholder = 'Título do TCC';
         break;
         case 'orientador': busca.placeholder = 'Nome do Orientador';
         break;
-        case 'chaves' :  busca.placeholder = 'Palavras-Chaves';
+        case 'chaves' :  busca.placeholder = 'Palavras-Chave';
 
         }
 
@@ -22,6 +25,7 @@ function onlyOneCheck(idPressed){
              if(inputs[i].checked && inputs[i].id != idOn ){
 
                         inputs[i].checked = false;
+                        inputs[i].disabled= false;
 
              }
         }

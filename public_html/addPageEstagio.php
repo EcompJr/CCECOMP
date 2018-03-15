@@ -42,17 +42,20 @@
 		  
 							  <div class='row'>
 								   <div class='col-lg-6'> ";
-						$numChar = strlen($texto);				   
-						if($numChar>900){		  
+										   
+							$z=0;  
 							$texto = explode("\n", $texto);
-							for($i=0; $i<sizeof($texto) && $i != 1; $i++)
-							$htmlPage .= "<p align='justify'>$texto[$i]</p>";
+							for($cont=0; $z<sizeof($texto) && ($cont+strlen($texto[$z]) <= 900 || $z == 0 ); $z++){
 
-						}
-						else{
+								$cont+=strlen($texto[$z]);	
+								$htmlPage .= "<p align='justify'>$texto[$z]</p>";
 
-							$htmlPage .= "<p align='justify'>$texto</p>";
-						}
+							}
+						
+						
+
+							
+						
 
 					    $htmlPage .= "	</div> <div class='col-lg-6'>
 					
@@ -64,11 +67,11 @@
 				   $htmlPage .= "<div class='row'>
 								 <div class='col-lg-12'> ";
 					 
-					if($numChar>900){			 
-						for($i=1; $i<sizeof($texto); $i++)
-						$htmlPage .= "<p align='justify'>$texto[$i]</p>";
+								 
+						for(; $z<sizeof($texto); $z++)
+						$htmlPage .= "<p align='justify'>$texto[$z]</p>";
 					 
-					}
+					
 
 					$htmlPage .= "</div>";
 					$htmlPage .= "</div>";
