@@ -220,7 +220,7 @@
                                 A <b>documentação comprovatória do motivo de ausência</b> (atestado do Serviço Médico da UEFS ou outro documento pertinente para demais casos) deve ser entregue ao colegiado no <b>prazo de 1 semana após a solicitação</b>, para que possa ser encaminhado ao professor responsável em tempo hábil para realização da segunda chamada.<br><br>
                                 Chamamos atenção que <b>não há previsão de abono de falta</b>, ou seja, a frequência do aluno continua sendo registrada normalmente. A previsão é somente de segunda chamada para o caso de haver avaliação durante o período de ausência justificada.<br><br>
 
-                                <a class="btn btn-warning" href="../data/Solicitacao_Segunda_Chamada.doc" class="button">Formulário para solicitação de Segunda Chamada</a>
+                                <a class="btn btn-warning" href="../data/Solicitacao_Segunda_Chamada.doc" class="button">Formulário para solicitação de Segunda <br>Chamada</a>
                                 </div>
                             </div>
                             <div class="modal-footer">

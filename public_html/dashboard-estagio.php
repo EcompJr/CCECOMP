@@ -117,11 +117,11 @@ if(isset($_POST['enviarEstagio'])){ //Cadastro de novo estágio
     <?php require_once("navBarADM.php");?>
     <div class="row">
 
-      <div class="col-md-offset-3 col-md-6">
+      <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10">
         <h2>Gerenciar Oportunidades de Estágio</h2>
       </div>
 
-      <div class="col-md-offset-3 col-md-6">
+      <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10">
 
         <h3>Oportunidades de Estágio</h3>
 

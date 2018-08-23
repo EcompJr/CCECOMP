@@ -121,7 +121,7 @@
     <!-- /.container -->
 
     <?php require_once 'editPage.php';?>
-    <hr>
+  
  
     <script src='../js/bootstrap-dropdownhover.min.js'></script>
 

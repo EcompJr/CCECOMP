@@ -166,10 +166,9 @@ function limpaString($str) {
         <!-- Content Row -->
         <div>
 <br><br>
-          <div >
-            <form method="POST" action=''>
-              <ul class="table-hover">
-                <table class="table table-hover" >
+        <div >
+            
+
 
                 <?php
 
@@ -181,15 +180,15 @@ function limpaString($str) {
 
                         <form method='POST' action=''>
                               <div class='row'>
-                                  <div class='col-md-10'>
+                                  <div class='col-md-10 col-xs-8'>
                                     <input  name='descricao' type='text' class='form-control' placeholder='Descrição' />
                                     </div>
-                                    <div class='col-md-1'>
+                                    <div class='col-md-1 col-xs-1'>
                                     <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
                                   </div>
                               </div>
 
-
+                          <div class='table-responsive'>
                           <table class='table table-hover' style='border-radius:10px;'>
                                   <thead >
                                   <tr>
@@ -213,7 +212,7 @@ function limpaString($str) {
                         }
 
                         echo "</tbody>";
-                        echo "</table>";
+                        echo "</table></div>";
                         echo "</form>";
 
 
@@ -227,47 +226,56 @@ function limpaString($str) {
 
 
                                 echo"
-                                <div class='col-md-10 '>
-                                  <input name='descricao' type='text' class='form-control' placeholder='Descrição' />
+                                <form method='POST' action=''>
+                                 <div class='row'>
+                                    <div class='col-md-10 col-xs-8'>
+                                      <input name='descricao' type='text' class='form-control' placeholder='Descrição' />
+                                    </div>
+                                    <div class='col-md-1 col-xs-1'>
+                                      <button type='submit' name='buscar'class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
+                                    </div>
+                                  </div>  
+                                    <div class='table-responsive'>
+                                      <table class='table table-hover' >
+
+                                          <thead >
+                                          <tr>
+                                          <th>Tipo</th>
+                                          <th>Número</th>
+                                          <th>Descrição</th>
+                                          <th>Download</th>
+                                          </tr>
+                                          </thead>
+                                          <tbody>";
+
+
+                                    while($news = mysql_fetch_array($query)){
+
+                                        $tipo = $news['Tipo'];
+                                        $numero = $news['Numero'];
+                                        $numero .= "_". $news['Ano'];
+                                        $descricao = $news['Descricao'];
+                                        $documento = $news['Arquivo'];
+
+
+                                        echo "
+
+
+                                            <tr>
+                                              <td>$tipo</td>
+                                              <td>$numero</td>
+                                              <td>$descricao</td>
+                                              <td><a href='$documento' target='_blank' class='btn btn-warning'>Download</a></td>
+                                            </tr>
+
+                                          ";
+                                    }
+
+                                    echo "</tbody>
+                                  </table>
                                 </div>
-                                <div class='col-md-1'>
-                                  <button type='submit' name='buscar'class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
-                                </div>
-
-
-                                <thead >
-                                <tr>
-                                <th>Tipo</th>
-                                <th>Número</th>
-                                <th>Descrição</th>
-                                <th>Download</th>
-                                </tr>
-                                </thead>
-                                <tbody>";
-
-
-                            while($news = mysql_fetch_array($query)){
-
-                                 $tipo = $news['Tipo'];
-                                 $numero = $news['Numero'];
-                                 $numero .= "_". $news['Ano'];
-                                 $descricao = $news['Descricao'];
-                                 $documento = $news['Arquivo'];
-
-
-                                 echo "
-
-
-                                     <tr>
-                                       <td>$tipo</td>
-                                       <td>$numero</td>
-                                       <td>$descricao</td>
-                                       <td><a href='$documento' target='_blank' class='btn btn-warning'>Download</a></td>
-                                     </tr>
-
-
-                                  ";
-                            }
+                              
+                            </form>";
 
 
                           }
@@ -279,12 +287,8 @@ function limpaString($str) {
                         }
 
                   ?>
-                </tbody>
-              </table>
 
-
-              </ul>
-            </form>
+              
 
           </div>
 

@@ -6,7 +6,7 @@
                 <div  class="col-lg-offset-1 col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <p style="color:white;font-size:15px;position:relative;top:40px;font-family:'Lato', sans-serif"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a target="_blank" href="http://www.ecompjr.com.br/"><img height="55" width='55'  style="border-radius:20px;"  src='../images/logoEcompJr.png'/> </a>Desenvolvido por EcompJr<br></p>
                 </div>
-                <div style="position:realtive;left:20px"class="col-lg-3 col-xs-12 col-sm-3 col-md-3 ">
+                <div style="position:relative;left:20px"class="col-lg-3 col-xs-12 col-sm-3 col-md-3 ">
                     <p style="color:white;font-size:15px;position:relative;top:40px;font-family:'Lato', sans-serif"><b style="color:white">Colegiado do Curso de Engenharia de Computação</b> 
                     LABOTEC III - SALA I8, UEFS 
                     Av. Transnordestina, S/N 

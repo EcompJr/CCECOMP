@@ -124,7 +124,7 @@ function limpaString($str) {
 
                  if( $nomeArquivoResolucao != ''){ //faz upload do arquivo se existir
                  $extensaoResolucao = pathinfo($nomeArquivoResolucao,PATHINFO_EXTENSION);
-                 $arquivo = '../data/resolucoes'.$numero.".".$extensaoResolucao;
+                 $arquivo = '../data/resolucao_'.$tipo.'_'.$numero.'_'.$ano.".".$extensaoResolucao;
 
                  if($extensaoResolucao == 'pdf' || $extensaoResolucao == 'doc' || $extensaoResolucao == 'docx' || $extensaoResolucao == 'PDF' ){
                            $upResolucao = true; //Pode adicionar a foto
@@ -255,11 +255,11 @@ if(isset($_POST['removeTypeResolution'])){
    <?php require_once("navBarADM.php");?>
    <div class="row">
 
-     <div class="col-md-offset-3 col-md-6">
+     <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10">
        <h2>Gerenciar Resoluções</h2>
      </div>
 
-     <div class="col-md-offset-3 col-md-6">
+     <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10">
 
        <h3>Resoluções</h3>
 
@@ -268,8 +268,7 @@ if(isset($_POST['removeTypeResolution'])){
 
          <div>
            <form method="POST" action=''>
-             <ul class="table-hover">
-               <table class="table table-hover" >
+
 
                <?php
 
@@ -289,7 +288,7 @@ if(isset($_POST['removeTypeResolution'])){
                        </div>
                    </div>
 
-
+               <div class='table-responsive'>
                <table class='table table-hover' style='border-radius:10px;'>
                        <thead >
                        <tr>
@@ -315,6 +314,7 @@ if(isset($_POST['removeTypeResolution'])){
 
              echo "</tbody>";
              echo "</table>";
+             echo "</div>";
              echo "</form>";
 
 
@@ -329,13 +329,15 @@ if(isset($_POST['removeTypeResolution'])){
 
                           echo"
 
-                          <div class='col-md-10'>
+                          <div class='col-md-10 col-xs-8'>
                             <input type='text' name='descricao' class='form-control'placeholder='Descrição' />
                           </div>
-                          <div class=col-md-1'>
+                          <div >
                             <button type='submit' name='buscar'class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
                           </div><br>
-
+                          
+                          <div class='table-responsive'>
+                          <table class='table table-hover' style='border-radius:10px;'>
                             <thead >
                                <tr>
                                  <th>Tipo</th>
@@ -369,6 +371,7 @@ if(isset($_POST['removeTypeResolution'])){
 
                            echo "</tbody>";
                            echo "</table>";
+                           echo "</div>";
                            echo "</form>";
                          }
                          else{
@@ -384,8 +387,6 @@ if(isset($_POST['removeTypeResolution'])){
 
                  ?>
                </tbody>
-             </table>
-             </ul>
            </form>
          </div>
          <!-- /.col-lg-12 -->
@@ -439,22 +440,22 @@ if(isset($_POST['removeTypeResolution'])){
                  </div>
                  <div class="form-group">
                    <label>Número</label>
-                   <input required='true' maxlength="10" name="Numero" type="text" class="form-control" id="numero">
+                   <input required='true' maxlength="10"   onkeypress='return onlyNumbers(event)' name="Numero" type="text" class="form-control" id="numero">
                  </div>
                  <div class="form-group">
                    <label>Ano</label>
-                   <input required='true' maxlength="10" name="Ano" type="text" class="form-control" id="Ano">
+                   <input required='true' maxlength="10" name="Ano" type="text"  onkeypress='return onlyNumbers(event)' class="form-control" id="Ano">
                  </div>
                  <div class="form-group">
                    <label>Descrição</label>
-                   <textarea rows='5'required='true'  maxlength="255" name="Descricao" type="text" class="form-control" id="descricao"></textarea>
+                   <textarea rows='5'required='true'   name="Descricao" type="text"  class="form-control" id="descricao"></textarea>
                  </div>
                  <div class="form-group">
                    <label>Enviar Arquivo</label>
-                   <input required='true' name="Arquivo" type="file" id="documento" class="custom-file-input">
+                   <input required='true' name="Arquivo" type="file" id="documento" class="custom-file-input" >
                    <span class="custom-file-control"></span>
                  </div>
-                 <button name="enviarResolucao" type="submit" class="btn btn-primary">Enviar</button>
+                 <button name="enviarResolucao" type="submit" class="btn btn-primary" id='enviar'>Enviar</button>
                </form>
              </div>
            </div>
@@ -521,11 +522,13 @@ if(isset($_POST['removeTypeResolution'])){
 
 
    <!-- jQuery -->
-   <script src="../js/jquery.js"></script>
+   <script src="../js/jquery.js"></script>  
 
    <!-- Bootstrap Core JavaScript -->
    <script src="../js/bootstrap.min.js"></script>
-   <!-- navBarscript -->
+   <script src='../js/registerPage.js'></script>
+
+    <!-- navBarscript -->
    <script src="../js/navbarADM.js">
      < script >
        $('#myModal').on('shown.bs.modal', function () {
@@ -533,6 +536,8 @@ if(isset($_POST['removeTypeResolution'])){
        }) <
        />
    </script>
+
+ 
    <br><br><br><br><br><br><br><br><br><br><br><br>
    <?php require_once("footer.php"); ?>
 

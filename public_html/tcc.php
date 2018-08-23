@@ -23,13 +23,15 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
      $nomeBusca = $_POST['nomeBusca'];
      $nomeBusca = limpaString($nomeBusca);
      $nomeBusca = strtoupper($nomeBusca);
-     $tipo = $_POST['check'];
+
+     
+     
     
 
 
-  if($nomeBusca != ''){
+  if($nomeBusca != '' && isset($_POST['check'])){
 
-     
+    $tipo = $_POST['check'];
 
      $nomeBusca = explode(' ', $nomeBusca);
      
@@ -315,17 +317,18 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
         <form method='POST' action=''>
               <div class='row'>
-                  <div class='col-md-10'>
+                  <div class='col-md-10 col-xs-8'>
                     <input id='nomeBusca' name='nomeBusca' type='text' class='form-control' placeholder='Nome do TCC' />
                     </div>
-                    <div class='col-md-1'>
+                    <div class='col-md-1 col-xs-1'>
                     <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
                   </div>
               </div>
-              <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked disabled=true type='checkbox' value='titulo'>Título do TCC</label>
+              <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked  type='checkbox' value='titulo'>Título do TCC</label>
               <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check2' onclick='onlyOneCheck(this)' type='checkbox' value='orientador'>Nome do Orientador</label>
               <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check3' onclick='onlyOneCheck(this)' type='checkbox' value='chaves'>Palavras-Chave</label>
 
+         <div class='table-responsive'>     
           <table class='table table-hover' style='border-radius:10px;'>
                   <thead >
                   <tr>
@@ -349,7 +352,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
         }
 
         echo "</tbody>";
-        echo "</table>";
+        echo "</table></div>";
         echo "</form>";
 
 
@@ -366,18 +369,19 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
             <form method='POST' action=''>
                   <div class='row'>
-                      <div class='col-md-10'>
+                      <div class='col-md-10 col-xs-8'>
                         <input id='nomeBusca' name='nomeBusca' type='text' class='form-control' placeholder='Título do TCC' />
                         </div>
-                        <div class='col-md-1'>
+                        <div class='col-md-1 col-xs-1'>
                         <button name ='buscar' type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-search'></span>&nbsp&nbsp&nbspBuscar</button>
                       </div>
                   </div>
 
-                  <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked disabled=true  type='checkbox' value='titulo'>Título do TCC</label>
+                  <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check1' onclick='onlyOneCheck(this)' checked   type='checkbox' value='titulo'>Título do TCC</label>
                   <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check2' onclick='onlyOneCheck(this)' type='checkbox' value='orientador'>Nome do Orientador</label>
                   <label style='text-transform:capitalize;'class='checkbox-inline'><input name='check' id='check3' onclick='onlyOneCheck(this)' type='checkbox' value='chaves'>Palavras-Chave</label>
 
+              <div class='table-responsive'>    
               <table class='table table-hover' style='border-radius:10px;'>
                       <thead >
                       <tr>
@@ -415,7 +419,7 @@ if(isset($_POST['buscar'])){ //Faz busca de TCC
 
                  }
                  echo "</tbody>";
-                 echo "</table>";
+                 echo "</table></div>";
                  echo "</form>";
 
 

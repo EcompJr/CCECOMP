@@ -146,14 +146,14 @@ if(!$_SESSION['auth']){
 
        <?php require_once("navBarADM.php");?>
 <div class="row">
-  <div class=" col-md-offset-4 col-md-8">
+  <div class=" col-md-offset-4 col-md-8 col-xs-offset-1 col-xs-10">
     <h2>Administração CCECOMP</h2>
   </div>
 </div>
 <br><br>
     <div class="row">
 
-      <div class="col-md-offset-1  col-md-7">
+      <div class="col-md-offset-1  col-md-7 col-xs-offset-1 col-xs-10">
         <h3>Páginas já criadas</h3>
         <p align="justify">Selecione o link de alguma das páginas já criadas no painel de notícias para ser redirecionado, ou remova alguma das notícias. </p>
         <ul class="list-group">
@@ -188,7 +188,7 @@ if(!$_SESSION['auth']){
      </form>
       </div>
 
-      <div class="  col-md-3">
+      <div class="  col-md-3 col-xs-offset-1 col-xs-10">
 
             <h3>Membros administradores</h3>
             <form method="POST" action=''>
@@ -207,7 +207,7 @@ if(!$_SESSION['auth']){
                                  if($user == "ccecomp@ecomp.uefs.br") {//root logado
 
                                         if($email != "ef84d6e2cf7188fd993bb1fe2acf22c0") //nao exibe o root na lista de administradores
-                                                        echo " <li class='list-group-item'>$nome <button name='removerAdm' value='$id'type='submit' class='btn btn-danger'>Remover</button></button></li>";
+                                                        echo " <li class='list-group-item'>$nome <br><button name='removerAdm' value='$id'type='submit' class='btn btn-danger'>Remover</button></button></li>";
 
                                                     
 

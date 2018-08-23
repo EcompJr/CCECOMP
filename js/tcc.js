@@ -8,7 +8,7 @@ function onlyOneCheck(idPressed){
         var busca = document.getElementById('nomeBusca');
 
         
-        idPressed.disabled = true;
+        
 
         switch(idPressed.value){ //Seta placeholder da busca
 
@@ -25,7 +25,7 @@ function onlyOneCheck(idPressed){
              if(inputs[i].checked && inputs[i].id != idOn ){
 
                         inputs[i].checked = false;
-                        inputs[i].disabled= false;
+                        
 
              }
         }

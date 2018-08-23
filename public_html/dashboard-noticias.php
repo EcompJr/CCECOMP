@@ -124,11 +124,11 @@ if(!$_SESSION['auth']){
     <?php require_once("navBarADM.php");?>
     <div class="row">
 
-      <div class="col-md-offset-3 col-md-6">
+      <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10">
         <h2>Gerenciar Notícias Publicadas</h2>
       </div>
 
-      <div class="col-md-offset-3 col-md-6">
+      <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10">
 
         <h3>Notícias</h3>
 
@@ -170,7 +170,7 @@ if(!$_SESSION['auth']){
 
                   ?>
                   <br>
-                  <button class="btn btn-warning col-md-offset-3 col-md-6" onclick="backForOne()" type="button" data-toggle="modal" data-target="#myModal1">
+                  <button class="btn btn-warning col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10" onclick="backForOne()" type="button" data-toggle="modal" data-target="#myModal1">
                     Cadastrar Nova Notícia
                   </button>
               </ul>

@@ -112,15 +112,15 @@
 					<form method="post" action="">
 						<div class="field half first">
 							<label style="color:white"for="name">Nome</label>
-							<input class="form-control" type="text" name="name" id="name" />
+							<input class="form-control" type="text" name="name" id="name"  required/>
 						</div>
 						<div class="field half">
 							<label style="color:white" for="email">Email</label>
-							<input  class="form-control"type="text" name="email" id="email" />
+							<input  class="form-control"type="text" name="email" id="email"  required/>
 						</div>
 						<div class="field">
 							<label style="color:white" for="message">Mensagem</label>
-							<textarea class="form-control"rows="20"name="message" id="message" rows="6"></textarea>
+							<textarea class="form-control"rows="20"name="message" id="message" rows="6" required></textarea>
 						</div>
 						<ul class="actions">
 							<li><button class="btn btn-primary" name="sendEmail" type="submit"  >Enviar Mensagem</button></li>

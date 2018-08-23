@@ -80,7 +80,7 @@
             </div>
 
               <div class="col-md-6">
-                <img width="550"alt="imagem da empresa"src="../images/EcompJr-picture-group.jpg" style="border-radius:10px"     />
+                <img class="img-responsive"width="550"alt="imagem da empresa"src="../images/EcompJr-picture-group.jpg" style="border-radius:10px"     />
               </div>
 
         </div>
@@ -116,7 +116,7 @@
         </div>
 
 
-        <hr>
+     
     </div>
 <hr>
   </div>

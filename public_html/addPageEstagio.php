@@ -75,6 +75,28 @@
 
 					$htmlPage .= "</div>";
 					$htmlPage .= "</div>";
+
+
+					$htmlPage .= "<div class='row'>
+					<div class='col-lg-12'> ";
+					 
+					 $links = $_POST['links'];
+					 $htmlPage .= "<ul>";
+	                 for($i=0; $i<sizeof($links); $i++){
+	   
+	                       if($links[$i] != ''){
+		  
+		                      $htmlPage .= "<li style='display:inline'><a role='button' target='_blank'class='btn btn-warning' href='$links[$i]' >Link</a></li>";
+
+
+		                    }
+	                 }
+					 $htmlPage .= "</ul>";
+					 
+
+		  $htmlPage .="
+		           </div>
+				  </div>";
 				   
 				   }
 				   else{

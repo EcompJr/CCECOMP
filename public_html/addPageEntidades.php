@@ -70,7 +70,7 @@
 
          $htmlPage .= "
          <div class='col-md-6'>
-           <img width='550'alt='imagem da entidade'src='$path' style='border-radius:10px'     />
+           <img class='img-responsive' width='550'alt='imagem da entidade'src='$path' style='border-radius:10px'     />
          </div>";
 
          $htmlPage .=  "</div>"; //row

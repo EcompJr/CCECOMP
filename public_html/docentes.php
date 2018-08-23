@@ -60,8 +60,8 @@
 
         <div class="row">
 
-            <div>
-                <table class="table table-sm">
+            <div class="table-responsive">
+                <table class="table table-sm ">
                     <thead>
                         <tr>
                             <th></th>
